@@ -1,0 +1,204 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>MainWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>MainWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>747</width>
+            <height>499</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Kerberos Ticket List</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>closeButton</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Close</string>
+            </property>
+            <property name="accel">
+                <string>Alt+C</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="0">
+            <property name="name">
+                <cstring>refreshButton</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Refresh</string>
+            </property>
+            <property name="accel">
+                <string>Alt+R</string>
+            </property>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>460</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QFrame" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>frame7</cstring>
+            </property>
+            <property name="paletteBackgroundColor">
+                <color>
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QGroupBox" row="1" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>legend</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>1</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Ticket flags legend</string>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&lt;qt&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;F&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Forwardable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;f&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Forwarded&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;P&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Proxiable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;p&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Proxy&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;D&lt;/b&gt;&lt;/td&gt;&lt;td&gt;May Postdate&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;d&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Postdated&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;i&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Invalid&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;R&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Renewable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;I&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Initial&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;H&lt;/b&gt;&lt;/td&gt;&lt;td&gt;HW Auth&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;A&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pre Auth&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;T&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Transit Policy Checked&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;O&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Ok as Delegate&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;a&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Anonymous&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/qt&gt;</string>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>commonLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QListView" row="2" column="0">
+                    <column>
+                        <property name="text">
+                            <string>Key</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Value</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>ticketView</cstring>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                    <property name="rootIsDecorated">
+                        <bool>true</bool>
+                    </property>
+                    <property name="resizeMode">
+                        <enum>LastColumn</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>title</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <pointsize>13</pointsize>
+                            <bold>1</bold>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Default credential cache</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>closeButton</sender>
+        <signal>clicked()</signal>
+        <receiver>MainWidget</receiver>
+        <slot>hideIt()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">mainwidget.ui.h</include>
+</includes>
+<slots>
+    <slot>hideIt()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
