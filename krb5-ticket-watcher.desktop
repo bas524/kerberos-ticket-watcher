@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=krb5-ticket-watcher -i 31
+Path=
+Type=Application
+MimeType=
+Terminal=false
+Icon=encrypted
+GenericName=Kerberos Ticket Watcher
+X-KDE-StartupNotify=false
+Categories=System;Network
