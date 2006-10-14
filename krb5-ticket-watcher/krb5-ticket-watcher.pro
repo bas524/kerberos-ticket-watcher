@@ -24,7 +24,7 @@ DEFINES += DEBUG
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
 
-DISTFILES += po/*.po po/Makefile
+DISTFILES += po/*.po po/Makefile Changes News COPYING
 
 SUBDIRS += src po
 
