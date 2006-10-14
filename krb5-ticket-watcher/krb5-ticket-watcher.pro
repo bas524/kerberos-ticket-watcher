@@ -1,5 +1,6 @@
 TEMPLATE	= app
 LANGUAGE	= C++
+APPVERSION      = 0.1.1
 
 HEADERS	+= src/trayicon.h \
            src/krb5ticketwatcher.h
@@ -29,14 +30,21 @@ SUBDIRS += src po
 
 QMAKE_CLEAN += src/*~
 
+BZIP2 = bzip2
+
 pot.target = pot
 pot.commands = make -C po/ pot
 
 qm.target = qm
 qm.commands = make -C po/ all
 
+dist-bzip2.target = dist-bzip2
+dist-bzip2.commands = @mkdir -p .tmp/krb5-ticket-watcher-$$APPVERSION && $(COPY_FILE) --parents $(SOURCES) $(HEADERS) $(FORMS) $(DIST) .tmp/krb5-ticket-watcher-$$APPVERSION/ && $(COPY_FILE) --parents src/mainwidget.ui.h .tmp/krb5-ticket-watcher-$$APPVERSION/ && ( cd `dirname .tmp/krb5-ticket-watcher-$$APPVERSION` && $(TAR) krb5-ticket-watcher-$${APPVERSION}.tar krb5-ticket-watcher-$$APPVERSION && $${BZIP2} krb5-ticket-watcher-$${APPVERSION}.tar ) && $(MOVE) `dirname .tmp/krb5-ticket-watcher-$$APPVERSION`/krb5-ticket-watcher-$${APPVERSION}.tar.bz2 . && $(DEL_FILE) -r .tmp/krb5-ticket-watcher-$$APPVERSION 
 
-QMAKE_EXTRA_UNIX_TARGETS += qm pot
+
+QMAKE_EXTRA_UNIX_TARGETS += qm pot dist-bzip2
+
+
 
 translations.path = $(DESTDIR)/usr/share/krb5-ticket-watcher/locales/
 translations.files = po/*.qm
