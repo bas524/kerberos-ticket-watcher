@@ -28,7 +28,7 @@ DISTFILES += po/*.po po/Makefile
 
 SUBDIRS += src po
 
-QMAKE_CLEAN += src/*~
+QMAKE_CLEAN += src/*~ krb5-ticket-watcher-$${APPVERSION}.tar.bz2 krb5-ticket-watcher 
 
 BZIP2 = bzip2
 
