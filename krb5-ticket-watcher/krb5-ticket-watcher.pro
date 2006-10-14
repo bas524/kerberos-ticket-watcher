@@ -50,7 +50,7 @@ translations.path = $(DESTDIR)/usr/share/krb5-ticket-watcher/locales/
 translations.files = po/*.qm
 
 documentation.path = $(DESTDIR)/usr/share/doc/packages/krb5-ticket-watcher/
-documentation.files = COPYING
+documentation.files = COPYING Changes News
 
 desktop.path = $(DESTDIR)/usr/share/applications/
 desktop.files = krb5-ticket-watcher.desktop
