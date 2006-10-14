@@ -36,10 +36,10 @@ public:
 public slots:
 	void initWorkflow();
 	void trayClicked(const QPoint &, int);
-	void trayDoubleClicked();
-	void dockActivated();
+	//void trayDoubleClicked();
+	//void dockActivated();
 	void kinit();
-	void help();
+	//void help();
 	void setTrayToolTip(const QString& text);
 	void setTrayIcon(const QString&);
 	void reReadCache();
@@ -59,7 +59,8 @@ private:
 	QString etype2String(krb5_enctype enctype);
 	QString oneAddr(krb5_address *a);
 
-
+	QString
+	passwordDialog(const QString& errorText = QString::null) const;
 	
 	bool getTgtFromCcache(krb5_context context, krb5_creds *creds);
 
@@ -74,14 +75,6 @@ private:
 
 	static const char *
 	getUserName();
-
-	static krb5_error_code
-	authDialogPrompter(krb5_context ctx,
-	                   void *data,
-	                   const char *name,
-	                   const char *banner,
-	                   int num_prompts,
-	                   krb5_prompt prompts[]);
 
 	int
 	initCredential(krb5_get_init_creds_opt *opts,
@@ -100,7 +93,6 @@ private:
 
 	TrayIcon     *tray;
 	QPopupMenu   *trayMenu;
-	bool          isVisible;
 	
 	QTimer        waitTimer;
 	QTranslator   translator;
@@ -111,10 +103,6 @@ private:
 	krb5_deltat    renew_lifetime;
 	
 	int            promptInterval;
-
-public:
-	static bool    canceled;
-	static bool    invalidPassword;
 	
 signals:
 	void newTrayOwner();

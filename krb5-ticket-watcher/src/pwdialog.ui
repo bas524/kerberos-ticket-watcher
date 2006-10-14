@@ -38,7 +38,7 @@
                 <string>Alt+O</string>
             </property>
             <property name="default">
-                <bool>false</bool>
+                <bool>true</bool>
             </property>
         </widget>
         <widget class="QPushButton" row="1" column="1">
@@ -213,12 +213,6 @@
         <signal>clicked()</signal>
         <receiver>PWDialog</receiver>
         <slot>reject()</slot>
-    </connection>
-    <connection>
-        <sender>promptEdit</sender>
-        <signal>returnPressed()</signal>
-        <receiver>PWDialog</receiver>
-        <slot>accept()</slot>
     </connection>
 </connections>
 <tabstops>
