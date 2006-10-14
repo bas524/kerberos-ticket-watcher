@@ -29,6 +29,9 @@
             <property name="accel">
                 <string>Alt+O</string>
             </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
         </widget>
         <widget class="QPushButton" row="1" column="1">
             <property name="name">
@@ -225,18 +228,6 @@
         <signal>clicked()</signal>
         <receiver>PWChangeDialog</receiver>
         <slot>reject()</slot>
-    </connection>
-    <connection>
-        <sender>pwEdit1</sender>
-        <signal>returnPressed()</signal>
-        <receiver>pwEdit2</receiver>
-        <slot>setFocus()</slot>
-    </connection>
-    <connection>
-        <sender>pwEdit2</sender>
-        <signal>returnPressed()</signal>
-        <receiver>PWChangeDialog</receiver>
-        <slot>accept()</slot>
     </connection>
 </connections>
 <tabstops>

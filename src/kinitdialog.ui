@@ -220,7 +220,7 @@
                 <string>Alt+O</string>
             </property>
             <property name="default">
-                <bool>false</bool>
+                <bool>true</bool>
             </property>
         </widget>
     </grid>
@@ -242,18 +242,6 @@
         <signal>clicked()</signal>
         <receiver>KinitDialog</receiver>
         <slot>reject()</slot>
-    </connection>
-    <connection>
-        <sender>princLineEdit</sender>
-        <signal>returnPressed()</signal>
-        <receiver>passwordLineEdit</receiver>
-        <slot>setFocus()</slot>
-    </connection>
-    <connection>
-        <sender>passwordLineEdit</sender>
-        <signal>returnPressed()</signal>
-        <receiver>KinitDialog</receiver>
-        <slot>accept()</slot>
     </connection>
 </connections>
 <tabstops>

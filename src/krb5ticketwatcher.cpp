@@ -63,9 +63,6 @@ static Atom kde_net_wm_user_time = 0;
 
 Time   qt_x_last_input_time = CurrentTime;
 
-bool Ktw::canceled        = false;
-bool Ktw::invalidPassword = false;
-
 static const unsigned char trayimage[] = { 
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
     0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00, 0x16,
@@ -179,7 +176,6 @@ Ktw::Ktw( int & argc, char ** argv )
 	: QApplication( argc, argv )
 	, tray(0)
 	, trayMenu(0)
-	, isVisible(false)
 	, waitTimer()
 	, translator()
 	, kcontext(0)
@@ -193,8 +189,8 @@ Ktw::Ktw( int & argc, char ** argv )
 	qDebug("translation file: " + transFile);
 	
 	bool ok = translator.load(transFile,
-	                          "po/");
-	//"/usr/share/watcher/locales/" );
+	                          // "po/");
+	                          "/usr/share/watcher/locales/");
 
 	if(ok)
 	{
@@ -232,7 +228,6 @@ Ktw::Ktw( int & argc, char ** argv )
 	initMainWindow();
 	createTrayMenu();
 	initTray();
-	//mainWidget()->hide();
 	qApp->processEvents();
 
 	connect( &waitTimer, SIGNAL(timeout()), this, SLOT(initWorkflow()) );
@@ -296,9 +291,9 @@ Ktw::initTray()
 	tray = new TrayIcon(pix, "Watcher", trayMenu);
 	tray->setWMDock(false);
 	connect(tray, SIGNAL(clicked(const QPoint &, int)), SLOT(trayClicked(const QPoint &, int)));
-	connect(tray, SIGNAL(doubleClicked(const QPoint &)), SLOT(trayDoubleClicked()));
-	connect(tray, SIGNAL(closed()), SLOT(dockActivated()));
-	connect(this, SIGNAL(trayOwnerDied()), SLOT(dockActivated()));
+	//connect(tray, SIGNAL(doubleClicked(const QPoint &)), SLOT(trayDoubleClicked()));
+	//connect(tray, SIGNAL(closed()), SLOT(dockActivated()));
+	//connect(this, SIGNAL(trayOwnerDied()), SLOT(dockActivated()));
 	connect(this, SIGNAL(newTrayOwner()), tray, SLOT(newTrayOwner()));
 	connect(this, SIGNAL(trayOwnerDied()), tray, SLOT(hide()));
 	setTrayToolTip("");
@@ -335,7 +330,8 @@ Ktw::reReadCache()
 void
 Ktw::createTrayMenu()
 {
-	if(trayMenu) {
+	if(trayMenu)
+	{
 		return;
 	}
 		
@@ -346,11 +342,11 @@ Ktw::createTrayMenu()
 	                     this, SLOT(kinit()));
 	// Popup Menu item
 	trayMenu->insertItem(tr("Renew Ticket"),
-	                     this, SLOT(renewCredential()));
+	                     this, SLOT(initWorkflow()));
 	trayMenu->insertSeparator();
 	// Popup Menu item
-	trayMenu->insertItem(tr("Help"),
-	                     this, SLOT(help()));
+	//trayMenu->insertItem(tr("Help"),
+	//                     this, SLOT(help()));
 	// Popup Menu item
 	trayMenu->insertItem(tr("Quit"),
 	                     qApp, SLOT(quit()));
@@ -381,22 +377,16 @@ Ktw::initWorkflow()
 				break;
 		case reinit:
 			waitTimer.stop();
-			do
-			{
-				retval = reinitCredential();
 
-				if(retval == KRB5KDC_ERR_KEY_EXP)
-				{
-					retval = changePassword();
-				}
-				else if(retval == KRB5_KDC_UNREACH)
-				{
-					// cannot reach the KDC sleeping. Try next time
-					qWarning("cannot reach the KDC. Sleeping ...");
-					retval = 0;
-				}
+			retval = reinitCredential();
+			
+			if(retval == KRB5_KDC_UNREACH)
+			{
+				// cannot reach the KDC sleeping. Try next time
+				qWarning("cannot reach the KDC. Sleeping ...");
+				retval = 0;
 			}
-			while((retval != 0) && !canceled);
+			
 			waitTimer.start( promptInterval*60*1000); // retryTime is in minutes
 
 			break;
@@ -530,10 +520,12 @@ Ktw::kinit()
 
 // public slots ------------------------------------------------------------- 
 
-void
-Ktw::help()
-{
-}
+/*
+  void
+  Ktw::help()
+  {
+  }
+*/
 
 // public slots ------------------------------------------------------------- 
 
@@ -542,12 +534,12 @@ Ktw::trayClicked(const QPoint &, int)
 {
 	qDebug("tray clicked");
 
-	if(isVisible)
+	if(((MainWidget*)mainWidget())->isVisible())
 	{
-		isVisible = false;
 		((MainWidget*)mainWidget())->hide();
-	} else {
-		isVisible = true;
+	}
+	else
+	{
 		reReadCache();
 		((MainWidget*)mainWidget())->show();
 	}
@@ -555,19 +547,23 @@ Ktw::trayClicked(const QPoint &, int)
 
 // public slots ------------------------------------------------------------- 
 
-void
-Ktw::trayDoubleClicked()
-{
-	qDebug("tray double clicked");
-}
+/*
+  void
+  Ktw::trayDoubleClicked()
+  {
+  qDebug("tray double clicked");
+  }
+*/
 
 // public slots ------------------------------------------------------------- 
 
-void
-Ktw::dockActivated()
-{
-	qDebug("dockActivated");
-}
+/*
+  void
+  Ktw::dockActivated()
+  {
+  qDebug("dockActivated");
+  }
+*/
 
 // ---------------------------------------------------------------------------
 
@@ -818,42 +814,13 @@ Ktw::initCredential(krb5_get_init_creds_opt *opts, const QString& password)
 	
 	qDebug("call initCredential");
 
-	if(password != QString::null)
-	{
-		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-		                                      (char*)password.ascii(), NULL, NULL,
-		                                      0, NULL, opts);
-	}
-	else
-	{
-		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-		                                      NULL, authDialogPrompter, NULL,
-		                                      0, NULL, opts);
-	}
+	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
+	                                      (char*)password.ascii(), NULL, NULL,
+	                                      0, NULL, opts);
 	
 	if (retval)
 	{
-		qDebug("RetVal: %d", retval);
-		switch (retval)
-		{
-			case KRB5KDC_ERR_PREAUTH_FAILED:
-			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
-				/* Invalid password, try again. */
-				invalidPassword = true;
-				break;
-			case KRB5KDC_ERR_KEY_EXP:
-				invalidPassword = false;
-				/* password expired */
-				break;
-			default:
-				invalidPassword = false;
-				break;
-		}
 		return retval;
-	}
-	else
-	{
-		invalidPassword = false;
 	}
 	
 	retval = krb5_cc_default(kcontext, &ccache);
@@ -882,7 +849,8 @@ Ktw::reinitCredential(const QString& password)
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_get_init_creds_opt opts;
-
+	QString passwd = password;
+	
 	qDebug("reinit called");
 	
 	if (kprincipal == NULL)
@@ -910,8 +878,87 @@ Ktw::reinitCredential(const QString& password)
 		creds_expiry = 0;
 	}
 
-	return initCredential(&opts, password);
+	bool repeat = true;
+	QString errorText = QString::null;
+	do
+	{
+		if(passwd == QString::null)
+		{
+			passwd = passwordDialog(errorText);
+
+			if(passwd.isNull())
+				return -1;
+		}
+		
+		retval = initCredential(&opts, passwd);
+		
+		if(retval)
+		{
+			qDebug("Error during initCredential(): %d", retval);
+			
+			switch (retval)
+			{
+				case KRB5KDC_ERR_PREAUTH_FAILED:
+				case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+					/* Invalid password, try again. */
+					errorText = tr("The password you entered is invalid");
+					break;
+				case KRB5KDC_ERR_KEY_EXP:
+					/* password expired */
+					retval = changePassword(passwd);
+					if(!retval)
+						repeat = false;
+					
+					break;
+				case KRB5_KDC_UNREACH:
+					/* kdc unreachable, return silently */
+					repeat = false;
+				default:
+					break;
+			}
+		}
+		else
+		{
+			repeat = false;
+		}
+		
+		// if we repeat this task, we should ask again for the password
+		passwd = QString::null;
+	}
+	while(repeat);
+
+	return retval;
 }
+
+QString
+Ktw::passwordDialog(const QString& errorText) const
+{
+	char* princ = NULL;
+	krb5_error_code retval;
+	
+	if((retval = krb5_unparse_name(kcontext, kprincipal, &princ)))
+	{
+		qWarning("Error while unparsing principal name");
+		return QString::null;
+	}
+	
+	PWDialog pwd(NULL, "pwdialog", true,
+	             Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
+	pwd.krb5prompt->setText(tr("Please enter the Kerberos password for %1").arg(princ));
+	pwd.promptEdit->setEchoMode(QLineEdit::Password);
+	
+	if(!errorText.isEmpty())
+	{
+		pwd.errorLabel->setText(errorText);
+	}
+	
+	int code = pwd.exec();
+	if(code == QDialog::Rejected)
+		return QString::null;
+	
+	return pwd.promptEdit->text();
+}
+
 
 int
 Ktw::changePassword(const QString &oldpw)
@@ -919,7 +966,8 @@ Ktw::changePassword(const QString &oldpw)
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_get_init_creds_opt opts;
-
+	QString oldPasswd = oldpw;
+	
 	qDebug("chagePassword called");
 	
 	if (kprincipal == NULL)
@@ -938,39 +986,44 @@ Ktw::changePassword(const QString &oldpw)
 	krb5_get_init_creds_opt_set_forwardable(&opts, 0);
 	krb5_get_init_creds_opt_set_proxiable(&opts, 0);
 
-	invalidPassword = false;
+	QString errorText = QString::null;
 	do
 	{
 		qDebug("call krb5_get_init_creds_password for kadmin/changepw");
-
-		if(oldpw != QString::null && !invalidPassword)
-		{
-			retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-			                                      (char*)oldpw.ascii(), NULL, NULL,
-			                                      0, "kadmin/changepw", &opts);
-		}
-		else
-		{
-			retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-			                                      NULL, authDialogPrompter, NULL,
-			                                      0, "kadmin/changepw", &opts);
-		}
-		if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
-			invalidPassword = true;
 		
+		if(oldPasswd.isEmpty() || !errorText.isEmpty())
+		{
+			oldPasswd = passwordDialog(errorText);
+			
+			if(oldPasswd.isNull())
+				return -1;
+		}
+		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
+		                                      (char*)oldPasswd.ascii(), NULL, NULL,
+		                                      0, "kadmin/changepw", &opts);
+		
+		switch(retval)
+		{
+			case KRB5KDC_ERR_PREAUTH_FAILED:
+			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+				errorText = tr("The password you entered is invalid");
+				break;
+			case KRB5_KDC_UNREACH:
+				/* kdc unreachable, return silently */
+				return retval;
+			default:
+				break;
+		}
 	}
-	while((retval != 0) && !canceled);
+	while((retval != 0));
 	
-	if(canceled)
-		return retval;
-
-	bool pwEqual = true;
+	bool    pwEqual = true;
 	QString p1;
 	QString p2;
 	do
 	{
-		
-		PWChangeDialog pwd(NULL, "pwchangedialog", true);
+		PWChangeDialog pwd(NULL, "pwchangedialog", true,
+		                   Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
 		pwd.pwPrompt1->setText(tr("Enter new password: "));
 		pwd.pwPrompt2->setText(tr("Reenter password: "));
 
@@ -978,8 +1031,6 @@ Ktw::changePassword(const QString &oldpw)
 		{
 			pwd.errorLabel->setText(tr("The passwords are not equal"));
 		}
-		
-		pwd.show();
 		
 		int code = pwd.exec();
 		
@@ -996,17 +1047,14 @@ Ktw::changePassword(const QString &oldpw)
 			{
 				pwEqual = true;
 			}
-			canceled = false;
 		}
 		else
 		{
-			canceled = true;
+			return retval;
 		}
 	}
-	while(!pwEqual && !canceled);
+	while(!pwEqual);
 
-	if(canceled)
-		return retval;
 	
 	int result_code;
 	krb5_data result_code_string, result_string;
@@ -1098,58 +1146,6 @@ const char *
 Ktw::getUserName()
 {
 	return getpwuid(getuid())->pw_name;
-}
-
-krb5_error_code
-Ktw::authDialogPrompter(krb5_context,
-                        void *,
-                        const char *,
-                        const char *,
-                        int num_prompts,
-                        krb5_prompt prompts[])
-{
-	int i = 0;
-	
-	for (i = 0; i < num_prompts; i++)
-	{
-		qDebug("Prompt[%d]: %s", i, prompts[i].prompt);
-
-		QString p(prompts[i].prompt);
-		if(p.startsWith("Password for "))
-		{
-			QString princ = p.mid(13);
-			p = tr("Please enter the Kerberos password for %1").arg(princ);
-		}
-		
-		PWDialog pwd(NULL, "pwdialog", true);
-		pwd.krb5prompt->setText(p);
-		if(prompts[i].hidden)
-		{
-			pwd.promptEdit->setEchoMode(QLineEdit::Password);
-		}
-		
-		if(invalidPassword)
-		{
-			pwd.errorLabel->setText(tr("The password you entered is invalid"));
-		}
-		
-		pwd.show();
-
-		int code = pwd.exec();
-		
-		if(code == QDialog::Accepted)
-		{
-			QString s = pwd.promptEdit->text();
-			prompts[i].reply->data = ::strndup(s.ascii(), s.length());
-			prompts[i].reply->length = s.length();
-			canceled = false;
-		}
-		else
-		{
-			canceled = true;
-		}
-	}
-	return 0;
 }
 
 QString
