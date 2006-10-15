@@ -67,6 +67,7 @@ const int KeyPress = XKeyPress;
 #include "pwdialog.h"
 #include "pwchangedialog.h"
 #include "kinitdialog.h"
+#include "TicketListItem.h"
 
 #include <sys/types.h>
 #include <pwd.h>
@@ -200,7 +201,7 @@ Ktw::Ktw( int & argc, char ** argv )
 	, translator()
 	, kcontext(0)
 	, kprincipal(0)
-	, creds_expiry(0)
+	, tgtEndtime(0)
 	, renew_lifetime(0)
 	, promptInterval(31)  // default 31 minutes
 {
@@ -721,7 +722,7 @@ Ktw::credentialCheck()
 
 	if (!getTgtFromCcache(kcontext, &my_creds))
 	{
-		creds_expiry = 0;
+		tgtEndtime = 0;
 		return retval;
 	}
 
@@ -731,13 +732,11 @@ Ktw::credentialCheck()
 		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
 	}
 	
-	creds_expiry = my_creds.times.endtime;
-
 	if ((krb5_timeofday(kcontext, &now) == 0) &&
 	    (now + (promptInterval * 60) >= my_creds.times.endtime))
 	{
-        qDebug("now:                   %d", now);
-        qDebug("endtime:               %d", creds_expiry);
+		qDebug("now:                   %d", now);
+		qDebug("endtime:               %d", my_creds.times.endtime);
 		qDebug("next Prompt:           %d", (now + (promptInterval * 60)));
 		qDebug("renew possible untill: %d", my_creds.times.renew_till);
 		if(now + (promptInterval * 60) >= my_creds.times.renew_till)
@@ -750,6 +749,8 @@ Ktw::credentialCheck()
 		}
 	}
 	
+	tgtEndtime = my_creds.times.endtime;
+
 	krb5_free_cred_contents(kcontext, &my_creds);
 
 	qDebug("credentials_expiring_real returns: %d", retval);
@@ -789,13 +790,13 @@ Ktw::renewCredential()
 			renew_lifetime = my_creds.times.renew_till -
 				my_creds.times.starttime;
 		}
-		creds_expiry = my_creds.times.endtime;
+		tgtEndtime = my_creds.times.endtime;
 		krb5_free_cred_contents(kcontext, &my_creds);
 	}
 	else
 	{
 		qDebug("TGT expired");
-		creds_expiry = 0;
+		tgtEndtime = 0;
 	}
 
 	retval = krb5_cc_default(kcontext, &ccache);
@@ -817,7 +818,7 @@ Ktw::renewCredential()
 	if (retval)
 		goto out;
 	
-	creds_expiry = my_creds.times.endtime;
+	tgtEndtime = my_creds.times.endtime;
 	
 out:
 	krb5_cc_close (kcontext, ccache);
@@ -855,7 +856,7 @@ Ktw::initCredential(krb5_get_init_creds_opt *opts, const QString& password)
 	if (retval)
 		goto out;
 	
-	creds_expiry = my_creds.times.endtime;
+	tgtEndtime = my_creds.times.endtime;
 	
 out:
 	krb5_cc_close (kcontext, ccache);
@@ -889,13 +890,13 @@ Ktw::reinitCredential(const QString& password)
 	{
 		qDebug("got tgt from ccache");
 		setOptionsUsingCreds(kcontext, &my_creds, &opts);
-		creds_expiry = my_creds.times.endtime;
+		tgtEndtime = my_creds.times.endtime;
 		krb5_free_cred_contents(kcontext, &my_creds);
 	}
 	else
 	{
 		qDebug("TGT expired");
-		creds_expiry = 0;
+		tgtEndtime = 0;
 	}
 
 	bool repeat = true;
@@ -1146,6 +1147,18 @@ Ktw::setOptionsUsingCreds(krb5_context ,
 	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
 }
 
+krb5_timestamp
+Ktw::getNow()
+{
+	krb5_timestamp now;
+	int e = krb5_timeofday(kcontext, &now);
+	if(e != 0)
+	{
+		warning("Cannot get current time: %s", strerror(e));
+		return 0;
+	}
+	return now;
+}
 
 // static -----------------------------------------------------------
 
@@ -1167,6 +1180,7 @@ Ktw::getUserName()
 {
 	return getpwuid(getuid())->pw_name;
 }
+
 
 QString
 Ktw::buildCcacheInfos()
@@ -1298,9 +1312,15 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 			after = after->parent();
 		}
 	}
+
+	QTime time;
+	krb5_timestamp expires = cred->times.endtime - getNow();
+	if(expires <= 0)
+		expires = 0;
 	
-	QListViewItem *lvi = new QListViewItem(lv, after,
-	                                       tr("Service principal"), n );
+	TicketListItem *lvi = new TicketListItem(lv, after, expires,
+	                                         tr("Service principal"), n,
+	                                         time.addSecs(expires).toString());
 
 	last = new QListViewItem(lvi, tr("Valid starting"), printtime(cred->times.starttime));
 	last = new QListViewItem(lvi, last,
@@ -1345,9 +1365,9 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	if(!retval)
 	{
 		last = new QListViewItem(lvi, last,
-		                         tr("Etype (skey)"), etype2String(cred->keyblock.enctype));
+		                         tr("Key Encryption Type"), etype2String(cred->keyblock.enctype));
 		last = new QListViewItem(lvi, last,
-		                         tr("Etype (tkt)" ), etype2String(tkt->enc_part.enctype));
+		                         tr("Ticket Encryption Type" ), etype2String(tkt->enc_part.enctype));
 	}
 	if (tkt != NULL)
 		krb5_free_ticket(kcontext, tkt);
@@ -1355,7 +1375,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	QString addresses;
 	if (!cred->addresses|| !cred->addresses[0])
 	{
-		addresses += QString("(none)");
+		addresses += tr("(none)");
 	}
 	else
 	{
@@ -1391,7 +1411,7 @@ Ktw::oneAddr(krb5_address *a)
     		if (a->length != 4)
     		{
     		broken:
-    			return QString("broken address (type %1 length %2)")
+    			return tr("Broken address (type %1 length %2)")
     				.arg(a->addrtype)
     				.arg(a->length);
     		}
@@ -1410,11 +1430,11 @@ Ktw::oneAddr(krb5_address *a)
     		}
     		break;
     	default:
-    		return QString("unknown addrtype %1").arg(a->addrtype);
+    		return tr("Unknown address type %1").arg(a->addrtype);
     }
 	if(addr.isNull())
 	{
-		return "(none)";
+		return tr("(none)");
 	}
 	return addr.toString();
 }
@@ -1437,16 +1457,14 @@ Ktw::etype2String(krb5_enctype enctype)
 QString
 Ktw::printtime(time_t tv)
 {
-    char timestring[30];
-    char fill;
+	char timestring[30];
+	char fill;
 
-    fill = ' ';
-    if (!krb5_timestamp_to_sfstring((krb5_timestamp) tv,
-                                    timestring,
-                                    18,
-                                    &fill))
-    {
-    	return timestring;
-    }
-    return "";
+	fill = ' ';
+	if (!krb5_timestamp_to_sfstring((krb5_timestamp) tv,
+	                                timestring, 29, &fill))
+	{
+		return timestring;
+	}
+	return "";
 }
