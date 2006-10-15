@@ -1,14 +1,16 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-APPVERSION      = 0.1.1
+APPVERSION  = 0.1.1
 
 HEADERS	+= src/trayicon.h \
-           src/krb5ticketwatcher.h
+           src/krb5ticketwatcher.h \
+           src/TicketListItem.h
 
 SOURCES	+= src/main.cpp \
 	src/trayicon.cpp \
 	src/trayicon_x11.cpp \
-    src/krb5ticketwatcher.cpp
+    src/krb5ticketwatcher.cpp \
+    src/TicketListItem.cpp
 
 FORMS	= src/pwdialog.ui \
           src/pwchangedialog.ui \
@@ -24,7 +26,7 @@ DEFINES += DEBUG
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
 
-DISTFILES += po/*.po po/Makefile Changes News COPYING
+DISTFILES += po/*.po po/Makefile Changes News COPYING TODO
 
 SUBDIRS += src po
 
@@ -50,7 +52,7 @@ translations.path = $(DESTDIR)/usr/share/krb5-ticket-watcher/locales/
 translations.files = po/*.qm
 
 documentation.path = $(DESTDIR)/usr/share/doc/packages/krb5-ticket-watcher/
-documentation.files = COPYING Changes News
+documentation.files = COPYING Changes News TODO
 
 desktop.path = $(DESTDIR)/usr/share/applications/
 desktop.files = krb5-ticket-watcher.desktop
