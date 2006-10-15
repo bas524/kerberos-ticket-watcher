@@ -1,0 +1,12 @@
+
+ticket view:
+
+- show the remaining time of the krbtgt in the tooltip
+
+
+kinit dialog:
+
+- seperate name from realm
+- show availbale realms in a combobox (parse krb5.conf and DNS srv records)
+- set lifetime
+- set renewable flag and time
