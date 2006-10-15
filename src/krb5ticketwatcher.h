@@ -87,6 +87,9 @@ private:
 	int
 	credentialCheck();
 
+	krb5_timestamp
+	getNow();
+
 	static size_t
 	getPrincipalRealmLength(krb5_principal p);
 
@@ -95,6 +98,7 @@ private:
 
 	static const char *
 	getUserName();
+
 
 	int
 	initCredential(krb5_get_init_creds_opt *opts,
@@ -111,6 +115,7 @@ private:
 	                     krb5_creds *creds,
 	                     krb5_get_init_creds_opt *opts);
 
+
 	TrayIcon     *tray;
 	QPopupMenu   *trayMenu;
 	
@@ -119,7 +124,7 @@ private:
 
 	krb5_context   kcontext;
 	krb5_principal kprincipal;
-	krb5_timestamp creds_expiry;
+	krb5_timestamp tgtEndtime;
 	krb5_deltat    renew_lifetime;
 	
 	int            promptInterval;
