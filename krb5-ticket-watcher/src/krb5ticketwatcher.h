@@ -29,6 +29,8 @@
 #include <qmap.h>
 #include <qstring.h>
 #include <qthread.h>
+
+#define KRB5_PRIVATE 1
 #include <krb5.h>
 
 class QGridLayout;
@@ -89,6 +91,9 @@ private:
 
 	krb5_timestamp
 	getNow();
+
+	QStringList
+	getRealms(krb5_context ctx);
 
 	static size_t
 	getPrincipalRealmLength(krb5_principal p);

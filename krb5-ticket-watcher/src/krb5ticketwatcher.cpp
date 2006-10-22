@@ -24,6 +24,7 @@
 #include <qtextcodec.h>
 #include <qpushbutton.h>
 #include <qcheckbox.h>
+#include <qcombobox.h>
 #include <qpopupmenu.h>
 #include <qiconset.h>
 #include <qlabel.h>
@@ -72,6 +73,7 @@ const int KeyPress = XKeyPress;
 #include <sys/types.h>
 #include <pwd.h>
 #include <et/com_err.h>
+
 
 // Atoms required for monitoring the freedesktop.org notification area
 static Atom manager_atom = 0;
@@ -445,12 +447,15 @@ Ktw::kinit()
 	
 	krb5_get_init_creds_opt_init(&opts);
 
+	QStringList realmList = getRealms(kcontext);
+
 	do
 	{
 		KinitDialog *dlg = new KinitDialog(mainWidget(), "kinitDialog");
 
 		dlg->errorLabel->setText(errorTxt);
-		dlg->princLineEdit->setText(getUserName());
+		dlg->userLineEdit->setText(getUserName());
+		dlg->realmComboBox->insertStringList(realmList);
 
 		if(opts.flags & KRB5_GET_INIT_CREDS_OPT_FORWARDABLE)
 		{
@@ -470,8 +475,10 @@ Ktw::kinit()
 			return;
 
 		errorTxt = "";
+
+		QString principal = dlg->userLineEdit->text() + "@" + dlg->realmComboBox->currentText();
 		
-		retval = krb5_parse_name(kcontext, dlg->princLineEdit->text(),
+		retval = krb5_parse_name(kcontext, principal,
 		                         &kprincipal);
 		if (retval)
 		{
@@ -965,13 +972,15 @@ Ktw::passwordDialog(const QString& errorText) const
 	
 	PWDialog pwd(NULL, "pwdialog", true,
 	             Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
-	pwd.krb5prompt->setText(tr("Please enter the Kerberos password for %1").arg(princ));
+	pwd.krb5prompt->setText(tr("Please enter the Kerberos password for <b>%1</b>").arg(princ));
 	pwd.promptEdit->setEchoMode(QLineEdit::Password);
 	
 	if(!errorText.isEmpty())
 	{
 		pwd.errorLabel->setText(errorText);
 	}
+
+	krb5_free_unparsed_name(kcontext, princ);
 	
 	int code = pwd.exec();
 	if(code == QDialog::Rejected)
@@ -989,7 +998,7 @@ Ktw::changePassword(const QString &oldpw)
 	krb5_get_init_creds_opt opts;
 	QString oldPasswd = oldpw;
 	
-	qDebug("chagePassword called");
+	qDebug("changePassword called");
 	
 	if (kprincipal == NULL)
 	{
@@ -1041,13 +1050,26 @@ Ktw::changePassword(const QString &oldpw)
 	bool    pwEqual = true;
 	QString p1;
 	QString p2;
+	QString principal;
+	char *princ = NULL;
+	
+	if((retval = krb5_unparse_name(kcontext, kprincipal, &princ)))
+	{
+		qWarning("Error while unparsing principal name");
+		principal = "";
+	}
+	else
+	{
+		principal = QString(princ);
+	}
+	krb5_free_unparsed_name(kcontext, princ);
+
 	do
 	{
 		PWChangeDialog pwd(NULL, "pwchangedialog", true,
 		                   Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
-		pwd.pwPrompt1->setText(tr("Enter new password: "));
-		pwd.pwPrompt2->setText(tr("Reenter password: "));
-
+		pwd.titleTextLabel->setText(tr("Change the password for principal <b>%1</b>").arg(principal));
+		
 		if(!pwEqual)
 		{
 			pwd.errorLabel->setText(tr("The passwords are not equal"));
@@ -1158,6 +1180,52 @@ Ktw::getNow()
 		return 0;
 	}
 	return now;
+}
+
+QStringList
+Ktw::getRealms(krb5_context ctx)
+{
+	krb5_error_code retval;
+	char *realm;
+	void *iter;
+	QStringList list;
+	char *r = NULL;
+	
+	krb5_get_default_realm(kcontext, &r);
+	QString defRealm(r);
+	krb5_free_default_realm(kcontext, r);
+
+	if ((retval = krb5_realm_iterator_create(ctx, &iter)))
+	{
+		qWarning("krb5_realm_iterator_create failed: %d", retval);
+		return list;
+	}
+	while (iter)
+	{
+		if ((retval = krb5_realm_iterator(ctx, &iter, &realm)))
+		{
+			qWarning("krb5_realm_iterator failed: %d", retval);
+			krb5_realm_iterator_free(ctx, &iter);
+			return list;
+		}
+		if (realm)
+		{
+			if(list.contains(realm) == 0)
+			{
+				if(defRealm == realm)
+				{
+					list.push_front(defRealm);
+				}
+				else
+				{
+					list.push_back(realm);
+				}
+			}
+			krb5_free_realm_string(ctx, realm);
+		}
+	}
+	krb5_realm_iterator_free(ctx, &iter);
+	return list;
 }
 
 // static -----------------------------------------------------------
