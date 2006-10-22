@@ -1,5 +1,9 @@
 krb5-ticket-watcher
 
+Version 0.1.2:
+- New look of the kinit dialog
+- New Ticket view
+
 Version 0.1.0:
 - initial release
 

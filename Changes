@@ -1,5 +1,18 @@
 krb5-ticket-watcher
 
+2006-10-22:
+- version 0.1.2
+- add TODO, TicketListItem.*
+- use TicketListItem to show the status of the ticket
+- add column 'Time Remaining' to listview
+- better date format in ticket view
+- calculate remaining time of a ticket
+- seperate name from realm
+- show available realms in a combobox
+- fix some memleaks
+- change look of the password change dialog
+
+
 2006-10-14:
 - version 0.1.1
 - initial release
