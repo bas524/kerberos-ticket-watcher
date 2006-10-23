@@ -26,7 +26,7 @@ DEFINES += DEBUG
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
 
-DISTFILES += po/*.po po/Makefile Changes News COPYING TODO
+DISTFILES += po/*.po po/Makefile Changes News COPYING TODO krb5-ticket-watcher.desktop
 
 SUBDIRS += src po
 
