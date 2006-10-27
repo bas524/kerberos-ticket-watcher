@@ -213,7 +213,7 @@ Ktw::Ktw( int & argc, char ** argv )
 	
 	bool ok = translator.load(transFile,
 	                          // "po/");
-	                          "/usr/share/watcher/locales/");
+	                          "/usr/share/krb5-ticket-watcher/locales/");
 
 	if(ok)
 	{
