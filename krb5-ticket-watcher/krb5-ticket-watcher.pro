@@ -36,6 +36,7 @@ BZIP2 = bzip2
 
 pot.target = pot
 pot.commands = make -C po/ pot
+pot.depends = $(UICIMPLS)
 
 qm.target = qm
 qm.commands = make -C po/ all
