@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-28 11:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Popup Menu item
+#: ../src/kinitdialog.cpp:270 ../src/krb5ticketwatcher.cpp:364
+msgid "New Ticket"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:271 ../src/pwchangedialog.cpp:249
+#: ../src/pwdialog.cpp:236
+msgid "&Cancel"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:272 ../src/mainwidget.cpp:113
+#: ../src/pwchangedialog.cpp:250 ../src/pwdialog.cpp:237
+msgid "Alt+C"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:273 ../src/pwchangedialog.cpp:251
+#: ../src/pwdialog.cpp:234
+msgid "&Ok"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:274 ../src/pwchangedialog.cpp:252
+#: ../src/pwdialog.cpp:235
+msgid "Alt+O"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:276
+msgid "Password:"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:277
+msgid "Principal:"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:278
+msgid "Ticket Flags"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:279
+msgid "forwardable"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:280
+msgid "proxiable"
+msgstr ""
+
+#: ../src/kinitdialog.cpp:281
+msgid "@"
+msgstr ""
+
+#. Popup Menu item
+#: ../src/krb5ticketwatcher.cpp:367
+msgid "Renew Ticket"
+msgstr ""
+
+#. Popup Menu item
+#. trayMenu->insertItem(tr("Help"),
+#. this, SLOT(help()));
+#. Popup Menu item
+#: ../src/krb5ticketwatcher.cpp:374
+msgid "Quit"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:487
+msgid "Invalid principal name"
+msgstr ""
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:519
+msgid "Invalid Password"
+msgstr ""
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:531
+msgid "Unknown principal"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:534
+msgid "Unknown realm"
+msgstr ""
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:932 ../src/krb5ticketwatcher.cpp:1039
+msgid "The password you entered is invalid"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:975
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1071
+msgid "Change the password for principal <b>%1</b>"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1075
+msgid "The passwords are not equal"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1373
+msgid " for client %1"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1390
+msgid "Service principal"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1393
+msgid "Valid starting"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1395
+msgid "Expires"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1397
+msgid "Renew until"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1430
+msgid "Ticket flags"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1436
+msgid "Key Encryption Type"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1438
+msgid "Ticket Encryption Type"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1446 ../src/krb5ticketwatcher.cpp:1505
+msgid "(none)"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1461
+msgid "Addresses"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1482
+msgid "Broken address (type %1 length %2)"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1501
+msgid "Unknown address type %1"
+msgstr ""
+
+#: ../src/mainwidget.cpp:70 ../src/mainwidget.cpp:135
+msgid "Property"
+msgstr ""
+
+#: ../src/mainwidget.cpp:71 ../src/mainwidget.cpp:136
+msgid "Value"
+msgstr ""
+
+#: ../src/mainwidget.cpp:72 ../src/mainwidget.cpp:137
+msgid "Time Remaining"
+msgstr ""
+
+#: ../src/mainwidget.cpp:111
+msgid "Kerberos Ticket List"
+msgstr ""
+
+#: ../src/mainwidget.cpp:112
+msgid "&Close"
+msgstr ""
+
+#: ../src/mainwidget.cpp:114
+msgid "&Refresh"
+msgstr ""
+
+#: ../src/mainwidget.cpp:115
+msgid "Alt+R"
+msgstr ""
+
+#: ../src/mainwidget.cpp:116
+msgid "Ticket flags legend"
+msgstr ""
+
+#: ../src/mainwidget.cpp:117
+msgid ""
+"<qt>\n"
+"<table>\n"
+"<tr><td><b>F</b></td><td>Forwardable</td></tr>\n"
+"<tr><td><b>f</b></td><td>Forwarded</td></tr>\n"
+"<tr><td><b>P</b></td><td>Proxiable</td></tr>\n"
+"<tr><td><b>p</b></td><td>Proxy</td></tr>\n"
+"<tr><td><b>D</b></td><td>May Postdate</td></tr>\n"
+"<tr><td><b>d</b></td><td>Postdated</td></tr>\n"
+"<tr><td><b>i</b></td><td>Invalid</td></tr>\n"
+"<tr><td><b>R</b></td><td>Renewable</td></tr>\n"
+"<tr><td><b>I</b></td><td>Initial</td></tr>\n"
+"<tr><td><b>H</b></td><td>HW Auth</td></tr>\n"
+"<tr><td><b>A</b></td><td>Pre Auth</td></tr>\n"
+"<tr><td><b>T</b></td><td>Transit Policy Checked</td></tr>\n"
+"<tr><td><b>O</b></td><td>Ok as Delegate</td></tr>\n"
+"<tr><td><b>a</b></td><td>Anonymous</td></tr>\n"
+"</table></qt>"
+msgstr ""
+
+#: ../src/mainwidget.cpp:138
+msgid "Default credential cache"
+msgstr ""
+
+#: ../src/pwchangedialog.cpp:248
+msgid "Change Kerberos Password"
+msgstr ""
+
+#: ../src/pwchangedialog.cpp:253
+msgid "Enter new password:"
+msgstr ""
+
+#: ../src/pwchangedialog.cpp:254
+msgid "Reenter password:"
+msgstr ""
+
+#: ../src/pwdialog.cpp:233
+msgid "Kerberos Password Dialog"
+msgstr ""
