@@ -204,7 +204,6 @@ Ktw::Ktw( int & argc, char ** argv )
 	, kcontext(0)
 	, kprincipal(0)
 	, tgtEndtime(0)
-	, renew_lifetime(0)
 	, promptInterval(31)  // default 31 minutes
 {
 	QString transFile = QString("krb5-ticket-watcher.") + QTextCodec::locale() + ".qm";
@@ -240,6 +239,8 @@ Ktw::Ktw( int & argc, char ** argv )
 			}
 		}
 	}
+
+	qDebug("PromptInterval is %d min.", promptInterval);
 	
 	krb5_error_code err = krb5_init_context(&kcontext);
 	if (err)
@@ -254,6 +255,8 @@ Ktw::Ktw( int & argc, char ** argv )
 	qApp->processEvents();
 
 	connect( &waitTimer, SIGNAL(timeout()), this, SLOT(initWorkflow()) );
+
+	qDebug("start the timer");
 	waitTimer.start( promptInterval*60*1000); // retryTime is in minutes
 }
 
@@ -399,6 +402,7 @@ Ktw::initWorkflow()
 			if(!retval)
 				break;
 		case reinit:
+			qDebug("stop the timer");
 			waitTimer.stop();
 
 			retval = reinitCredential();
@@ -410,11 +414,12 @@ Ktw::initWorkflow()
 				retval = 0;
 			}
 			
+			qDebug("start the timer");
 			waitTimer.start( promptInterval*60*1000); // retryTime is in minutes
 
 			break;
 	}
-			
+	
 	qDebug("Workflow finished");
 }
 
@@ -743,6 +748,7 @@ Ktw::credentialCheck()
 	    (now + (promptInterval * 60) >= my_creds.times.endtime))
 	{
 		qDebug("now:                   %d", now);
+		qDebug("starttime:             %d", my_creds.times.starttime);
 		qDebug("endtime:               %d", my_creds.times.endtime);
 		qDebug("next Prompt:           %d", (now + (promptInterval * 60)));
 		qDebug("renew possible untill: %d", my_creds.times.renew_till);
@@ -786,17 +792,11 @@ Ktw::renewCredential()
 		}
 	}
 
+	krb5_get_init_creds_opt_init(&opts);
 	if (getTgtFromCcache (kcontext, &my_creds))
 	{
 		qDebug("got tgt from ccache");
 		setOptionsUsingCreds(kcontext, &my_creds, &opts);
-
-		if((renew_lifetime == 0) &&
-		   (my_creds.times.renew_till > my_creds.times.starttime) )
-		{
-			renew_lifetime = my_creds.times.renew_till -
-				my_creds.times.starttime;
-		}
 		tgtEndtime = my_creds.times.endtime;
 		krb5_free_cred_contents(kcontext, &my_creds);
 	}
@@ -1140,30 +1140,6 @@ Ktw::setOptionsUsingCreds(krb5_context ,
 	flag = (creds->ticket_flags & TKT_FLG_PROXIABLE) != 0;
 	krb5_get_init_creds_opt_set_proxiable(opts, flag);
 
-	flag = (creds->ticket_flags & TKT_FLG_RENEWABLE) != 0;
-
-	if (flag && (creds->times.renew_till > creds->times.starttime))
-	{
-		if(renew_lifetime == 0)
-		{
-			renew_lifetime = creds->times.renew_till -
-				creds->times.starttime;
-		}
-		qDebug("CALC: renew_lifetime %d", renew_lifetime);
-		krb5_get_init_creds_opt_set_renew_life(opts,
-		                                       renew_lifetime);
-	}
-		
-	qDebug("CALC: end(%d) > calc(%d)", creds->times.endtime,
-	         creds->times.starttime + (promptInterval * 60));
-	if (creds->times.endtime >
-	    creds->times.starttime + (promptInterval * 60) )
-	{
-		qDebug("CALC: (%d)", creds->times.endtime - creds->times.starttime);
-		krb5_get_init_creds_opt_set_tkt_life(opts,
-		                                     creds->times.endtime -
-		                                     creds->times.starttime);
-	}
 	
 	/* This doesn't do a deep copy -- fix it later. */
 	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */

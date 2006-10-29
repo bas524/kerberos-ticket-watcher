@@ -130,7 +130,6 @@ private:
 	krb5_context   kcontext;
 	krb5_principal kprincipal;
 	krb5_timestamp tgtEndtime;
-	krb5_deltat    renew_lifetime;
 	
 	int            promptInterval;
 	
