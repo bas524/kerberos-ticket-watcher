@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-10-28 11:44+0200\n"
+"POT-Creation-Date: 2006-10-29 17:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Popup Menu item
-#: ../src/kinitdialog.cpp:270 ../src/krb5ticketwatcher.cpp:364
+#: ../src/kinitdialog.cpp:270 ../src/krb5ticketwatcher.cpp:367
 msgid "New Ticket"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgid "@"
 msgstr ""
 
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:367
+#: ../src/krb5ticketwatcher.cpp:370
 msgid "Renew Ticket"
 msgstr ""
 
@@ -74,25 +74,25 @@ msgstr ""
 #. trayMenu->insertItem(tr("Help"),
 #. this, SLOT(help()));
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:374
+#: ../src/krb5ticketwatcher.cpp:377
 msgid "Quit"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:487
+#: ../src/krb5ticketwatcher.cpp:492
 msgid "Invalid principal name"
 msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:519
+#: ../src/krb5ticketwatcher.cpp:524
 msgid "Invalid Password"
 msgstr ""
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:531
+#: ../src/krb5ticketwatcher.cpp:536
 msgid "Unknown principal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:534
+#: ../src/krb5ticketwatcher.cpp:539
 msgid "Unknown realm"
 msgstr ""
 
@@ -113,51 +113,51 @@ msgstr ""
 msgid "The passwords are not equal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1373
+#: ../src/krb5ticketwatcher.cpp:1349
 msgid " for client %1"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1390
+#: ../src/krb5ticketwatcher.cpp:1366
 msgid "Service principal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1393
+#: ../src/krb5ticketwatcher.cpp:1369
 msgid "Valid starting"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1395
+#: ../src/krb5ticketwatcher.cpp:1371
 msgid "Expires"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1397
+#: ../src/krb5ticketwatcher.cpp:1373
 msgid "Renew until"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1430
+#: ../src/krb5ticketwatcher.cpp:1406
 msgid "Ticket flags"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1436
+#: ../src/krb5ticketwatcher.cpp:1412
 msgid "Key Encryption Type"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1438
+#: ../src/krb5ticketwatcher.cpp:1414
 msgid "Ticket Encryption Type"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1446 ../src/krb5ticketwatcher.cpp:1505
+#: ../src/krb5ticketwatcher.cpp:1422 ../src/krb5ticketwatcher.cpp:1481
 msgid "(none)"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1461
+#: ../src/krb5ticketwatcher.cpp:1437
 msgid "Addresses"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1482
+#: ../src/krb5ticketwatcher.cpp:1458
 msgid "Broken address (type %1 length %2)"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1501
+#: ../src/krb5ticketwatcher.cpp:1477
 msgid "Unknown address type %1"
 msgstr ""
 
