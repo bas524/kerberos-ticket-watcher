@@ -21,7 +21,7 @@ TARGET      = krb5-ticket-watcher
 
 LIBS    += -lkrb5 -lcom_err
 
-DEFINES += DEBUG
+#DEFINES += DEBUG
 
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
