@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>435</width>
-            <height>293</height>
+            <width>487</width>
+            <height>386</height>
         </rect>
     </property>
     <property name="caption">
@@ -18,6 +18,9 @@
     <grid>
         <property name="name">
             <cstring>unnamed</cstring>
+        </property>
+        <property name="resizeMode">
+            <enum>Minimum</enum>
         </property>
         <spacer row="1" column="0">
             <property name="name">
@@ -109,23 +112,6 @@
                         <bool>true</bool>
                     </property>
                 </widget>
-                <spacer row="1" column="0" rowspan="4" colspan="1">
-                    <property name="name">
-                        <cstring>spacer3</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>320</height>
-                        </size>
-                    </property>
-                </spacer>
                 <widget class="QLabel" row="0" column="1" rowspan="1" colspan="4">
                     <property name="name">
                         <cstring>errorLabel</cstring>
@@ -146,23 +132,6 @@
                         <string></string>
                     </property>
                 </widget>
-                <spacer row="4" column="4">
-                    <property name="name">
-                        <cstring>spacer3_2</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Expanding</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>16</height>
-                        </size>
-                    </property>
-                </spacer>
                 <widget class="QLabel" row="2" column="1">
                     <property name="name">
                         <cstring>passwordLabel</cstring>
@@ -187,35 +156,6 @@
                         <string>Principal:</string>
                     </property>
                 </widget>
-                <widget class="QButtonGroup" row="3" column="2" rowspan="1" colspan="3">
-                    <property name="name">
-                        <cstring>flagGroup</cstring>
-                    </property>
-                    <property name="title">
-                        <string>Ticket Flags</string>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>forwardCheckBox</cstring>
-                            </property>
-                            <property name="text">
-                                <string>forwardable</string>
-                            </property>
-                        </widget>
-                        <widget class="QCheckBox">
-                            <property name="name">
-                                <cstring>proxyCheckBox</cstring>
-                            </property>
-                            <property name="text">
-                                <string>proxiable</string>
-                            </property>
-                        </widget>
-                    </vbox>
-                </widget>
                 <widget class="QLineEdit" row="1" column="2">
                     <property name="name">
                         <cstring>userLineEdit</cstring>
@@ -237,6 +177,196 @@
                         <bool>true</bool>
                     </property>
                 </widget>
+                <spacer row="1" column="0" rowspan="5" colspan="1">
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>MinimumExpanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>100</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="4">
+                    <property name="name">
+                        <cstring>detailsCheckBox</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Details ...</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                </widget>
+                <widget class="QGroupBox" row="4" column="1" rowspan="1" colspan="4">
+                    <property name="name">
+                        <cstring>detailsBox</cstring>
+                    </property>
+                    <property name="title">
+                        <string></string>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="3">
+                            <property name="name">
+                                <cstring>flagGroup</cstring>
+                            </property>
+                            <property name="title">
+                                <string>Ticket Flags</string>
+                            </property>
+                            <vbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <widget class="QCheckBox">
+                                    <property name="name">
+                                        <cstring>forwardCheckBox</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>forwardable</string>
+                                    </property>
+                                </widget>
+                                <widget class="QCheckBox">
+                                    <property name="name">
+                                        <cstring>proxyCheckBox</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>proxiable</string>
+                                    </property>
+                                </widget>
+                            </vbox>
+                        </widget>
+                        <widget class="QCheckBox" row="2" column="0">
+                            <property name="name">
+                                <cstring>renewCheckBox</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Renewable for:</string>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="1" column="2">
+                            <item>
+                                <property name="text">
+                                    <string>days</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>hours</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>minutes</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>seconds</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>lifetimeUnitComboBox</cstring>
+                            </property>
+                            <property name="editable">
+                                <bool>false</bool>
+                            </property>
+                            <property name="currentItem">
+                                <number>1</number>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox" row="1" column="1">
+                            <property name="name">
+                                <cstring>lifetimeSpinBox</cstring>
+                            </property>
+                            <property name="specialValueText">
+                                <string>default</string>
+                            </property>
+                            <property name="maxValue">
+                                <number>100</number>
+                            </property>
+                            <property name="value">
+                                <number>0</number>
+                            </property>
+                        </widget>
+                        <widget class="QLabel" row="1" column="0">
+                            <property name="name">
+                                <cstring>textLabel1_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Lifetime:</string>
+                            </property>
+                        </widget>
+                        <widget class="QSpinBox" row="2" column="1">
+                            <property name="name">
+                                <cstring>renewtimeSpinBox</cstring>
+                            </property>
+                            <property name="specialValueText">
+                                <string>default</string>
+                            </property>
+                            <property name="maxValue">
+                                <number>100</number>
+                            </property>
+                            <property name="value">
+                                <number>0</number>
+                            </property>
+                        </widget>
+                        <widget class="QComboBox" row="2" column="2">
+                            <item>
+                                <property name="text">
+                                    <string>days</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>hours</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>minutes</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>seconds</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>renewUnitComboBox</cstring>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+                <spacer row="5" column="4">
+                    <property name="name">
+                        <cstring>spacer3_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>MinimumExpanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
             </grid>
         </widget>
     </grid>
@@ -259,14 +389,43 @@
         <receiver>KinitDialog</receiver>
         <slot>reject()</slot>
     </connection>
+    <connection>
+        <sender>detailsCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KinitDialog</receiver>
+        <slot>changeDetailsState(int)</slot>
+    </connection>
+    <connection>
+        <sender>renewCheckBox</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>KinitDialog</receiver>
+        <slot>changeRenewState(int)</slot>
+    </connection>
 </connections>
 <tabstops>
     <tabstop>userLineEdit</tabstop>
+    <tabstop>realmComboBox</tabstop>
     <tabstop>passwordLineEdit</tabstop>
+    <tabstop>detailsCheckBox</tabstop>
     <tabstop>forwardCheckBox</tabstop>
     <tabstop>proxyCheckBox</tabstop>
+    <tabstop>lifetimeSpinBox</tabstop>
+    <tabstop>lifetimeUnitComboBox</tabstop>
+    <tabstop>renewCheckBox</tabstop>
+    <tabstop>renewtimeSpinBox</tabstop>
+    <tabstop>renewUnitComboBox</tabstop>
     <tabstop>okButton</tabstop>
     <tabstop>cancelButton</tabstop>
 </tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">kinitdialog.ui.h</include>
+</includes>
+<slots>
+    <slot>changeDetailsState( int state )</slot>
+    <slot>changeRenewState( int state )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
 <layoutdefaults spacing="6" margin="11"/>
 </UI>
