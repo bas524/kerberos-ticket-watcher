@@ -1,6 +1,6 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-APPVERSION  = 0.1.2
+APPVERSION  = 0.1.3
 
 HEADERS	+= src/trayicon.h \
            src/krb5ticketwatcher.h \
