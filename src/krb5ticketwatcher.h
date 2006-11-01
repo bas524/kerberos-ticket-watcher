@@ -116,11 +116,11 @@ private:
 	changePassword(const QString& oldpw = QString::null);
 	
 	void
-	setOptionsUsingCreds(krb5_context context,
-	                     krb5_creds *creds,
-	                     krb5_get_init_creds_opt *opts);
+	setDefaultOptionsUsingCreds(krb5_context);
 
-
+	void
+	setOptions(krb5_context, krb5_get_init_creds_opt *opts);
+	
 	TrayIcon     *tray;
 	QPopupMenu   *trayMenu;
 	
@@ -130,6 +130,14 @@ private:
 	krb5_context   kcontext;
 	krb5_principal kprincipal;
 	krb5_timestamp tgtEndtime;
+
+	bool           forwardable;
+	bool           proxiable;
+	
+	krb5_deltat    lifetime;
+	QString        lifetimeUnit;
+	krb5_deltat    renewtime;
+	QString        renewtimeUnit;
 	
 	int            promptInterval;
 	

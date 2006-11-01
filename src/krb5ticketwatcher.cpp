@@ -25,6 +25,7 @@
 #include <qpushbutton.h>
 #include <qcheckbox.h>
 #include <qcombobox.h>
+#include <qspinbox.h>
 #include <qpopupmenu.h>
 #include <qiconset.h>
 #include <qlabel.h>
@@ -204,6 +205,12 @@ Ktw::Ktw( int & argc, char ** argv )
 	, kcontext(0)
 	, kprincipal(0)
 	, tgtEndtime(0)
+	, forwardable(true)
+	, proxiable(false)
+	, lifetime(0)        // 0 default
+	, lifetimeUnit("hours")
+	, renewtime(0)       // 0 default, -1 no renewtime
+	, renewtimeUnit("days")
 	, promptInterval(31)  // default 31 minutes
 {
 	QString transFile = QString("krb5-ticket-watcher.") + QTextCodec::locale() + ".qm";
@@ -211,9 +218,8 @@ Ktw::Ktw( int & argc, char ** argv )
 	qDebug("translation file: " + transFile);
 	
 	bool ok = translator.load(transFile,
-	                          // "po/");
 	                          "/usr/share/krb5-ticket-watcher/locales/");
-
+	
 	if(ok)
 	{
 		installTranslator( &translator );
@@ -224,6 +230,10 @@ Ktw::Ktw( int & argc, char ** argv )
 		qWarning("failed to load translation: "+ transFile);
 	}
 
+	/* init with translations */
+	lifetimeUnit  = tr("hours");
+	renewtimeUnit = tr("days");
+	
 	if(argc >= 3)
 	{
 		if(QString(argv[1]) == "-i" ||
@@ -248,7 +258,8 @@ Ktw::Ktw( int & argc, char ** argv )
 		qFatal("Error at krb5_init_context");
 		return;
 	}
-	
+
+	setDefaultOptionsUsingCreds(kcontext);
 	initMainWindow();
 	createTrayMenu();
 	initTray();
@@ -458,23 +469,39 @@ Ktw::kinit()
 	{
 		KinitDialog *dlg = new KinitDialog(mainWidget(), "kinitDialog");
 
+		dlg->show();
+
 		dlg->errorLabel->setText(errorTxt);
 		dlg->userLineEdit->setText(getUserName());
 		dlg->realmComboBox->insertStringList(realmList);
-
-		if(opts.flags & KRB5_GET_INIT_CREDS_OPT_FORWARDABLE)
-		{
-			qDebug("FL: %d",opts.forwardable);
-			dlg->forwardCheckBox->setChecked(opts.forwardable);
-		}
+		dlg->passwordLineEdit->setFocus();
 		
-		if(opts.flags & KRB5_GET_INIT_CREDS_OPT_PROXIABLE)
+		dlg->forwardCheckBox->setChecked(forwardable);
+		dlg->proxyCheckBox->setChecked(proxiable);
+		
+
+		if(lifetime >= 0)
 		{
-			qDebug("FL2: %d",opts.proxiable);
-			dlg->proxyCheckBox->setChecked(opts.proxiable);
+			dlg->lifetimeSpinBox->setValue(lifetime);
+			dlg->lifetimeUnitComboBox->setCurrentText(lifetimeUnit);
 		}
-			
-		dlg->show();
+		else
+		{
+			dlg->lifetimeSpinBox->setValue(0);
+		}
+
+		if(renewtime >= 0)
+		{
+			dlg->renewtimeSpinBox->setValue(renewtime);
+			dlg->renewUnitComboBox->setCurrentText(renewtimeUnit);
+			dlg->renewCheckBox->setChecked(true);
+		}
+		else
+		{
+			dlg->renewCheckBox->setChecked(false);
+		}
+
+		
 		int ret = dlg->exec();
 		if(ret == QDialog::Rejected)
 			return;
@@ -496,20 +523,50 @@ Ktw::kinit()
 		if(dlg->forwardCheckBox->isChecked())
 		{
 			krb5_get_init_creds_opt_set_forwardable(&opts, 1);
+			forwardable = true;
 		}
 		else
 		{
 			krb5_get_init_creds_opt_set_forwardable(&opts, 0);
+			forwardable = false;
 		}
 		if(dlg->proxyCheckBox->isChecked())
 		{
 			krb5_get_init_creds_opt_set_proxiable(&opts, 1);
+			proxiable = true;
 		}
 		else
 		{
 			krb5_get_init_creds_opt_set_proxiable(&opts, 0);
+			proxiable = false;
 		}
 
+		if(dlg->lifetimeSpinBox->value() >= 0)
+		{
+			lifetime = dlg->lifetimeSpinBox->value();
+			lifetimeUnit = dlg->lifetimeUnitComboBox->currentText();
+		}
+		else
+		{
+			lifetime = 0;
+		}
+
+		if(!dlg->renewCheckBox->isChecked())
+		{
+			renewtime = -1;
+		}
+		else if(dlg->renewtimeSpinBox->value() >= 0)
+		{
+			renewtime = dlg->renewtimeSpinBox->value();
+			renewtimeUnit = dlg->renewUnitComboBox->currentText();
+		}
+		else
+		{
+			renewtime = 0;
+		}
+
+		setOptions(kcontext, &opts);
+		
 		retval = initCredential(&opts, dlg->passwordLineEdit->text());
 		if (retval)
 		{
@@ -796,7 +853,7 @@ Ktw::renewCredential()
 	if (getTgtFromCcache (kcontext, &my_creds))
 	{
 		qDebug("got tgt from ccache");
-		setOptionsUsingCreds(kcontext, &my_creds, &opts);
+		//setOptionsUsingCreds(kcontext, &my_creds, &opts);
 		tgtEndtime = my_creds.times.endtime;
 		krb5_free_cred_contents(kcontext, &my_creds);
 	}
@@ -893,10 +950,11 @@ Ktw::reinitCredential(const QString& password)
 	}
 
 	krb5_get_init_creds_opt_init(&opts);
+	setOptions(kcontext, &opts);
+	
 	if (getTgtFromCcache (kcontext, &my_creds))
 	{
 		qDebug("got tgt from ccache");
-		setOptionsUsingCreds(kcontext, &my_creds, &opts);
 		tgtEndtime = my_creds.times.endtime;
 		krb5_free_cred_contents(kcontext, &my_creds);
 	}
@@ -1128,18 +1186,89 @@ Ktw::changePassword(const QString &oldpw)
 }
 
 void
-Ktw::setOptionsUsingCreds(krb5_context ,
-                          krb5_creds *creds,
-                          krb5_get_init_creds_opt *opts)
+Ktw::setDefaultOptionsUsingCreds(krb5_context)
 {
-	int flag;
+	krb5_creds creds;
+	
+	if (getTgtFromCcache (kcontext, &creds))
+	{
+		forwardable = (creds.ticket_flags & TKT_FLG_FORWARDABLE) != 0;
+		
+		proxiable = (creds.ticket_flags & TKT_FLG_PROXIABLE) != 0;
+		
+		krb5_deltat tkt_lifetime = creds.times.endtime - creds.times.starttime;
+		
+		if( (tkt_lifetime % (60*60*24)) == 0 )
+		{
+			lifetime = tkt_lifetime / (60*60*24);
+			lifetimeUnit = tr("days");
+		}
+		else if( (tkt_lifetime % (60*60)) == 0 )
+		{
+			lifetime = tkt_lifetime / (60*60);
+			lifetimeUnit = tr("hours");
+		}
+		else if( (tkt_lifetime % (60)) == 0 )
+		{
+			lifetime = tkt_lifetime / (60);
+			lifetimeUnit = tr("minutes");
+		}
+		else
+		{
+			lifetime = tkt_lifetime;
+			lifetimeUnit = tr("seconds");
+		}
 
-	flag = (creds->ticket_flags & TKT_FLG_FORWARDABLE) != 0;
-	krb5_get_init_creds_opt_set_forwardable(opts, flag);
+		if(creds.times.renew_till == 0)
+			renewtime = -1;
+		
+		krb5_free_cred_contents (kcontext, &creds);
+	}
+}
 
-	flag = (creds->ticket_flags & TKT_FLG_PROXIABLE) != 0;
-	krb5_get_init_creds_opt_set_proxiable(opts, flag);
+void
+Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
+{
+	krb5_get_init_creds_opt_set_forwardable(opts, (forwardable)?1:0);
 
+	krb5_get_init_creds_opt_set_proxiable(opts, (proxiable)?1:0);
+
+
+	if(lifetime > 0)
+	{
+		krb5_deltat tkt_lifetime = 0;
+		
+		if(lifetimeUnit == tr("seconds")) tkt_lifetime = lifetime;
+		if(lifetimeUnit == tr("minutes")) tkt_lifetime = lifetime*60;
+		if(lifetimeUnit == tr("hours")) tkt_lifetime = lifetime*60*60;
+		if(lifetimeUnit == tr("days")) tkt_lifetime = lifetime*60*60*24;
+
+		qDebug("Set lifetime to: %d", tkt_lifetime);
+		
+		krb5_get_init_creds_opt_set_tkt_life(opts, tkt_lifetime);
+	}
+	
+
+	if(renewtime > 0)
+	{
+		krb5_deltat tkt_renewtime = 0;
+
+		if(renewtimeUnit == tr("seconds")) tkt_renewtime = renewtime;
+		if(renewtimeUnit == tr("minutes")) tkt_renewtime = renewtime*60;
+		if(renewtimeUnit == tr("hours")) tkt_renewtime = renewtime*60*60;
+		if(renewtimeUnit == tr("days")) tkt_renewtime = renewtime*60*60*24;
+
+		qDebug("Set renewtime to: %d", tkt_renewtime);
+
+		krb5_get_init_creds_opt_set_renew_life(opts, tkt_renewtime);
+	}
+	else if(renewtime < 0)
+	{
+		qDebug("Set renewtime to: %d", 0);
+
+		krb5_get_init_creds_opt_set_renew_life(opts, 0);
+	}
+	
 	
 	/* This doesn't do a deep copy -- fix it later. */
 	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
@@ -1369,8 +1498,12 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	last = new QListViewItem(lvi, tr("Valid starting"), printtime(cred->times.starttime));
 	last = new QListViewItem(lvi, last,
 	                         tr("Expires"), printtime(cred->times.endtime));
-	last = new QListViewItem(lvi, last,
-	                         tr("Renew until"), printtime(cred->times.renew_till));
+
+	if(cred->times.renew_till)
+	{
+		last = new QListViewItem(lvi, last,
+		                         tr("Renew until"), printtime(cred->times.renew_till));
+	}
 	
 	QString tFlags;
 	if (cred->ticket_flags & TKT_FLG_FORWARDABLE)
@@ -1502,9 +1635,13 @@ QString
 Ktw::printtime(time_t tv)
 {
 	char timestring[30];
-	char fill;
+	char fill = ' ';
 
-	fill = ' ';
+	if(tv == 0)
+	{
+		return "";
+	}
+	
 	if (!krb5_timestamp_to_sfstring((krb5_timestamp) tv,
 	                                timestring, 29, &fill))
 	{
