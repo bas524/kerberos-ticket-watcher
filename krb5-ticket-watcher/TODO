@@ -4,7 +4,3 @@ ticket view:
 - show the remaining time of the krbtgt in the tooltip
 
 
-kinit dialog:
-
-- set lifetime
-- set renewable flag and time
