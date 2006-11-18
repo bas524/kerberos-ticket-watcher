@@ -4,13 +4,15 @@ APPVERSION  = 0.1.3
 
 HEADERS	+= src/trayicon.h \
            src/krb5ticketwatcher.h \
-           src/TicketListItem.h
+           src/TicketListItem.h \
+           src/v5.h
 
 SOURCES	+= src/main.cpp \
 	src/trayicon.cpp \
 	src/trayicon_x11.cpp \
     src/krb5ticketwatcher.cpp \
-    src/TicketListItem.cpp
+    src/TicketListItem.cpp \
+    src/v5.cpp
 
 FORMS	= src/pwdialog.ui \
           src/pwchangedialog.ui \

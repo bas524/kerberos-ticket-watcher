@@ -55,6 +55,10 @@ public:
 	enum reqAction {none, renew, reinit};
 	
 	
+signals:
+	void newTrayOwner();
+	void trayOwnerDied();
+
 public slots:
 	void initWorkflow();
 	void trayClicked(const QPoint &, int);
@@ -66,10 +70,6 @@ public slots:
 	void setTrayIcon(const QString&);
 	void reReadCache();
 
-private slots:
-	int
-	renewCredential();
-	
 private:
 	void createTrayMenu();
 	void initMainWindow();
@@ -78,36 +78,13 @@ private:
 	QString showCredential(krb5_creds *cred, char *defname);
 
 	QString printtime(time_t tv);
-	QString etype2String(krb5_enctype enctype);
 	QString oneAddr(krb5_address *a);
 
 	QString
 	passwordDialog(const QString& errorText = QString::null) const;
 	
-	bool getTgtFromCcache(krb5_context context, krb5_creds *creds);
-
-	int
-	credentialCheck();
-
-	krb5_timestamp
-	getNow();
-
-	QStringList
-	getRealms(krb5_context ctx);
-
-	static size_t
-	getPrincipalRealmLength(krb5_principal p);
-
-	static const char *
-	getPrincipalRealmData(krb5_principal p);
-
 	static const char *
 	getUserName();
-
-
-	int
-	initCredential(krb5_get_init_creds_opt *opts,
-	               const QString& password = QString::null);
 
 	int
 	reinitCredential(const QString &password = QString::null);
@@ -141,9 +118,6 @@ private:
 	
 	int            promptInterval;
 	
-signals:
-	void newTrayOwner();
-	void trayOwnerDied();
 };
 
 #endif //KRB5_TICKET_WATCHER_H

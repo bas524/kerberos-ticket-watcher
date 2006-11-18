@@ -65,6 +65,7 @@ const int KeyPress = XKeyPress;
 
 #include "trayicon.h"
 #include "krb5ticketwatcher.h"
+#include "v5.h"
 #include "mainwidget.h"
 #include "pwdialog.h"
 #include "pwchangedialog.h"
@@ -398,7 +399,7 @@ Ktw::initWorkflow()
 	bool have_tgt = FALSE;
 	krb5_creds creds;
 
-	have_tgt = getTgtFromCcache(kcontext, &creds);
+	have_tgt = v5::getTgtFromCcache(kcontext, &creds);
 	if (have_tgt)
 	{
 		krb5_copy_principal(kcontext, creds.client, &kprincipal);
@@ -406,10 +407,10 @@ Ktw::initWorkflow()
 	}
 	
 	int  retval = 0;
-	switch(credentialCheck())
+	switch(v5::credentialCheck(kcontext, kprincipal, promptInterval, &tgtEndtime))
 	{
 		case renew:
-			retval = renewCredential();
+			retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
 			if(!retval)
 				break;
 		case reinit:
@@ -463,7 +464,7 @@ Ktw::kinit()
 	
 	krb5_get_init_creds_opt_init(&opts);
 
-	QStringList realmList = getRealms(kcontext);
+	QStringList realmList = v5::getRealms(kcontext);
 
 	do
 	{
@@ -567,7 +568,9 @@ Ktw::kinit()
 
 		setOptions(kcontext, &opts);
 		
-		retval = initCredential(&opts, dlg->passwordLineEdit->text());
+		retval = v5::initCredential(kcontext, kprincipal,
+		                            &opts, dlg->passwordLineEdit->text(),
+		                            &tgtEndtime);
 		if (retval)
 		{
 			qDebug("Error during initCredential(): %d", retval);
@@ -733,200 +736,6 @@ Ktw::x11EventFilter( XEvent *_event )
 	return false;
 }
 
-bool
-Ktw::getTgtFromCcache (krb5_context context, krb5_creds *creds)
-{
-	krb5_ccache ccache;
-	krb5_creds mcreds;
-	krb5_principal principal, tgt_principal;
-	bool ret;
-
-	memset(&ccache, 0, sizeof(ccache));
-	ret = FALSE;
-	if (krb5_cc_default(context, &ccache) == 0)
-	{
-		memset(&principal, 0, sizeof(principal));
-		if (krb5_cc_get_principal(context, ccache, &principal) == 0)
-		{
-			memset(&tgt_principal, 0, sizeof(tgt_principal));
-			if (krb5_build_principal_ext(context, &tgt_principal,
-			                             Ktw::getPrincipalRealmLength(principal),
-			                             Ktw::getPrincipalRealmData(principal),
-			                             KRB5_TGS_NAME_SIZE,
-			                             KRB5_TGS_NAME,
-			                             Ktw::getPrincipalRealmLength(principal),
-			                             Ktw::getPrincipalRealmData(principal),
-			                             0) == 0)
-			{
-				memset(creds, 0, sizeof(*creds));
-				memset(&mcreds, 0, sizeof(mcreds));
-				mcreds.client = principal;
-				mcreds.server = tgt_principal;
-				if (krb5_cc_retrieve_cred(context, ccache,
-				                          0,
-				                          &mcreds,
-				                          creds) == 0)
-				{
-					ret = TRUE;
-				}
-				else
-				{
-					memset(creds, 0, sizeof(*creds));
-				}
-				krb5_free_principal(context, tgt_principal);
-			}
-			krb5_free_principal(context, principal);
-		}
-		krb5_cc_close(context, ccache);
-	}
-	return ret;
-}
-
-int
-Ktw::credentialCheck()
-{
-	krb5_creds my_creds;
-	krb5_timestamp now;
-	reqAction retval = none;
-
-	if (!getTgtFromCcache(kcontext, &my_creds))
-	{
-		tgtEndtime = 0;
-		return retval;
-	}
-
-	if (krb5_principal_compare (kcontext, my_creds.client, kprincipal))
-	{
-		krb5_free_principal(kcontext, kprincipal);
-		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
-	}
-	
-	if ((krb5_timeofday(kcontext, &now) == 0) &&
-	    (now + (promptInterval * 60) >= my_creds.times.endtime))
-	{
-		qDebug("now:                   %d", now);
-		qDebug("starttime:             %d", my_creds.times.starttime);
-		qDebug("endtime:               %d", my_creds.times.endtime);
-		qDebug("next Prompt:           %d", (now + (promptInterval * 60)));
-		qDebug("renew possible untill: %d", my_creds.times.renew_till);
-		if(now + (promptInterval * 60) >= my_creds.times.renew_till)
-		{
-			retval = reinit;
-		}
-		else
-		{		
-			retval = renew;
-		}
-	}
-	
-	tgtEndtime = my_creds.times.endtime;
-
-	krb5_free_cred_contents(kcontext, &my_creds);
-
-	qDebug("credentials_expiring_real returns: %d", retval);
-	
-	return retval;
-}
-
-int
-Ktw::renewCredential()
-{
-	krb5_error_code retval;
-	krb5_creds      my_creds;
-	krb5_ccache     ccache;
-	krb5_get_init_creds_opt opts;
-	
-	qDebug("renew called");
-
-	if (kprincipal == NULL)
-	{
-		qDebug("TRY to find a principal name");
-		retval = krb5_parse_name(kcontext, getUserName(),
-		                         &kprincipal);
-		if (retval)
-		{
-			return retval;
-		}
-	}
-
-	krb5_get_init_creds_opt_init(&opts);
-	if (getTgtFromCcache (kcontext, &my_creds))
-	{
-		qDebug("got tgt from ccache");
-		//setOptionsUsingCreds(kcontext, &my_creds, &opts);
-		tgtEndtime = my_creds.times.endtime;
-		krb5_free_cred_contents(kcontext, &my_creds);
-	}
-	else
-	{
-		qDebug("TGT expired");
-		tgtEndtime = 0;
-	}
-
-	retval = krb5_cc_default(kcontext, &ccache);
-	if (retval)
-		return retval;
-
-	retval = krb5_get_renewed_creds(kcontext, &my_creds, kprincipal, ccache,
-	                                NULL);
-	
-	qDebug("krb5_get_renewed_creds returned: %d", retval);
-	if (retval)
-		goto out;
-	
-	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
-	if (retval)
-		goto out;
-	
-	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-	if (retval)
-		goto out;
-	
-	tgtEndtime = my_creds.times.endtime;
-	
-out:
-	krb5_cc_close (kcontext, ccache);
-	
-	return retval;
-}
-
-int
-Ktw::initCredential(krb5_get_init_creds_opt *opts, const QString& password)
-{
-	krb5_error_code retval;
-	krb5_creds my_creds;
-	krb5_ccache ccache;
-	
-	qDebug("call initCredential");
-
-	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-	                                      (char*)password.ascii(), NULL, NULL,
-	                                      0, NULL, opts);
-	
-	if (retval)
-	{
-		return retval;
-	}
-	
-	retval = krb5_cc_default(kcontext, &ccache);
-	if (retval)
-		return retval;
-
-	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
-	if (retval)
-		goto out;
-	
-	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-	if (retval)
-		goto out;
-	
-	tgtEndtime = my_creds.times.endtime;
-	
-out:
-	krb5_cc_close (kcontext, ccache);
-	
-	return retval;
-}
 
 int
 Ktw::reinitCredential(const QString& password)
@@ -952,7 +761,7 @@ Ktw::reinitCredential(const QString& password)
 	krb5_get_init_creds_opt_init(&opts);
 	setOptions(kcontext, &opts);
 	
-	if (getTgtFromCcache (kcontext, &my_creds))
+	if (v5::getTgtFromCcache (kcontext, &my_creds))
 	{
 		qDebug("got tgt from ccache");
 		tgtEndtime = my_creds.times.endtime;
@@ -976,7 +785,7 @@ Ktw::reinitCredential(const QString& password)
 				return -1;
 		}
 		
-		retval = initCredential(&opts, passwd);
+		retval = v5::initCredential(kcontext, kprincipal, &opts, passwd, &tgtEndtime);
 		
 		if(retval)
 		{
@@ -1186,15 +995,15 @@ Ktw::changePassword(const QString &oldpw)
 }
 
 void
-Ktw::setDefaultOptionsUsingCreds(krb5_context)
+Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 {
 	krb5_creds creds;
 	
-	if (getTgtFromCcache (kcontext, &creds))
+	if (v5::getTgtFromCcache (kcontext, &creds))
 	{
-		forwardable = (creds.ticket_flags & TKT_FLG_FORWARDABLE) != 0;
+		forwardable = v5::getCredForwardable(&creds) != 0;
 		
-		proxiable = (creds.ticket_flags & TKT_FLG_PROXIABLE) != 0;
+		proxiable = v5::getCredProxiable(&creds) != 0;
 		
 		krb5_deltat tkt_lifetime = creds.times.endtime - creds.times.starttime;
 		
@@ -1274,79 +1083,8 @@ Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
 	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
 }
 
-krb5_timestamp
-Ktw::getNow()
-{
-	krb5_timestamp now;
-	int e = krb5_timeofday(kcontext, &now);
-	if(e != 0)
-	{
-		warning("Cannot get current time: %s", strerror(e));
-		return 0;
-	}
-	return now;
-}
-
-QStringList
-Ktw::getRealms(krb5_context ctx)
-{
-	krb5_error_code retval;
-	char *realm;
-	void *iter;
-	QStringList list;
-	char *r = NULL;
-	
-	krb5_get_default_realm(kcontext, &r);
-	QString defRealm(r);
-	krb5_free_default_realm(kcontext, r);
-
-	if ((retval = krb5_realm_iterator_create(ctx, &iter)))
-	{
-		qWarning("krb5_realm_iterator_create failed: %d", retval);
-		return list;
-	}
-	while (iter)
-	{
-		if ((retval = krb5_realm_iterator(ctx, &iter, &realm)))
-		{
-			qWarning("krb5_realm_iterator failed: %d", retval);
-			krb5_realm_iterator_free(ctx, &iter);
-			return list;
-		}
-		if (realm)
-		{
-			if(list.contains(realm) == 0)
-			{
-				if(defRealm == realm)
-				{
-					list.push_front(defRealm);
-				}
-				else
-				{
-					list.push_back(realm);
-				}
-			}
-			krb5_free_realm_string(ctx, realm);
-		}
-	}
-	krb5_realm_iterator_free(ctx, &iter);
-	return list;
-}
-
 // static -----------------------------------------------------------
 
-
-size_t
-Ktw::getPrincipalRealmLength(krb5_principal p)
-{
-        return p->realm.length;
-}
-
-const char *
-Ktw::getPrincipalRealmData(krb5_principal p)
-{
-        return p->realm.data;
-}
 
 const char *
 Ktw::getUserName()
@@ -1487,7 +1225,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	}
 
 	QTime time;
-	krb5_timestamp expires = cred->times.endtime - getNow();
+	krb5_timestamp expires = cred->times.endtime - v5::getNow(kcontext);
 	if(expires <= 0)
 		expires = 0;
 	
@@ -1506,33 +1244,33 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	}
 	
 	QString tFlags;
-	if (cred->ticket_flags & TKT_FLG_FORWARDABLE)
+	if (v5::getCredForwardable(cred) != 0)
 		tFlags += 'F';
-	if (cred->ticket_flags & TKT_FLG_FORWARDED)
+	if (v5::getCredForwarded(cred) != 0)
 		tFlags += 'f';
-	if (cred->ticket_flags & TKT_FLG_PROXIABLE)
+	if (v5::getCredProxiable(cred) != 0)
 		tFlags += 'P';
-	if (cred->ticket_flags & TKT_FLG_PROXY)
+	if (v5::getCredProxy(cred) != 0)
 		tFlags += 'p';
-	if (cred->ticket_flags & TKT_FLG_MAY_POSTDATE)
+	if (v5::getCredMayPostdate(cred) != 0)
 		tFlags += 'D';
-	if (cred->ticket_flags & TKT_FLG_POSTDATED)
+	if (v5::getCredPostdated(cred) != 0)
 		tFlags += 'd';
-	if (cred->ticket_flags & TKT_FLG_INVALID)
+	if (v5::getCredInvalid(cred) != 0)
 		tFlags += 'i';
-	if (cred->ticket_flags & TKT_FLG_RENEWABLE)
+	if (v5::getCredRenewable(cred) != 0)
 		tFlags += 'R';
-	if (cred->ticket_flags & TKT_FLG_INITIAL)
+	if (v5::getCredInitial(cred) != 0)
 		tFlags += 'I';
-	if (cred->ticket_flags & TKT_FLG_HW_AUTH)
+	if (v5::getCredHwAuth(cred) != 0)
 		tFlags += 'H';
-	if (cred->ticket_flags & TKT_FLG_PRE_AUTH)
+	if (v5::getCredPreAuth(cred) != 0)
 		tFlags += 'A';
-	if (cred->ticket_flags & TKT_FLG_TRANSIT_POLICY_CHECKED)
+	if (v5::getCredTransitPolicyChecked(cred) != 0)
 		tFlags += 'T';
-	if (cred->ticket_flags & TKT_FLG_OK_AS_DELEGATE)
+	if (v5::getCredOkAsDelegate(cred) != 0)
         tFlags += 'O';         /* D/d are taken.  Use short strings?  */
-	if (cred->ticket_flags & TKT_FLG_ANONYMOUS)
+	if (v5::getCredAnonymous(cred) != 0)
 		tFlags += 'a';
 	
 	last = new QListViewItem(lvi, last,
@@ -1542,9 +1280,9 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	if(!retval)
 	{
 		last = new QListViewItem(lvi, last,
-		                         tr("Key Encryption Type"), etype2String(cred->keyblock.enctype));
+		                         tr("Key Encryption Type"), v5::etype2String(cred->keyblock.enctype));
 		last = new QListViewItem(lvi, last,
-		                         tr("Ticket Encryption Type" ), etype2String(tkt->enc_part.enctype));
+		                         tr("Ticket Encryption Type" ), v5::etype2String(tkt->enc_part.enctype));
 	}
 	if (tkt != NULL)
 		krb5_free_ticket(kcontext, tkt);
@@ -1616,20 +1354,6 @@ Ktw::oneAddr(krb5_address *a)
 	return addr.toString();
 }
 
-QString
-Ktw::etype2String(krb5_enctype enctype)
-{
-	static char buf[100];
-	krb5_error_code retval;
-	
-	if((retval = krb5_enctype_to_string(enctype, buf, sizeof(buf))))
-	{
-		/* XXX if there's an error != EINVAL, I should probably report it */
-		sprintf(buf, "etype %d", enctype);
-	}
-
-	return buf;
-}
 
 QString
 Ktw::printtime(time_t tv)
