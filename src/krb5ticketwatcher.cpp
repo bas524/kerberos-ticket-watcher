@@ -273,8 +273,10 @@ Ktw::Ktw( int & argc, char ** argv )
 
 Ktw::~Ktw()
 {
-	krb5_free_principal(kcontext, kprincipal);
+	if(kprincipal)
+		krb5_free_principal(kcontext, kprincipal);
 	kprincipal = NULL;
+		
 	krb5_free_context(kcontext);
 	kcontext = NULL;
 }
