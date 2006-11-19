@@ -171,6 +171,7 @@ v5::renewCredential(krb5_context kcontext, krb5_principal kprincipal, krb5_times
 	*tgtEndtime = my_creds.times.endtime;
 	
 out:
+	krb5_free_cred_contents(kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 	
 	return retval;
@@ -197,8 +198,10 @@ v5::initCredential(krb5_context kcontext, krb5_principal kprincipal,
 	
 	retval = krb5_cc_default(kcontext, &ccache);
 	if (retval)
-		return retval;
-
+	{
+		goto out;
+	}
+	
 	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 	if (retval)
 		goto out;
@@ -210,6 +213,7 @@ v5::initCredential(krb5_context kcontext, krb5_principal kprincipal,
 	*tgtEndtime = my_creds.times.endtime;
 	
 out:
+	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 	
 	return retval;
