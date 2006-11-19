@@ -59,7 +59,8 @@ signals:
 	void trayOwnerDied();
 
 public slots:
-	void initWorkflow();
+    void forceRenewCredential();
+	void initWorkflow(int type = 0);
 	void trayClicked(const QPoint &, int);
 	//void trayDoubleClicked();
 	//void dockActivated();
@@ -110,9 +111,9 @@ private:
 	bool           forwardable;
 	bool           proxiable;
 	
-	krb5_deltat    lifetime;
+	krb5_deltat    lifetime;      // 0 default
 	QString        lifetimeUnit;
-	krb5_deltat    renewtime;
+	krb5_deltat    renewtime;     // 0 default, -1 no renewtime
 	QString        renewtimeUnit;
 	
 	int            promptInterval;

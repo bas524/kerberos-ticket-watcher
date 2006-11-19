@@ -381,7 +381,7 @@ Ktw::createTrayMenu()
 	                     this, SLOT(kinit()));
 	// Popup Menu item
 	trayMenu->insertItem(tr("Renew Ticket"),
-	                     this, SLOT(initWorkflow()));
+	                     this, SLOT(forceRenewCredential()));
 	trayMenu->insertSeparator();
 	// Popup Menu item
 	//trayMenu->insertItem(tr("Help"),
@@ -395,7 +395,14 @@ Ktw::createTrayMenu()
 // public ------------------------------------------------------------------
 
 void
-Ktw::initWorkflow()
+Ktw::forceRenewCredential()
+{
+	qDebug("forceRenewCredential called");
+	initWorkflow(1);
+}
+
+void
+Ktw::initWorkflow(int type)
 {
 	bool have_tgt = FALSE;
 	krb5_creds creds;
@@ -431,6 +438,13 @@ Ktw::initWorkflow()
 			waitTimer.start( promptInterval*60*1000); // retryTime is in minutes
 
 			break;
+		default:
+			if(type != 0)
+			{
+				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
+				if(!retval)
+					break;
+			}
 	}
 	
 	qDebug("Workflow finished");
@@ -525,22 +539,22 @@ Ktw::kinit()
 		
 		if(dlg->forwardCheckBox->isChecked())
 		{
-			krb5_get_init_creds_opt_set_forwardable(&opts, 1);
+			//krb5_get_init_creds_opt_set_forwardable(&opts, 1);
 			forwardable = true;
 		}
 		else
 		{
-			krb5_get_init_creds_opt_set_forwardable(&opts, 0);
+			//krb5_get_init_creds_opt_set_forwardable(&opts, 0);
 			forwardable = false;
 		}
 		if(dlg->proxyCheckBox->isChecked())
 		{
-			krb5_get_init_creds_opt_set_proxiable(&opts, 1);
+			//krb5_get_init_creds_opt_set_proxiable(&opts, 1);
 			proxiable = true;
 		}
 		else
 		{
-			krb5_get_init_creds_opt_set_proxiable(&opts, 0);
+			//krb5_get_init_creds_opt_set_proxiable(&opts, 0);
 			proxiable = false;
 		}
 
@@ -1045,6 +1059,10 @@ Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 void
 Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
 {
+	qDebug("================= Options =================");
+	qDebug("Forwardable %s",(forwardable)?"true":"false");
+	qDebug("Proxiable %s",(proxiable)?"true":"false");
+	
 	krb5_get_init_creds_opt_set_forwardable(opts, (forwardable)?1:0);
 
 	krb5_get_init_creds_opt_set_proxiable(opts, (proxiable)?1:0);
@@ -1084,7 +1102,12 @@ Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
 
 		krb5_get_init_creds_opt_set_renew_life(opts, 0);
 	}
+	else
+	{
+		qDebug("Use default renewtime");
+	}
 	
+	qDebug("================= END Options =================");
 	
 	/* This doesn't do a deep copy -- fix it later. */
 	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
