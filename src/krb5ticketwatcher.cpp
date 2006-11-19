@@ -537,26 +537,8 @@ Ktw::kinit()
 			continue;
 		}
 		
-		if(dlg->forwardCheckBox->isChecked())
-		{
-			//krb5_get_init_creds_opt_set_forwardable(&opts, 1);
-			forwardable = true;
-		}
-		else
-		{
-			//krb5_get_init_creds_opt_set_forwardable(&opts, 0);
-			forwardable = false;
-		}
-		if(dlg->proxyCheckBox->isChecked())
-		{
-			//krb5_get_init_creds_opt_set_proxiable(&opts, 1);
-			proxiable = true;
-		}
-		else
-		{
-			//krb5_get_init_creds_opt_set_proxiable(&opts, 0);
-			proxiable = false;
-		}
+		forwardable = dlg->forwardCheckBox->isChecked();
+		proxiable = dlg->proxyCheckBox->isChecked();
 
 		if(dlg->lifetimeSpinBox->value() >= 0)
 		{
