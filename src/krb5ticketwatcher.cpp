@@ -509,7 +509,8 @@ Ktw::kinit()
 		errorTxt = "";
 
 		QString principal = dlg->userLineEdit->text() + "@" + dlg->realmComboBox->currentText();
-		
+
+		krb5_free_principal(kcontext, kprincipal);
 		retval = krb5_parse_name(kcontext, principal,
 		                         &kprincipal);
 		if (retval)
@@ -906,6 +907,7 @@ Ktw::changePassword(const QString &oldpw)
 				break;
 			case KRB5_KDC_UNREACH:
 				/* kdc unreachable, return silently */
+				krb5_free_cred_contents (kcontext, &my_creds);
 				return retval;
 			default:
 				break;
@@ -959,6 +961,7 @@ Ktw::changePassword(const QString &oldpw)
 		}
 		else
 		{
+			krb5_free_cred_contents (kcontext, &my_creds);
 			return retval;
 		}
 	}
@@ -973,9 +976,12 @@ Ktw::changePassword(const QString &oldpw)
 	                                   &result_string)))
 	{
 		qDebug("changing password failed. %d", retval);
+		krb5_free_cred_contents (kcontext, &my_creds);
 		return retval;
 	}
 
+	krb5_free_cred_contents (kcontext, &my_creds);
+	
 	if (result_code)
 	{
 		qDebug("%.*s%s%.*s\n",
@@ -1119,6 +1125,9 @@ Ktw::buildCcacheInfos()
     	
     	goto done;
     }
+    if(kprincipal != NULL)
+    	krb5_free_principal(kcontext, kprincipal);
+    
     if ((code = krb5_cc_get_principal(kcontext, cache, &kprincipal)))
     {
     	errmsg += "Error while retrieving principal name";
@@ -1130,10 +1139,14 @@ Ktw::buildCcacheInfos()
     	goto done;
     }
 
-    ((MainWidget*)mainWidget())->commonLabel->setText(
-                                                      QString("<qt><b>Ticket cache: %1:%2</b><br><b>Default principal: %3</b><br><br>")
+    ((MainWidget*)mainWidget())->commonLabel->setText(QString("<qt><b>")+
+                                                      tr("Ticket cache: %1:%2")
                                                       .arg(krb5_cc_get_type(kcontext, cache))
-                                                      .arg(krb5_cc_get_name(kcontext, cache), defname));
+                                                      .arg(krb5_cc_get_name(kcontext, cache)) +
+                                                      QString("</b><br><b>")+
+                                                      tr("Default principal: %3").arg(defname)+
+                                                      QString("</b><br><br>")
+                                                      );
     ((MainWidget*)mainWidget())->ticketView->clear();
     
     if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
@@ -1175,6 +1188,11 @@ Ktw::buildCcacheInfos()
     done = true;
     
 done:
+    if(defname != NULL)
+    	krb5_free_unparsed_name(kcontext, defname);
+    if(cache != NULL)
+    	krb5_cc_close(kcontext, cache);
+    
     if(!done)
     {
     	qDebug("%s", errmsg.ascii());
