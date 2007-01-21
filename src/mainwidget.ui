@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>747</width>
+            <width>816</width>
             <height>499</height>
         </rect>
     </property>
@@ -180,9 +180,6 @@
                     </property>
                     <property name="rootIsDecorated">
                         <bool>true</bool>
-                    </property>
-                    <property name="resizeMode">
-                        <enum>LastColumn</enum>
                     </property>
                 </widget>
                 <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
