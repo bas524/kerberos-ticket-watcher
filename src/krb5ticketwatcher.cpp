@@ -473,6 +473,7 @@ void
 Ktw::kinit()
 {
 	krb5_get_init_creds_opt opts;
+
 	krb5_error_code retval;
 	bool ok = false;
 	QString errorTxt;
@@ -741,6 +742,7 @@ Ktw::reinitCredential(const QString& password)
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_get_init_creds_opt opts;
+
 	QString passwd = password;
 	
 	qDebug("reinit called");
@@ -757,6 +759,7 @@ Ktw::reinitCredential(const QString& password)
 	}
 
 	krb5_get_init_creds_opt_init(&opts);
+
 	setOptions(kcontext, &opts);
 	
 	if (v5::getTgtFromCcache (kcontext, &my_creds))
@@ -1008,21 +1011,18 @@ Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 		
 		proxiable = v5::getCredProxiable(&creds) != 0;
 		
-		krb5_deltat tkt_lifetime = creds.times.endtime - creds.times.starttime;
+ 		krb5_deltat tkt_lifetime = creds.times.endtime - creds.times.starttime;
 		
-		if( (tkt_lifetime % (60*60*24)) == 0 )
+		if( (lifetime = (krb5_deltat) tkt_lifetime / (60*60*24)) > 0 )
 		{
-			lifetime = tkt_lifetime / (60*60*24);
 			lifetimeUnit = tr("days");
 		}
-		else if( (tkt_lifetime % (60*60)) == 0 )
+		else if( (lifetime = (krb5_deltat) tkt_lifetime / (60*60)) > 0 )
 		{
-			lifetime = tkt_lifetime / (60*60);
 			lifetimeUnit = tr("hours");
 		}
-		else if( (tkt_lifetime % (60)) == 0 )
+		else if( (lifetime = (krb5_deltat) tkt_lifetime / (60)) > 0 )
 		{
-			lifetime = tkt_lifetime / (60);
 			lifetimeUnit = tr("minutes");
 		}
 		else
@@ -1030,10 +1030,33 @@ Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 			lifetime = tkt_lifetime;
 			lifetimeUnit = tr("seconds");
 		}
-
-		if(creds.times.renew_till == 0)
-			renewtime = -1;
 		
+		if(creds.times.renew_till == 0)
+		{
+			renewtime = -1;
+		}
+		else
+		{
+			krb5_deltat tkt_renewtime = creds.times.renew_till - creds.times.starttime;
+
+			if( (renewtime = (krb5_deltat) (tkt_renewtime / (60*60*24))) > 0 )
+			{
+				renewtimeUnit = tr("days");
+			}
+			else if( (renewtime = (krb5_deltat) (tkt_renewtime / (60*60))) > 0 )
+			{
+				renewtimeUnit = tr("hours");
+			}
+			else if( (renewtime = (krb5_deltat) (tkt_renewtime / (60))) > 0 )
+			{
+				renewtimeUnit = tr("minutes");
+			}
+			else
+			{
+				renewtime = tkt_renewtime;
+				renewtimeUnit = tr("seconds");
+			}
+		}
 		krb5_free_cred_contents (kcontext, &creds);
 	}
 }
