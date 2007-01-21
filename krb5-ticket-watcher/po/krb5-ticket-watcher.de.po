@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-21 18:02+0100\n"
+"POT-Creation-Date: 2007-01-21 18:06+0100\n"
 "PO-Revision-Date: 2007-01-21 18:05+0100\n"
 "Last-Translator: Michael Calmer <Michael.Calmer@gmx.de>\n"
 "Language-Team: Deutsch <de@li.org>\n"
@@ -288,4 +288,3 @@ msgstr "Passwort wiederholen:"
 #: ../src/pwdialog.cpp:233
 msgid "Kerberos Password Dialog"
 msgstr "Kerberos Passwort Dialog"
-

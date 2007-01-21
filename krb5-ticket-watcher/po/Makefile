@@ -3,7 +3,7 @@ LOCALES = krb5-ticket-watcher.de.qm \
           krb5-ticket-watcher.en.qm \
           krb5-ticket-watcher.qm
 PACKAGE = krb5-ticket-watcher
-VERSION = 0.1
+VERSION = 0.2
 LANGUAGES = de en
 
 all: $(LOCALES)
