@@ -1,5 +1,10 @@
 krb5-ticket-watcher
 
+2007-01-21:
+- version 0.2.0
+- calculate renewtime from ticket if available
+- move some krb5 library function calls to v5.cpp
+
 2006-11-01:
 - version 0.1.3
 - implement more options for kinit dialog
