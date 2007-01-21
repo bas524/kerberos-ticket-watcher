@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-01 15:05+0100\n"
+"POT-Creation-Date: 2007-01-21 18:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Popup Menu item
-#: ../src/kinitdialog.cpp:327 ../src/krb5ticketwatcher.cpp:375
+#: ../src/kinitdialog.cpp:327 ../src/krb5ticketwatcher.cpp:380
 msgid "New Ticket"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "&Cancel"
 msgstr ""
 
-#: ../src/kinitdialog.cpp:329 ../src/mainwidget.cpp:113
+#: ../src/kinitdialog.cpp:329 ../src/mainwidget.cpp:112
 #: ../src/pwchangedialog.cpp:250 ../src/pwdialog.cpp:237
 msgid "Alt+C"
 msgstr ""
@@ -78,26 +78,29 @@ msgid "Renewable for:"
 msgstr ""
 
 #: ../src/kinitdialog.cpp:344 ../src/kinitdialog.cpp:353
-#: ../src/krb5ticketwatcher.cpp:1201 ../src/krb5ticketwatcher.cpp:1237
-#: ../src/krb5ticketwatcher.cpp:1252
+#: ../src/krb5ticketwatcher.cpp:235 ../src/krb5ticketwatcher.cpp:1018
+#: ../src/krb5ticketwatcher.cpp:1044 ../src/krb5ticketwatcher.cpp:1083
+#: ../src/krb5ticketwatcher.cpp:1098
 msgid "days"
 msgstr ""
 
+#. init with translations
 #: ../src/kinitdialog.cpp:345 ../src/kinitdialog.cpp:354
-#: ../src/krb5ticketwatcher.cpp:1206 ../src/krb5ticketwatcher.cpp:1236
-#: ../src/krb5ticketwatcher.cpp:1251
+#: ../src/krb5ticketwatcher.cpp:234 ../src/krb5ticketwatcher.cpp:1022
+#: ../src/krb5ticketwatcher.cpp:1048 ../src/krb5ticketwatcher.cpp:1082
+#: ../src/krb5ticketwatcher.cpp:1097
 msgid "hours"
 msgstr ""
 
 #: ../src/kinitdialog.cpp:346 ../src/kinitdialog.cpp:355
-#: ../src/krb5ticketwatcher.cpp:1211 ../src/krb5ticketwatcher.cpp:1235
-#: ../src/krb5ticketwatcher.cpp:1250
+#: ../src/krb5ticketwatcher.cpp:1026 ../src/krb5ticketwatcher.cpp:1052
+#: ../src/krb5ticketwatcher.cpp:1081 ../src/krb5ticketwatcher.cpp:1096
 msgid "minutes"
 msgstr ""
 
 #: ../src/kinitdialog.cpp:347 ../src/kinitdialog.cpp:356
-#: ../src/krb5ticketwatcher.cpp:1216 ../src/krb5ticketwatcher.cpp:1234
-#: ../src/krb5ticketwatcher.cpp:1249
+#: ../src/krb5ticketwatcher.cpp:1031 ../src/krb5ticketwatcher.cpp:1057
+#: ../src/krb5ticketwatcher.cpp:1080 ../src/krb5ticketwatcher.cpp:1095
 msgid "seconds"
 msgstr ""
 
@@ -110,7 +113,7 @@ msgid "Lifetime:"
 msgstr ""
 
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:378
+#: ../src/krb5ticketwatcher.cpp:383
 msgid "Renew Ticket"
 msgstr ""
 
@@ -118,126 +121,134 @@ msgstr ""
 #. trayMenu->insertItem(tr("Help"),
 #. this, SLOT(help()));
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:385
+#: ../src/krb5ticketwatcher.cpp:390
 msgid "Quit"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:516
+#: ../src/krb5ticketwatcher.cpp:537
 msgid "Invalid principal name"
 msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:578
+#: ../src/krb5ticketwatcher.cpp:583
 msgid "Invalid Password"
 msgstr ""
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:590
+#: ../src/krb5ticketwatcher.cpp:595
 msgid "Unknown principal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:593
+#: ../src/krb5ticketwatcher.cpp:598
 msgid "Unknown realm"
 msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:987 ../src/krb5ticketwatcher.cpp:1094
+#: ../src/krb5ticketwatcher.cpp:800 ../src/krb5ticketwatcher.cpp:907
 msgid "The password you entered is invalid"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1030
+#: ../src/krb5ticketwatcher.cpp:843
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1126
+#: ../src/krb5ticketwatcher.cpp:940
 msgid "Change the password for principal <b>%1</b>"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1130
+#: ../src/krb5ticketwatcher.cpp:944
 msgid "The passwords are not equal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1471
+#: ../src/krb5ticketwatcher.cpp:1173
+msgid "Ticket cache: %1:%2"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1177
+msgid "Default principal: %3"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1263
 msgid " for client %1"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1488
+#: ../src/krb5ticketwatcher.cpp:1280
 msgid "Service principal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1491
+#: ../src/krb5ticketwatcher.cpp:1283
 msgid "Valid starting"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1493
+#: ../src/krb5ticketwatcher.cpp:1285
 msgid "Expires"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1498
+#: ../src/krb5ticketwatcher.cpp:1290
 msgid "Renew until"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1532
+#: ../src/krb5ticketwatcher.cpp:1324
 msgid "Ticket flags"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1538
+#: ../src/krb5ticketwatcher.cpp:1330
 msgid "Key Encryption Type"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1540
+#: ../src/krb5ticketwatcher.cpp:1332
 msgid "Ticket Encryption Type"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1548 ../src/krb5ticketwatcher.cpp:1607
+#: ../src/krb5ticketwatcher.cpp:1340 ../src/krb5ticketwatcher.cpp:1399
 msgid "(none)"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1563
+#: ../src/krb5ticketwatcher.cpp:1355
 msgid "Addresses"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1584
+#: ../src/krb5ticketwatcher.cpp:1376
 msgid "Broken address (type %1 length %2)"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1603
+#: ../src/krb5ticketwatcher.cpp:1395
 msgid "Unknown address type %1"
 msgstr ""
 
-#: ../src/mainwidget.cpp:70 ../src/mainwidget.cpp:135
+#: ../src/mainwidget.cpp:70 ../src/mainwidget.cpp:134
 msgid "Property"
 msgstr ""
 
-#: ../src/mainwidget.cpp:71 ../src/mainwidget.cpp:136
+#: ../src/mainwidget.cpp:71 ../src/mainwidget.cpp:135
 msgid "Value"
 msgstr ""
 
-#: ../src/mainwidget.cpp:72 ../src/mainwidget.cpp:137
+#: ../src/mainwidget.cpp:72 ../src/mainwidget.cpp:136
 msgid "Time Remaining"
 msgstr ""
 
-#: ../src/mainwidget.cpp:111
+#: ../src/mainwidget.cpp:110
 msgid "Kerberos Ticket List"
 msgstr ""
 
-#: ../src/mainwidget.cpp:112
+#: ../src/mainwidget.cpp:111
 msgid "&Close"
 msgstr ""
 
-#: ../src/mainwidget.cpp:114
+#: ../src/mainwidget.cpp:113
 msgid "&Refresh"
 msgstr ""
 
-#: ../src/mainwidget.cpp:115
+#: ../src/mainwidget.cpp:114
 msgid "Alt+R"
 msgstr ""
 
-#: ../src/mainwidget.cpp:116
+#: ../src/mainwidget.cpp:115
 msgid "Ticket flags legend"
 msgstr ""
 
-#: ../src/mainwidget.cpp:117
+#: ../src/mainwidget.cpp:116
 msgid ""
 "<qt>\n"
 "<table>\n"
@@ -258,7 +269,7 @@ msgid ""
 "</table></qt>"
 msgstr ""
 
-#: ../src/mainwidget.cpp:138
+#: ../src/mainwidget.cpp:137
 msgid "Default credential cache"
 msgstr ""
 
