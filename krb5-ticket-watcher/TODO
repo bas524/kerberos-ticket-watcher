@@ -3,4 +3,6 @@ ticket view:
 
 - show the remaining time of the krbtgt in the tooltip
 
+- add kdestroy functionality
 
+- use popup dialogs for errors 
