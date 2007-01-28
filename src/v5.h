@@ -47,6 +47,9 @@ class v5
 	               krb5_timestamp *tgtEndtime);
 
 	static int
+	destroyCcache(krb5_context kcontext);
+	
+	static int
 	getCredForwardable(krb5_creds *creds);
 
 	static int

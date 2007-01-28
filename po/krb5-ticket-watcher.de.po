@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-21 18:06+0100\n"
-"PO-Revision-Date: 2007-01-21 18:05+0100\n"
+"POT-Creation-Date: 2007-01-28 18:06+0100\n"
+"PO-Revision-Date: 2007-01-28 18:13+0100\n"
 "Last-Translator: Michael Calmer <Michael.Calmer@gmx.de>\n"
 "Language-Team: Deutsch <de@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #. Popup Menu item
-#: ../src/kinitdialog.cpp:327 ../src/krb5ticketwatcher.cpp:380
+#: ../src/kinitdialog.cpp:327 ../src/krb5ticketwatcher.cpp:381
 msgid "New Ticket"
 msgstr "Neues Ticket"
 
@@ -78,29 +78,29 @@ msgid "Renewable for:"
 msgstr "Erneuerbar für:"
 
 #: ../src/kinitdialog.cpp:344 ../src/kinitdialog.cpp:353
-#: ../src/krb5ticketwatcher.cpp:235 ../src/krb5ticketwatcher.cpp:1018
-#: ../src/krb5ticketwatcher.cpp:1044 ../src/krb5ticketwatcher.cpp:1083
-#: ../src/krb5ticketwatcher.cpp:1098
+#: ../src/krb5ticketwatcher.cpp:236 ../src/krb5ticketwatcher.cpp:1045
+#: ../src/krb5ticketwatcher.cpp:1071 ../src/krb5ticketwatcher.cpp:1110
+#: ../src/krb5ticketwatcher.cpp:1125
 msgid "days"
 msgstr "Tage"
 
 #. init with translations
 #: ../src/kinitdialog.cpp:345 ../src/kinitdialog.cpp:354
-#: ../src/krb5ticketwatcher.cpp:234 ../src/krb5ticketwatcher.cpp:1022
-#: ../src/krb5ticketwatcher.cpp:1048 ../src/krb5ticketwatcher.cpp:1082
-#: ../src/krb5ticketwatcher.cpp:1097
+#: ../src/krb5ticketwatcher.cpp:235 ../src/krb5ticketwatcher.cpp:1049
+#: ../src/krb5ticketwatcher.cpp:1075 ../src/krb5ticketwatcher.cpp:1109
+#: ../src/krb5ticketwatcher.cpp:1124
 msgid "hours"
 msgstr "Stunden"
 
 #: ../src/kinitdialog.cpp:346 ../src/kinitdialog.cpp:355
-#: ../src/krb5ticketwatcher.cpp:1026 ../src/krb5ticketwatcher.cpp:1052
-#: ../src/krb5ticketwatcher.cpp:1081 ../src/krb5ticketwatcher.cpp:1096
+#: ../src/krb5ticketwatcher.cpp:1053 ../src/krb5ticketwatcher.cpp:1079
+#: ../src/krb5ticketwatcher.cpp:1108 ../src/krb5ticketwatcher.cpp:1123
 msgid "minutes"
 msgstr "Minuten"
 
 #: ../src/kinitdialog.cpp:347 ../src/kinitdialog.cpp:356
-#: ../src/krb5ticketwatcher.cpp:1031 ../src/krb5ticketwatcher.cpp:1057
-#: ../src/krb5ticketwatcher.cpp:1080 ../src/krb5ticketwatcher.cpp:1095
+#: ../src/krb5ticketwatcher.cpp:1058 ../src/krb5ticketwatcher.cpp:1084
+#: ../src/krb5ticketwatcher.cpp:1107 ../src/krb5ticketwatcher.cpp:1122
 msgid "seconds"
 msgstr "Sekunden"
 
@@ -113,106 +113,148 @@ msgid "Lifetime:"
 msgstr "Lebensdauer:"
 
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:383
+#: ../src/krb5ticketwatcher.cpp:384
 msgid "Renew Ticket"
 msgstr "Ticket erneuern"
+
+#. Popup Menu item
+#: ../src/krb5ticketwatcher.cpp:387
+msgid "Destroy Ticket"
+msgstr "Ticket zerstören"
 
 #. Popup Menu item
 #. trayMenu->insertItem(tr("Help"),
 #. this, SLOT(help()));
 #. Popup Menu item
-#: ../src/krb5ticketwatcher.cpp:390
+#: ../src/krb5ticketwatcher.cpp:394
 msgid "Quit"
 msgstr "Beenden"
 
-#: ../src/krb5ticketwatcher.cpp:537
+#. title
+#: ../src/krb5ticketwatcher.cpp:413
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "Kerberos Ticket Liste zerstören?"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:415
+msgid "Do you want to destroy the ticket cache?"
+msgstr "Wollen Sie die Ticket Liste zerstören?"
+
+#: ../src/krb5ticketwatcher.cpp:416
+msgid "&Yes"
+msgstr "&Ja"
+
+#: ../src/krb5ticketwatcher.cpp:416
+msgid "&No"
+msgstr "&Nein"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:424
+msgid "Error !"
+msgstr "Fehler !"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket cache cannot be destroyed."
+msgstr "Die Ticket Liste konnte nicht zerstört werden."
+
+#: ../src/krb5ticketwatcher.cpp:564
 msgid "Invalid principal name"
 msgstr "Ungültiger Principal Name"
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:583
+#: ../src/krb5ticketwatcher.cpp:610
 msgid "Invalid Password"
 msgstr "Ungültiges Passwort"
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:595
+#: ../src/krb5ticketwatcher.cpp:622
 msgid "Unknown principal"
 msgstr "Unbekannter Principal"
 
-#: ../src/krb5ticketwatcher.cpp:598
+#: ../src/krb5ticketwatcher.cpp:625
 msgid "Unknown realm"
 msgstr "Unbekanntes Realm"
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:800 ../src/krb5ticketwatcher.cpp:907
+#: ../src/krb5ticketwatcher.cpp:827 ../src/krb5ticketwatcher.cpp:934
 msgid "The password you entered is invalid"
 msgstr "Das eingegebene Passwort ist ungültig"
 
-#: ../src/krb5ticketwatcher.cpp:843
+#: ../src/krb5ticketwatcher.cpp:870
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr "Geben Sie bitte das Kerberos Passwort für <b>%1</b> ein"
 
-#: ../src/krb5ticketwatcher.cpp:940
+#: ../src/krb5ticketwatcher.cpp:967
 msgid "Change the password for principal <b>%1</b>"
 msgstr "Passwort für das Principal <b>%1</b> ändern"
 
-#: ../src/krb5ticketwatcher.cpp:944
+#: ../src/krb5ticketwatcher.cpp:971
 msgid "The passwords are not equal"
 msgstr "Die Passwörter sind nicht gleich"
 
-#: ../src/krb5ticketwatcher.cpp:1173
+#: ../src/krb5ticketwatcher.cpp:1183
+msgid "No credentials cache found"
+msgstr "Keine standard Ticket Liste gefunden"
+
+#: ../src/krb5ticketwatcher.cpp:1183 ../src/krb5ticketwatcher.cpp:1189
+#: ../src/krb5ticketwatcher.cpp:1210
 msgid "Ticket cache: %1:%2"
 msgstr "Ticket Speicher: %1:%2"
 
-#: ../src/krb5ticketwatcher.cpp:1177
+#: ../src/krb5ticketwatcher.cpp:1189
+msgid "Error while setting cache flags"
+msgstr "Es ist ein Fehler beim setzen der Ticket Listen Markierung aufgetreten"
+
+#: ../src/krb5ticketwatcher.cpp:1214
 msgid "Default principal: %3"
 msgstr "Standard Principal: %3"
 
-#: ../src/krb5ticketwatcher.cpp:1263
+#: ../src/krb5ticketwatcher.cpp:1299
 msgid " for client %1"
 msgstr "für Client %1"
 
-#: ../src/krb5ticketwatcher.cpp:1280
+#: ../src/krb5ticketwatcher.cpp:1316
 msgid "Service principal"
 msgstr "Dienst Principal"
 
-#: ../src/krb5ticketwatcher.cpp:1283
+#: ../src/krb5ticketwatcher.cpp:1319
 msgid "Valid starting"
 msgstr "Gültigkeitsbeginn"
 
-#: ../src/krb5ticketwatcher.cpp:1285
+#: ../src/krb5ticketwatcher.cpp:1321
 msgid "Expires"
 msgstr "Gültigkeitsende"
 
-#: ../src/krb5ticketwatcher.cpp:1290
+#: ../src/krb5ticketwatcher.cpp:1326
 msgid "Renew until"
 msgstr "Erneuerbar bis"
 
-#: ../src/krb5ticketwatcher.cpp:1324
+#: ../src/krb5ticketwatcher.cpp:1360
 msgid "Ticket flags"
 msgstr "Ticket Kennzeichen"
 
-#: ../src/krb5ticketwatcher.cpp:1330
+#: ../src/krb5ticketwatcher.cpp:1366
 msgid "Key Encryption Type"
 msgstr "Verschlüsselungstyp (Schlüssel)"
 
-#: ../src/krb5ticketwatcher.cpp:1332
+#: ../src/krb5ticketwatcher.cpp:1368
 msgid "Ticket Encryption Type"
 msgstr "Verschlüsselungtyp (Ticket)"
 
-#: ../src/krb5ticketwatcher.cpp:1340 ../src/krb5ticketwatcher.cpp:1399
+#: ../src/krb5ticketwatcher.cpp:1376 ../src/krb5ticketwatcher.cpp:1435
 msgid "(none)"
 msgstr "(keine)"
 
-#: ../src/krb5ticketwatcher.cpp:1355
+#: ../src/krb5ticketwatcher.cpp:1391
 msgid "Addresses"
 msgstr "Adressen"
 
-#: ../src/krb5ticketwatcher.cpp:1376
+#: ../src/krb5ticketwatcher.cpp:1412
 msgid "Broken address (type %1 length %2)"
 msgstr "Ungültige Adresse (Typ %1 Länge %2)"
 
-#: ../src/krb5ticketwatcher.cpp:1395
+#: ../src/krb5ticketwatcher.cpp:1431
 msgid "Unknown address type %1"
 msgstr "Unbekannter Adresstyp %1"
 
@@ -234,7 +276,7 @@ msgstr "Kerberos Ticket Liste"
 
 #: ../src/mainwidget.cpp:111
 msgid "&Close"
-msgstr "&Schliessen"
+msgstr "&Schließen"
 
 #: ../src/mainwidget.cpp:113
 msgid "&Refresh"
@@ -288,3 +330,4 @@ msgstr "Passwort wiederholen:"
 #: ../src/pwdialog.cpp:233
 msgid "Kerberos Password Dialog"
 msgstr "Kerberos Passwort Dialog"
+

@@ -220,6 +220,27 @@ out:
 }
 
 int
+v5::destroyCcache(krb5_context kcontext)
+{
+	int code = 0;
+	krb5_ccache cache = NULL;
+	
+	code = krb5_cc_default(kcontext, &cache);
+	if (code)
+	{
+		return code;
+	}
+
+	code = krb5_cc_destroy (kcontext, cache);
+	if (code != 0  && code != KRB5_FCC_NOFILE)
+	{
+		return code;
+	}
+
+	return 0;
+}
+
+int
 v5::getCredForwardable(krb5_creds *creds)
 {
         return creds->ticket_flags & TKT_FLG_FORWARDABLE;

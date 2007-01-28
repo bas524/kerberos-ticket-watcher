@@ -42,6 +42,7 @@
 #include <qpixmap.h>
 #include <qsettings.h>
 #include <qsocket.h>
+#include <qmessagebox.h>
 
 #include <time.h>
 #include <string.h>
@@ -382,6 +383,9 @@ Ktw::createTrayMenu()
 	// Popup Menu item
 	trayMenu->insertItem(tr("Renew Ticket"),
 	                     this, SLOT(forceRenewCredential()));
+	// Popup Menu item
+	trayMenu->insertItem(tr("Destroy Ticket"),
+	                     this, SLOT(destroyCredential()));
 	trayMenu->insertSeparator();
 	// Popup Menu item
 	//trayMenu->insertItem(tr("Help"),
@@ -399,6 +403,29 @@ Ktw::forceRenewCredential()
 {
 	qDebug("forceRenewCredential called");
 	initWorkflow(1);
+}
+
+void
+Ktw::destroyCredential()
+{
+	if ( ! QMessageBox::question((MainWidget*)mainWidget(),
+	                             // title
+	                             tr("Destroy Kerberos Ticket Cache?"),
+	                             // message text
+	                             tr("Do you want to destroy the ticket cache?"),
+	                             tr("&Yes"), tr("&No"),
+	                             QString::null, 0, 1 ) )
+	{
+		int code = v5::destroyCcache(kcontext);
+		if(code)
+		{
+			QMessageBox::critical((MainWidget*)mainWidget(),
+			                      // title
+			                      tr("Error !"),
+			                      // message text
+			                      tr("Ticket cache cannot be destroyed."));
+		}
+	}
 }
 
 void
@@ -1140,6 +1167,8 @@ Ktw::buildCcacheInfos()
     QString errmsg;
     bool done = false;
 
+    ((MainWidget*)mainWidget())->ticketView->clear();
+    
     if ((code = krb5_cc_default(kcontext, &cache)))
     {
     	errmsg += "Error while getting default ccache";
@@ -1149,10 +1178,18 @@ Ktw::buildCcacheInfos()
     flags = 0;                          /* turns off OPENCLOSE mode */
     if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
     {
-    	errmsg += QString("Error while setting cache flags (ticket cache %1:%2)")
-    		.arg(krb5_cc_get_type(kcontext, cache))
-    		.arg(krb5_cc_get_name(kcontext, cache));
-    	
+    	if (code == KRB5_FCC_NOFILE)
+    	{
+    		errmsg += tr("No credentials cache found") + " (" + tr("Ticket cache: %1:%2")
+    			.arg(krb5_cc_get_type(kcontext, cache))
+    			.arg(krb5_cc_get_name(kcontext, cache)) + ")";
+    	}
+    	else
+    	{
+    		errmsg += tr("Error while setting cache flags") + " (" + tr("Ticket cache: %1:%2")
+    			.arg(krb5_cc_get_type(kcontext, cache))
+    			.arg(krb5_cc_get_name(kcontext, cache)) + ")";
+    	}
     	goto done;
     }
     if(kprincipal != NULL)
@@ -1177,7 +1214,6 @@ Ktw::buildCcacheInfos()
                                                       tr("Default principal: %3").arg(defname)+
                                                       QString("</b><br><br>")
                                                       );
-    ((MainWidget*)mainWidget())->ticketView->clear();
     
     if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
     {
