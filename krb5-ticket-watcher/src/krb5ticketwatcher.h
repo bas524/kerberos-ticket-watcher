@@ -60,6 +60,7 @@ signals:
 
 public slots:
     void forceRenewCredential();
+    void destroyCredential();
 	void initWorkflow(int type = 0);
 	void trayClicked(const QPoint &, int);
 	//void trayDoubleClicked();
