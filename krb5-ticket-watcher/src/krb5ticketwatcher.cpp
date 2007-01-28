@@ -390,6 +390,10 @@ Ktw::createTrayMenu()
 	// Popup Menu item
 	//trayMenu->insertItem(tr("Help"),
 	//                     this, SLOT(help()));
+
+	// Popup Menu item
+	trayMenu->insertItem(tr("Restore"),
+	                     this, SLOT(restore()));
 	// Popup Menu item
 	trayMenu->insertItem(tr("Quit"),
 	                     qApp, SLOT(quit()));
@@ -659,9 +663,15 @@ Ktw::trayClicked(const QPoint &, int)
 	}
 	else
 	{
-		reReadCache();
-		((MainWidget*)mainWidget())->show();
+		restore();
 	}
+}
+
+void
+Ktw::restore()
+{
+	reReadCache();
+	((MainWidget*)mainWidget())->show();
 }
 
 // public slots ------------------------------------------------------------- 
