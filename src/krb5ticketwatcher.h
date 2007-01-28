@@ -63,6 +63,7 @@ public slots:
     void destroyCredential();
 	void initWorkflow(int type = 0);
 	void trayClicked(const QPoint &, int);
+	void restore();
 	//void trayDoubleClicked();
 	//void dockActivated();
 	void kinit();
