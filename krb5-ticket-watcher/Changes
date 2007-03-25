@@ -1,5 +1,9 @@
 krb5-ticket-watcher
 
+2007-03-25:
+- use qt linguist for translations
+
+2007-01-28:
 - add "restore" to the menu 
 - add kdestroy functionality
 
