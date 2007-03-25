@@ -1,6 +1,6 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-APPVERSION  = 0.2.0
+APPVERSION  = 0.2.1
 
 HEADERS	+= src/trayicon.h \
            src/krb5ticketwatcher.h \
@@ -18,6 +18,8 @@ FORMS	= src/pwdialog.ui \
           src/pwchangedialog.ui \
           src/mainwidget.ui \
           src/kinitdialog.ui
+TRANSLATIONS = po/krb5-ticket-watcher.de.ts \
+               po/krb5-ticket-watcher.en.ts
 
 TARGET      = krb5-ticket-watcher 
 
@@ -28,7 +30,7 @@ LIBS    += -lkrb5 -lcom_err
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
 
-DISTFILES += po/*.po po/Makefile Changes News COPYING TODO krb5-ticket-watcher.desktop
+DISTFILES += po/*.ts Changes News COPYING TODO krb5-ticket-watcher.desktop
 
 SUBDIRS += src po
 
@@ -37,11 +39,11 @@ QMAKE_CLEAN += src/*~ krb5-ticket-watcher-$${APPVERSION}.tar.bz2 krb5-ticket-wat
 BZIP2 = bzip2
 
 pot.target = pot
-pot.commands = make -C po/ pot
+pot.commands = lupdate $(TARGET).pro
 pot.depends = $(UICIMPLS)
 
 qm.target = qm
-qm.commands = make -C po/ all
+qm.commands = lrelease $(TARGET).pro 
 
 dist-bzip2.target = dist-bzip2
 dist-bzip2.commands = @mkdir -p .tmp/krb5-ticket-watcher-$$APPVERSION && $(COPY_FILE) --parents $(SOURCES) $(HEADERS) $(FORMS) $(DIST) .tmp/krb5-ticket-watcher-$$APPVERSION/ && $(COPY_FILE) --parents src/mainwidget.ui.h .tmp/krb5-ticket-watcher-$$APPVERSION/ && $(COPY_FILE) --parents src/kinitdialog.ui.h .tmp/krb5-ticket-watcher-$$APPVERSION/ && ( cd `dirname .tmp/krb5-ticket-watcher-$$APPVERSION` && $(TAR) krb5-ticket-watcher-$${APPVERSION}.tar krb5-ticket-watcher-$$APPVERSION && $${BZIP2} krb5-ticket-watcher-$${APPVERSION}.tar ) && $(MOVE) `dirname .tmp/krb5-ticket-watcher-$$APPVERSION`/krb5-ticket-watcher-$${APPVERSION}.tar.bz2 . && $(DEL_FILE) -r .tmp/krb5-ticket-watcher-$$APPVERSION 

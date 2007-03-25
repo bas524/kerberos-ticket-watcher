@@ -1,5 +1,13 @@
 krb5-ticket-watcher
 
+Version 0.2.1:
+- use qt linguist for translations
+
+Version 0.2.0:
+- add "restore" to the menu
+- add kdestroy functionality
+- calculate renewtime from ticket if available
+
 Version 0.1.3:
 - new kinit dialog
 
