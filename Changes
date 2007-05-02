@@ -1,5 +1,8 @@
 krb5-ticket-watcher
 
+2007-05-02:
+- add "Name" key to desktop file
+
 2007-03-25:
 - use qt linguist for translations
 

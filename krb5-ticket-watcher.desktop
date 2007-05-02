@@ -7,5 +7,6 @@ MimeType=
 Terminal=false
 Icon=encrypted
 GenericName=Kerberos Ticket Watcher
+Name=Kerberos Ticket Watcher
 X-KDE-StartupNotify=false
 Categories=System;Network
