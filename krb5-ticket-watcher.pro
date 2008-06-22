@@ -68,7 +68,10 @@ desktop.files = krb5-ticket-watcher.desktop
 binary.path = $(DESTDIR)/usr/bin/
 binary.files = krb5-ticket-watcher
 
-INSTALLS += translations desktop documentation binary
+icon.path = $(DESTDIR)/usr/share/pixmaps/
+icon.files = krb5-ticket-watcher.png
+
+INSTALLS += translations desktop documentation icon binary
 
 #The following line was inserted by qt3to4
 QT += network  
