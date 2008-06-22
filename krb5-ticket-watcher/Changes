@@ -1,5 +1,8 @@
 krb5-ticket-watcher
 
+2008-06-22:
+- start porting to QT4
+
 2007-05-02:
 - add "Name" key to desktop file
 

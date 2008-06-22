@@ -1,19 +1,24 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-APPVERSION  = 0.2.1
+APPVERSION  = 0.9.0
+QT += qt3support
 
-HEADERS	+= src/trayicon.h \
-           src/krb5ticketwatcher.h \
+HEADERS	+= src/krb5ticketwatcher.h \
            src/TicketListItem.h \
-           src/v5.h
+           src/v5.h \
+           src/kinitdialog.h \
+           src/mainwidget.h \
+           src/pwdialog.h \
+           src/pwchangedialog.h 
 
 SOURCES	+= src/main.cpp \
-	src/trayicon.cpp \
-	src/trayicon_x11.cpp \
     src/krb5ticketwatcher.cpp \
     src/TicketListItem.cpp \
-    src/v5.cpp
+    src/v5.cpp  \
+    src/kinitdialog.cpp \
+    src/mainwidget.cpp
 
+#The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS	= src/pwdialog.ui \
           src/pwchangedialog.ui \
           src/mainwidget.ui \
@@ -25,7 +30,7 @@ TARGET      = krb5-ticket-watcher
 
 LIBS    += -lkrb5 -lcom_err
 
-#DEFINES += DEBUG
+DEFINES += DEBUG
 
 #POST_TARGETDEPS += pot qm
 POST_TARGETDEPS += qm
@@ -66,4 +71,9 @@ binary.path = $(DESTDIR)/usr/bin/
 binary.files = krb5-ticket-watcher
 
 INSTALLS += translations desktop documentation binary
+
+#The following line was inserted by qt3to4
+QT += network  
+#The following line was inserted by qt3to4
+#CONFIG += uic3
 

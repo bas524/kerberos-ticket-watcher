@@ -25,24 +25,28 @@
 #include <qcheckbox.h>
 #include <qcombobox.h>
 #include <qspinbox.h>
-#include <qpopupmenu.h>
-#include <qiconset.h>
+#include <q3popupmenu.h>
+#include <qicon.h>
 #include <qlabel.h>
 #include <qlineedit.h>
-#include <qtextbrowser.h>
-#include <qlistview.h>
-#include <qhbox.h>
+#include <q3textbrowser.h>
+#include <q3listview.h>
+#include <q3hbox.h>
 #include <qvariant.h>
-#include <qframe.h>
-#include <qprogressbar.h>
+#include <q3frame.h>
+#include <q3progressbar.h>
 #include <qlayout.h>
 #include <qtooltip.h>
-#include <qwhatsthis.h>
+#include <q3whatsthis.h>
 #include <qimage.h>
 #include <qpixmap.h>
 #include <qsettings.h>
-#include <qsocket.h>
+#include <q3socket.h>
 #include <qmessagebox.h>
+//Added by qt3to4:
+#include <QEvent>
+#include <QTime>
+#include <QCursor>
 
 #include <time.h>
 #include <string.h>
@@ -63,7 +67,6 @@ const int KeyPress = XKeyPress;
 #undef KeyPress
 #endif
 
-#include "trayicon.h"
 #include "krb5ticketwatcher.h"
 #include "v5.h"
 #include "mainwidget.h"
@@ -75,18 +78,6 @@ const int KeyPress = XKeyPress;
 #include <sys/types.h>
 #include <pwd.h>
 #include <et/com_err.h>
-
-
-// Atoms required for monitoring the freedesktop.org notification area
-static Atom manager_atom = 0;
-static Atom tray_selection_atom = 0;
-Window root_window = 0;
-Window tray_owner = None;
-
-//static Atom atom_KdeNetUserTime;
-static Atom kde_net_wm_user_time = 0;
-
-Time   qt_x_last_input_time = CurrentTime;
 
 static const unsigned char trayimage[] = { 
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
@@ -170,31 +161,6 @@ static const unsigned char trayimage[] = {
     0xce, 0xf1, 0x17, 0xbf, 0xc6, 0xb2, 0xcf, 0x76, 0x78, 0xf7, 0xa6, 0x00,
     0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82
 };
-
-void setTrayOwnerWindow(Display *dsp)
-{
-	/* This code is basically trying to mirror what happens in
-	 * eggtrayicon.c:egg_tray_icon_update_manager_window()
-	 */
-	// ignore events from the old tray owner
-	if (tray_owner != None)
-	{
-		XSelectInput(dsp, tray_owner, 0);
-	}
-	
-	// obtain the Window handle for the new tray owner
-	XGrabServer(dsp);
-	tray_owner = XGetSelectionOwner(dsp, tray_selection_atom);
-	
-	// we have to be able to spot DestroyNotify messages on the tray owner
-	if (tray_owner != None)
-	{
-		XSelectInput(dsp, tray_owner, StructureNotifyMask|PropertyChangeMask);
-	}
-	XUngrabServer(dsp);
-	XFlush(dsp);
-}
-
 
 
 Ktw::Ktw( int & argc, char ** argv )
@@ -288,57 +254,14 @@ Ktw::~Ktw()
 void
 Ktw::initTray()
 {
-	const int max = 20;
-	Atom* atoms[max];
-	char* names[max];
-	Atom atoms_return[max];
-	int n = 0;
-	
-	atoms[n] = &kde_net_wm_user_time;
-	names[n++] = (char *) "_NET_WM_USER_TIME";
-	atoms[n] = &manager_atom;
-	names[n++] = (char *) "MANAGER";
-	
-	Display *dsp = qt_xdisplay();
-	
-	XInternAtoms( dsp, names, n, false, atoms_return );
-	
-	for (int i = 0; i < n; i++ )
-		*atoms[i] = atoms_return[i];
-	
-	// get the selection type we'll use to locate the notification tray
-	char buf[32];
-	snprintf(buf, sizeof(buf),
-	         "_NET_SYSTEM_TRAY_S%d",
-	         XScreenNumberOfScreen( XDefaultScreenOfDisplay(dsp) ));
-	
-	tray_selection_atom = XInternAtom(dsp, buf, false);
-	
-	// make a note of the window handle for the root window
-	root_window = QApplication::desktop()->winId();
-	
-	XWindowAttributes attr;
-	
-	// this is actually futile, since Qt overrides it at some
-	// unknown point in the near future.
-	XGetWindowAttributes(dsp, root_window, &attr);
-	XSelectInput(dsp, root_window, attr.your_event_mask | StructureNotifyMask);
-	
-	setTrayOwnerWindow(dsp);
-	
 	QPixmap pix;
 	pix.loadFromData(trayimage, sizeof( trayimage ), "PNG");
-	tray = new TrayIcon(pix, "Watcher", trayMenu);
-	tray->setWMDock(false);
-	connect(tray, SIGNAL(clicked(const QPoint &, int)), SLOT(trayClicked(const QPoint &, int)));
-	//connect(tray, SIGNAL(doubleClicked(const QPoint &)), SLOT(trayDoubleClicked()));
-	//connect(tray, SIGNAL(closed()), SLOT(dockActivated()));
-	//connect(this, SIGNAL(trayOwnerDied()), SLOT(dockActivated()));
-	connect(this, SIGNAL(newTrayOwner()), tray, SLOT(newTrayOwner()));
-	connect(this, SIGNAL(trayOwnerDied()), tray, SLOT(hide()));
+	tray = new QSystemTrayIcon(QIcon(pix), this);
+	connect(tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+	        SLOT(trayClicked(QSystemTrayIcon::ActivationReason)));
 	setTrayToolTip("");
+	tray->setContextMenu ( trayMenu );
 	tray->show();
-	
 }
 
 // private ------------------------------------------------------------------
@@ -347,7 +270,7 @@ void
 Ktw::initMainWindow()
 {
 	MainWidget *mainWidget = new MainWidget();
-	connect(mainWidget->refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
+	connect(mainWidget, SIGNAL(refreshClicked()), this, SLOT(reReadCache()));
 	setMainWidget(mainWidget);
 }
 
@@ -360,8 +283,8 @@ Ktw::reReadCache()
 	
 	if(!ret.isEmpty())
 	{
-		qDebug("Error: %s", ret.data());
-		((MainWidget*)mainWidget())->commonLabel->setText("<qt><pre>" + ret + "</pre></qt>");
+		qDebug() << "Error: " << ret;
+		((MainWidget*)mainWidget())->setCommonLabel(ret);
 	}
 }
 
@@ -375,28 +298,49 @@ Ktw::createTrayMenu()
 		return;
 	}
 		
-	trayMenu = new QPopupMenu(0, "Kerberos5 Ticket Watcher");
+	trayMenu = new QMenu(mainWidget());
+	trayMenu->setTitle("Kerberos5 Ticket Watcher");
 
+	kinitAction = new QAction(tr("&New Ticket"), this);
+	kinitAction->setShortcut(tr("Ctrl+N"));
+	kinitAction->setStatusTip(tr("Create a new Ticket"));
+	connect(kinitAction, SIGNAL(triggered()), this, SLOT(kinit()));
+
+	renewAction = new QAction(tr("&Renew Ticket"), this);
+	renewAction->setShortcut(tr("Ctrl+R"));
+	renewAction->setStatusTip(tr("Renew the Ticket"));
+	connect(renewAction, SIGNAL(triggered()), this, SLOT(forceRenewCredential()));
+
+	destroyAction = new QAction(tr("&Destroy Ticket"), this);
+	destroyAction->setShortcut(tr("Ctrl+D"));
+	destroyAction->setStatusTip(tr("Destroy the Ticket"));
+	connect(destroyAction, SIGNAL(triggered()), this, SLOT(destroyCredential()));
+
+	restoreAction = new QAction(tr("Re&store"), this);
+	restoreAction->setShortcut(tr("Ctrl+S"));
+	restoreAction->setStatusTip(tr("Restore the Window"));
+	connect(restoreAction, SIGNAL(triggered()), this, SLOT(restore()));
+
+	quitAction = new QAction(tr("&Quit"), this);
+	quitAction->setShortcut(tr("Ctrl+Q"));
+	quitAction->setStatusTip(tr("Quit krb5TicketWatscher"));
+	connect(quitAction, SIGNAL(triggered()), this, SLOT(quit()));
+	
 	// Popup Menu item
-	trayMenu->insertItem(tr("New Ticket"),
-	                     this, SLOT(kinit()));
+	trayMenu->addAction(kinitAction);
 	// Popup Menu item
-	trayMenu->insertItem(tr("Renew Ticket"),
-	                     this, SLOT(forceRenewCredential()));
+	trayMenu->addAction(renewAction);
 	// Popup Menu item
-	trayMenu->insertItem(tr("Destroy Ticket"),
-	                     this, SLOT(destroyCredential()));
+	trayMenu->addAction(destroyAction);
 	trayMenu->insertSeparator();
 	// Popup Menu item
 	//trayMenu->insertItem(tr("Help"),
 	//                     this, SLOT(help()));
 
 	// Popup Menu item
-	trayMenu->insertItem(tr("Restore"),
-	                     this, SLOT(restore()));
+	trayMenu->addAction(restoreAction);
 	// Popup Menu item
-	trayMenu->insertItem(tr("Quit"),
-	                     qApp, SLOT(quit()));
+	trayMenu->addAction(quitAction);
 }
 
 
@@ -417,8 +361,7 @@ Ktw::destroyCredential()
 	                             tr("Destroy Kerberos Ticket Cache?"),
 	                             // message text
 	                             tr("Do you want to destroy the ticket cache?"),
-	                             tr("&Yes"), tr("&No"),
-	                             QString::null, 0, 1 ) )
+	                             QMessageBox::Yes| QMessageBox::No, QMessageBox::No ))
 	{
 		int code = v5::destroyCcache(kcontext);
 		if(code)
@@ -494,7 +437,7 @@ Ktw::setTrayToolTip(const QString& text)
 void
 Ktw::setTrayIcon(const QString &path)
 {
-	tray->setIcon(QPixmap(path));
+	tray->setIcon(QIcon(path));
 }
 
 
@@ -515,48 +458,53 @@ Ktw::kinit()
 
 	do
 	{
-		KinitDialog *dlg = new KinitDialog(mainWidget(), "kinitDialog");
+		KinitDialog *dlg = new KinitDialog(mainWidget(), "kinitDialog", true);
 
-		dlg->show();
+		//dlg->show();
 
-		dlg->errorLabel->setText(errorTxt);
-		dlg->userLineEdit->setText(getUserName());
-		dlg->realmComboBox->insertStringList(realmList);
-		dlg->passwordLineEdit->setFocus();
+		dlg->errorLabelSetText(errorTxt);
+		dlg->userLineEditSetText(getUserName());
+		dlg->realmComboBoxInsertStringList(realmList);
+		dlg->passwordLineEditSetFocus();
 		
-		dlg->forwardCheckBox->setChecked(forwardable);
-		dlg->proxyCheckBox->setChecked(proxiable);
+		dlg->forwardCheckBoxSetChecked(forwardable);
+		dlg->proxyCheckBoxSetChecked(proxiable);
 		
 
 		if(lifetime >= 0)
 		{
-			dlg->lifetimeSpinBox->setValue(lifetime);
-			dlg->lifetimeUnitComboBox->setCurrentText(lifetimeUnit);
+			dlg->lifetimeSpinBoxSetValue(lifetime);
+			dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
 		}
 		else
 		{
-			dlg->lifetimeSpinBox->setValue(0);
+			dlg->lifetimeSpinBoxSetValue(0);
 		}
 
 		if(renewtime >= 0)
 		{
-			dlg->renewtimeSpinBox->setValue(renewtime);
-			dlg->renewUnitComboBox->setCurrentText(renewtimeUnit);
-			dlg->renewCheckBox->setChecked(true);
+			dlg->renewtimeSpinBoxSetValue(renewtime);
+			dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
+			dlg->renewCheckBoxSetChecked(true);
 		}
 		else
 		{
-			dlg->renewCheckBox->setChecked(false);
+			dlg->renewCheckBoxSetChecked(false);
 		}
 
 		
 		int ret = dlg->exec();
+		delete dlg;
 		if(ret == QDialog::Rejected)
+		{
+			qDebug("rejected");
 			return;
+		}
+		qDebug("accepted");
 
 		errorTxt = "";
 
-		QString principal = dlg->userLineEdit->text() + "@" + dlg->realmComboBox->currentText();
+		QString principal = dlg->userLineEditText() + "@" + dlg->realmComboBoxCurrentText();
 
 		krb5_free_principal(kcontext, kprincipal);
 		retval = krb5_parse_name(kcontext, principal,
@@ -569,27 +517,27 @@ Ktw::kinit()
 			continue;
 		}
 		
-		forwardable = dlg->forwardCheckBox->isChecked();
-		proxiable = dlg->proxyCheckBox->isChecked();
+		forwardable = dlg->forwardCheckBoxIsChecked();
+		proxiable = dlg->proxyCheckBoxIsChecked();
 
-		if(dlg->lifetimeSpinBox->value() >= 0)
+		if(dlg->lifetimeSpinBoxValue() >= 0)
 		{
-			lifetime = dlg->lifetimeSpinBox->value();
-			lifetimeUnit = dlg->lifetimeUnitComboBox->currentText();
+			lifetime = dlg->lifetimeSpinBoxValue();
+			lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
 		}
 		else
 		{
 			lifetime = 0;
 		}
 
-		if(!dlg->renewCheckBox->isChecked())
+		if(!dlg->renewCheckBoxIsChecked())
 		{
 			renewtime = -1;
 		}
-		else if(dlg->renewtimeSpinBox->value() >= 0)
+		else if(dlg->renewtimeSpinBoxValue() >= 0)
 		{
-			renewtime = dlg->renewtimeSpinBox->value();
-			renewtimeUnit = dlg->renewUnitComboBox->currentText();
+			renewtime = dlg->renewtimeSpinBoxValue();
+			renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
 		}
 		else
 		{
@@ -599,7 +547,7 @@ Ktw::kinit()
 		setOptions(kcontext, &opts);
 		
 		retval = v5::initCredential(kcontext, kprincipal,
-		                            &opts, dlg->passwordLineEdit->text(),
+		                            &opts, dlg->passwordLineEditText(),
 		                            &tgtEndtime);
 		if (retval)
 		{
@@ -615,7 +563,7 @@ Ktw::kinit()
 					break;
 				case KRB5KDC_ERR_KEY_EXP:
                     /* password expired */
-					retval = changePassword(dlg->passwordLineEdit->text());
+					retval = changePassword(dlg->passwordLineEditText());
 					if(!retval)
 						ok = false;
 					
@@ -653,17 +601,24 @@ Ktw::kinit()
 // public slots ------------------------------------------------------------- 
 
 void
-Ktw::trayClicked(const QPoint &, int)
+Ktw::trayClicked(QSystemTrayIcon::ActivationReason reason )
 {
-	qDebug("tray clicked");
-
-	if(((MainWidget*)mainWidget())->isVisible())
+	if(reason == QSystemTrayIcon::Context)
 	{
-		((MainWidget*)mainWidget())->hide();
+		trayMenu->exec(QCursor::pos());
 	}
 	else
 	{
-		restore();
+		qDebug("tray clicked");
+
+		if(((MainWidget*)mainWidget())->isVisible())
+		{
+			((MainWidget*)mainWidget())->hide();
+		}
+		else
+		{
+			restore();
+		}
 	}
 }
 
@@ -675,103 +630,6 @@ Ktw::restore()
 }
 
 // public slots ------------------------------------------------------------- 
-
-/*
-  void
-  Ktw::trayDoubleClicked()
-  {
-  qDebug("tray double clicked");
-  }
-*/
-
-// public slots ------------------------------------------------------------- 
-
-/*
-  void
-  Ktw::dockActivated()
-  {
-  qDebug("dockActivated");
-  }
-*/
-
-// ---------------------------------------------------------------------------
-
-bool
-Ktw::notify(QObject *receiver, QEvent *event)
-{
-	if( event->type() == QEvent::Show && receiver->isWidgetType())
-	{
-		QWidget* w = static_cast< QWidget* >( receiver );
-		if( w->isTopLevel() && qt_x_last_input_time != CurrentTime ) // CurrentTime means no input event yet
-			XChangeProperty( qt_xdisplay(), w->winId(), kde_net_wm_user_time, XA_CARDINAL,
-			                32, PropModeReplace, (unsigned char*)&qt_x_last_input_time, 1 );
-	}
-	if( event->type() == QEvent::Hide && receiver->isWidgetType())
-	{
-		QWidget* w = static_cast< QWidget* >( receiver );
-		if( w->isTopLevel() && w->winId() != 0 )
-			XDeleteProperty( qt_xdisplay(), w->winId(), kde_net_wm_user_time );
-	}
-	return QApplication::notify(receiver, event);
-}
-
-// ---------------------------------------------------------------------------
-
-bool
-Ktw::x11EventFilter( XEvent *_event )
-{
-	switch ( _event->type ) {
-		case ClientMessage:
-			if (_event->xclient.window == root_window && _event->xclient.message_type == manager_atom)
-			{
-                // A new notification area application has
-                // announced its presence
-				setTrayOwnerWindow(_event->xclient.display);
-				newTrayOwner();
-				break;
-			}
-		case DestroyNotify:
-			if (_event->xdestroywindow.event == tray_owner)
-			{
-				// there is now no known notification area.
-				// We're still looking out for the MANAGER
-				// message sent to the root window, at which
-				// point we'll have another look to see
-				// whether a notification area is available.
-				tray_owner = 0;
-				trayOwnerDied();
-				break;
-			}
-			
-		case ButtonPress:
-		case XKeyPress:
-			{
-				if( _event->type == ButtonPress )
-					qt_x_last_input_time = _event->xbutton.time;
-				else // KeyPress
-					qt_x_last_input_time = _event->xkey.time;
-				QWidget *w = activeWindow();
-				if( w ) {
-					XChangeProperty( qt_xdisplay(), w->winId(), kde_net_wm_user_time, XA_CARDINAL,
-					                32, PropModeReplace, (unsigned char*)&qt_x_last_input_time, 1 );
-					/*timeval tv;
-					  gettimeofday( &tv, NULL );
-					  unsigned long now = tv.tv_sec * 10 + tv.tv_usec / 100000;
-					  XChangeProperty(qt_xdisplay(), w->winId(),
-					  atom_KdeNetUserTime, XA_CARDINAL,
-					  32, PropModeReplace, (unsigned char *)&now, 1);*/
-				}
-				break;
-			}
-			
-		default:
-			break;
-	}
-	
-	// process the event normally
-	return false;
-}
-
 
 int
 Ktw::reinitCredential(const QString& password)
@@ -877,12 +735,12 @@ Ktw::passwordDialog(const QString& errorText) const
 	
 	PWDialog pwd(NULL, "pwdialog", true,
 	             Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
-	pwd.krb5prompt->setText(tr("Please enter the Kerberos password for <b>%1</b>").arg(princ));
-	pwd.promptEdit->setEchoMode(QLineEdit::Password);
+	pwd.krb5promptSetText(tr("Please enter the Kerberos password for <b>%1</b>").arg(princ));
+	pwd.promptEditSetEchoMode(QLineEdit::Password);
 	
 	if(!errorText.isEmpty())
 	{
-		pwd.errorLabel->setText(errorText);
+		pwd.errorLabelSetText(errorText);
 	}
 
 	krb5_free_unparsed_name(kcontext, princ);
@@ -891,7 +749,7 @@ Ktw::passwordDialog(const QString& errorText) const
 	if(code == QDialog::Rejected)
 		return QString::null;
 	
-	return pwd.promptEdit->text();
+	return pwd.promptEditText();
 }
 
 
@@ -934,7 +792,7 @@ Ktw::changePassword(const QString &oldpw)
 				return -1;
 		}
 		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-		                                      (char*)oldPasswd.ascii(), NULL, NULL,
+		                                      oldPasswd.toAscii().data(), NULL, NULL,
 		                                      0, "kadmin/changepw", &opts);
 		
 		switch(retval)
@@ -974,19 +832,19 @@ Ktw::changePassword(const QString &oldpw)
 	{
 		PWChangeDialog pwd(NULL, "pwchangedialog", true,
 		                   Qt::WStyle_DialogBorder | Qt::WStyle_StaysOnTop);
-		pwd.titleTextLabel->setText(tr("Change the password for principal <b>%1</b>").arg(principal));
+		pwd.titleTextLabelSetText(tr("Change the password for principal <b>%1</b>").arg(principal));
 		
 		if(!pwEqual)
 		{
-			pwd.errorLabel->setText(tr("The passwords are not equal"));
+			pwd.errorLabelSetText(tr("The passwords are not equal"));
 		}
 		
 		int code = pwd.exec();
 		
 		if(code == QDialog::Accepted)
 		{
-			p1 = pwd.pwEdit1->text();
-			p2 = pwd.pwEdit2->text();
+			p1 = pwd.pwEdit1Text();
+			p2 = pwd.pwEdit2Text();
 
 			if(p1 != p2)
 			{
@@ -1177,7 +1035,7 @@ Ktw::buildCcacheInfos()
     QString errmsg;
     bool done = false;
 
-    ((MainWidget*)mainWidget())->ticketView->clear();
+    ((MainWidget*)mainWidget())->ticketViewClear();
     
     if ((code = krb5_cc_default(kcontext, &cache)))
     {
@@ -1216,14 +1074,14 @@ Ktw::buildCcacheInfos()
     	goto done;
     }
 
-    ((MainWidget*)mainWidget())->commonLabel->setText(QString("<qt><b>")+
-                                                      tr("Ticket cache: %1:%2")
-                                                      .arg(krb5_cc_get_type(kcontext, cache))
-                                                      .arg(krb5_cc_get_name(kcontext, cache)) +
-                                                      QString("</b><br><b>")+
-                                                      tr("Default principal: %3").arg(defname)+
-                                                      QString("</b><br><br>")
-                                                      );
+    ((MainWidget*)mainWidget())->setCommonLabel(QString("<qt><b>")+
+                                                tr("Ticket cache: %1:%2")
+                                                .arg(krb5_cc_get_type(kcontext, cache))
+                                                .arg(krb5_cc_get_name(kcontext, cache)) +
+                                                QString("</b><br><b>")+
+                                                tr("Default principal: %3").arg(defname)+
+                                                QString("</b><br><br>")
+                                                );
     
     if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
     {
@@ -1259,7 +1117,7 @@ Ktw::buildCcacheInfos()
     	goto done;
     }
 
-    ((MainWidget*)mainWidget())->ticketView->firstChild()->setOpen(true);
+    ((MainWidget*)mainWidget())->ticketViewFirstChildSetOpen(true);
     
     done = true;
     
@@ -1286,8 +1144,8 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	krb5_error_code retval;
 	krb5_ticket *tkt;
 	char *name, *sname;
-	QListView *lv = ((MainWidget*)mainWidget())->ticketView;
-	QListViewItem *last = NULL;
+	Q3ListView *lv = ((MainWidget*)mainWidget())->getTicketView();
+	Q3ListViewItem *last = NULL;
 	
 	lv->setSorting(-1);
 	
@@ -1308,7 +1166,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	QString n = QString(sname) +
 		((strcmp(name, defname))? tr(" for client %1").arg(name):QString());
 
-	QListViewItem *after = 0;
+	Q3ListViewItem *after = 0;
 	if( (after = lv->lastItem()) != 0)
 	{
 		if(after->depth() > 0)
@@ -1326,13 +1184,13 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	                                         tr("Service principal"), n,
 	                                         time.addSecs(expires).toString());
 
-	last = new QListViewItem(lvi, tr("Valid starting"), printtime(cred->times.starttime));
-	last = new QListViewItem(lvi, last,
+	last = new Q3ListViewItem(lvi, tr("Valid starting"), printtime(cred->times.starttime));
+	last = new Q3ListViewItem(lvi, last,
 	                         tr("Expires"), printtime(cred->times.endtime));
 
 	if(cred->times.renew_till)
 	{
-		last = new QListViewItem(lvi, last,
+		last = new Q3ListViewItem(lvi, last,
 		                         tr("Renew until"), printtime(cred->times.renew_till));
 	}
 	
@@ -1366,15 +1224,15 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	if (v5::getCredAnonymous(cred) != 0)
 		tFlags += 'a';
 	
-	last = new QListViewItem(lvi, last,
+	last = new Q3ListViewItem(lvi, last,
 	                         tr("Ticket flags"), tFlags);
 
 	retval = krb5_decode_ticket(&cred->ticket, &tkt);
 	if(!retval)
 	{
-		last = new QListViewItem(lvi, last,
+		last = new Q3ListViewItem(lvi, last,
 		                         tr("Key Encryption Type"), v5::etype2String(cred->keyblock.enctype));
-		last = new QListViewItem(lvi, last,
+		last = new Q3ListViewItem(lvi, last,
 		                         tr("Ticket Encryption Type" ), v5::etype2String(tkt->enc_part.enctype));
 	}
 	if (tkt != NULL)
@@ -1397,7 +1255,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 			addresses += oneAddr(cred->addresses[i]);
 		}
 	}
-	last = new QListViewItem(lvi, last,
+	last = new Q3ListViewItem(lvi, last,
 	                         tr("Addresses" ), addresses);
 	
 	krb5_free_unparsed_name(kcontext, name);
