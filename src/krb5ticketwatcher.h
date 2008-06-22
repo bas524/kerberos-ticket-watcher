@@ -28,18 +28,25 @@
 #include <qmap.h>
 #include <qstring.h>
 #include <qthread.h>
+//Added by qt3to4:
+#include <Q3GridLayout>
+#include <QEvent>
+#include <Q3HBoxLayout>
+#include <QLabel>
+#include <Q3PopupMenu>
+#include <QSystemTrayIcon>
 
 #define KRB5_PRIVATE 1
 #include <krb5.h>
 
-class QGridLayout;
-class QHBoxLayout;
+class Q3GridLayout;
+class Q3HBoxLayout;
 class QLabel;
 class QPushButton;
 class QPopupMenu;
-class TrayIcon;
+class QSystemTrayIcon;
 class MainWidget;
-
+class QAction;
 
 class Ktw : public QApplication
 {
@@ -48,21 +55,19 @@ class Ktw : public QApplication
 public:
 	Ktw( int & argc, char ** argv );
 	~Ktw();
-	bool x11EventFilter( XEvent *_event );
-	bool notify(QObject *receiver, QEvent *event);
 
 	enum reqAction {none, renew, reinit};
 	
-	
-signals:
-	void newTrayOwner();
-	void trayOwnerDied();
-
+	/*	
+	  	signals:
+	  	void newTrayOwner();
+	  	void trayOwnerDied();
+	*/
 public slots:
     void forceRenewCredential();
     void destroyCredential();
 	void initWorkflow(int type = 0);
-	void trayClicked(const QPoint &, int);
+	void trayClicked(QSystemTrayIcon::ActivationReason reason);
 	void restore();
 	//void trayDoubleClicked();
 	//void dockActivated();
@@ -100,9 +105,15 @@ private:
 	void
 	setOptions(krb5_context, krb5_get_init_creds_opt *opts);
 	
-	TrayIcon     *tray;
-	QPopupMenu   *trayMenu;
-	
+	QSystemTrayIcon *tray;
+	QMenu           *trayMenu;
+
+	QAction         *kinitAction;
+	QAction         *renewAction;
+	QAction         *destroyAction;
+	QAction         *restoreAction;
+	QAction         *quitAction;
+		
 	QTimer        waitTimer;
 	QTranslator   translator;
 

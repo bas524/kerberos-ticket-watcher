@@ -33,7 +33,7 @@ TicketListItem::paintCell(QPainter *p, const QColorGroup &cg, int column, int wi
 	else
 		_cg.setColor( QColorGroup::Base, Qt::green );
 	
-	QListViewItem::paintCell( p, _cg, column, width, align);
+	Q3ListViewItem::paintCell( p, _cg, column, width, align);
 	
 	_cg.setColor( QColorGroup::Base, c );
 };

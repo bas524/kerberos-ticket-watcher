@@ -331,7 +331,7 @@ v5::getNow(krb5_context kcontext)
 	int e = krb5_timeofday(kcontext, &now);
 	if(e != 0)
 	{
-		warning("Cannot get current time: %s", strerror(e));
+		qWarning("Cannot get current time: %s", strerror(e));
 		return 0;
 	}
 	return now;

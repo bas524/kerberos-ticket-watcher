@@ -45,6 +45,15 @@ void myMessageOutput( QtMsgType type, const char *msg )
 		case QtFatalMsg:
 			fprintf( stderr, "Fatal: %s\n", msg );
 			abort();                    // deliberately core dump
+			break;
+		case QtCriticalMsg:
+			fprintf( stderr, "Critical: %s\n", msg );
+			break;
+			/*
+			  case QtSystemMsg:
+			  fprintf( stderr, "System: %s\n", msg );
+			  break;
+			*/
 	}
 }
 
@@ -52,6 +61,7 @@ int main( int argc, char **argv )
 {
 	qInstallMsgHandler( myMessageOutput );
 	Ktw w( argc, argv );
+        QApplication::setQuitOnLastWindowClosed(false);
 	//w.setGeometry( 100, 100, 200, 120 );
 	//a.setMainWidget( &w );
 	//w.show();

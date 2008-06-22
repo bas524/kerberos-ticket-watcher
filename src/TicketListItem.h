@@ -22,38 +22,38 @@
 #define  TICKET_LIST_ITEM_H
 
 #include <qstring.h>
-#include <qlistview.h>
+#include <q3listview.h>
 #include <krb5.h>
 
-class TicketListItem : public QListViewItem
+class TicketListItem : public Q3ListViewItem
 {
 	public:
-	TicketListItem( QListView * parent )
-		: QListViewItem(parent),
+	TicketListItem( Q3ListView * parent )
+		: Q3ListViewItem(parent),
 		  exp(-1)
 	{};
 	
 	TicketListItem( TicketListItem * parent )
-		: QListViewItem(parent),
+		: Q3ListViewItem(parent),
 		  exp(-1)
 	{};
 
-	TicketListItem( TicketListItem * parent, QListViewItem * after )
-		: QListViewItem(parent, after),
+	TicketListItem( TicketListItem * parent, Q3ListViewItem * after )
+		: Q3ListViewItem(parent, after),
 		  exp(-1)
 	{};
 
-	TicketListItem( QListView * parent, QListViewItem * after )
-		: QListViewItem(parent, after),
+	TicketListItem( Q3ListView * parent, Q3ListViewItem * after )
+		: Q3ListViewItem(parent, after),
 		  exp(-1)
 	{};
 
-	TicketListItem(QListView * parent,
+	TicketListItem(Q3ListView * parent,
 	               QString label1, QString label2 = QString::null, QString label3 = QString::null,
 	               QString label4 = QString::null, QString label5 = QString::null,
 	               QString label6 = QString::null, QString label7 = QString::null,
 	               QString label8 = QString::null )
-		: QListViewItem(parent, label1, label2, label3, label4, label5, label6, label7, label8),
+		: Q3ListViewItem(parent, label1, label2, label3, label4, label5, label6, label7, label8),
 		  exp(-1)
 	{};
 
@@ -62,25 +62,25 @@ class TicketListItem : public QListViewItem
 	               QString label4 = QString::null, QString label5 = QString::null,
 	               QString label6 = QString::null, QString label7 = QString::null,
 	               QString label8 = QString::null )
-		: QListViewItem(parent, label1, label2, label3, label4, label5, label6, label7, label8),
+		: Q3ListViewItem(parent, label1, label2, label3, label4, label5, label6, label7, label8),
 		  exp(-1)
 	{};
 		
-	TicketListItem(QListView * parent, QListViewItem * after, krb5_timestamp expires,
+	TicketListItem(Q3ListView * parent, Q3ListViewItem * after, krb5_timestamp expires,
 	               QString label1, QString label2 = QString::null, QString label3 = QString::null,
 	               QString label4 = QString::null, QString label5 = QString::null,
 	               QString label6 = QString::null, QString label7 = QString::null,
 	               QString label8 = QString::null )
-		: QListViewItem(parent, after, label1, label2, label3, label4, label5, label6, label7, label8),
+		: Q3ListViewItem(parent, after, label1, label2, label3, label4, label5, label6, label7, label8),
 		  exp(expires)
 	{};
 
-	TicketListItem(TicketListItem * parent, QListViewItem * after,
+	TicketListItem(TicketListItem * parent, Q3ListViewItem * after,
 	               QString label1, QString label2 = QString::null, QString label3 = QString::null,
 	               QString label4 = QString::null, QString label5 = QString::null,
 	               QString label6 = QString::null, QString label7 = QString::null,
 	               QString label8 = QString::null )
-		: QListViewItem(parent, after, label1, label2, label3, label4, label5, label6, label7, label8),
+		: Q3ListViewItem(parent, after, label1, label2, label3, label4, label5, label6, label7, label8),
 		  exp(-1)
 	{};
 
