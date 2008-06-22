@@ -18,7 +18,7 @@
  *
  */
 
-#include <qapplication.h>
+#include <QCoreApplication>
 #include <qtranslator.h>
 #include <qtextcodec.h>
 #include <qpushbutton.h>
@@ -52,24 +52,8 @@
 #include <string.h>
 #include <sys/time.h>
 
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
-#include <X11/Xatom.h>
-#include <X11/SM/SMlib.h>
-
-#ifdef KeyPress
-#ifndef FIXX11H_KeyPress
-#define FIXX11H_KeyPress
-const int XKeyPress = KeyPress;
-#undef KeyPress
-const int KeyPress = XKeyPress;
-#endif
-#undef KeyPress
-#endif
-
 #include "krb5ticketwatcher.h"
 #include "v5.h"
-#include "mainwidget.h"
 #include "pwdialog.h"
 #include "pwchangedialog.h"
 #include "kinitdialog.h"
@@ -163,8 +147,8 @@ static const unsigned char trayimage[] = {
 };
 
 
-Ktw::Ktw( int & argc, char ** argv )
-	: QApplication( argc, argv )
+Ktw::Ktw( int & argc, char ** argv, QWidget* parent, Qt::WindowFlags fl )
+	: QWidget( parent, fl )
 	, tray(0)
 	, trayMenu(0)
 	, waitTimer()
@@ -189,7 +173,7 @@ Ktw::Ktw( int & argc, char ** argv )
 	
 	if(ok)
 	{
-		installTranslator( &translator );
+		QCoreApplication::installTranslator( &translator );
 		qDebug("load translation successfully");
 	}
 	else
@@ -269,9 +253,9 @@ Ktw::initTray()
 void
 Ktw::initMainWindow()
 {
-	MainWidget *mainWidget = new MainWidget();
-	connect(mainWidget, SIGNAL(refreshClicked()), this, SLOT(reReadCache()));
-	setMainWidget(mainWidget);
+	setupUi(this);
+
+	connect(refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
 }
 
 // public slot --------------------------------------------------------------
@@ -284,7 +268,7 @@ Ktw::reReadCache()
 	if(!ret.isEmpty())
 	{
 		qDebug() << "Error: " << ret;
-		((MainWidget*)mainWidget())->setCommonLabel(ret);
+		commonLabel->setText("<qt><pre>" + ret + "</pre></qt>");
 	}
 }
 
@@ -298,7 +282,7 @@ Ktw::createTrayMenu()
 		return;
 	}
 		
-	trayMenu = new QMenu(mainWidget());
+	trayMenu = new QMenu(this);
 	trayMenu->setTitle("Kerberos5 Ticket Watcher");
 
 	kinitAction = new QAction(tr("&New Ticket"), this);
@@ -324,7 +308,7 @@ Ktw::createTrayMenu()
 	quitAction = new QAction(tr("&Quit"), this);
 	quitAction->setShortcut(tr("Ctrl+Q"));
 	quitAction->setStatusTip(tr("Quit krb5TicketWatscher"));
-	connect(quitAction, SIGNAL(triggered()), this, SLOT(quit()));
+	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 	
 	// Popup Menu item
 	trayMenu->addAction(kinitAction);
@@ -356,7 +340,7 @@ Ktw::forceRenewCredential()
 void
 Ktw::destroyCredential()
 {
-	if ( ! QMessageBox::question((MainWidget*)mainWidget(),
+	if ( ! QMessageBox::question(this,
 	                             // title
 	                             tr("Destroy Kerberos Ticket Cache?"),
 	                             // message text
@@ -366,7 +350,7 @@ Ktw::destroyCredential()
 		int code = v5::destroyCcache(kcontext);
 		if(code)
 		{
-			QMessageBox::critical((MainWidget*)mainWidget(),
+			QMessageBox::critical(this,
 			                      // title
 			                      tr("Error !"),
 			                      // message text
@@ -458,7 +442,7 @@ Ktw::kinit()
 
 	do
 	{
-		KinitDialog *dlg = new KinitDialog(mainWidget(), "kinitDialog", true);
+		KinitDialog *dlg = new KinitDialog(this, "kinitDialog", true);
 
 		//dlg->show();
 
@@ -611,9 +595,9 @@ Ktw::trayClicked(QSystemTrayIcon::ActivationReason reason )
 	{
 		qDebug("tray clicked");
 
-		if(((MainWidget*)mainWidget())->isVisible())
+		if(isVisible())
 		{
-			((MainWidget*)mainWidget())->hide();
+			hide();
 		}
 		else
 		{
@@ -626,7 +610,7 @@ void
 Ktw::restore()
 {
 	reReadCache();
-	((MainWidget*)mainWidget())->show();
+	show();
 }
 
 // public slots ------------------------------------------------------------- 
@@ -1035,7 +1019,7 @@ Ktw::buildCcacheInfos()
     QString errmsg;
     bool done = false;
 
-    ((MainWidget*)mainWidget())->ticketViewClear();
+    ticketView->clear();
     
     if ((code = krb5_cc_default(kcontext, &cache)))
     {
@@ -1074,14 +1058,14 @@ Ktw::buildCcacheInfos()
     	goto done;
     }
 
-    ((MainWidget*)mainWidget())->setCommonLabel(QString("<qt><b>")+
-                                                tr("Ticket cache: %1:%2")
-                                                .arg(krb5_cc_get_type(kcontext, cache))
-                                                .arg(krb5_cc_get_name(kcontext, cache)) +
-                                                QString("</b><br><b>")+
-                                                tr("Default principal: %3").arg(defname)+
-                                                QString("</b><br><br>")
-                                                );
+    commonLabel->setText(QString("<qt><b>")+
+                         tr("Ticket cache: %1:%2")
+                         .arg(krb5_cc_get_type(kcontext, cache))
+                         .arg(krb5_cc_get_name(kcontext, cache)) +
+                         QString("</b><br><b>")+
+                         tr("Default principal: %3").arg(defname)+
+                         QString("</b><br><br>")
+                         );
     
     if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
     {
@@ -1117,7 +1101,7 @@ Ktw::buildCcacheInfos()
     	goto done;
     }
 
-    ((MainWidget*)mainWidget())->ticketViewFirstChildSetOpen(true);
+    ticketView->firstChild()->setOpen(true);
     
     done = true;
     
@@ -1144,7 +1128,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	krb5_error_code retval;
 	krb5_ticket *tkt;
 	char *name, *sname;
-	Q3ListView *lv = ((MainWidget*)mainWidget())->getTicketView();
+	Q3ListView *lv = ticketView;
 	Q3ListViewItem *last = NULL;
 	
 	lv->setSorting(-1);

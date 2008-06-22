@@ -27,6 +27,7 @@
  *
  */
 
+#include <QtGui>
 #include <qapplication.h>
 
 #include "krb5ticketwatcher.h"
@@ -60,11 +61,22 @@ void myMessageOutput( QtMsgType type, const char *msg )
 int main( int argc, char **argv )
 {
 	qInstallMsgHandler( myMessageOutput );
+
+	QApplication app(argc, argv);
+
+	if (!QSystemTrayIcon::isSystemTrayAvailable())
+	{
+		QMessageBox::critical(0, QObject::tr("Systray"),
+		                      QObject::tr("I couldn't detect any system tray "
+		                                  "on this system."));
+		return 1;
+	}
+	QApplication::setQuitOnLastWindowClosed(false);
+
 	Ktw w( argc, argv );
-        QApplication::setQuitOnLastWindowClosed(false);
 	//w.setGeometry( 100, 100, 200, 120 );
 	//a.setMainWidget( &w );
 	//w.show();
 	w.initWorkflow();
-	return w.exec();
+	return app.exec();
 }
