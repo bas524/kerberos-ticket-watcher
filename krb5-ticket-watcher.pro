@@ -7,16 +7,14 @@ HEADERS	+= src/krb5ticketwatcher.h \
            src/TicketListItem.h \
            src/v5.h \
            src/kinitdialog.h \
-           src/mainwidget.h \
            src/pwdialog.h \
            src/pwchangedialog.h 
 
-SOURCES	+= src/main.cpp \
-    src/krb5ticketwatcher.cpp \
-    src/TicketListItem.cpp \
-    src/v5.cpp  \
-    src/kinitdialog.cpp \
-    src/mainwidget.cpp
+SOURCES	+= src/main.cpp  \
+           src/krb5ticketwatcher.cpp \
+           src/TicketListItem.cpp \
+           src/v5.cpp  \
+           src/kinitdialog.cpp
 
 #The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS	= src/pwdialog.ui \

@@ -39,40 +39,34 @@
 #define KRB5_PRIVATE 1
 #include <krb5.h>
 
+#include "ui_mainwidget.h"
+
 class Q3GridLayout;
 class Q3HBoxLayout;
 class QLabel;
 class QPushButton;
 class QPopupMenu;
 class QSystemTrayIcon;
-class MainWidget;
 class QAction;
 
-class Ktw : public QApplication
+class Ktw : public QWidget, private Ui::MainWidget
 {
 	Q_OBJECT
 	
 public:
-	Ktw( int & argc, char ** argv );
+	Ktw(int & argc, char ** argv,
+	    QWidget* parent = 0, Qt::WindowFlags fl = 0  );
 	~Ktw();
-
+	
 	enum reqAction {none, renew, reinit};
 	
-	/*	
-	  	signals:
-	  	void newTrayOwner();
-	  	void trayOwnerDied();
-	*/
 public slots:
     void forceRenewCredential();
     void destroyCredential();
 	void initWorkflow(int type = 0);
 	void trayClicked(QSystemTrayIcon::ActivationReason reason);
 	void restore();
-	//void trayDoubleClicked();
-	//void dockActivated();
 	void kinit();
-	//void help();
 	void setTrayToolTip(const QString& text);
 	void setTrayIcon(const QString&);
 	void reReadCache();
