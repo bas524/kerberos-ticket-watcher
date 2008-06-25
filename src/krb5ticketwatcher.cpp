@@ -340,12 +340,12 @@ Ktw::forceRenewCredential()
 void
 Ktw::destroyCredential()
 {
-	if ( ! QMessageBox::question(this,
-	                             // title
-	                             tr("Destroy Kerberos Ticket Cache?"),
-	                             // message text
-	                             tr("Do you want to destroy the ticket cache?"),
-	                             QMessageBox::Yes| QMessageBox::No, QMessageBox::No ))
+	if ( QMessageBox::Yes == QMessageBox::question(this,
+												   // title
+												   tr("Destroy Kerberos Ticket Cache?"),
+												   // message text
+												   tr("Do you want to destroy the ticket cache?"),
+												   QMessageBox::Yes| QMessageBox::No, QMessageBox::No ))
 	{
 		int code = v5::destroyCcache(kcontext);
 		if(code)
@@ -356,6 +356,10 @@ Ktw::destroyCredential()
 			                      // message text
 			                      tr("Ticket cache cannot be destroyed."));
 		}
+	}
+	else
+	{
+		qDebug("Destroy Kerberos Ticket Cache? => No");
 	}
 }
 
@@ -478,7 +482,6 @@ Ktw::kinit()
 
 		
 		int ret = dlg->exec();
-		delete dlg;
 		if(ret == QDialog::Rejected)
 		{
 			qDebug("rejected");
