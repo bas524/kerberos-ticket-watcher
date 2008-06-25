@@ -224,6 +224,8 @@ v5::destroyCcache(krb5_context kcontext)
 {
 	int code = 0;
 	krb5_ccache cache = NULL;
+
+	qDebug("destroyCcache called");
 	
 	code = krb5_cc_default(kcontext, &cache);
 	if (code)
