@@ -1,6 +1,6 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-VERSION  = 0.9.0
+VERSION  = 0.9.1
 QT += qt3support
 
 HEADERS	+= src/krb5ticketwatcher.h \
