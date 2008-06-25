@@ -19,15 +19,11 @@ KinitDialog::KinitDialog( QWidget* parent, const char* name,
 	setModal(modal);
 	setName(name);
 	setupUi(this);
-}
-
-KinitDialog::~KinitDialog() {}
-
-void KinitDialog::init()
-{
     changeDetailsState(QCheckBox::Off);
     changeRenewState(QCheckBox::On);
 }
+
+KinitDialog::~KinitDialog() {}
 
 void KinitDialog::changeDetailsState( int state )
 {
