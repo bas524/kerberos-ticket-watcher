@@ -296,6 +296,11 @@ Ktw::createTrayMenu()
 	renewAction->setStatusTip(tr("Renew the Ticket"));
 	connect(renewAction, SIGNAL(triggered()), this, SLOT(forceRenewCredential()));
 
+	cpwAction = new QAction(tr("&Change Kerberos Password"), this);
+	cpwAction->setShortcut(tr("Ctrl+C"));
+	cpwAction->setStatusTip(tr("Change the Kerberos Password"));
+	connect(cpwAction, SIGNAL(triggered()), this, SLOT(changePassword()));
+
 	destroyAction = new QAction(tr("&Destroy Ticket"), this);
 	destroyAction->setShortcut(tr("Ctrl+D"));
 	destroyAction->setStatusTip(tr("Destroy the Ticket"));
@@ -317,6 +322,9 @@ Ktw::createTrayMenu()
 	trayMenu->addAction(renewAction);
 	// Popup Menu item
 	trayMenu->addAction(destroyAction);
+	// Popup Menu item
+	trayMenu->addAction(cpwAction);
+	
 	trayMenu->insertSeparator();
 	// Popup Menu item
 	//trayMenu->insertItem(tr("Help"),
@@ -575,9 +583,7 @@ Ktw::kinit()
 					errorTxt = tr("Unknown realm");
 					break;
 				default:
-					const char *message = krb5_get_error_message(kcontext, retval);
-					errorTxt = tr("Error: %1").arg(message);
-					krb5_free_error_message(kcontext, message);
+					errorTxt = v5::getKrb5ErrorMessage(kcontext, retval);
 					break;
 			}
 		}
@@ -703,9 +709,13 @@ Ktw::reinitCredential(const QString& password)
 					
 					break;
 				case KRB5_KDC_UNREACH:
-					/* kdc unreachable, return silently */
+					/* kdc unreachable, return */
+					QMessageBox::critical(this, tr("Failure"),
+					                      v5::getKrb5ErrorMessage(kcontext, retval),
+					                      QMessageBox::Ok, QMessageBox::Ok);
 					repeat = false;
 				default:
+					errorText = v5::getKrb5ErrorMessage(kcontext, retval);
 					break;
 			}
 		}
@@ -795,19 +805,25 @@ Ktw::changePassword(const QString &oldpw)
 		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
 		                                      oldPasswd.toAscii().data(), NULL, NULL,
 		                                      0, "kadmin/changepw", &opts);
-		
-		switch(retval)
+		if(retval)
 		{
-			case KRB5KDC_ERR_PREAUTH_FAILED:
-			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
-				errorText = tr("The password you entered is invalid");
-				break;
-			case KRB5_KDC_UNREACH:
-				/* kdc unreachable, return silently */
-				krb5_free_cred_contents (kcontext, &my_creds);
-				return retval;
-			default:
-				break;
+			switch(retval)
+			{
+				case KRB5KDC_ERR_PREAUTH_FAILED:
+				case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+					errorText = tr("The password you entered is invalid");
+					break;
+				case KRB5_KDC_UNREACH:
+					/* kdc unreachable, return */
+					krb5_free_cred_contents (kcontext, &my_creds);
+					QMessageBox::critical(this, tr("Failure"),
+					                      v5::getKrb5ErrorMessage(kcontext, retval),
+					                      QMessageBox::Ok, QMessageBox::Ok);
+					return retval;
+				default:
+					errorText = v5::getKrb5ErrorMessage(kcontext, retval);
+					break;
+			}
 		}
 	}
 	while((retval != 0));
@@ -874,6 +890,9 @@ Ktw::changePassword(const QString &oldpw)
 	{
 		qDebug("changing password failed. %d", retval);
 		krb5_free_cred_contents (kcontext, &my_creds);
+		QMessageBox::critical(this, tr("Password change failed"),
+		                      v5::getKrb5ErrorMessage(kcontext, retval),
+		                      QMessageBox::Ok, QMessageBox::Ok);
 		return retval;
 	}
 
