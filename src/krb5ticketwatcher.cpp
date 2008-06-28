@@ -313,7 +313,7 @@ Ktw::createTrayMenu()
 
 	quitAction = new QAction(tr("&Quit"), this);
 	quitAction->setShortcut(tr("Ctrl+Q"));
-	quitAction->setStatusTip(tr("Quit krb5TicketWatscher"));
+	quitAction->setStatusTip(tr("Quit krb5TicketWatcher"));
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 	
 	// Popup Menu item
