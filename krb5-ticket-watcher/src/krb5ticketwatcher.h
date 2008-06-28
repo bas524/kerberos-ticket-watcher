@@ -46,8 +46,8 @@ class Q3HBoxLayout;
 class QLabel;
 class QPushButton;
 class QPopupMenu;
-class QSystemTrayIcon;
 class QAction;
+class QSystemTrayIcon;
 
 class Ktw : public QWidget, private Ui::MainWidget
 {
@@ -59,7 +59,7 @@ public:
 	~Ktw();
 	
 	enum reqAction {none, renew, reinit};
-	
+
 public slots:
     void forceRenewCredential();
     void destroyCredential();
@@ -71,6 +71,9 @@ public slots:
 	void setTrayIcon(const QString&);
 	void reReadCache();
 
+protected:
+	bool eventFilter(QObject *obj, QEvent *ev);
+	
 private:
 	void createTrayMenu();
 	void initMainWindow();
