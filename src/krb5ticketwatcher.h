@@ -73,7 +73,11 @@ public slots:
 
 protected:
 	bool eventFilter(QObject *obj, QEvent *ev);
-	
+
+private slots:
+	int
+	changePassword(const QString& oldpw = QString::null);
+
 private:
 	void createTrayMenu();
 	void initMainWindow();
@@ -93,9 +97,6 @@ private:
 	int
 	reinitCredential(const QString &password = QString::null);
 
-	int
-	changePassword(const QString& oldpw = QString::null);
-	
 	void
 	setDefaultOptionsUsingCreds(krb5_context);
 
@@ -107,6 +108,7 @@ private:
 
 	QAction         *kinitAction;
 	QAction         *renewAction;
+	QAction         *cpwAction;
 	QAction         *destroyAction;
 	QAction         *restoreAction;
 	QAction         *quitAction;
