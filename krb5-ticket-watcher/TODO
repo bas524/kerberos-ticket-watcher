@@ -4,7 +4,5 @@ ticket view:
 - use popup dialogs for errors 
   (not display them inside of the dialog)
 
-- add change password dialog
-
 - remove use of QT3Support lib
 
