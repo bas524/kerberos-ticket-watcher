@@ -47,6 +47,7 @@
 #include <QEvent>
 #include <QTime>
 #include <QCursor>
+#include <QSystemTrayIcon>
 
 #include <time.h>
 #include <string.h>
@@ -227,11 +228,10 @@ Ktw::~Ktw()
 	if(kprincipal)
 		krb5_free_principal(kcontext, kprincipal);
 	kprincipal = NULL;
-		
+	
 	krb5_free_context(kcontext);
 	kcontext = NULL;
 }
-
 
 // private ------------------------------------------------------------------
 
@@ -246,6 +246,7 @@ Ktw::initTray()
 	setTrayToolTip("");
 	tray->setContextMenu ( trayMenu );
 	tray->show();
+	tray->installEventFilter(this);
 }
 
 // private ------------------------------------------------------------------
@@ -382,7 +383,12 @@ Ktw::initWorkflow(int type)
 		case renew:
 			retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
 			if(!retval)
+			{
+				tray->showMessage(tr("Ticket renewed"),
+				                  tr("Ticket successfully renewed."),
+				                  QSystemTrayIcon::Information, 5000 );
 				break;
+			}
 		case reinit:
 			qDebug("stop the timer");
 			waitTimer.stop();
@@ -405,7 +411,12 @@ Ktw::initWorkflow(int type)
 			{
 				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
 				if(!retval)
+				{
+					tray->showMessage(tr("Ticket renewed"),
+					                  tr("Ticket successfully renewed."),
+					                  QSystemTrayIcon::Information, 5000 );
 					break;
+				}
 			}
 	}
 	
@@ -564,6 +575,9 @@ Ktw::kinit()
 					errorTxt = tr("Unknown realm");
 					break;
 				default:
+					const char *message = krb5_get_error_message(kcontext, retval);
+					errorTxt = tr("Error: %1").arg(message);
+					krb5_free_error_message(kcontext, message);
 					break;
 			}
 		}
@@ -1310,4 +1324,42 @@ Ktw::printtime(time_t tv)
 		return timestring;
 	}
 	return "";
+}
+
+
+// protected
+
+bool
+Ktw::eventFilter(QObject *obj, QEvent *event)
+{
+	qDebug("eventFilter called");
+	if(obj == tray)
+	{
+		if (event->type() == QEvent::ToolTip)
+		{
+			QString tipText = tr("No Credential Cache found");
+			krb5_creds creds;
+			krb5_context   kcontext;
+			krb5_error_code err = krb5_init_context(&kcontext);
+			if (err)
+			{
+				qWarning("Error at krb5_init_context");
+				return false;
+			}
+			
+			if (v5::getTgtFromCcache (kcontext, &creds))
+			{
+				QTime time;
+				krb5_timestamp expires = creds.times.endtime - v5::getNow(kcontext);
+				if(expires <= 0)
+					expires = 0;
+				tipText = tr("Ticket expires in %1").arg(time.addSecs(expires).toString());
+				krb5_free_cred_contents (kcontext, &creds);
+			}
+			krb5_free_context(kcontext);
+			setTrayToolTip(tipText);
+		}
+	}
+	// pass the event on to the parent class
+	return QWidget::eventFilter(obj, event);
 }

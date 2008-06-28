@@ -8,7 +8,7 @@ HEADERS	+= src/krb5ticketwatcher.h \
            src/v5.h \
            src/kinitdialog.h \
            src/pwdialog.h \
-           src/pwchangedialog.h 
+           src/pwchangedialog.h
 
 SOURCES	+= src/main.cpp  \
            src/krb5ticketwatcher.cpp \
