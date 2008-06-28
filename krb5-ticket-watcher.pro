@@ -1,6 +1,6 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-VERSION  = 0.9.1
+VERSION  = 0.9.2
 QT += qt3support
 
 HEADERS	+= src/krb5ticketwatcher.h \
@@ -53,8 +53,9 @@ QMAKE_EXTRA_UNIX_TARGETS += qm pot
 translations.path = /usr/share/krb5-ticket-watcher/locales/
 translations.files = po/*.qm
 
-documentation.path = /usr/share/doc/packages/krb5-ticket-watcher/
-documentation.files = COPYING Changes News TODO
+# it is better to install the documentation via the spec file
+#documentation.path = /usr/share/doc/packages/krb5-ticket-watcher/
+#documentation.files = COPYING Changes News TODO
 
 desktop.path = /usr/share/applications/
 desktop.files = krb5-ticket-watcher.desktop
@@ -65,7 +66,7 @@ binary.files = krb5-ticket-watcher
 icon.path = /usr/share/pixmaps/
 icon.files = krb5-ticket-watcher.png
 
-INSTALLS += translations desktop documentation icon binary
+INSTALLS += translations desktop icon binary
 
 #The following line was inserted by qt3to4
 QT += network  
