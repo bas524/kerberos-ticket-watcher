@@ -105,7 +105,9 @@ class v5
 
 	static QString
 	etype2String(krb5_enctype enctype);
-		
+
+	static QString
+	getKrb5ErrorMessage(krb5_context kcontext, krb5_error_code code);
 };
 
 #endif /* KRB5_TICKET_WATCHER_V5_H */

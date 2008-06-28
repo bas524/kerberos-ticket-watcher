@@ -411,3 +411,13 @@ v5::etype2String(krb5_enctype enctype)
 
 	return buf;
 }
+
+QString
+v5::getKrb5ErrorMessage(krb5_context kcontext, krb5_error_code code)
+{
+	const char *message = krb5_get_error_message(kcontext, code);
+	QString msg(message);
+	krb5_free_error_message(kcontext, message);
+	return msg;
+}
+	
