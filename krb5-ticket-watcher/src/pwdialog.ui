@@ -1,202 +1,252 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>PWDialog</class>
-  <widget class="QDialog" name="PWDialog" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>385</width>
-        <height>182</height>
-      </rect>
-    </property>
-    <property name="windowTitle" >
-      <string>Kerberos Password Dialog</string>
-    </property>
-    <layout class="QGridLayout" >
-      <item row="1" column="2" >
-        <widget class="QPushButton" name="okButton" >
-          <property name="sizePolicy" >
-            <sizepolicy>
-              <hsizetype>1</hsizetype>
-              <vsizetype>0</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-            </sizepolicy>
-          </property>
-          <property name="text" >
-            <string>&amp;Ok</string>
-          </property>
-          <property name="shortcut" >
-            <string>Alt+O</string>
-          </property>
-          <property name="default" >
-            <bool>true</bool>
-          </property>
-        </widget>
+<ui version="4.0" >
+ <class>PWDialog</class>
+ <widget class="QDialog" name="PWDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>418</width>
+    <height>182</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Kerberos Password Dialog</string>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="1" column="2" >
+    <widget class="QPushButton" name="okButton" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text" >
+      <string>&amp;Ok</string>
+     </property>
+     <property name="shortcut" >
+      <string>Alt+O</string>
+     </property>
+     <property name="default" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" >
+    <widget class="QPushButton" name="cancelButton" >
+     <property name="text" >
+      <string>&amp;Cancel</string>
+     </property>
+     <property name="shortcut" >
+      <string>Alt+C</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <spacer name="spacer1" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>230</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0" colspan="3" >
+    <widget class="Q3Frame" name="frame" >
+     <property name="frameShape" >
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QGridLayout" >
+      <item row="0" column="0" >
+       <widget class="QLabel" name="pixmapLabel1" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="pixmap" >
+         <pixmap>image0</pixmap>
+        </property>
+        <property name="scaledContents" >
+         <bool>true</bool>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLabel" name="errorLabel" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="palette" >
+         <palette>
+          <active>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText" >
+            <brush brushstyle="SolidPattern" >
+             <color alpha="255" >
+              <red>119</red>
+              <green>119</green>
+              <blue>119</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font" >
+         <font>
+          <italic>true</italic>
+         </font>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item rowspan="3" row="1" column="0" >
+       <spacer name="spacer3" >
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>20</width>
+          <height>50</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item row="1" column="1" >
-        <widget class="QPushButton" name="cancelButton" >
-          <property name="text" >
-            <string>&amp;Cancel</string>
-          </property>
-          <property name="shortcut" >
-            <string>Alt+C</string>
-          </property>
-        </widget>
+       <widget class="QLabel" name="krb5prompt" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string/>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
       </item>
-      <item row="1" column="0" >
-        <spacer name="spacer1" >
-          <property name="sizeHint" >
-            <size>
-              <width>230</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
+      <item row="2" column="1" >
+       <widget class="QLineEdit" name="promptEdit" />
       </item>
-      <item rowspan="1" row="0" column="0" colspan="3" >
-        <widget class="Q3Frame" name="frame" >
-          <property name="frameShape" >
-            <enum>StyledPanel</enum>
-          </property>
-          <property name="frameShadow" >
-            <enum>Plain</enum>
-          </property>
-          <layout class="QGridLayout" >
-            <item row="0" column="0" >
-              <widget class="QLabel" name="pixmapLabel1" >
-                <property name="sizePolicy" >
-                  <sizepolicy>
-                    <hsizetype>0</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <property name="pixmap" >
-                  <pixmap>image0</pixmap>
-                </property>
-                <property name="scaledContents" >
-                  <bool>true</bool>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item row="0" column="1" >
-              <widget class="QLabel" name="errorLabel" >
-                <property name="sizePolicy" >
-                  <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <property name="font" >
-                  <font>
-                    <italic>true</italic>
-                  </font>
-                </property>
-                <property name="text" >
-                  <string/>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item rowspan="3" row="1" column="0" colspan="1" >
-              <spacer name="spacer3" >
-                <property name="sizeHint" >
-                  <size>
-                    <width>20</width>
-                    <height>50</height>
-                  </size>
-                </property>
-                <property name="sizeType" >
-                  <enum>QSizePolicy::Expanding</enum>
-                </property>
-                <property name="orientation" >
-                  <enum>Qt::Vertical</enum>
-                </property>
-              </spacer>
-            </item>
-            <item row="1" column="1" >
-              <widget class="QLabel" name="krb5prompt" >
-                <property name="sizePolicy" >
-                  <sizepolicy>
-                    <hsizetype>5</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <property name="text" >
-                  <string/>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item row="2" column="1" >
-              <widget class="QLineEdit" name="promptEdit" />
-            </item>
-            <item row="3" column="1" >
-              <spacer name="spacer3_2" >
-                <property name="sizeHint" >
-                  <size>
-                    <width>20</width>
-                    <height>21</height>
-                  </size>
-                </property>
-                <property name="sizeType" >
-                  <enum>QSizePolicy::Expanding</enum>
-                </property>
-                <property name="orientation" >
-                  <enum>Qt::Vertical</enum>
-                </property>
-              </spacer>
-            </item>
-          </layout>
-        </widget>
+      <item row="3" column="1" >
+       <spacer name="spacer3_2" >
+        <property name="orientation" >
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+       </spacer>
       </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <tabstops>
-    <tabstop>promptEdit</tabstop>
-    <tabstop>okButton</tabstop>
-    <tabstop>cancelButton</tabstop>
-  </tabstops>
-  <images>
-    <image name="image0" >
-      <data format="PNG" length="1360" >89504e470d0a1a0a0000000d4948445200000020000000200806000000737a7af400000517494441545885c5975d68544714c77f7b5db39b98adf95851a34913158dd1b452db2a488badb5155bfba22f3e54a4da421ffa609fa42fea83a0f8509fc5071529a894422988156cc552d4b40113129ae826249b8fc664f3b17befeede3b7766fa70633edc9bcdfa517ae0b2c3ec9df9ffce393367e6c2ff6c81671d70f6ecb5b052aa1ea80b0428d39acf95523d528a96870fdb2e9e3f7f7a0490ff09c09933df6f0f04025b57adaa0aad5cb98468743152cae3c9a4c5a347fdf4f58d904e9be75a5bef9fb87af5dc502120c142844f9ebc180e040207972faf5cba7bf756caca220402b3d9376d5acbe0e030376ffef9a5d65bde1d1a1af8f8f6ed9fe380c837f782f9c48f1d3b1f564a1f6c6c5cbd74dfbef7282e0e23a5249d4e639a2696656dcf64321886414545191b36d4313c3c1e0d85a2bb1c277bbdbfbf3b05a8e706d8b66df70735354bd7eddfbf13e089287d7d8f696fefa1ab6b60bb942eb69dc6b66d2291080d0d75c462f16830f84a4553d3ad5f0107d0cf0c70e4c877658661ec3d74e8138a8bc32493499249936bd76e73e7ce03f1e0415b4f2cd65bdad939581a8f274a4b4a0c5cd7211a8d5255554e6b6bfc3521c42f7d7db17f00d74f23ef1a504a6fddb8b18ecaca322ccbc2b66d2e5fbe4947c7c3aeebd72f350d0dc54da005d0070e1cfd7a74347978cf9e370887c3545757b3624505f5f56f7e71f7ee8d76c0f68330f2010821963534d4a1b5c6344d9a9b3be9ea8a8f5db870f2f7a1a1f828300e7403dd972e9dfa369148fc78efde437a7b7b0158bffe550c63613d100116fa69e405705df9eaaa55556432198410343777d2d3d3f13790054cc00292400a48f4f5751defee7e4c369b656c6c8cdada65048345af038b9e0bc0715c8a8b4308211042e03882f1f144122f9c4f2f2c75e3c6a576cbca2284606464844864118ee302143147bae74b018ee3e0380eaeeb22844029adf10a8cdfd6924208b4d64829a7c0f116bb6fd19b270202dbb6b16d7b7232172925ccb1a500ed385edd715d77123e6f1dca0fa0b5c6b66d1cc799f45ea1e7929e316626809e67806f5edace36d41b06cb7febed24db761129250b1c87cd65dd6cfe30b1a66aefdaf2c5c50b8461a0811d33c7fe31d049c59843d029412e2c62476d279f1d5d7d3800773e3d15bbcc53e9cbc94bd3e9865d0b17b025525343a4ba26bfbb9e1d9fef8554bc97546f2f89943cbfe344c73778bb47f946209d61cb9a8fdea7eaed46d08ff016fb8bd992b7d631d0b48c891bf70f03a7810120ed0b30616942e551b0aebc1471004c9b506c88096b11403990981320696adc4c3f64ad9723ee2a6819c44d2b92a606af204d2d7e9f0880b415647dcf8e6733a9a0fd31a46ca41364c2c7a7dc08581ad75690cdbf7fe7354742f728980e488deb289256ee96cc8d80a9716d099917888069c3401284f2a2a03c8009b300005782769f330552c1681a5236280d524f0168a9717d6e88fef7019127056ad20bada70bb2ab4048b09c59a2d3bf936d1ff30770d5740a828657aeb49e9e4ca9c94967b4fdfa6601f897e4390024d8024a439eb8d4d31ecd122db0efb922505234dd7e2a9fd30279fa72009e2502a1a0e7b9abc8c9a35f6e0b85f231dfe37860d800a3d203987aa43749bebe9cffa79f8154a8b00848a5e33ffdf05775ac71392b226970b39e074f56fdccf6938539ab9dfb5e7faa88b69152d28e6cc53b8ea7f291731cefac5f1aa9ad2c79a72868546b5dd0b7e35705bcc34446b4dcea787c6530998d0171bc4badaf8001848030de65723e88658500e09dff16308677937601fe058d04715d6cb9690e0000000049454e44ae426082</data>
-    </image>
-  </images>
-  <connections>
-    <connection>
-      <sender>okButton</sender>
-      <signal>clicked()</signal>
-      <receiver>PWDialog</receiver>
-      <slot>accept()</slot>
-    </connection>
-    <connection>
-      <sender>cancelButton</sender>
-      <signal>clicked()</signal>
-      <receiver>PWDialog</receiver>
-      <slot>reject()</slot>
-    </connection>
-  </connections>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <customwidgets>
+  <customwidget>
+   <class>Q3Frame</class>
+   <extends>QFrame</extends>
+   <header>Qt3Support/Q3Frame</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>promptEdit</tabstop>
+  <tabstop>okButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>PWDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>PWDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
