@@ -1,324 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="de_DE">
+<defaultcodec></defaultcodec>
 <context>
     <name>@default</name>
     <message>
-        <location filename="" line="0"/>
         <source>@</source>
         <translation type="obsolete">@</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;No</source>
         <translation type="obsolete">&amp;Nein</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Ok</source>
         <translation type="obsolete">&amp;Ok</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Yes</source>
         <translation type="obsolete">&amp;Ja</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Quit</source>
         <translation type="obsolete">Beenden</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>days</source>
         <translation type="obsolete">Tage</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Renew Ticket</source>
         <translation type="obsolete">Ticket erneuern</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Reenter password:</source>
         <translation type="obsolete">Passwort wiederholen:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket cache: %1:%2</source>
         <translation type="obsolete">Ticket Speicher: %1:%2</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Alt+C</source>
         <translation type="obsolete">Alt+A</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Alt+D</source>
         <translation type="obsolete">Alt+D</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Alt+O</source>
         <translation type="obsolete">Alt+O</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Alt+R</source>
         <translation type="obsolete">Alt+E</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Value</source>
         <translation type="obsolete">Wert</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>hours</source>
         <translation type="obsolete">Stunden</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Kerberos Password Dialog</source>
         <translation type="obsolete">Kerberos Passwort Dialog</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Invalid Password</source>
         <translation type="obsolete">Ungültiges Passwort</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Broken address (type %1 length %2)</source>
         <translation type="obsolete">Ungültige Adresse (Typ %1 Länge %2)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Service principal</source>
         <translation type="obsolete">Dienst Principal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Change the password for principal &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="obsolete">Passwort für das Principal &lt;b&gt;%1&lt;/b&gt; ändern</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Enter new password:</source>
         <translation type="obsolete">Neues Passwort eingeben:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Valid starting</source>
         <translation type="obsolete">Gültigkeitsbeginn</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Close</source>
         <translation type="obsolete">&amp;Schließen</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source> for client %1</source>
         <translation type="obsolete">für Client %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>(none)</source>
         <translation type="obsolete">(keine)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Time Remaining</source>
         <translation type="obsolete">Verbleibende Zeit</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket flags</source>
         <translation type="obsolete">Ticket Kennzeichen</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Default credential cache</source>
         <translation type="obsolete">Standard Ticket Speicher</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket Flags</source>
         <translation type="obsolete">Ticket Kennzeichen</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>minutes</source>
         <translation type="obsolete">Minuten</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Principal:</source>
         <translation type="obsolete">Principal:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Destroy Kerberos Ticket Cache?</source>
         <translation type="obsolete">Kerberos Ticket Liste zerstören?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>New Ticket</source>
         <translation type="obsolete">Neues Ticket</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Kerberos Ticket List</source>
         <translation type="obsolete">Kerberos Ticket Liste</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>The passwords are not equal</source>
         <translation type="obsolete">Die Passwörter sind nicht gleich</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Error while setting cache flags</source>
         <translation type="obsolete">Es ist ein Fehler beim setzen der Ticket Listen Markierung aufgetreten</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Invalid principal name</source>
         <translation type="obsolete">Ungültiger Principal Name</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Unknown address type %1</source>
         <translation type="obsolete">Unbekannter Adresstyp %1</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Change Kerberos Password</source>
         <translation type="obsolete">Kerberos Passwort ändern</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket cache cannot be destroyed.</source>
         <translation type="obsolete">Die Ticket Liste konnte nicht zerstört werden.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Refresh</source>
         <translation type="obsolete">&amp;Erneuern</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Please enter the Kerberos password for &lt;b&gt;%1&lt;/b&gt;</source>
         <translation type="obsolete">Geben Sie bitte das Kerberos Passwort für &lt;b&gt;%1&lt;/b&gt; ein</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Do you want to destroy the ticket cache?</source>
         <translation type="obsolete">Wollen Sie die Ticket Liste zerstören?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Destroy Ticket</source>
         <translation type="obsolete">Ticket zerstören</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Renew until</source>
         <translation type="obsolete">Erneuerbar bis</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>No credentials cache found</source>
         <translation type="obsolete">Keine standard Ticket Liste gefunden</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Property</source>
         <translation type="obsolete">Eigenschaft</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>seconds</source>
         <translation type="obsolete">Sekunden</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Cancel</source>
         <translation type="obsolete">&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Password:</source>
         <translation type="obsolete">Passwort:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>default</source>
         <translation type="obsolete">standard</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Unknown principal</source>
         <translation type="obsolete">Unbekannter Principal</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket flags legend</source>
         <translation type="obsolete">Ticket Kennzeichen Legende</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Addresses</source>
         <translation type="obsolete">Adressen</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Unknown realm</source>
         <translation type="obsolete">Unbekanntes Realm</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Error !</source>
         <translation type="obsolete">Fehler !</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Lifetime:</source>
         <translation type="obsolete">Lebensdauer:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Expires</source>
         <translation type="obsolete">Gültigkeitsende</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>The password you entered is invalid</source>
         <translation type="obsolete">Das eingegebene Passwort ist ungültig</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Default principal: %3</source>
         <translation type="obsolete">Standard Principal: %3</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Renewable for:</source>
         <translation type="obsolete">Erneuerbar für:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Details ...</source>
         <translation type="obsolete">&amp;Details ...</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Ticket Encryption Type</source>
         <translation type="obsolete">Verschlüsselungtyp (Ticket)</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Key Encryption Type</source>
         <translation type="obsolete">Verschlüsselungstyp (Schlüssel)</translation>
     </message>
@@ -326,372 +263,411 @@
 <context>
     <name>KinitDialog</name>
     <message>
-        <location filename="../src/kinitdialog.ui" line="16"/>
+        <location filename="../src/kinitdialog.ui" line="13"/>
         <source>New Ticket</source>
-        <translation type="unfinished">Neues Ticket</translation>
+        <translation>Neues Ticket</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="41"/>
+        <location filename="../src/kinitdialog.ui" line="35"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">&amp;Abbrechen</translation>
+        <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="44"/>
+        <location filename="../src/kinitdialog.ui" line="38"/>
         <source>Alt+C</source>
-        <translation type="unfinished">Alt+A</translation>
+        <translation>Alt+A</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="59"/>
+        <location filename="../src/kinitdialog.ui" line="51"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;Ok</translation>
+        <translation>&amp;Ok</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="62"/>
+        <location filename="../src/kinitdialog.ui" line="54"/>
         <source>Alt+O</source>
-        <translation type="unfinished">Alt+O</translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="117"/>
+        <location filename="../src/kinitdialog.ui" line="144"/>
         <source>Password:</source>
-        <translation type="unfinished">Passwort:</translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="134"/>
+        <location filename="../src/kinitdialog.ui" line="161"/>
         <source>Principal:</source>
-        <translation type="unfinished">Principal:</translation>
+        <translation>Principal:</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="147"/>
+        <location filename="../src/kinitdialog.ui" line="174"/>
         <source>@</source>
-        <translation type="unfinished">@</translation>
+        <translation>@</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="180"/>
+        <location filename="../src/kinitdialog.ui" line="207"/>
         <source>&amp;Details ...</source>
-        <translation type="unfinished">&amp;Details ...</translation>
+        <translation>&amp;Details ...</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="183"/>
+        <location filename="../src/kinitdialog.ui" line="210"/>
         <source>Alt+D</source>
-        <translation type="unfinished">Alt+D</translation>
+        <translation>Alt+D</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="196"/>
+        <location filename="../src/kinitdialog.ui" line="223"/>
         <source>Ticket Flags</source>
-        <translation type="unfinished">Ticket Kennzeichen</translation>
+        <translation>Ticket Kennzeichen</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="202"/>
+        <location filename="../src/kinitdialog.ui" line="229"/>
         <source>forwardable</source>
-        <translation type="unfinished"></translation>
+        <translation>forwardable</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="209"/>
+        <location filename="../src/kinitdialog.ui" line="236"/>
         <source>proxiable</source>
-        <translation type="unfinished"></translation>
+        <translation>proxiable</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="219"/>
+        <location filename="../src/kinitdialog.ui" line="246"/>
         <source>Renewable for:</source>
-        <translation type="unfinished">Erneuerbar für:</translation>
+        <translation>Erneuerbar für:</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="296"/>
+        <location filename="../src/kinitdialog.ui" line="323"/>
         <source>days</source>
-        <translation type="unfinished">Tage</translation>
+        <translation>Tage</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="301"/>
+        <location filename="../src/kinitdialog.ui" line="328"/>
         <source>hours</source>
-        <translation type="unfinished">Stunden</translation>
+        <translation>Stunden</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="306"/>
+        <location filename="../src/kinitdialog.ui" line="333"/>
         <source>minutes</source>
-        <translation type="unfinished">Minuten</translation>
+        <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="311"/>
+        <location filename="../src/kinitdialog.ui" line="338"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunden</translation>
+        <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="282"/>
+        <location filename="../src/kinitdialog.ui" line="309"/>
         <source>default</source>
-        <translation type="unfinished">standard</translation>
+        <translation>standard</translation>
     </message>
     <message>
-        <location filename="../src/kinitdialog.ui" line="272"/>
+        <location filename="../src/kinitdialog.ui" line="299"/>
         <source>Lifetime:</source>
-        <translation type="unfinished">Lebensdauer:</translation>
+        <translation>Lebensdauer:</translation>
     </message>
 </context>
 <context>
     <name>Ktw</name>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="976"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1012"/>
         <source>hours</source>
-        <translation type="unfinished">Stunden</translation>
+        <translation>Stunden</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="977"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1013"/>
         <source>days</source>
-        <translation type="unfinished">Tage</translation>
+        <translation>Tage</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>New Ticket</source>
         <translation type="obsolete">Neues Ticket</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Renew Ticket</source>
         <translation type="obsolete">Ticket erneuern</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Destroy Ticket</source>
         <translation type="obsolete">Ticket zerstören</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>Quit</source>
         <translation type="obsolete">Beenden</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="345"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="354"/>
         <source>Destroy Kerberos Ticket Cache?</source>
-        <translation type="unfinished">Kerberos Ticket Liste zerstören?</translation>
+        <translation>Kerberos Ticket Liste zerstören?</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="347"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="356"/>
         <source>Do you want to destroy the ticket cache?</source>
-        <translation type="unfinished">Wollen Sie die Ticket Liste zerstören?</translation>
+        <translation>Wollen Sie die Ticket Liste zerstören?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;Yes</source>
         <translation type="obsolete">&amp;Ja</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
         <source>&amp;No</source>
         <translation type="obsolete">&amp;Nein</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="355"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="364"/>
         <source>Error !</source>
-        <translation type="unfinished">Fehler !</translation>
+        <translation>Fehler !</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="357"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="366"/>
         <source>Ticket cache cannot be destroyed.</source>
-        <translation type="unfinished">Die Ticket Liste konnte nicht zerstört werden.</translation>
+        <translation>Die Ticket Liste konnte nicht zerstört werden.</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="500"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="522"/>
         <source>Invalid principal name</source>
-        <translation type="unfinished">Ungültiger Principal Name</translation>
+        <translation>Ungültiger Principal Name</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="546"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="568"/>
         <source>Invalid Password</source>
-        <translation type="unfinished">Ungültiges Passwort</translation>
+        <translation>Ungültiges Passwort</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="558"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="580"/>
         <source>Unknown principal</source>
-        <translation type="unfinished">Unbekannter Principal</translation>
+        <translation>Unbekannter Principal</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="561"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="583"/>
         <source>Unknown realm</source>
-        <translation type="unfinished">Unbekanntes Realm</translation>
+        <translation>Unbekanntes Realm</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="786"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="814"/>
         <source>The password you entered is invalid</source>
-        <translation type="unfinished">Das eingegebene Passwort ist ungültig</translation>
+        <translation>Das eingegebene Passwort ist ungültig</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="722"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="749"/>
         <source>Please enter the Kerberos password for &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished">Geben Sie bitte das Kerberos Passwort für &lt;b&gt;%1&lt;/b&gt; ein</translation>
+        <translation>Geben Sie bitte das Kerberos Passwort für &lt;b&gt;%1&lt;/b&gt; ein</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="819"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="852"/>
         <source>Change the password for principal &lt;b&gt;%1&lt;/b&gt;</source>
-        <translation type="unfinished">Passwort für das Principal &lt;b&gt;%1&lt;/b&gt; ändern</translation>
+        <translation>Passwort für das Principal &lt;b&gt;%1&lt;/b&gt; ändern</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="823"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="856"/>
         <source>The passwords are not equal</source>
-        <translation type="unfinished">Die Passwörter sind nicht gleich</translation>
+        <translation>Die Passwörter sind nicht gleich</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="975"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1011"/>
         <source>minutes</source>
-        <translation type="unfinished">Minuten</translation>
+        <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="974"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1010"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunden</translation>
+        <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1035"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1071"/>
         <source>No credentials cache found</source>
-        <translation type="unfinished">Keine standard Ticket Liste gefunden</translation>
+        <translation>Keine standard Ticket Liste gefunden</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1063"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1099"/>
         <source>Ticket cache: %1:%2</source>
-        <translation type="unfinished">Ticket Speicher: %1:%2</translation>
+        <translation>Ticket Speicher: %1:%2</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1041"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1077"/>
         <source>Error while setting cache flags</source>
-        <translation type="unfinished">Es ist ein Fehler beim setzen der Ticket Listen Markierung aufgetreten</translation>
+        <translation>Es ist ein Fehler beim setzen der Ticket Listen Markierung aufgetreten</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1066"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1102"/>
         <source>Default principal: %3</source>
-        <translation type="unfinished">Standard Principal: %3</translation>
+        <translation>Standard Principal: %3</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1151"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1187"/>
         <source> for client %1</source>
-        <translation type="unfinished">für Client %1</translation>
+        <translation>für Client %1</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1168"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1204"/>
         <source>Service principal</source>
-        <translation type="unfinished">Dienst Principal</translation>
+        <translation>Dienst Principal</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1171"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1207"/>
         <source>Valid starting</source>
-        <translation type="unfinished">Gültigkeitsbeginn</translation>
+        <translation>Gültigkeitsbeginn</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1173"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1209"/>
         <source>Expires</source>
-        <translation type="unfinished">Gültigkeitsende</translation>
+        <translation>Gültigkeitsende</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1178"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1214"/>
         <source>Renew until</source>
-        <translation type="unfinished">Erneuerbar bis</translation>
+        <translation>Erneuerbar bis</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1212"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1248"/>
         <source>Ticket flags</source>
-        <translation type="unfinished">Ticket Kennzeichen</translation>
+        <translation>Ticket Kennzeichen</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1218"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1254"/>
         <source>Key Encryption Type</source>
-        <translation type="unfinished">Verschlüsselungstyp (Schlüssel)</translation>
+        <translation>Verschlüsselungstyp (Schlüssel)</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1220"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1256"/>
         <source>Ticket Encryption Type</source>
-        <translation type="unfinished">Verschlüsselungtyp (Ticket)</translation>
+        <translation>Verschlüsselungtyp (Ticket)</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1287"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1323"/>
         <source>(none)</source>
-        <translation type="unfinished">(keine)</translation>
+        <translation>(keine)</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1243"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1279"/>
         <source>Addresses</source>
-        <translation type="unfinished">Adressen</translation>
+        <translation>Adressen</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1265"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1301"/>
         <source>Broken address (type %1 length %2)</source>
-        <translation type="unfinished">Ungültige Adresse (Typ %1 Länge %2)</translation>
+        <translation>Ungültige Adresse (Typ %1 Länge %2)</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="1283"/>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1319"/>
         <source>Unknown address type %1</source>
-        <translation type="unfinished">Unbekannter Adresstyp %1</translation>
-    </message>
-    <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="288"/>
-        <source>&amp;New Ticket</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannter Adresstyp %1</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="289"/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;New Ticket</source>
+        <translation>&amp;Neues Ticket</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="290"/>
-        <source>Create a new Ticket</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+N</source>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="293"/>
-        <source>&amp;Renew Ticket</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/krb5ticketwatcher.cpp" line="291"/>
+        <source>Create a new Ticket</source>
+        <translation>Neues Ticket erzeugen</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="294"/>
-        <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;Renew Ticket</source>
+        <translation>Ticket e&amp;rneuern</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="295"/>
+        <source>Ctrl+R</source>
+        <translation>Ctrl+R</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="296"/>
         <source>Renew the Ticket</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="298"/>
-        <source>&amp;Destroy Ticket</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="299"/>
-        <source>Ctrl+D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="300"/>
-        <source>Destroy the Ticket</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="303"/>
-        <source>Re&amp;store</source>
-        <translation type="unfinished"></translation>
+        <translation>Ticket erneuern</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="304"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;Destroy Ticket</source>
+        <translation>Ticket &amp;zerstören</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="305"/>
-        <source>Restore the Window</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+D</source>
+        <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/krb5ticketwatcher.cpp" line="308"/>
-        <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/krb5ticketwatcher.cpp" line="306"/>
+        <source>Destroy the Ticket</source>
+        <translation>Ticket zerstören</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="309"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <source>Re&amp;store</source>
+        <translation>&amp;Wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/krb5ticketwatcher.cpp" line="310"/>
-        <source>Quit krb5TicketWatscher</source>
-        <translation type="unfinished"></translation>
+        <source>Ctrl+S</source>
+        <translation>Ctrl+W</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="311"/>
+        <source>Restore the Window</source>
+        <translation>Fenter wiederherstellen</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="314"/>
+        <source>&amp;Quit</source>
+        <translation>&amp;Beenden</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="315"/>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+B</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="299"/>
+        <source>&amp;Change Kerberos Password</source>
+        <translation>Kerberos Passwort ä&amp;ndern</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="300"/>
+        <source>Ctrl+C</source>
+        <translation>Ctrl+N</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="301"/>
+        <source>Change the Kerberos Password</source>
+        <translation>Kerberos Passwort ändern</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="423"/>
+        <source>Ticket renewed</source>
+        <translation>Ticket erneuert</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="424"/>
+        <source>Ticket successfully renewed.</source>
+        <translation>Ticket erfolgreich erneuert.</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="819"/>
+        <source>Failure</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="893"/>
+        <source>Password change failed</source>
+        <translation>Passwort ändern fehlgeschlagen</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1359"/>
+        <source>No Credential Cache found</source>
+        <translation>Keine Ticket Liste gefunden</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="1375"/>
+        <source>Ticket expires in %1</source>
+        <translation>Ticket läuft in %1 ab</translation>
+    </message>
+    <message>
+        <location filename="../src/krb5ticketwatcher.cpp" line="316"/>
+        <source>Quit krb5TicketWatcher</source>
+        <translation>krb5TicketWatcher beenden</translation>
     </message>
 </context>
 <context>
@@ -699,32 +675,32 @@
     <message>
         <location filename="../src/mainwidget.ui" line="13"/>
         <source>Kerberos Ticket List</source>
-        <translation type="unfinished">Kerberos Ticket Liste</translation>
+        <translation>Kerberos Ticket Liste</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="19"/>
         <source>&amp;Close</source>
-        <translation type="unfinished">&amp;Schließen</translation>
+        <translation>&amp;Schließen</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="22"/>
         <source>Alt+C</source>
-        <translation type="unfinished">Alt+A</translation>
+        <translation>Alt+S</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="32"/>
         <source>&amp;Refresh</source>
-        <translation type="unfinished">&amp;Erneuern</translation>
+        <translation>&amp;Erneuern</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="35"/>
         <source>Alt+R</source>
-        <translation type="unfinished">Alt+E</translation>
+        <translation>Alt+E</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="73"/>
         <source>Ticket flags legend</source>
-        <translation type="unfinished">Ticket Kennzeichen Legende</translation>
+        <translation>Ticket Kennzeichen Legende</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="79"/>
@@ -745,93 +721,109 @@
 &lt;tr&gt;&lt;td&gt;&lt;b&gt;O&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Ok as Delegate&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;b&gt;a&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Anonymous&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;&lt;/qt&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;qt&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;F&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Forwardable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;f&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Forwarded&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;P&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Proxiable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;p&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Proxy&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;D&lt;/b&gt;&lt;/td&gt;&lt;td&gt;May Postdate&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;d&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Postdated&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;i&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Invalid&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;R&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Renewable&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;I&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Initial&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;H&lt;/b&gt;&lt;/td&gt;&lt;td&gt;HW Auth&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;A&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Pre Auth&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;T&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Transit Policy Checked&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;O&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Ok as Delegate&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;a&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Anonymous&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/qt&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="128"/>
         <source>Property</source>
-        <translation type="unfinished">Eigenschaft</translation>
+        <translation>Eigenschaft</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="133"/>
         <source>Value</source>
-        <translation type="unfinished">Wert</translation>
+        <translation>Wert</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="138"/>
         <source>Time Remaining</source>
-        <translation type="unfinished">Verbleibende Zeit</translation>
+        <translation>Verbleibende Zeit</translation>
     </message>
     <message>
         <location filename="../src/mainwidget.ui" line="153"/>
         <source>Default credential cache</source>
-        <translation type="unfinished">Standard Ticket Speicher</translation>
+        <translation>Standard Ticket Speicher</translation>
     </message>
 </context>
 <context>
     <name>PWChangeDialog</name>
     <message>
-        <location filename="../src/pwchangedialog.ui" line="16"/>
+        <location filename="../src/pwchangedialog.ui" line="13"/>
         <source>Change Kerberos Password</source>
-        <translation type="unfinished">Kerberos Passwort ändern</translation>
+        <translation>Kerberos Passwort ändern</translation>
+    </message>
+    <message>
+        <location filename="../src/pwchangedialog.ui" line="35"/>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/pwchangedialog.ui" line="38"/>
-        <source>&amp;Cancel</source>
-        <translation type="unfinished">&amp;Abbrechen</translation>
+        <source>Alt+C</source>
+        <translation>Alt+A</translation>
     </message>
     <message>
-        <location filename="../src/pwchangedialog.ui" line="41"/>
-        <source>Alt+C</source>
-        <translation type="unfinished">Alt+A</translation>
+        <location filename="../src/pwchangedialog.ui" line="45"/>
+        <source>&amp;Ok</source>
+        <translation>&amp;Ok</translation>
     </message>
     <message>
         <location filename="../src/pwchangedialog.ui" line="48"/>
-        <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;Ok</translation>
-    </message>
-    <message>
-        <location filename="../src/pwchangedialog.ui" line="51"/>
         <source>Alt+O</source>
-        <translation type="unfinished">Alt+O</translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
-        <location filename="../src/pwchangedialog.ui" line="136"/>
+        <location filename="../src/pwchangedialog.ui" line="131"/>
         <source>Enter new password:</source>
-        <translation type="unfinished">Neues Passwort eingeben:</translation>
+        <translation>Neues Passwort eingeben:</translation>
     </message>
     <message>
-        <location filename="../src/pwchangedialog.ui" line="152"/>
+        <location filename="../src/pwchangedialog.ui" line="147"/>
         <source>Reenter password:</source>
-        <translation type="unfinished">Passwort wiederholen:</translation>
+        <translation>Passwort wiederholen:</translation>
     </message>
 </context>
 <context>
     <name>PWDialog</name>
     <message>
-        <location filename="../src/pwdialog.ui" line="16"/>
+        <location filename="../src/pwdialog.ui" line="13"/>
         <source>Kerberos Password Dialog</source>
-        <translation type="unfinished">Kerberos Passwort Dialog</translation>
+        <translation>Kerberos Passwort Dialog</translation>
     </message>
     <message>
-        <location filename="../src/pwdialog.ui" line="30"/>
+        <location filename="../src/pwdialog.ui" line="25"/>
         <source>&amp;Ok</source>
-        <translation type="unfinished">&amp;Ok</translation>
+        <translation>&amp;Ok</translation>
     </message>
     <message>
-        <location filename="../src/pwdialog.ui" line="33"/>
+        <location filename="../src/pwdialog.ui" line="28"/>
         <source>Alt+O</source>
-        <translation type="unfinished">Alt+O</translation>
+        <translation>Alt+O</translation>
     </message>
     <message>
-        <location filename="../src/pwdialog.ui" line="43"/>
+        <location filename="../src/pwdialog.ui" line="38"/>
         <source>&amp;Cancel</source>
-        <translation type="unfinished">&amp;Abbrechen</translation>
+        <translation>&amp;Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/pwdialog.ui" line="46"/>
+        <location filename="../src/pwdialog.ui" line="41"/>
         <source>Alt+C</source>
-        <translation type="unfinished">Alt+A</translation>
+        <translation>Alt+A</translation>
     </message>
 </context>
 <context>
@@ -839,12 +831,12 @@
     <message>
         <location filename="../src/main.cpp" line="69"/>
         <source>Systray</source>
-        <translation type="unfinished"></translation>
+        <translation>System Tray</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="71"/>
         <source>I couldn&apos;t detect any system tray on this system.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich kann kein System Tray auf diesem System finden.</translation>
     </message>
 </context>
 </TS>
