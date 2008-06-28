@@ -1,5 +1,12 @@
 krb5-ticket-watcher
 
+Version 0.9.4
+- add change password menu item
+- better error messages
+- show the remaining time of the krbtgt in the tooltip
+- show message if tgt was renewed
+- porting to QT4
+
 Version 0.2.1:
 - use qt linguist for translations
 
