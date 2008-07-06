@@ -19,7 +19,8 @@
  */
 
 #include "v5.h"
-#include <qstring.h>
+#include <QString>
+#include <QStringList>
 #include "krb5ticketwatcher.h"
 
 bool

@@ -1,9 +1,9 @@
 #ifndef PWDIALOG_H
 #define PWDIALOG_H
 
-#include <qvariant.h>
-#include <qpixmap.h>
-#include <qdialog.h>
+#include <QDialog>
+#include <QString>
+#include <QLineEdit>
 
 #include "ui_pwdialog.h"
 

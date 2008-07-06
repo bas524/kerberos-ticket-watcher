@@ -28,7 +28,7 @@
  */
 
 #include <QtGui>
-#include <qapplication.h>
+#include <QApplication>
 
 #include "krb5ticketwatcher.h"
 
@@ -74,9 +74,6 @@ int main( int argc, char **argv )
 	QApplication::setQuitOnLastWindowClosed(false);
 
 	Ktw w( argc, argv );
-	//w.setGeometry( 100, 100, 200, 120 );
-	//a.setMainWidget( &w );
-	//w.show();
 	w.initWorkflow();
 	return app.exec();
 }

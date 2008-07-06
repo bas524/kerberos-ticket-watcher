@@ -19,39 +19,30 @@
  */
 
 #include <QCoreApplication>
-#include <qtranslator.h>
-#include <qtextcodec.h>
-#include <qpushbutton.h>
-#include <qcheckbox.h>
-#include <qcombobox.h>
-#include <qspinbox.h>
-#include <q3popupmenu.h>
-#include <qicon.h>
-#include <qlabel.h>
-#include <qlineedit.h>
+
 #include <q3textbrowser.h>
 #include <q3listview.h>
-#include <q3hbox.h>
-#include <qvariant.h>
-#include <q3frame.h>
-#include <q3progressbar.h>
-#include <qlayout.h>
-#include <qtooltip.h>
-#include <q3whatsthis.h>
-#include <qimage.h>
-#include <qpixmap.h>
-#include <qsettings.h>
-#include <q3socket.h>
-#include <qmessagebox.h>
-//Added by qt3to4:
+
+#include <QtDebug>
+#include <QTextCodec>
+#include <QPushButton>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QSpinBox>
+#include <QIcon>
+#include <QLabel>
+#include <QLineEdit>
+#include <QLayout>
+#include <QToolTip>
+#include <QImage>
+#include <QPixmap>
+#include <QMessageBox>
 #include <QEvent>
 #include <QTime>
 #include <QCursor>
 #include <QSystemTrayIcon>
-
-#include <time.h>
-#include <string.h>
-#include <sys/time.h>
+#include <QHostAddress>
+#include <QMenu>
 
 #include "krb5ticketwatcher.h"
 #include "v5.h"
@@ -60,9 +51,7 @@
 #include "kinitdialog.h"
 #include "TicketListItem.h"
 
-#include <sys/types.h>
 #include <pwd.h>
-#include <et/com_err.h>
 
 static const unsigned char trayimage[] = { 
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,

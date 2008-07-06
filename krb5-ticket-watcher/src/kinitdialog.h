@@ -1,9 +1,9 @@
 #ifndef KINITDIALOG_H
 #define KINITDIALOG_H
 
-#include <qvariant.h>
-#include <qpixmap.h>
-#include <qdialog.h>
+#include <QDialog>
+#include <QString>
+#include <QStringList>
 
 #include "ui_kinitdialog.h"
 
