@@ -53,7 +53,7 @@
     </widget>
    </item>
    <item row="0" column="0" colspan="3" >
-    <widget class="Q3Frame" name="frame" >
+    <widget class="QFrame" name="frame" >
      <property name="frameShape" >
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -234,9 +234,9 @@
  <layoutdefault spacing="6" margin="11" />
  <customwidgets>
   <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
+   <class>QFrame</class>
+   <extends>QWidget</extends>
+   <header>QFrame</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
