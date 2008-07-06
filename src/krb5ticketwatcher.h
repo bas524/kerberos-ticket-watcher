@@ -21,19 +21,9 @@
 #ifndef  KRB5_TICKET_WATCHER_H
 #define  KRB5_TICKET_WATCHER_H
 
-#include <qapplication.h>
-#include <qtranslator.h>
-#include <qvariant.h>
-#include <qtimer.h>
-#include <qmap.h>
-#include <qstring.h>
-#include <qthread.h>
-//Added by qt3to4:
-#include <Q3GridLayout>
-#include <QEvent>
-#include <Q3HBoxLayout>
-#include <QLabel>
-#include <Q3PopupMenu>
+#include <QString>
+#include <QTimer>
+#include <QTranslator>
 #include <QSystemTrayIcon>
 
 #define KRB5_PRIVATE 1
@@ -41,13 +31,10 @@
 
 #include "ui_mainwidget.h"
 
-class Q3GridLayout;
-class Q3HBoxLayout;
-class QLabel;
-class QPushButton;
-class QPopupMenu;
 class QAction;
 class QSystemTrayIcon;
+class QMenu;
+class QEvent;
 
 class Ktw : public QWidget, private Ui::MainWidget
 {

@@ -1,9 +1,8 @@
 #ifndef PWCHANGEDIALOG_H
 #define PWCHANGEDIALOG_H
 
-#include <qvariant.h>
-#include <qpixmap.h>
-#include <qdialog.h>
+#include <QDialog>
+#include <QString>
 
 #include "ui_pwchangedialog.h"
 
