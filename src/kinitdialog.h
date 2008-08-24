@@ -33,7 +33,8 @@ class KinitDialog : public QDialog, private Ui::KinitDialog
 	
 	void realmComboBoxInsertStringList(const QStringList& stringList)
 	{
-		realmComboBox->insertStringList(stringList);
+		realmComboBox->clear();
+		realmComboBox->addItems(stringList);
 	}
 
 	QString realmComboBoxCurrentText() const
@@ -83,7 +84,8 @@ class KinitDialog : public QDialog, private Ui::KinitDialog
 
 	void lifetimeUnitComboBoxSetCurrentText(const QString& text)
 	{
-		lifetimeUnitComboBox->setCurrentText(text);
+		int index = lifetimeUnitComboBox->findText(text);
+		lifetimeUnitComboBox->setCurrentIndex(index);
 	}
 
 	QString lifetimeUnitComboBoxCurrentText() const 
@@ -103,7 +105,8 @@ class KinitDialog : public QDialog, private Ui::KinitDialog
 	
 	void renewUnitComboBoxSetCurrentText(const QString& text)
 	{
-		renewUnitComboBox->setCurrentText(text);
+		int index = renewUnitComboBox->findText(text);
+		renewUnitComboBox->setCurrentIndex(index);
 	}
 
 	QString renewUnitComboBoxCurrentText() const 

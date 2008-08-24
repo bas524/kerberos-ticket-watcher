@@ -12,7 +12,7 @@
   <property name="windowTitle" >
    <string>New Ticket</string>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QGridLayout" name="mainlayout" >
    <item row="1" column="0" >
     <spacer name="spacer1" >
      <property name="orientation" >
@@ -66,7 +66,7 @@
      <property name="frameShadow" >
       <enum>QFrame::Plain</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2" >
+     <layout class="QGridLayout" name="gridLayout" >
       <item row="0" column="0" >
        <widget class="QLabel" name="pixmapLabel1" >
         <property name="sizePolicy" >
@@ -216,7 +216,7 @@
         <property name="title" >
          <string/>
         </property>
-        <layout class="QGridLayout" name="gridLayout" >
+        <layout class="QGridLayout" name="detailLayout" >
          <item row="0" column="0" colspan="3" >
           <widget class="QGroupBox" name="groupBox" >
            <property name="title" >

@@ -190,7 +190,7 @@ v5::initCredential(krb5_context kcontext, krb5_principal kprincipal,
 	qDebug("call initCredential");
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-	                                      (char*)password.ascii(), NULL, NULL,
+	                                      password.toUtf8().data(), NULL, NULL,
 	                                      0, NULL, opts);
 	if (retval)
 	{
