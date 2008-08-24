@@ -17,7 +17,7 @@ public:
     	: QDialog(parent, fl)
 	{
 		setModal(modal);
-		setName(name);
+		setAccessibleName(name);
 		setupUi(this);
 	}
 	

@@ -1,10 +1,8 @@
 TEMPLATE	= app
 LANGUAGE	= C++
-VERSION  = 0.9.2
-QT += qt3support
+VERSION  = 0.9.3
 
 HEADERS	+= src/krb5ticketwatcher.h \
-           src/TicketListItem.h \
            src/v5.h \
            src/kinitdialog.h \
            src/pwdialog.h \
@@ -12,11 +10,9 @@ HEADERS	+= src/krb5ticketwatcher.h \
 
 SOURCES	+= src/main.cpp  \
            src/krb5ticketwatcher.cpp \
-           src/TicketListItem.cpp \
            src/v5.cpp  \
            src/kinitdialog.cpp
 
-#The following line was changed from FORMS to FORMS3 by qt3to4
 FORMS	= src/pwdialog.ui \
           src/pwchangedialog.ui \
           src/mainwidget.ui \
@@ -68,6 +64,5 @@ icon.files = krb5-ticket-watcher.png
 
 INSTALLS += translations desktop icon binary
 
-#The following line was inserted by qt3to4
 QT += network  
 

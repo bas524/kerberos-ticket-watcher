@@ -49,6 +49,34 @@
         </property>
        </widget>
       </item>
+      <item row="3" column="0" >
+       <widget class="QTreeWidget" name="ticketView" >
+        <property name="minimumSize" >
+         <size>
+          <width>627</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="selectionMode" >
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <column>
+         <property name="text" >
+          <string>Property</string>
+         </property>
+        </column>
+        <column>
+         <property name="text" >
+          <string>Value</string>
+         </property>
+        </column>
+        <column>
+         <property name="text" >
+          <string>Time Remaining</string>
+         </property>
+        </column>
+       </widget>
+      </item>
       <item rowspan="2" row="2" column="1" >
        <widget class="QGroupBox" name="groupBox" >
         <property name="title" >
@@ -85,52 +113,6 @@
           </widget>
          </item>
         </layout>
-       </widget>
-      </item>
-      <item row="3" column="0" >
-       <widget class="Q3ListView" name="ticketView" >
-        <property name="selectionMode" >
-         <enum>Q3ListView::NoSelection</enum>
-        </property>
-        <property name="allColumnsShowFocus" >
-         <bool>true</bool>
-        </property>
-        <property name="rootIsDecorated" >
-         <bool>true</bool>
-        </property>
-        <column>
-         <property name="text" >
-          <string>Property</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Value</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Time Remaining</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
-        </column>
        </widget>
       </item>
      </layout>
@@ -179,13 +161,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <customwidgets>
-  <customwidget>
-   <class>Q3ListView</class>
-   <extends>Q3Frame</extends>
-   <header>q3listview.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

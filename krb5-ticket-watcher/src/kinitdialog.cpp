@@ -17,10 +17,10 @@ KinitDialog::KinitDialog( QWidget* parent, const char* name,
 	: QDialog(parent, fl)
 {
 	setModal(modal);
-	setName(name);
+	setAccessibleName(name);
 	setupUi(this);
-    changeDetailsState(QCheckBox::Off);
-    changeRenewState(QCheckBox::On);
+    changeDetailsState(Qt::Unchecked);
+    changeRenewState(Qt::Checked);
 }
 
 KinitDialog::~KinitDialog() {}
@@ -28,11 +28,11 @@ KinitDialog::~KinitDialog() {}
 void KinitDialog::changeDetailsState( int state )
 {
 	qDebug("changeDetailsState called");
-	if(state == QCheckBox::On)
+	if(state == Qt::Checked)
 	{
 		detailsBox->show();
 	}
-	else if(state == QCheckBox::Off)
+	else if(state == Qt::Unchecked)
 	{
 		detailsBox->hide();
 	}
@@ -43,12 +43,12 @@ void KinitDialog::changeDetailsState( int state )
 void KinitDialog::changeRenewState(int state)
 {
 	qDebug("changeRenewState called");
-	if(state == QCheckBox::On)
+	if(state == Qt::Checked)
 	{
 		renewtimeSpinBox->setEnabled(true);
 		renewUnitComboBox->setEnabled(true);
 	}
-	else if(state == QCheckBox::Off)
+	else if(state == Qt::Unchecked)
 	{
 		renewtimeSpinBox->setEnabled(false);
 		renewUnitComboBox->setEnabled(false);
