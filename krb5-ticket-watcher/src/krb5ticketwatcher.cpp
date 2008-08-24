@@ -152,7 +152,7 @@ Ktw::Ktw( int & argc, char ** argv, QWidget* parent, Qt::WindowFlags fl )
 	, renewtimeUnit("days")
 	, promptInterval(31)  // default 31 minutes
 {
-	QString transFile = QString("krb5-ticket-watcher.") + QLocale::system().name();
+	QString transFile = QString("krb5-ticket-watcher.") + QLocale::system().name() + ".qm";
 
 	qDebug(("translation file: " + transFile).toUtf8());
 	
