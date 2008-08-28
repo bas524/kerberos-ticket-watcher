@@ -152,26 +152,9 @@ Ktw::Ktw( int & argc, char ** argv, QWidget* parent, Qt::WindowFlags fl )
 	, renewtimeUnit("days")
 	, promptInterval(31)  // default 31 minutes
 {
-	QString transFile = QString("krb5-ticket-watcher.") + QLocale::system().name() + ".qm";
-
-	qDebug(("translation file: " + transFile).toUtf8());
-	
-	bool ok = translator.load(transFile,
-	                          "/usr/share/krb5-ticket-watcher/locales/");
-	
-	if(ok)
-	{
-		QCoreApplication::installTranslator( &translator );
-		qDebug("load translation successfully");
-	}
-	else
-	{
-		qWarning(("failed to load translation: "+ transFile).toUtf8());
-	}
-
 	/* init with translations */
-	lifetimeUnit  = tr("hours");
-	renewtimeUnit = tr("days");
+	lifetimeUnit  = ki18n("hours");
+	renewtimeUnit = ki18n("days");
 	
 	if(argc >= 3)
 	{
@@ -273,34 +256,34 @@ Ktw::createTrayMenu()
 	trayMenu = new QMenu(this);
 	trayMenu->setTitle("Kerberos5 Ticket Watcher");
 
-	kinitAction = new QAction(tr("&New Ticket"), this);
-	kinitAction->setShortcut(tr("Ctrl+N"));
-	kinitAction->setStatusTip(tr("Create a new Ticket"));
+	kinitAction = new QAction(ki18n("&New Ticket"), this);
+	kinitAction->setShortcut(ki18n("Ctrl+N"));
+	kinitAction->setStatusTip(ki18n("Create a new Ticket"));
 	connect(kinitAction, SIGNAL(triggered()), this, SLOT(kinit()));
 
-	renewAction = new QAction(tr("&Renew Ticket"), this);
-	renewAction->setShortcut(tr("Ctrl+R"));
-	renewAction->setStatusTip(tr("Renew the Ticket"));
+	renewAction = new QAction(ki18n("&Renew Ticket"), this);
+	renewAction->setShortcut(ki18n("Ctrl+R"));
+	renewAction->setStatusTip(ki18n("Renew the Ticket"));
 	connect(renewAction, SIGNAL(triggered()), this, SLOT(forceRenewCredential()));
 
-	cpwAction = new QAction(tr("&Change Kerberos Password"), this);
-	cpwAction->setShortcut(tr("Ctrl+C"));
-	cpwAction->setStatusTip(tr("Change the Kerberos Password"));
+	cpwAction = new QAction(ki18n("&Change Kerberos Password"), this);
+	cpwAction->setShortcut(ki18n("Ctrl+C"));
+	cpwAction->setStatusTip(ki18n("Change the Kerberos Password"));
 	connect(cpwAction, SIGNAL(triggered()), this, SLOT(changePassword()));
 
-	destroyAction = new QAction(tr("&Destroy Ticket"), this);
-	destroyAction->setShortcut(tr("Ctrl+D"));
-	destroyAction->setStatusTip(tr("Destroy the Ticket"));
+	destroyAction = new QAction(ki18n("&Destroy Ticket"), this);
+	destroyAction->setShortcut(ki18n("Ctrl+D"));
+	destroyAction->setStatusTip(ki18n("Destroy the Ticket"));
 	connect(destroyAction, SIGNAL(triggered()), this, SLOT(destroyCredential()));
 
-	restoreAction = new QAction(tr("Re&store"), this);
-	restoreAction->setShortcut(tr("Ctrl+S"));
-	restoreAction->setStatusTip(tr("Restore the Window"));
+	restoreAction = new QAction(ki18n("Re&store"), this);
+	restoreAction->setShortcut(ki18n("Ctrl+S"));
+	restoreAction->setStatusTip(ki18n("Restore the Window"));
 	connect(restoreAction, SIGNAL(triggered()), this, SLOT(restore()));
 
-	quitAction = new QAction(tr("&Quit"), this);
-	quitAction->setShortcut(tr("Ctrl+Q"));
-	quitAction->setStatusTip(tr("Quit krb5TicketWatcher"));
+	quitAction = new QAction(ki18n("&Quit"), this);
+	quitAction->setShortcut(ki18n("Ctrl+Q"));
+	quitAction->setStatusTip(ki18n("Quit krb5TicketWatcher"));
 	connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 	
 	// Popup Menu item
@@ -314,7 +297,7 @@ Ktw::createTrayMenu()
 	
 	trayMenu->addSeparator();
 	// Popup Menu item
-	//trayMenu->insertItem(tr("Help"),
+	//trayMenu->insertItem(ki18n("Help"),
 	//                     this, SLOT(help()));
 
 	// Popup Menu item
@@ -338,9 +321,9 @@ Ktw::destroyCredential()
 {
 	if ( QMessageBox::Yes == QMessageBox::question(this,
 												   // title
-												   tr("Destroy Kerberos Ticket Cache?"),
+												   ki18n("Destroy Kerberos Ticket Cache?"),
 												   // message text
-												   tr("Do you want to destroy the ticket cache?"),
+												   ki18n("Do you want to destroy the ticket cache?"),
 												   QMessageBox::Yes| QMessageBox::No, QMessageBox::No ))
 	{
 		int code = v5::destroyCcache(kcontext);
@@ -348,9 +331,9 @@ Ktw::destroyCredential()
 		{
 			QMessageBox::critical(this,
 			                      // title
-			                      tr("Error !"),
+			                      ki18n("Error !"),
 			                      // message text
-			                      tr("Ticket cache cannot be destroyed."));
+			                      ki18n("Ticket cache cannot be destroyed."));
 		}
 	}
 	else
@@ -379,8 +362,8 @@ Ktw::initWorkflow(int type)
 			retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
 			if(!retval)
 			{
-				tray->showMessage(tr("Ticket renewed"),
-				                  tr("Ticket successfully renewed."),
+				tray->showMessage(ki18n("Ticket renewed"),
+				                  ki18n("Ticket successfully renewed."),
 				                  QSystemTrayIcon::Information, 5000 );
 				break;
 			}
@@ -407,8 +390,8 @@ Ktw::initWorkflow(int type)
 				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
 				if(!retval)
 				{
-					tray->showMessage(tr("Ticket renewed"),
-					                  tr("Ticket successfully renewed."),
+					tray->showMessage(ki18n("Ticket renewed"),
+					                  ki18n("Ticket successfully renewed."),
 					                  QSystemTrayIcon::Information, 5000 );
 					break;
 				}
@@ -506,7 +489,7 @@ Ktw::kinit()
 		{
 			qDebug("Error during parse_name: %d", retval);
 			ok = true;
-			errorTxt = tr("Invalid principal name");
+			errorTxt = ki18n("Invalid principal name");
 			continue;
 		}
 		
@@ -552,7 +535,7 @@ Ktw::kinit()
 				case KRB5KDC_ERR_PREAUTH_FAILED:
 				case KRB5KRB_AP_ERR_BAD_INTEGRITY:
                     /* Invalid password, try again. */
-					errorTxt = tr("Invalid Password");
+					errorTxt = ki18n("Invalid Password");
 					break;
 				case KRB5KDC_ERR_KEY_EXP:
                     /* password expired */
@@ -564,10 +547,10 @@ Ktw::kinit()
 				case KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN:
 				case KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN:
 					/* principal unknown */
-					errorTxt = tr("Unknown principal");
+					errorTxt = ki18n("Unknown principal");
 					break;
 				case KRB5_REALM_CANT_RESOLVE:
-					errorTxt = tr("Unknown realm");
+					errorTxt = ki18n("Unknown realm");
 					break;
 				default:
 					errorTxt = v5::getKrb5ErrorMessage(kcontext, retval);
@@ -686,7 +669,7 @@ Ktw::reinitCredential(const QString& password)
 				case KRB5KDC_ERR_PREAUTH_FAILED:
 				case KRB5KRB_AP_ERR_BAD_INTEGRITY:
 					/* Invalid password, try again. */
-					errorText = tr("The password you entered is invalid");
+					errorText = ki18n("The password you entered is invalid");
 					break;
 				case KRB5KDC_ERR_KEY_EXP:
 					/* password expired */
@@ -697,7 +680,7 @@ Ktw::reinitCredential(const QString& password)
 					break;
 				case KRB5_KDC_UNREACH:
 					/* kdc unreachable, return */
-					QMessageBox::critical(this, tr("Failure"),
+					QMessageBox::critical(this, ki18n("Failure"),
 					                      v5::getKrb5ErrorMessage(kcontext, retval),
 					                      QMessageBox::Ok, QMessageBox::Ok);
 					repeat = false;
@@ -732,7 +715,7 @@ Ktw::passwordDialog(const QString& errorText) const
 	}
 	
 	PWDialog pwd(NULL, "pwdialog", true);
-	pwd.krb5promptSetText(tr("Please enter the Kerberos password for <b>%1</b>").arg(princ));
+	pwd.krb5promptSetText(ki18n("Please enter the Kerberos password for <b>%1</b>").arg(princ));
 	pwd.promptEditSetEchoMode(QLineEdit::Password);
 	
 	if(!errorText.isEmpty())
@@ -804,12 +787,12 @@ Ktw::changePassword(const QString &oldpw)
 			{
 				case KRB5KDC_ERR_PREAUTH_FAILED:
 				case KRB5KRB_AP_ERR_BAD_INTEGRITY:
-					errorText = tr("The password you entered is invalid");
+					errorText = ki18n("The password you entered is invalid");
 					break;
 				case KRB5_KDC_UNREACH:
 					/* kdc unreachable, return */
 					krb5_free_cred_contents (kcontext, &my_creds);
-					QMessageBox::critical(this, tr("Failure"),
+					QMessageBox::critical(this, ki18n("Failure"),
 					                      v5::getKrb5ErrorMessage(kcontext, retval),
 					                      QMessageBox::Ok, QMessageBox::Ok);
 					return retval;
@@ -841,11 +824,11 @@ Ktw::changePassword(const QString &oldpw)
 	do
 	{
 		PWChangeDialog pwd(NULL, "pwchangedialog", true);
-		pwd.titleTextLabelSetText(tr("Change the password for principal <b>%1</b>").arg(principal));
+		pwd.titleTextLabelSetText(ki18n("Change the password for principal <b>%1</b>").arg(principal));
 		
 		if(!pwEqual)
 		{
-			pwd.errorLabelSetText(tr("The passwords are not equal"));
+			pwd.errorLabelSetText(ki18n("The passwords are not equal"));
 		}
 		
 		int code = pwd.exec();
@@ -882,7 +865,7 @@ Ktw::changePassword(const QString &oldpw)
 	{
 		qDebug("changing password failed. %d", retval);
 		krb5_free_cred_contents (kcontext, &my_creds);
-		QMessageBox::critical(this, tr("Password change failed"),
+		QMessageBox::critical(this, ki18n("Password change failed"),
 		                      v5::getKrb5ErrorMessage(kcontext, retval),
 		                      QMessageBox::Ok, QMessageBox::Ok);
 		return retval;
@@ -922,20 +905,20 @@ Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 		
 		if( (lifetime = (krb5_deltat) tkt_lifetime / (60*60*24)) > 0 )
 		{
-			lifetimeUnit = tr("days");
+			lifetimeUnit = ki18n("days");
 		}
 		else if( (lifetime = (krb5_deltat) tkt_lifetime / (60*60)) > 0 )
 		{
-			lifetimeUnit = tr("hours");
+			lifetimeUnit = ki18n("hours");
 		}
 		else if( (lifetime = (krb5_deltat) tkt_lifetime / (60)) > 0 )
 		{
-			lifetimeUnit = tr("minutes");
+			lifetimeUnit = ki18n("minutes");
 		}
 		else
 		{
 			lifetime = tkt_lifetime;
-			lifetimeUnit = tr("seconds");
+			lifetimeUnit = ki18n("seconds");
 		}
 		
 		if(creds.times.renew_till == 0)
@@ -948,20 +931,20 @@ Ktw::setDefaultOptionsUsingCreds(krb5_context kcontext)
 
 			if( (renewtime = (krb5_deltat) (tkt_renewtime / (60*60*24))) > 0 )
 			{
-				renewtimeUnit = tr("days");
+				renewtimeUnit = ki18n("days");
 			}
 			else if( (renewtime = (krb5_deltat) (tkt_renewtime / (60*60))) > 0 )
 			{
-				renewtimeUnit = tr("hours");
+				renewtimeUnit = ki18n("hours");
 			}
 			else if( (renewtime = (krb5_deltat) (tkt_renewtime / (60))) > 0 )
 			{
-				renewtimeUnit = tr("minutes");
+				renewtimeUnit = ki18n("minutes");
 			}
 			else
 			{
 				renewtime = tkt_renewtime;
-				renewtimeUnit = tr("seconds");
+				renewtimeUnit = ki18n("seconds");
 			}
 		}
 		krb5_free_cred_contents (kcontext, &creds);
@@ -984,10 +967,10 @@ Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
 	{
 		krb5_deltat tkt_lifetime = 0;
 		
-		if(lifetimeUnit == tr("seconds")) tkt_lifetime = lifetime;
-		if(lifetimeUnit == tr("minutes")) tkt_lifetime = lifetime*60;
-		if(lifetimeUnit == tr("hours")) tkt_lifetime = lifetime*60*60;
-		if(lifetimeUnit == tr("days")) tkt_lifetime = lifetime*60*60*24;
+		if(lifetimeUnit == ki18n("seconds")) tkt_lifetime = lifetime;
+		if(lifetimeUnit == ki18n("minutes")) tkt_lifetime = lifetime*60;
+		if(lifetimeUnit == ki18n("hours")) tkt_lifetime = lifetime*60*60;
+		if(lifetimeUnit == ki18n("days")) tkt_lifetime = lifetime*60*60*24;
 
 		qDebug("Set lifetime to: %d", tkt_lifetime);
 		
@@ -999,10 +982,10 @@ Ktw::setOptions(krb5_context, krb5_get_init_creds_opt *opts)
 	{
 		krb5_deltat tkt_renewtime = 0;
 
-		if(renewtimeUnit == tr("seconds")) tkt_renewtime = renewtime;
-		if(renewtimeUnit == tr("minutes")) tkt_renewtime = renewtime*60;
-		if(renewtimeUnit == tr("hours")) tkt_renewtime = renewtime*60*60;
-		if(renewtimeUnit == tr("days")) tkt_renewtime = renewtime*60*60*24;
+		if(renewtimeUnit == ki18n("seconds")) tkt_renewtime = renewtime;
+		if(renewtimeUnit == ki18n("minutes")) tkt_renewtime = renewtime*60;
+		if(renewtimeUnit == ki18n("hours")) tkt_renewtime = renewtime*60*60;
+		if(renewtimeUnit == ki18n("days")) tkt_renewtime = renewtime*60*60*24;
 
 		qDebug("Set renewtime to: %d", tkt_renewtime);
 
@@ -1060,13 +1043,13 @@ Ktw::buildCcacheInfos()
     {
     	if (code == KRB5_FCC_NOFILE)
     	{
-    		errmsg += tr("No credentials cache found") + " (" + tr("Ticket cache: %1:%2")
+    		errmsg += ki18n("No credentials cache found") + " (" + ki18n("Ticket cache: %1:%2")
     			.arg(krb5_cc_get_type(kcontext, cache))
     			.arg(krb5_cc_get_name(kcontext, cache)) + ")";
     	}
     	else
     	{
-    		errmsg += tr("Error while setting cache flags") + " (" + tr("Ticket cache: %1:%2")
+    		errmsg += ki18n("Error while setting cache flags") + " (" + ki18n("Ticket cache: %1:%2")
     			.arg(krb5_cc_get_type(kcontext, cache))
     			.arg(krb5_cc_get_name(kcontext, cache)) + ")";
     	}
@@ -1087,11 +1070,11 @@ Ktw::buildCcacheInfos()
     }
 
     commonLabel->setText(QString("<qt><b>")+
-                         tr("Ticket cache: %1:%2")
+                         ki18n("Ticket cache: %1:%2")
                          .arg(krb5_cc_get_type(kcontext, cache))
                          .arg(krb5_cc_get_name(kcontext, cache)) +
                          QString("</b><br><b>")+
-                         tr("Default principal: %3").arg(defname)+
+                         ki18n("Default principal: %3").arg(defname)+
                          QString("</b><br><br>")
                          );
     
@@ -1176,7 +1159,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 		cred->times.starttime = cred->times.authtime;
 
 	QString n = QString(sname) +
-		((strcmp(name, defname))? tr(" for client %1").arg(name):QString());
+		((strcmp(name, defname))? ki18n(" for client %1").arg(name):QString());
 
 	QTreeWidgetItem *after = 0;
 	int count = lv->topLevelItemCount();
@@ -1200,7 +1183,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 		expires = 0;
 	
 	QTreeWidgetItem *lvi = new QTreeWidgetItem(lv, after);
-	lvi->setText(0, tr("Service principal"));
+	lvi->setText(0, ki18n("Service principal"));
 	lvi->setText(1, n);
 	lvi->setText(2, time.addSecs(expires).toString());
 
@@ -1216,17 +1199,17 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	lvi->setBackground(2, brush);
 	
 	last = new QTreeWidgetItem(lvi);
-	last->setText(0, tr("Valid starting"));
+	last->setText(0, ki18n("Valid starting"));
 	last->setText(1, printtime(cred->times.starttime));
 	
 	last = new QTreeWidgetItem(lvi, last);
-	last->setText(0, tr("Expires"));
+	last->setText(0, ki18n("Expires"));
 	last->setText(1, printtime(cred->times.endtime));
 
 	if(cred->times.renew_till)
 	{
 		last = new QTreeWidgetItem(lvi, last);
-		last->setText(0, tr("Renew until"));
+		last->setText(0, ki18n("Renew until"));
 		last->setText(1, printtime(cred->times.renew_till));
 	}
 	
@@ -1261,17 +1244,17 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 		tFlags += 'a';
 	
 	last = new QTreeWidgetItem(lvi, last);
-	last->setText(0, tr("Ticket flags"));
+	last->setText(0, ki18n("Ticket flags"));
 	last->setText(1, tFlags);
 
 	retval = krb5_decode_ticket(&cred->ticket, &tkt);
 	if(!retval)
 	{
 		last = new QTreeWidgetItem(lvi, last);
-		last->setText(0, tr("Key Encryption Type"));
+		last->setText(0, ki18n("Key Encryption Type"));
 		last->setText(1, v5::etype2String(cred->keyblock.enctype));
 		last = new QTreeWidgetItem(lvi, last);
-		last->setText(0, tr("Ticket Encryption Type" ));
+		last->setText(0, ki18n("Ticket Encryption Type" ));
 		last->setText(1, v5::etype2String(tkt->enc_part.enctype));
 	}
 	if (tkt != NULL)
@@ -1280,7 +1263,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	QString addresses;
 	if (!cred->addresses|| !cred->addresses[0])
 	{
-		addresses += tr("(none)");
+		addresses += ki18n("(none)");
 	}
 	else
 	{
@@ -1295,7 +1278,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 		}
 	}
 	last = new QTreeWidgetItem(lvi, last);
-	last->setText(0, tr("Addresses" ));
+	last->setText(0, ki18n("Addresses" ));
 	last->setText(1, addresses);
 	
 	krb5_free_unparsed_name(kcontext, name);
@@ -1317,7 +1300,7 @@ Ktw::oneAddr(krb5_address *a)
     		if (a->length != 4)
     		{
     		broken:
-    			return tr("Broken address (type %1 length %2)")
+    			return ki18n("Broken address (type %1 length %2)")
     				.arg(a->addrtype)
     				.arg(a->length);
     		}
@@ -1336,11 +1319,11 @@ Ktw::oneAddr(krb5_address *a)
     		}
     		break;
     	default:
-    		return tr("Unknown address type %1").arg(a->addrtype);
+    		return ki18n("Unknown address type %1").arg(a->addrtype);
     }
 	if(addr.isNull())
 	{
-		return tr("(none)");
+		return ki18n("(none)");
 	}
 	return addr.toString();
 }
@@ -1376,7 +1359,7 @@ Ktw::eventFilter(QObject *obj, QEvent *event)
 	{
 		if (event->type() == QEvent::ToolTip)
 		{
-			QString tipText = tr("No Credential Cache found");
+			QString tipText = ki18n("No Credential Cache found");
 			krb5_creds creds;
 			krb5_context   kcontext;
 			krb5_error_code err = krb5_init_context(&kcontext);
@@ -1392,7 +1375,7 @@ Ktw::eventFilter(QObject *obj, QEvent *event)
 				krb5_timestamp expires = creds.times.endtime - v5::getNow(kcontext);
 				if(expires <= 0)
 					expires = 0;
-				tipText = tr("Ticket expires in %1").arg(time.addSecs(expires).toString());
+				tipText = ki18n("Ticket expires in %1").arg(time.addSecs(expires).toString());
 				krb5_free_cred_contents (kcontext, &creds);
 			}
 			krb5_free_context(kcontext);

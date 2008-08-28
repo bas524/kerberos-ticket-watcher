@@ -29,6 +29,8 @@
 #define KRB5_PRIVATE 1
 #include <krb5.h>
 
+#include "krb5_tw_gettext.h"
+
 #include "ui_mainwidget.h"
 
 class QAction;

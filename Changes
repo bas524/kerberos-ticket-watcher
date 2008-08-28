@@ -1,5 +1,14 @@
 krb5-ticket-watcher
 
+2008-08-28:
+- version 1.0.0
+- Build with cmake
+- use gettext for translations
+
+2008-08-24:
+- replace Q3ListView with QTreeWidget
+- remove the use of QT3Support lib
+
 2008-06-28:
 - version 0.9.2
 - add change password menu item

@@ -1,6 +1,11 @@
 krb5-ticket-watcher
 
-Version 0.9.4
+Version 1.0.0
+- Build with cmake
+- use gettext for translations
+- remove use of Qt3Support
+
+Version 0.9.2
 - add change password menu item
 - better error messages
 - show the remaining time of the krbtgt in the tooltip

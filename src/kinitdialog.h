@@ -5,6 +5,8 @@
 #include <QString>
 #include <QStringList>
 
+#include "krb5_tw_gettext.h"
+
 #include "ui_kinitdialog.h"
 
 class KinitDialog : public QDialog, private Ui::KinitDialog
