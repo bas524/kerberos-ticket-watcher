@@ -92,6 +92,7 @@ ENDIF (NOT CREATEPOT)
  
 ADD_CUSTOM_TARGET(pot ${CREATEPOT} ${CMAKE_SOURCE_DIR}/po
                   DEPENDS krb5-ticket-watcher)
+ADD_CUSTOM_TARGET(backupclean find ${CMAKE_SOURCE_DIR} -name "*~" -print0 | xargs -0 rm -f )
 
 # here we instruct CMake to build "krb5-ticket-watcher" executable from all of the source files
 ADD_EXECUTABLE( krb5-ticket-watcher ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS} )
