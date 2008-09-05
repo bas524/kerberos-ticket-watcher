@@ -1,5 +1,9 @@
 krb5-ticket-watcher
 
+Version 1.0.1
+- Move text for the ticket flags legend out of the ui file
+  This make translation a little bit easier.
+
 Version 1.0.0
 - Build with cmake
 - use gettext for translations

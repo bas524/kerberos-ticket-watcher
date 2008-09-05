@@ -1,5 +1,10 @@
 krb5-ticket-watcher
 
+2008-09-05:
+- version 1.0.1
+- Move text for the ticket flags legend out of the ui file
+  This make translation a little bit easier.
+
 2008-08-28:
 - version 1.0.0
 - Build with cmake
