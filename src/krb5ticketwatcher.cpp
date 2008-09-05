@@ -226,6 +226,37 @@ Ktw::initMainWindow()
 {
 	setupUi(this);
 
+	textLabel1->setText(
+						// Legend: Explain ticket flag "F"
+						QString("<qt><table><tr><td><b>F</b></td><td>")+ki18n("Forwardable")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "f"
+						QString("<tr><td><b>f</b></td><td>")+ki18n("Forwarded")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "p"
+						QString("<tr><td><b>P</b></td><td>")+ki18n("Proxiable")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "P"
+						QString("<tr><td><b>p</b></td><td>")+ki18n("Proxy")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "D"
+						QString("<tr><td><b>D</b></td><td>")+ki18n("May Postdate")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "d"
+						QString("<tr><td><b>d</b></td><td>")+ki18n("Postdated")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "i"
+						QString("<tr><td><b>i</b></td><td>")+ki18n("Invalid")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "R"
+						QString("<tr><td><b>R</b></td><td>")+ki18n("Renewable")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "I"
+						QString("<tr><td><b>I</b></td><td>")+ki18n("Initial")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "H"
+						QString("<tr><td><b>H</b></td><td>")+ki18n("HW Auth")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "A"
+						QString("<tr><td><b>A</b></td><td>")+ki18n("Pre Auth")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "T"
+						QString("<tr><td><b>T</b></td><td>")+ki18n("Transit Policy Checked")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "O"
+						QString("<tr><td><b>O</b></td><td>")+ki18n("Ok as Delegate")+QString("</td></tr>")+
+						// Legend: Explain ticket flag "a"
+						QString("<tr><td><b>a</b></td><td>")+ki18n("Anonymous")+QString("</td></tr></table></qt>")
+					   );
+	
 	connect(refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
 }
 
@@ -239,7 +270,7 @@ Ktw::reReadCache()
 	if(!ret.isEmpty())
 	{
 		qDebug() << "Error: " << ret;
-		commonLabel->setText("<qt><pre>" + ret + "</pre></qt>");
+		commonLabel->setText("<qt><b>" + ret + "</b></qt>");
 	}
 }
 
@@ -1077,7 +1108,7 @@ Ktw::buildCcacheInfos()
                          ki18n("Default principal: %3").arg(defname)+
                          QString("</b><br><br>")
                          );
-    
+
     if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
     {
     	errmsg += "Error while starting to retrieve tickets";

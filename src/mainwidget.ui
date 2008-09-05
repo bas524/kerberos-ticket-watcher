@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>819</width>
+    <width>836</width>
     <height>499</height>
    </rect>
   </property>
@@ -86,23 +86,7 @@
          <item row="0" column="0" >
           <widget class="QLabel" name="textLabel1" >
            <property name="text" >
-            <string>&lt;qt>
-&lt;table>
-&lt;tr>&lt;td>&lt;b>F&lt;/b>&lt;/td>&lt;td>Forwardable&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>f&lt;/b>&lt;/td>&lt;td>Forwarded&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>P&lt;/b>&lt;/td>&lt;td>Proxiable&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>p&lt;/b>&lt;/td>&lt;td>Proxy&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>D&lt;/b>&lt;/td>&lt;td>May Postdate&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>d&lt;/b>&lt;/td>&lt;td>Postdated&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>i&lt;/b>&lt;/td>&lt;td>Invalid&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>R&lt;/b>&lt;/td>&lt;td>Renewable&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>I&lt;/b>&lt;/td>&lt;td>Initial&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>H&lt;/b>&lt;/td>&lt;td>HW Auth&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>A&lt;/b>&lt;/td>&lt;td>Pre Auth&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>T&lt;/b>&lt;/td>&lt;td>Transit Policy Checked&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>O&lt;/b>&lt;/td>&lt;td>Ok as Delegate&lt;/td>&lt;/tr>
-&lt;tr>&lt;td>&lt;b>a&lt;/b>&lt;/td>&lt;td>Anonymous&lt;/td>&lt;/tr>
-&lt;/table>&lt;/qt></string>
+            <string/>
            </property>
            <property name="alignment" >
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
