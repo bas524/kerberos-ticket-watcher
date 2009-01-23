@@ -1,506 +1,506 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Michael Calmer, Nuernberg
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# translation of krb5-ticket-watcher.po to dansk
+# Jan Madsen <jan.madsen.pt@gmail.com>, 2008.
+# Martin Schlander <mschlander@opensuse.org>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-05 12:18+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2008-11-12 09:44+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <opensuse-translation@opensuse.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../src/krb5ticketwatcher.cpp:1193
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1193
-#, possible-qt-format
+#, qt-format
 msgid " for client %1"
-msgstr ""
+msgstr " til klienten %1"
 
 #: ../build/ui_pwchangedialog.h:173 ../build/ui_pwdialog.h:157
 #: ../build/ui_kinitdialog.h:279
 msgid "&Cancel"
-msgstr ""
+msgstr "&Annullér"
 
 #: ../src/krb5ticketwatcher.cpp:300
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:300
 msgid "&Change Kerberos Password"
-msgstr ""
+msgstr "Æ&ndr Kerberos-adgangskode"
 
 #: ../build/ui_mainwidget.h:139
 msgid "&Close"
-msgstr ""
+msgstr "&Luk"
 
 #: ../src/krb5ticketwatcher.cpp:305
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:305
 msgid "&Destroy Ticket"
-msgstr ""
+msgstr "&Destruér billet"
 
 #: ../build/ui_kinitdialog.h:287
 msgid "&Details..."
-msgstr ""
+msgstr "&Detaljer..."
 
 #: ../src/krb5ticketwatcher.cpp:290
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:290
 msgid "&New Ticket"
-msgstr ""
+msgstr "&Ny billet"
 
 #: ../build/ui_pwchangedialog.h:175 ../build/ui_pwdialog.h:155
 #: ../build/ui_kinitdialog.h:281
 msgid "&Ok"
-msgstr ""
+msgstr "&OK"
 
 #: ../src/krb5ticketwatcher.cpp:315
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:315
 msgid "&Quit"
-msgstr ""
+msgstr "&Afslut"
 
 #: ../build/ui_mainwidget.h:137
 msgid "&Refresh"
-msgstr ""
+msgstr "&Genopfrisk"
 
 #: ../src/krb5ticketwatcher.cpp:295
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:295
 msgid "&Renew Ticket"
-msgstr ""
+msgstr "Fo&rny billet"
 
 #: ../src/krb5ticketwatcher.cpp:1297 ../src/krb5ticketwatcher.cpp:1357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1297
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1357
 msgid "(none)"
-msgstr ""
+msgstr "(ingen)"
 
 #: ../build/ui_kinitdialog.h:285
 msgid "@"
-msgstr ""
+msgstr "@"
 
 #: ../src/krb5ticketwatcher.cpp:1312
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1312
 msgid "Addresses"
-msgstr ""
+msgstr "Adresser"
 
 #: ../build/ui_pwchangedialog.h:174 ../build/ui_pwdialog.h:158
 #: ../build/ui_mainwidget.h:140 ../build/ui_kinitdialog.h:280
 msgid "Alt+C"
-msgstr ""
+msgstr "Alt+C"
 
 #: ../build/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr ""
+msgstr "Alt+D"
 
 #: ../build/ui_pwchangedialog.h:176 ../build/ui_pwdialog.h:156
 #: ../build/ui_kinitdialog.h:282
 msgid "Alt+O"
-msgstr ""
+msgstr "Alt+O"
 
 #: ../build/ui_mainwidget.h:138
 msgid "Alt+R"
-msgstr ""
+msgstr "Alt+R"
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:257
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:257
 msgid "Anonymous"
-msgstr ""
+msgstr "Anonym"
 
 #: ../src/krb5ticketwatcher.cpp:1334
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1334
-#, possible-qt-format
+#, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr ""
+msgstr "Defekt adresse (type %1 længde %2)"
 
 #: ../build/ui_pwchangedialog.h:172
 msgid "Change Kerberos Password"
-msgstr ""
+msgstr "Ændr Kerberos-adgangskode"
 
 #: ../src/krb5ticketwatcher.cpp:302
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:302
 msgid "Change the Kerberos Password"
-msgstr ""
+msgstr "Ændr Kerberos-adgangskoden"
 
 #: ../src/krb5ticketwatcher.cpp:858
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:858
-#, possible-qt-format
+#, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr ""
+msgstr "Ændr adgangskoden for principalen <b>%1</b>"
 
 #: ../src/krb5ticketwatcher.cpp:292
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:292
 msgid "Create a new Ticket"
-msgstr ""
+msgstr "Opret en ny billet"
 
 #: ../src/krb5ticketwatcher.cpp:301
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:301
 msgid "Ctrl+C"
-msgstr ""
+msgstr "Ctrl+C"
 
 #: ../src/krb5ticketwatcher.cpp:306
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:306
 msgid "Ctrl+D"
-msgstr ""
+msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:291
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:291
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+N"
 
 #: ../src/krb5ticketwatcher.cpp:316
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:316
 msgid "Ctrl+Q"
-msgstr ""
+msgstr "Ctrl+Q"
 
 #: ../src/krb5ticketwatcher.cpp:296
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:296
 msgid "Ctrl+R"
-msgstr ""
+msgstr "Ctrl+R"
 
 #: ../src/krb5ticketwatcher.cpp:311
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:311
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: ../build/ui_mainwidget.h:130
 msgid "Default credential cache"
-msgstr ""
+msgstr "Standard akkreditiv-cache"
 
 #: ../src/krb5ticketwatcher.cpp:1108
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1108
-#, possible-qt-format
+#, qt-format
 msgid "Default principal: %3"
-msgstr ""
+msgstr "Standard principal: %3"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:355
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:355
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr ""
+msgstr "Destruér Kerberos billet-cache?"
 
 #: ../src/krb5ticketwatcher.cpp:307
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:307
 msgid "Destroy the Ticket"
-msgstr ""
+msgstr "Destruér billetten"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:357
 msgid "Do you want to destroy the ticket cache?"
-msgstr ""
+msgstr "Vil du destruere billet-cachen?"
 
 #: ../build/ui_pwchangedialog.h:177
 msgid "Enter new password:"
-msgstr ""
+msgstr "Angiv ny adgangskode:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:365
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:365
 msgid "Error !"
-msgstr ""
+msgstr "Fejl !"
 
 #: ../src/krb5ticketwatcher.cpp:1083
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1083
 msgid "Error while setting cache flags"
-msgstr ""
+msgstr "Fejl under sætning af cache-flag"
 
 #: ../src/krb5ticketwatcher.cpp:1237
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1237
 msgid "Expires"
-msgstr ""
+msgstr "Udløber"
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:714 ../src/krb5ticketwatcher.cpp:826
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:714
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:826
 msgid "Failure"
-msgstr ""
+msgstr "Fejl"
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:231
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:231
 msgid "Forwardable"
-msgstr ""
+msgstr "Kan videresendes"
 
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:233
 msgid "Forwarded"
-msgstr ""
+msgstr "Videresendt"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:249
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:249
 msgid "HW Auth"
-msgstr ""
+msgstr "HW-godk."
 
 #: ../src/main.cpp:70
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
-msgstr ""
+msgstr "Jeg kunne ikke finde noget statusområde på dette system."
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:247
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:247
 msgid "Initial"
-msgstr ""
+msgstr "Initial"
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:243
 msgid "Invalid"
-msgstr ""
+msgstr "Ugyldig"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:569
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:569
 msgid "Invalid Password"
-msgstr ""
+msgstr "Ugyldig adgangskode"
 
 #: ../src/krb5ticketwatcher.cpp:523
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:523
 msgid "Invalid principal name"
-msgstr ""
+msgstr "Ugyldigt principal-navn"
 
 #: ../build/ui_pwdialog.h:154
 msgid "Kerberos Password Dialog"
-msgstr ""
+msgstr "Kerberos adgangskodedialog"
 
 #: ../build/ui_mainwidget.h:129
 msgid "Kerberos Ticket List"
-msgstr ""
+msgstr "Kerberos billetliste"
 
 #: ../src/krb5ticketwatcher.cpp:1285
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1285
 msgid "Key Encryption Type"
-msgstr ""
+msgstr "Type af nøglekryptering"
 
 #: ../build/ui_kinitdialog.h:293
 msgid "Lifetime:"
-msgstr ""
+msgstr "Levetid:"
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:239
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:239
 msgid "May Postdate"
-msgstr ""
+msgstr "Må fremdatere"
 
 #: ../build/ui_kinitdialog.h:278
 msgid "New Ticket"
-msgstr ""
+msgstr "Ny billet"
 
+#
 #: ../src/krb5ticketwatcher.cpp:1393
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1393
 msgid "No Credential Cache found"
-msgstr ""
+msgstr "Ingen akkreditiv-cache fundet"
 
 #: ../src/krb5ticketwatcher.cpp:1077
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1077
 msgid "No credentials cache found"
-msgstr ""
+msgstr "Ingen akkreditiv-cache fundet"
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:255
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:255
 msgid "Ok as Delegate"
-msgstr ""
+msgstr "OK som delegeret"
 
 #: ../src/krb5ticketwatcher.cpp:899
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:899
 msgid "Password change failed"
-msgstr ""
+msgstr "Ændring af adgangskode fejlede"
 
 #: ../build/ui_kinitdialog.h:286
 msgid "Password:"
-msgstr ""
+msgstr "Adgangskode:"
 
 #: ../src/krb5ticketwatcher.cpp:749
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:749
-#, possible-qt-format
+#, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr ""
+msgstr "Angiv Kerberos-adgangskoden for <b>%1</b>"
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:241
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:241
 msgid "Postdated"
-msgstr ""
+msgstr "Fremdateret"
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:251
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:251
 msgid "Pre Auth"
-msgstr ""
+msgstr "Forgodk."
 
 #: ../build/ui_kinitdialog.h:284
 msgid "Principal:"
-msgstr ""
+msgstr "Principal:"
 
 #: ../build/ui_mainwidget.h:132
 msgid "Property"
-msgstr ""
+msgstr "Egenskab"
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:235
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:235
 msgid "Proxiable"
-msgstr ""
+msgstr "Fuldmægtig"
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:237
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:237
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: ../src/krb5ticketwatcher.cpp:317
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:317
 msgid "Quit krb5TicketWatcher"
-msgstr ""
+msgstr "Afslut krb5TicketWatcher"
 
 #: ../src/krb5ticketwatcher.cpp:310
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:310
 msgid "Re&store"
-msgstr ""
+msgstr "Gen&opret"
 
 #: ../build/ui_pwchangedialog.h:178
 msgid "Reenter password:"
-msgstr ""
+msgstr "Gentag adgangskode:"
 
 #: ../src/krb5ticketwatcher.cpp:297
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:297
 msgid "Renew the Ticket"
-msgstr ""
+msgstr "Forny billetten"
 
 #: ../src/krb5ticketwatcher.cpp:1243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1243
 msgid "Renew until"
-msgstr ""
+msgstr "Forny indtil"
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:245
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:245
 msgid "Renewable"
-msgstr ""
+msgstr "Kan fornyes"
 
 #: ../build/ui_kinitdialog.h:301
 msgid "Renewable for:"
-msgstr ""
+msgstr "Kan fornyes til:"
 
 #: ../src/krb5ticketwatcher.cpp:312
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:312
 msgid "Restore the Window"
-msgstr ""
+msgstr "Genopret vinduet"
 
 #: ../src/krb5ticketwatcher.cpp:1217
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1217
 msgid "Service principal"
-msgstr ""
+msgstr "Tjeneste-principal"
 
 #: ../src/main.cpp:69
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/main.cpp:69
 msgid "Systray"
-msgstr ""
+msgstr "Statusområde"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:703 ../src/krb5ticketwatcher.cpp:821
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:703
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:821
 msgid "The password you entered is invalid"
-msgstr ""
+msgstr "Adgangskoden, du angav, er ugyldig"
 
 #: ../src/krb5ticketwatcher.cpp:862
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:862
 msgid "The passwords are not equal"
-msgstr ""
+msgstr "Adgangskoderne er ikke ens"
 
 #: ../src/krb5ticketwatcher.cpp:1288
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1288
 msgid "Ticket Encryption Type"
-msgstr ""
+msgstr "Type af billetkryptering"
 
 #: ../build/ui_kinitdialog.h:290
 msgid "Ticket Flags"
-msgstr ""
+msgstr "Billetflag"
 
 #: ../build/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr ""
+msgstr "Billetflag - forklaring"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:367
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:367
 msgid "Ticket cache cannot be destroyed."
-msgstr ""
+msgstr "Billet-cache kan ikke destrueres."
 
 #: ../src/krb5ticketwatcher.cpp:1077 ../src/krb5ticketwatcher.cpp:1083
 #: ../src/krb5ticketwatcher.cpp:1104
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1077
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1083
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1104
-#, possible-qt-format
+#, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr ""
+msgstr "Billet-cache: %1:%2"
 
 #: ../src/krb5ticketwatcher.cpp:1409
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1409
-#, possible-qt-format
+#, qt-format
 msgid "Ticket expires in %1"
-msgstr ""
+msgstr "Billetten udløber om %1"
 
 #: ../src/krb5ticketwatcher.cpp:1278
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1278
 msgid "Ticket flags"
-msgstr ""
+msgstr "Billetflag"
 
 #: ../src/krb5ticketwatcher.cpp:396 ../src/krb5ticketwatcher.cpp:424
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:396
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:424
 msgid "Ticket renewed"
-msgstr ""
+msgstr "Billet fornyet"
 
 #: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:397
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:425
 msgid "Ticket successfully renewed."
-msgstr ""
+msgstr "Billet blev fornyet."
 
 #: ../build/ui_mainwidget.h:134
 msgid "Time Remaining"
-msgstr ""
+msgstr "Tid tilbage"
 
 #. Legend: Explain ticket flag "T"
 #: ../src/krb5ticketwatcher.cpp:253
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:253
 msgid "Transit Policy Checked"
-msgstr ""
+msgstr "Overgangspolitik tjekket"
 
 #: ../src/krb5ticketwatcher.cpp:1353
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1353
-#, possible-qt-format
+#, qt-format
 msgid "Unknown address type %1"
-msgstr ""
+msgstr "Ukendt adressetype %1"
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:581
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:581
 msgid "Unknown principal"
-msgstr ""
+msgstr "Ukendt principal"
 
 #: ../src/krb5ticketwatcher.cpp:584
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:584
 msgid "Unknown realm"
-msgstr ""
+msgstr "Ukendt område"
 
 #: ../src/krb5ticketwatcher.cpp:1233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1233
 msgid "Valid starting"
-msgstr ""
+msgstr "Gyldig fra"
 
 #: ../build/ui_mainwidget.h:133
 msgid "Value"
-msgstr ""
+msgstr "Værdi"
 
 #: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:939
 #: ../src/krb5ticketwatcher.cpp:965 ../src/krb5ticketwatcher.cpp:1004
@@ -512,15 +512,15 @@ msgstr ""
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1019
 #: ../build/ui_kinitdialog.h:296 ../build/ui_kinitdialog.h:304
 msgid "days"
-msgstr ""
+msgstr "dage"
 
 #: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:302
 msgid "default"
-msgstr ""
+msgstr "standard"
 
 #: ../build/ui_kinitdialog.h:291
 msgid "forwardable"
-msgstr ""
+msgstr "kan videresendes"
 
 #. init with translations
 #: ../src/krb5ticketwatcher.cpp:156 ../src/krb5ticketwatcher.cpp:943
@@ -533,7 +533,7 @@ msgstr ""
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1018
 #: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:305
 msgid "hours"
-msgstr ""
+msgstr "timer"
 
 #: ../src/krb5ticketwatcher.cpp:947 ../src/krb5ticketwatcher.cpp:973
 #: ../src/krb5ticketwatcher.cpp:1002 ../src/krb5ticketwatcher.cpp:1017
@@ -543,11 +543,11 @@ msgstr ""
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1017
 #: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:306
 msgid "minutes"
-msgstr ""
+msgstr "minutter"
 
 #: ../build/ui_kinitdialog.h:292
 msgid "proxiable"
-msgstr ""
+msgstr "fuldmægtig"
 
 #: ../src/krb5ticketwatcher.cpp:952 ../src/krb5ticketwatcher.cpp:978
 #: ../src/krb5ticketwatcher.cpp:1001 ../src/krb5ticketwatcher.cpp:1016
@@ -557,4 +557,5 @@ msgstr ""
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1016
 #: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:307
 msgid "seconds"
-msgstr ""
+msgstr "sekunder"
+
