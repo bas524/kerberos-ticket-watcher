@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher.km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-05 12:18+0200\n"
+"POT-Creation-Date: 2009-03-16 10:33+0100\n"
 "PO-Revision-Date: 2008-09-26 13:57+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -382,7 +382,7 @@ msgstr "បន្ត​រហូត​ដល់"
 msgid "Renewable"
 msgstr "អាច​បន្ត"
 
-#: ../build/ui_kinitdialog.h:301
+#: ../build/ui_kinitdialog.h:302
 msgid "Renewable for:"
 msgstr "អាច​បន្ត​សម្រាប់ ៖"
 
@@ -508,11 +508,11 @@ msgstr "តម្លៃ"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:965
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1004
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:296 ../build/ui_kinitdialog.h:304
+#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:306
 msgid "days"
 msgstr "ថ្ងៃ"
 
-#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:302
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
 msgid "default"
 msgstr "លំនាំដើម"
 
@@ -529,7 +529,7 @@ msgstr "អាច​បញ្ជូន​បន្ត​បាន"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:969
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1003
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:305
+#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:307
 msgid "hours"
 msgstr "ម៉ោង"
 
@@ -539,7 +539,7 @@ msgstr "ម៉ោង"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:973
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1002
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1017
-#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:306
+#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:308
 msgid "minutes"
 msgstr "នាទី"
 
@@ -553,6 +553,6 @@ msgstr "អាចដាក់ប្រូកស៊ី​បាន"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:978
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1001
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1016
-#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:307
+#: ../build/ui_kinitdialog.h:300 ../build/ui_kinitdialog.h:309
 msgid "seconds"
 msgstr "វិនាទី"

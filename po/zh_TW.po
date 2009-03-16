@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-05 12:18+0200\n"
+"POT-Creation-Date: 2009-03-16 10:33+0100\n"
 "PO-Revision-Date: 2009-01-21 13:40\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1193
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1193
-#, possible-qt-format
+#, qt-format
 msgid " for client %1"
 msgstr " 對於用戶端 %1"
 
@@ -107,7 +107,7 @@ msgstr "匿名"
 
 #: ../src/krb5ticketwatcher.cpp:1334
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1334
-#, possible-qt-format
+#, qt-format
 msgid "Broken address (type %1 length %2)"
 msgstr "損毀位址 (類型 %1 長度 %2)"
 
@@ -122,7 +122,7 @@ msgstr "變更 Kerberos 密碼"
 
 #: ../src/krb5ticketwatcher.cpp:858
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:858
-#, possible-qt-format
+#, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr "變更主體 <b>%1</b> 的密碼"
 
@@ -167,7 +167,7 @@ msgstr "預設身份證明快取"
 
 #: ../src/krb5ticketwatcher.cpp:1108
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1108
-#, possible-qt-format
+#, qt-format
 msgid "Default principal: %3"
 msgstr "預設主體：%3"
 
@@ -315,7 +315,7 @@ msgstr "密碼："
 
 #: ../src/krb5ticketwatcher.cpp:749
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:749
-#, possible-qt-format
+#, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr "請輸入 <b>%1</b> 的 Kerberos 密碼"
 
@@ -381,7 +381,7 @@ msgstr "更新至"
 msgid "Renewable"
 msgstr "可更新"
 
-#: ../build/ui_kinitdialog.h:301
+#: ../build/ui_kinitdialog.h:302
 msgid "Renewable for:"
 msgstr "可更新："
 
@@ -436,13 +436,13 @@ msgstr "無法損毀票證快取。"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1077
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1083
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1104
-#, possible-qt-format
+#, qt-format
 msgid "Ticket cache: %1:%2"
 msgstr "票證快取：%1:%2"
 
 #: ../src/krb5ticketwatcher.cpp:1409
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1409
-#, possible-qt-format
+#, qt-format
 msgid "Ticket expires in %1"
 msgstr "票證將於 %1 過期"
 
@@ -475,7 +475,7 @@ msgstr "已檢查傳送規則"
 
 #: ../src/krb5ticketwatcher.cpp:1353
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1353
-#, possible-qt-format
+#, qt-format
 msgid "Unknown address type %1"
 msgstr "未知的位址類型 %1"
 
@@ -507,11 +507,11 @@ msgstr "值"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:965
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1004
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:296 ../build/ui_kinitdialog.h:304
+#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:306
 msgid "days"
 msgstr "日"
 
-#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:302
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
 msgid "default"
 msgstr "預設值"
 
@@ -528,7 +528,7 @@ msgstr "可轉遞"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:969
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1003
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:305
+#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:307
 msgid "hours"
 msgstr "小時"
 
@@ -538,7 +538,7 @@ msgstr "小時"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:973
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1002
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1017
-#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:306
+#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:308
 msgid "minutes"
 msgstr "分鐘"
 
@@ -552,7 +552,6 @@ msgstr "可代理"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:978
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1001
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1016
-#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:307
+#: ../build/ui_kinitdialog.h:300 ../build/ui_kinitdialog.h:309
 msgid "seconds"
 msgstr "秒"
-

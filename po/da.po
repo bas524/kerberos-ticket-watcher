@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-05 12:18+0200\n"
+"POT-Creation-Date: 2009-03-16 10:33+0100\n"
 "PO-Revision-Date: 2008-11-12 09:44+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <opensuse-translation@opensuse.org>\n"
@@ -384,7 +384,7 @@ msgstr "Forny indtil"
 msgid "Renewable"
 msgstr "Kan fornyes"
 
-#: ../build/ui_kinitdialog.h:301
+#: ../build/ui_kinitdialog.h:302
 msgid "Renewable for:"
 msgstr "Kan fornyes til:"
 
@@ -510,11 +510,11 @@ msgstr "Værdi"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:965
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1004
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:296 ../build/ui_kinitdialog.h:304
+#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:306
 msgid "days"
 msgstr "dage"
 
-#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:302
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
 msgid "default"
 msgstr "standard"
 
@@ -531,7 +531,7 @@ msgstr "kan videresendes"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:969
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1003
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:297 ../build/ui_kinitdialog.h:305
+#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:307
 msgid "hours"
 msgstr "timer"
 
@@ -541,7 +541,7 @@ msgstr "timer"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:973
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1002
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1017
-#: ../build/ui_kinitdialog.h:298 ../build/ui_kinitdialog.h:306
+#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:308
 msgid "minutes"
 msgstr "minutter"
 
@@ -555,7 +555,6 @@ msgstr "fuldmægtig"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:978
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1001
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.1/src/krb5ticketwatcher.cpp:1016
-#: ../build/ui_kinitdialog.h:299 ../build/ui_kinitdialog.h:307
+#: ../build/ui_kinitdialog.h:300 ../build/ui_kinitdialog.h:309
 msgid "seconds"
 msgstr "sekunder"
-
