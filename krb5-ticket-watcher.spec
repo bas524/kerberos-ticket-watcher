@@ -1,5 +1,5 @@
 Name: krb5-ticket-watcher
-Version: 1.0.1
+Version: 1.0.2
 Release: alt1
 Summary: A Tray Applet for Watching, Renewing, and Reinitializing Kerberos Tickets
 Url: http://sourceforge.net/projects/krb5ticketwatch
@@ -36,5 +36,8 @@ tickets.
 %doc COPYING Changes News TODO 
 
 %changelog
+* Sun Mar 22 2009 Andriy Stepanov <stanv@altlinux.ru> 1.0.2-alt1
+- New version.
+
 * Fri Mar 20 2009 Andriy Stepanov <stanv@altlinux.ru> 1.0.1-alt1
 - Initial import to Sisyphus

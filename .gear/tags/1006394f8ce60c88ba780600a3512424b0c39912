@@ -1,0 +1,13 @@
+object 9d1d6507fa85f60ca72e9a4f4725caf0ac93823e
+type commit
+tag v1.0.2
+tagger Andriy Stepanov <stanv@altlinux.ru> 1237730880 +0300
+
+v1.0.2
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iEYEABECAAYFAknGRkAACgkQcfgMhiiRlqrmvACeOL7oE8Wjc0MY2QX3JRRmnnDy
+7RwAnArpOVXrZ4D4VwLRGUSXrk0b20JZ
+=5BcA
+-----END PGP SIGNATURE-----
