@@ -19,6 +19,7 @@
  */
 
 #include "v5.h"
+#include <stdio.h>
 #include <QString>
 #include <QStringList>
 #include "krb5ticketwatcher.h"
