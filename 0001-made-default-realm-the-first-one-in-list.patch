@@ -1,0 +1,25 @@
+From 572ad8343d138f16085854ac5921adfdcfa32683 Mon Sep 17 00:00:00 2001
+From: Sergey Bolshakov <sbolshakov@altlinux.org>
+Date: Mon, 30 Mar 2009 20:24:33 +0400
+Subject: [PATCH] made default realm the first one in list
+
+---
+ krb5-ticket-watcher/src/v5.cpp |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+diff --git a/krb5-ticket-watcher/src/v5.cpp b/krb5-ticket-watcher/src/v5.cpp
+index 955a36d..52f39a2 100644
+--- a/krb5-ticket-watcher/src/v5.cpp
++++ b/krb5-ticket-watcher/src/v5.cpp
+@@ -358,6 +358,8 @@ v5::getRealms(krb5_context kcontext)
+ 		qWarning("krb5_realm_iterator_create failed: %d", retval);
+ 		return list;
+ 	}
++	if (!defRealm.isEmpty())
++		list.push_front(defRealm);
+ 	while (iter)
+ 	{
+ 		if ((retval = krb5_realm_iterator(kcontext, &iter, &realm)))
+-- 
+1.6.1.3.GIT
+

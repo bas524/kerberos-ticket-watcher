@@ -1,6 +1,6 @@
 Name: krb5-ticket-watcher
 Version: 1.0.2
-Release: alt1
+Release: alt2
 Summary: A Tray Applet for Watching, Renewing, and Reinitializing Kerberos Tickets
 Url: http://sourceforge.net/projects/krb5ticketwatch
 License: %gpl2plus
@@ -9,6 +9,7 @@ Group: System/X11
 Packager: Andriy Stepanov <stanv@altlinux.ru>
 
 Source: %name-%version.tar
+Patch1: 0001-made-default-realm-the-first-one-in-list.patch
 
 BuildRequires: kde-common-devel rpm-build-licenses libkrb5-devel libkeyutils-devel
 # Automatically added by buildreq on Thu Mar 19 2009
@@ -20,6 +21,7 @@ tickets.
 
 %prep
 %setup
+%patch1 -p2
 
 %build
 %add_optflags -I%_includedir/krb5
@@ -36,6 +38,9 @@ tickets.
 %doc COPYING Changes News TODO 
 
 %changelog
+* Mon Mar 30 2009 Andriy Stepanov <stanv@altlinux.ru> 1.0.2-alt2
+- Add patch: Fetch default REALM name from DNS records.
+
 * Sun Mar 22 2009 Andriy Stepanov <stanv@altlinux.ru> 1.0.2-alt1
 - New version.
 
