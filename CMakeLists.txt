@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.6)
   
 
 SET( PACKAGE krb5-ticket-watcher )
-SET( VERSION 1.0.2 )
+SET( VERSION 1.0.3 )
 
 
 # with SET() command you can change variables or define new ones

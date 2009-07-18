@@ -459,20 +459,21 @@ Ktw::kinit()
 	krb5_error_code retval;
 	bool ok = false;
 	QString errorTxt;
-	
-	krb5_get_init_creds_opt_init(&opts);
+	char *r = NULL;
 
-	QStringList realmList = v5::getRealms(kcontext);
+	krb5_get_init_creds_opt_init(&opts);
+	
+	krb5_get_default_realm(kcontext, &r);
+	QString defRealm(r);
+	krb5_free_default_realm(kcontext, r);
 
 	do
 	{
 		KinitDialog *dlg = new KinitDialog(this, "kinitDialog", true);
 
-		//dlg->show();
-
 		dlg->errorLabelSetText(errorTxt);
 		dlg->userLineEditSetText(getUserName());
-		dlg->realmComboBoxInsertStringList(realmList);
+		dlg->realmLineEditSetText(defRealm);
 		dlg->passwordLineEditSetFocus();
 		
 		dlg->forwardCheckBoxSetChecked(forwardable);
@@ -511,7 +512,7 @@ Ktw::kinit()
 
 		errorTxt = "";
 
-		QString principal = dlg->userLineEditText() + "@" + dlg->realmComboBoxCurrentText();
+		QString principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
 
 		krb5_free_principal(kcontext, kprincipal);
 		retval = krb5_parse_name(kcontext, principal.toUtf8(),
