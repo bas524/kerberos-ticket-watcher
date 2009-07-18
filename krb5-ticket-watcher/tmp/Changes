@@ -1,27 +1,5 @@
 krb5-ticket-watcher
 
-2009-07-18:
-- version 1.0.3
-- replace realm list in kinit with default realm only
-  to build with krb5 1.7
-- fix remaining ticket lifetime in the tooltip and the
-  ticket view. 
-
-2009-03-16:
-- version 1.0.2
-- fix building with gcc 4.4
-- update translations
-
-2008-09-05:
-- version 1.0.1
-- Move text for the ticket flags legend out of the ui file
-  This make translation a little bit easier.
-
-2008-08-28:
-- version 1.0.0
-- Build with cmake
-- use gettext for translations
-
 2008-08-24:
 - replace Q3ListView with QTreeWidget
 - remove the use of QT3Support lib

@@ -459,20 +459,21 @@ Ktw::kinit()
 	krb5_error_code retval;
 	bool ok = false;
 	QString errorTxt;
-	
-	krb5_get_init_creds_opt_init(&opts);
+	char *r = NULL;
 
-	QStringList realmList = v5::getRealms(kcontext);
+	krb5_get_init_creds_opt_init(&opts);
+	
+	krb5_get_default_realm(kcontext, &r);
+	QString defRealm(r);
+	krb5_free_default_realm(kcontext, r);
 
 	do
 	{
 		KinitDialog *dlg = new KinitDialog(this, "kinitDialog", true);
 
-		//dlg->show();
-
 		dlg->errorLabelSetText(errorTxt);
 		dlg->userLineEditSetText(getUserName());
-		dlg->realmComboBoxInsertStringList(realmList);
+		dlg->realmLineEditSetText(defRealm);
 		dlg->passwordLineEditSetFocus();
 		
 		dlg->forwardCheckBoxSetChecked(forwardable);
@@ -511,7 +512,7 @@ Ktw::kinit()
 
 		errorTxt = "";
 
-		QString principal = dlg->userLineEditText() + "@" + dlg->realmComboBoxCurrentText();
+		QString principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
 
 		krb5_free_principal(kcontext, kprincipal);
 		retval = krb5_parse_name(kcontext, principal.toUtf8(),
@@ -1208,7 +1209,6 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	  }
 	*/
 	
-	QTime time;
 	krb5_timestamp expires = cred->times.endtime - v5::getNow(kcontext);
 	if(expires <= 0)
 		expires = 0;
@@ -1216,7 +1216,7 @@ Ktw::showCredential(krb5_creds *cred, char *defname)
 	QTreeWidgetItem *lvi = new QTreeWidgetItem(lv, after);
 	lvi->setText(0, ki18n("Service principal"));
 	lvi->setText(1, n);
-	lvi->setText(2, time.addSecs(expires).toString());
+	lvi->setText(2, printInterval(expires));
 
 	QBrush brush(Qt::green);
 	
@@ -1380,6 +1380,33 @@ Ktw::printtime(time_t tv)
 }
 
 
+QString
+Ktw::printInterval(krb5_timestamp time)
+{
+	if(time < 1)	
+		time = 1;
+
+    int sec = time % 60;
+
+    time = int(time / 60);
+
+    int min = time % 60;
+
+    time = int(time / 60);
+
+    int hour = time % 24;
+
+    time = int(time /24);
+
+    QString str;
+    if(time > 0)
+    	str.sprintf("%d %s %02d:%02d:%02d", time, ki18n("Day(s)").toUtf8().data(), hour, min, sec);
+    else
+    	str.sprintf("%02d:%02d:%02d", hour, min, sec);
+    
+    return str;
+}
+
 // protected
 
 bool
@@ -1402,11 +1429,10 @@ Ktw::eventFilter(QObject *obj, QEvent *event)
 			
 			if (v5::getTgtFromCcache (kcontext, &creds))
 			{
-				QTime time;
 				krb5_timestamp expires = creds.times.endtime - v5::getNow(kcontext);
 				if(expires <= 0)
 					expires = 0;
-				tipText = ki18n("Ticket expires in %1").arg(time.addSecs(expires).toString());
+				tipText = ki18n("Ticket expires in %1").arg(printInterval(expires));
 				krb5_free_cred_contents (kcontext, &creds);
 			}
 			krb5_free_context(kcontext);

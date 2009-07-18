@@ -1,0 +1,3 @@
+- use popup dialogs for errors 
+  (not display them inside of the dialog)
+

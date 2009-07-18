@@ -341,6 +341,7 @@ v5::getNow(krb5_context kcontext)
 	return now;
 }
 
+/*
 QStringList
 v5::getRealms(krb5_context kcontext)
 {
@@ -386,6 +387,7 @@ v5::getRealms(krb5_context kcontext)
 	krb5_realm_iterator_free(kcontext, &iter);
 	return list;
 }
+*/
 
 size_t
 v5::getPrincipalRealmLength(krb5_principal p)

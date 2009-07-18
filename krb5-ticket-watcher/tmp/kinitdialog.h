@@ -33,14 +33,15 @@ class KinitDialog : public QDialog, private Ui::KinitDialog
 		return userLineEdit->text();
 	}
 	
-	void realmLineEditSetText(const QString& text)
+	void realmComboBoxInsertStringList(const QStringList& stringList)
 	{
-		realmLineEdit->setText(text);
+		realmComboBox->clear();
+		realmComboBox->addItems(stringList);
 	}
 
-	QString realmLineEditText() const
+	QString realmComboBoxCurrentText() const
 	{
-		return realmLineEdit->text();
+		return realmComboBox->currentText();
 	}
 	
 	void passwordLineEditSetFocus()

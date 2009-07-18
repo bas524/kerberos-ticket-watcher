@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# search for sourcecode-files
+SRCFILES=`find .. -type d -name testsuite -prune -o -name build -prune , \
+                           -type f -name "*.h" \
+                                -o -name "*.c"   \
+                                -o -name "*.cc"  \
+                                -o -name "*.cpp"`
+echo $SRCFILES
+#calling xgettext with the sourcefiles
+xgettext -s --no-wrap --add-comments --add-location --keyword=_ --keyword=_:1,2 --keyword=__ --keyword=N_ --keyword=intl --foreign-user --copyright-holder="Michael Calmer, Nuernberg" --default-domain=krb5-ticket-watcher --output=krb5-ticket-watcher.pot $SRCFILES
