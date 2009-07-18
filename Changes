@@ -4,6 +4,8 @@ krb5-ticket-watcher
 - version 1.0.3
 - replace realm list in kinit with default realm only
   to build with krb5 1.7
+- fix remaining ticket lifetime in the tooltip and the
+  ticket view. 
 
 2009-03-16:
 - version 1.0.2

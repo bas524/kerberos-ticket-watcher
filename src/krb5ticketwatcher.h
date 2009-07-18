@@ -76,6 +76,7 @@ private:
 
 	QString printtime(time_t tv);
 	QString oneAddr(krb5_address *a);
+	QString printInterval(krb5_timestamp time);
 
 	QString
 	passwordDialog(const QString& errorText = QString::null) const;

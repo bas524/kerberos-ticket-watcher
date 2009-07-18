@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher.km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-18 15:47+0200\n"
+"POT-Creation-Date: 2009-07-18 18:48+0200\n"
 "PO-Revision-Date: 2008-09-26 13:57+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../src/krb5ticketwatcher.cpp:1194
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1193
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1194
 #, qt-format
 msgid " for client %1"
 msgstr " សម្រាប់​ម៉ាស៊ីនភ្ញៀវ %1"
@@ -26,7 +26,7 @@ msgid "&Cancel"
 msgstr "បោះបង់"
 
 #: ../src/krb5ticketwatcher.cpp:300
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:300
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:300
 msgid "&Change Kerberos Password"
 msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
 
@@ -35,7 +35,7 @@ msgid "&Close"
 msgstr "បិទ"
 
 #: ../src/krb5ticketwatcher.cpp:305
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:305
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:305
 msgid "&Destroy Ticket"
 msgstr "បំផ្លាញ​សំបុត្រ"
 
@@ -44,7 +44,7 @@ msgid "&Details..."
 msgstr "សេចក្ដី​លម្អិត..."
 
 #: ../src/krb5ticketwatcher.cpp:290
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:290
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:290
 msgid "&New Ticket"
 msgstr "សំបុត្រ​ថ្មី"
 
@@ -54,7 +54,7 @@ msgid "&Ok"
 msgstr "យល់ព្រម"
 
 #: ../src/krb5ticketwatcher.cpp:315
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:315
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:315
 msgid "&Quit"
 msgstr "ចេញ"
 
@@ -63,13 +63,13 @@ msgid "&Refresh"
 msgstr "ធ្វើ​ឲ្យ​ស្រស់"
 
 #: ../src/krb5ticketwatcher.cpp:295
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:295
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:295
 msgid "&Renew Ticket"
 msgstr "បន្ត​សំបុត្រ"
 
-#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1297
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1357
+#: ../src/krb5ticketwatcher.cpp:1297 ../src/krb5ticketwatcher.cpp:1357
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1298
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1358
 msgid "(none)"
 msgstr "(គ្មាន)"
 
@@ -77,8 +77,8 @@ msgstr "(គ្មាន)"
 msgid "@"
 msgstr "@"
 
-#: ../src/krb5ticketwatcher.cpp:1313
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1312
+#: ../src/krb5ticketwatcher.cpp:1312
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1313
 msgid "Addresses"
 msgstr "អាសយដ្ឋាន​"
 
@@ -102,12 +102,12 @@ msgstr "ជំនួស(Alt)+R"
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:257
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:257
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:257
 msgid "Anonymous"
 msgstr "អនាមិក"
 
-#: ../src/krb5ticketwatcher.cpp:1335
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1334
+#: ../src/krb5ticketwatcher.cpp:1334
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1335
 #, qt-format
 msgid "Broken address (type %1 length %2)"
 msgstr "អាសយដ្ឋាន​ខូច (ប្រភេទ %1 ប្រវែង %2)"
@@ -117,75 +117,80 @@ msgid "Change Kerberos Password"
 msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:302
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:302
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:302
 msgid "Change the Kerberos Password"
 msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:859
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:858
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:859
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​សម្រាប់​គោលការណ៍ <b>%1</b>"
 
 #: ../src/krb5ticketwatcher.cpp:292
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:292
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:292
 msgid "Create a new Ticket"
 msgstr "បង្កើត​សំបុត្រ​ថ្មី"
 
 #: ../src/krb5ticketwatcher.cpp:301
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:301
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:301
 msgid "Ctrl+C"
 msgstr "បញ្ជា(Ctrl)+C"
 
 #: ../src/krb5ticketwatcher.cpp:306
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:306
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:306
 msgid "Ctrl+D"
 msgstr "បញ្ជា(Ctrl)+D"
 
 #: ../src/krb5ticketwatcher.cpp:291
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:291
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:291
 msgid "Ctrl+N"
 msgstr "បញ្ជា(Ctrl)+N"
 
 #: ../src/krb5ticketwatcher.cpp:316
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:316
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:316
 msgid "Ctrl+Q"
 msgstr "បញ្ជា(Ctrl)+Q"
 
 #: ../src/krb5ticketwatcher.cpp:296
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:296
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:296
 msgid "Ctrl+R"
 msgstr "បញ្ជា(Ctrl)+R"
 
 #: ../src/krb5ticketwatcher.cpp:311
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:311
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:311
 msgid "Ctrl+S"
 msgstr "បញ្ជា(Ctrl)+S"
+
+#: ../src/krb5ticketwatcher.cpp:1403
+#, fuzzy
+msgid "Day(s)"
+msgstr "ថ្ងៃ"
 
 #: ../build/ui_mainwidget.h:130
 msgid "Default credential cache"
 msgstr "ឃ្លាំង​សម្ងាត់​លំនាំដើម"
 
 #: ../src/krb5ticketwatcher.cpp:1109
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1108
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1109
 #, qt-format
 msgid "Default principal: %3"
 msgstr "គោលការណ៍​លំនាំដើម ៖ %3"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:355
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:355
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:355
 msgid "Destroy Kerberos Ticket Cache?"
 msgstr "បំផ្លាញ​ឃ្លាំង​សម្ងាត់​សំបុត្រ​របស់ Kerberos ?"
 
 #: ../src/krb5ticketwatcher.cpp:307
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:307
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:307
 msgid "Destroy the Ticket"
 msgstr "បំផ្លាញ​សំបុត្រ"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:357
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:357
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:357
 msgid "Do you want to destroy the ticket cache?"
 msgstr "តើ​អ្នក​ចង់​បំផ្លាញ​ឃ្លាំង​សម្ងាត់​សំបុត្រ​ឬ ?"
 
@@ -195,70 +200,70 @@ msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​ថ្ម
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:365
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:365
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:365
 msgid "Error !"
 msgstr "កំហុស !"
 
 #: ../src/krb5ticketwatcher.cpp:1084
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1083
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
 msgid "Error while setting cache flags"
 msgstr "កំហុស​ខណៈពេល​កំណត់​ទង់​ឃ្លាំង​សម្ងាត់"
 
-#: ../src/krb5ticketwatcher.cpp:1238
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1237
+#: ../src/krb5ticketwatcher.cpp:1237
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1238
 msgid "Expires"
 msgstr "ផុត​កំណត់"
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:715 ../src/krb5ticketwatcher.cpp:827
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:714
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:826
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:715
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:827
 msgid "Failure"
 msgstr "​បរាជ័យ"
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:231
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:231
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:231
 msgid "Forwardable"
 msgstr "អាច​បញ្ជូន​បន្ត​បាន"
 
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:233
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:233
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:233
 msgid "Forwarded"
 msgstr "បានបញ្ជូនបន្ត"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:249
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:249
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:249
 msgid "HW Auth"
 msgstr "អ្នក​និពន្ធ HW"
 
 #: ../src/main.cpp:70
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/main.cpp:70
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
 msgstr "ខ្ញុំ​មិន​អាច​រកឃើញ​ថាស​ប្រព័ន្ធ​ណាមួយ​​នៅ​ក្នុង​ប្រព័ន្ធ​នេះ​ទេ ។"
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:247
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:247
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:247
 msgid "Initial"
 msgstr "ចាប់ផ្ដើម"
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:243
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:243
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:243
 msgid "Invalid"
 msgstr "មិន​​ត្រឹមត្រូវ"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:570
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:569
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:570
 msgid "Invalid Password"
 msgstr "ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ"
 
 #: ../src/krb5ticketwatcher.cpp:524
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:523
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:524
 msgid "Invalid principal name"
 msgstr "ឈ្មោះ​គោលាការណ៍​មិន​ត្រឹមត្រូវ"
 
@@ -270,8 +275,8 @@ msgstr "ប្រអប់​ពាក្យ​សម្ងាត់​របស
 msgid "Kerberos Ticket List"
 msgstr "បញ្ជី​សំបុត្រ​របស់ Kerberos"
 
-#: ../src/krb5ticketwatcher.cpp:1286
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1285
+#: ../src/krb5ticketwatcher.cpp:1285
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1286
 msgid "Key Encryption Type"
 msgstr "ប្រភេទ​អ៊ិនគ្រីបសោ"
 
@@ -281,7 +286,7 @@ msgstr "ពេលវេលា ៖"
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:239
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:239
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:239
 msgid "May Postdate"
 msgstr "អាច​ចុះ​កាលបរិច្ឆេទ"
 
@@ -289,24 +294,24 @@ msgstr "អាច​ចុះ​កាលបរិច្ឆេទ"
 msgid "New Ticket"
 msgstr "សំបុត្រ​ថ្មី"
 
-#: ../src/krb5ticketwatcher.cpp:1394
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1393
+#: ../src/krb5ticketwatcher.cpp:1420
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1394
 msgid "No Credential Cache found"
 msgstr "រក​មិនឃើញ​ឃ្លាំង​សម្ងាត់"
 
 #: ../src/krb5ticketwatcher.cpp:1078
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1077
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
 msgid "No credentials cache found"
 msgstr "រក​មិនឃើញ​ឃ្លាំង​សម្ងាត់​"
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:255
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:255
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:255
 msgid "Ok as Delegate"
 msgstr "យល់​ព្រមជា​អ្នក​ទទួលសិទ្ធិ"
 
 #: ../src/krb5ticketwatcher.cpp:900
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:899
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:900
 msgid "Password change failed"
 msgstr "បាន​បរាជ័យ​ក្នុងកា​រផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់"
 
@@ -315,20 +320,20 @@ msgid "Password:"
 msgstr "ពាក្យ​សម្ងាត់ ៖"
 
 #: ../src/krb5ticketwatcher.cpp:750
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:749
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:750
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr "សូម​បញ្ចូល​ពាក្យ​សម្ងាត់​ Kerberos សម្រាប់ <b>%1</b>"
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:241
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:241
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:241
 msgid "Postdated"
 msgstr "ចុះកាល​បរិច្ឆេទ​"
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:251
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:251
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:251
 msgid "Pre Auth"
 msgstr "អ្នក​និពន្ធ​មុន"
 
@@ -342,23 +347,23 @@ msgstr "លក្ខណៈ​សម្បត្តិ"
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:235
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:235
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:235
 msgid "Proxiable"
 msgstr "អាច​ដាក់​ប្រូកស៊ី​បាន"
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:237
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:237
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:237
 msgid "Proxy"
 msgstr "ប្រូកស៊ី"
 
 #: ../src/krb5ticketwatcher.cpp:317
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:317
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:317
 msgid "Quit krb5TicketWatcher"
 msgstr "ចេញ​ពី​កម្មវិធីមើល​សំបុត្រ​ krb5"
 
 #: ../src/krb5ticketwatcher.cpp:310
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:310
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:310
 msgid "Re&store"
 msgstr "ស្ដារឡើង​វិញ"
 
@@ -367,18 +372,18 @@ msgid "Reenter password:"
 msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​ម្ដង​ទៀត ៖"
 
 #: ../src/krb5ticketwatcher.cpp:297
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:297
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:297
 msgid "Renew the Ticket"
 msgstr "បន្ត​សំបុត្រ​"
 
-#: ../src/krb5ticketwatcher.cpp:1244
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1243
+#: ../src/krb5ticketwatcher.cpp:1243
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1244
 msgid "Renew until"
 msgstr "បន្ត​រហូត​ដល់"
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:245
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:245
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:245
 msgid "Renewable"
 msgstr "អាច​បន្ត"
 
@@ -387,34 +392,34 @@ msgid "Renewable for:"
 msgstr "អាច​បន្ត​សម្រាប់ ៖"
 
 #: ../src/krb5ticketwatcher.cpp:312
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:312
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:312
 msgid "Restore the Window"
 msgstr "ស្ដារ​បង្អួច"
 
-#: ../src/krb5ticketwatcher.cpp:1218
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1217
+#: ../src/krb5ticketwatcher.cpp:1217
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1218
 msgid "Service principal"
 msgstr "គោលការណ៍​សេវា"
 
 #: ../src/main.cpp:69
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/main.cpp:69
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:69
 msgid "Systray"
 msgstr "ថាស​ប្រព័ន្ធ"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:704 ../src/krb5ticketwatcher.cpp:822
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:703
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:821
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:704
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:822
 msgid "The password you entered is invalid"
 msgstr "ពាក្យ​សម្ងាត់​ដែល​អ្នក​បានបញ្ចូល​មិន​ត្រឹមត្រូវ​ទេ"
 
 #: ../src/krb5ticketwatcher.cpp:863
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:862
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:863
 msgid "The passwords are not equal"
 msgstr "ពាក្យ​សម្ងាត់​មិនស្មើ​គ្នា"
 
-#: ../src/krb5ticketwatcher.cpp:1289
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1288
+#: ../src/krb5ticketwatcher.cpp:1288
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1289
 msgid "Ticket Encryption Type"
 msgstr "ប្រភេទ​អ៊ិនគ្រីប​សំបុត្រ"
 
@@ -428,39 +433,39 @@ msgstr "តាង​ទង់ជាតិ​សំបុត្រ"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:367
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:367
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:367
 msgid "Ticket cache cannot be destroyed."
 msgstr "ឃ្លាំង​សម្ងាត់​សំបុត្រ​មិនអាច​ត្រូវ​បានបង្ហាញ ។"
 
 #: ../src/krb5ticketwatcher.cpp:1078 ../src/krb5ticketwatcher.cpp:1084
 #: ../src/krb5ticketwatcher.cpp:1105
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1077
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1083
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1104
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1105
 #, qt-format
 msgid "Ticket cache: %1:%2"
 msgstr "ឃ្លាំង​សម្ងាត់​សំបុត្រ ៖ %1:%2"
 
-#: ../src/krb5ticketwatcher.cpp:1410
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1409
+#: ../src/krb5ticketwatcher.cpp:1435
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1410
 #, qt-format
 msgid "Ticket expires in %1"
 msgstr "សំបុត្រ​ផុត​កំណត់​ក្នុង​រយៈពេល %1"
 
-#: ../src/krb5ticketwatcher.cpp:1279
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1278
+#: ../src/krb5ticketwatcher.cpp:1278
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1279
 msgid "Ticket flags"
 msgstr "ទង់​សំបុត្រ"
 
 #: ../src/krb5ticketwatcher.cpp:396 ../src/krb5ticketwatcher.cpp:424
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:396
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:424
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:396
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:424
 msgid "Ticket renewed"
 msgstr "បានបន្ត​សំបុត្រ"
 
 #: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:397
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:425
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:397
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:425
 msgid "Ticket successfully renewed."
 msgstr "បាន​បន្ត​សំបុត្រ​ដោយ​ជោគជ័យ ។"
 
@@ -470,29 +475,29 @@ msgstr "ពេលវេលា​នៅ​សល់"
 
 #. Legend: Explain ticket flag "T"
 #: ../src/krb5ticketwatcher.cpp:253
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:253
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:253
 msgid "Transit Policy Checked"
 msgstr "បានពិនិត្យមើល​គោលនយោបាយ​ប្ដូរ"
 
-#: ../src/krb5ticketwatcher.cpp:1354
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1353
+#: ../src/krb5ticketwatcher.cpp:1353
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1354
 #, qt-format
 msgid "Unknown address type %1"
 msgstr "មិនស្គាល់​ប្រភេទ​អាសយដ្ឋាន %1"
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:582
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:581
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:582
 msgid "Unknown principal"
 msgstr "មិនស្គាល់​គោលការណ៍"
 
 #: ../src/krb5ticketwatcher.cpp:585
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:584
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:585
 msgid "Unknown realm"
 msgstr "មិនស្គាល់ realm"
 
-#: ../src/krb5ticketwatcher.cpp:1234
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1233
+#: ../src/krb5ticketwatcher.cpp:1233
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1234
 msgid "Valid starting"
 msgstr "ការ​ចាប់ផ្ដើម​ត្រឹមត្រូវ"
 
@@ -503,11 +508,11 @@ msgstr "តម្លៃ"
 #: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:940
 #: ../src/krb5ticketwatcher.cpp:966 ../src/krb5ticketwatcher.cpp:1005
 #: ../src/krb5ticketwatcher.cpp:1020
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:157
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:939
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:965
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1004
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1019
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:157
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:940
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:966
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1005
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1020
 #: ../build/ui_kinitdialog.h:290 ../build/ui_kinitdialog.h:298
 msgid "days"
 msgstr "ថ្ងៃ"
@@ -524,21 +529,21 @@ msgstr "អាច​បញ្ជូន​បន្ត​បាន"
 #: ../src/krb5ticketwatcher.cpp:156 ../src/krb5ticketwatcher.cpp:944
 #: ../src/krb5ticketwatcher.cpp:970 ../src/krb5ticketwatcher.cpp:1004
 #: ../src/krb5ticketwatcher.cpp:1019
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:156
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:943
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:969
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1003
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1018
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:156
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:944
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:970
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1004
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1019
 #: ../build/ui_kinitdialog.h:291 ../build/ui_kinitdialog.h:299
 msgid "hours"
 msgstr "ម៉ោង"
 
 #: ../src/krb5ticketwatcher.cpp:948 ../src/krb5ticketwatcher.cpp:974
 #: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:947
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:973
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1002
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1017
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:948
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:974
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1003
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1018
 #: ../build/ui_kinitdialog.h:292 ../build/ui_kinitdialog.h:300
 msgid "minutes"
 msgstr "នាទី"
@@ -549,10 +554,10 @@ msgstr "អាចដាក់ប្រូកស៊ី​បាន"
 
 #: ../src/krb5ticketwatcher.cpp:953 ../src/krb5ticketwatcher.cpp:979
 #: ../src/krb5ticketwatcher.cpp:1002 ../src/krb5ticketwatcher.cpp:1017
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:952
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:978
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1001
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp:1016
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:953
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:979
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1002
+#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1017
 #: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:301
 msgid "seconds"
 msgstr "វិនាទី"
