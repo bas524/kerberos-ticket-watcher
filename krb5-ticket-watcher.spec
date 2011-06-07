@@ -1,6 +1,7 @@
+BuildRequires: desktop-file-utils
 Name: krb5-ticket-watcher
 Version: 1.0.2
-Release: alt3
+Release: alt3.qa1
 Summary: A Tray Applet for Watching, Renewing, and Reinitializing Kerberos Tickets
 Url: http://sourceforge.net/projects/krb5ticketwatch
 License: %gpl2plus
@@ -31,6 +32,9 @@ tickets.
 
 %install
 %K4install
+desktop-file-install --dir %buildroot%_desktopdir \
+	--add-category=Security \
+	%buildroot%_desktopdir/krb5-ticket-watcher.desktop
 
 %files
 %_bindir/krb5-ticket-watcher
@@ -40,6 +44,11 @@ tickets.
 %doc COPYING Changes News TODO 
 
 %changelog
+* Tue Jun 07 2011 Repocop Q. A. Robot <repocop@altlinux.org> 1.0.2-alt3.qa1
+- NMU (by repocop). See http://www.altlinux.org/Tools/Repocop
+- applied repocop fixes:
+  * freedesktop-desktop-file-proposed-patch for krb5-ticket-watcher
+
 * Wed Apr 08 2009 Andriy Stepanov <stanv@altlinux.ru> 1.0.2-alt3
 - #19536 (fix: convert valid/expires info to local charset)
 
