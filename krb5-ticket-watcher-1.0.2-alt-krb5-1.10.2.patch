@@ -1,0 +1,30 @@
+diff --git a/krb5-ticket-watcher/src/krb5ticketwatcher.h b/krb5-ticket-watcher/src/krb5ticketwatcher.h
+index 7b83b0e..38030b9 100644
+--- a/krb5-ticket-watcher/src/krb5ticketwatcher.h
++++ b/krb5-ticket-watcher/src/krb5ticketwatcher.h
+@@ -27,7 +27,10 @@
+ #include <QSystemTrayIcon>
+ 
+ #define KRB5_PRIVATE 1
++extern "C" {
++#include <k5-int.h>
+ #include <krb5.h>
++}
+ 
+ #include "krb5_tw_gettext.h"
+ 
+diff --git a/krb5-ticket-watcher/src/v5.h b/krb5-ticket-watcher/src/v5.h
+index 7f7d233..57f0ac6 100644
+--- a/krb5-ticket-watcher/src/v5.h
++++ b/krb5-ticket-watcher/src/v5.h
+@@ -22,7 +22,10 @@
+ #define  KRB5_TICKET_WATCHER_V5_H
+ 
+ #define KRB5_PRIVATE 1
++extern "C" {
++#include <k5-int.h>
+ #include <krb5.h>
++}
+ 
+ class QString;
+ class QStringList;
