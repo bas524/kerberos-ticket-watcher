@@ -1,0 +1,13 @@
+object 23a9d2397169fd1bdebf292c4988cb7ac525be00
+type commit
+tag v1.0.3
+tagger Andriy Stepanov <stanv@altlinux.ru> 1247937462 +0400
+
+krb5-ticket-watcher 1.0.3
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEABECAAYFAlBkVj8ACgkQcfgMhiiRlqoRYACeLZtVHx/lJohUvcyK3wasx6FR
+i+AAnRD3U4r+5ZawD6VIVdd3n8RpmtkP
+=ds4y
+-----END PGP SIGNATURE-----
