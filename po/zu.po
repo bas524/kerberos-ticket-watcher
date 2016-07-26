@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: installation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-18 18:48+0200\n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
 "PO-Revision-Date: 2006-11-03 14:26\n"
 "Last-Translator: Novell Language <language@novell.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
@@ -15,29 +15,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/krb5ticketwatcher.cpp:1194
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1194
+#: ../src/krb5ticketwatcher.cpp:1195
 #, qt-format
 msgid " for client %1"
 msgstr ""
 
-#: ../build/ui_pwchangedialog.h:173 ../build/ui_pwdialog.h:157
-#: ../build/ui_kinitdialog.h:303
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
 msgid "&Cancel"
 msgstr "&Khansela"
 
-#: ../src/krb5ticketwatcher.cpp:300
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:300
+#: ../src/krb5ticketwatcher.cpp:301
 #, fuzzy
 msgid "&Change Kerberos Password"
 msgstr "Shintsha Iphasiwedi"
 
-#: ../build/ui_mainwidget.h:139
+#: ../build/ui_mainwidget.h:140
 msgid "&Close"
 msgstr "&Vala"
 
-#: ../src/krb5ticketwatcher.cpp:305
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:305
+#: ../src/krb5ticketwatcher.cpp:306
 msgid "&Destroy Ticket"
 msgstr ""
 
@@ -46,35 +43,30 @@ msgstr ""
 msgid "&Details..."
 msgstr "&Imininingwane"
 
-#: ../src/krb5ticketwatcher.cpp:290
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:290
+#: ../src/krb5ticketwatcher.cpp:291
 msgid "&New Ticket"
 msgstr ""
 
-#: ../build/ui_pwchangedialog.h:175 ../build/ui_pwdialog.h:155
-#: ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
 #, fuzzy
 msgid "&Ok"
 msgstr "Ok"
 
-#: ../src/krb5ticketwatcher.cpp:315
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:315
+#: ../src/krb5ticketwatcher.cpp:316
 msgid "&Quit"
 msgstr "&Yeka"
 
-#: ../build/ui_mainwidget.h:137
+#: ../build/ui_mainwidget.h:138
 #, fuzzy
 msgid "&Refresh"
 msgstr "Vuselela kabusha"
 
-#: ../src/krb5ticketwatcher.cpp:295
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:295
+#: ../src/krb5ticketwatcher.cpp:296
 msgid "&Renew Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1297 ../src/krb5ticketwatcher.cpp:1357
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1298
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1358
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
 msgid "(none)"
 msgstr ""
 
@@ -82,14 +74,13 @@ msgstr ""
 msgid "@"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1312
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1313
+#: ../src/krb5ticketwatcher.cpp:1313
 #, fuzzy
 msgid "Addresses"
 msgstr "Ikheli Lakho"
 
-#: ../build/ui_pwchangedialog.h:174 ../build/ui_pwdialog.h:158
-#: ../build/ui_mainwidget.h:140 ../build/ui_kinitdialog.h:304
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -97,24 +88,22 @@ msgstr "Alt+C"
 msgid "Alt+D"
 msgstr "Alt+D"
 
-#: ../build/ui_pwchangedialog.h:176 ../build/ui_pwdialog.h:156
-#: ../build/ui_kinitdialog.h:306
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
 msgid "Alt+O"
 msgstr "Alt+O"
 
-#: ../build/ui_mainwidget.h:138
+#: ../build/ui_mainwidget.h:139
 #, fuzzy
 msgid "Alt+R"
 msgstr "Alt+Y"
 
 #. Legend: Explain ticket flag "a"
-#: ../src/krb5ticketwatcher.cpp:257
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:257
+#: ../src/krb5ticketwatcher.cpp:258
 msgid "Anonymous"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1334
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1335
+#: ../src/krb5ticketwatcher.cpp:1335
 #, qt-format
 msgid "Broken address (type %1 length %2)"
 msgstr ""
@@ -124,58 +113,49 @@ msgstr ""
 msgid "Change Kerberos Password"
 msgstr "Shintsha Iphasiwedi"
 
-#: ../src/krb5ticketwatcher.cpp:302
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:302
+#: ../src/krb5ticketwatcher.cpp:303
 #, fuzzy
 msgid "Change the Kerberos Password"
 msgstr "Shintsha Iphasiwedi"
 
-#: ../src/krb5ticketwatcher.cpp:859
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:859
+#: ../src/krb5ticketwatcher.cpp:860
 #, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr "Faka iphasiwedi yomphakeli we-`%1':"
 
-#: ../src/krb5ticketwatcher.cpp:292
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:292
+#: ../src/krb5ticketwatcher.cpp:293
 #, fuzzy
 msgid "Create a new Ticket"
 msgstr "Yakha iphrofayili entsha"
 
-#: ../src/krb5ticketwatcher.cpp:301
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:301
+#: ../src/krb5ticketwatcher.cpp:302
 #, fuzzy
 msgid "Ctrl+C"
 msgstr "Ctrl+P"
 
-#: ../src/krb5ticketwatcher.cpp:306
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:306
+#: ../src/krb5ticketwatcher.cpp:307
 #, fuzzy
 msgid "Ctrl+D"
 msgstr "Ctrl+P"
 
-#: ../src/krb5ticketwatcher.cpp:291
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:291
+#: ../src/krb5ticketwatcher.cpp:292
 #, fuzzy
 msgid "Ctrl+N"
 msgstr "Ctrl+P"
 
-#: ../src/krb5ticketwatcher.cpp:316
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:316
+#: ../src/krb5ticketwatcher.cpp:317
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../src/krb5ticketwatcher.cpp:296
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:296
+#: ../src/krb5ticketwatcher.cpp:297
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: ../src/krb5ticketwatcher.cpp:311
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:311
+#: ../src/krb5ticketwatcher.cpp:312
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: ../src/krb5ticketwatcher.cpp:1403
+#: ../src/krb5ticketwatcher.cpp:1404
 msgid "Day(s)"
 msgstr ""
 
@@ -183,27 +163,23 @@ msgstr ""
 msgid "Default credential cache"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1109
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1109
+#: ../src/krb5ticketwatcher.cpp:1110
 #, qt-format
 msgid "Default principal: %3"
 msgstr ""
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:355
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:355
+#: ../src/krb5ticketwatcher.cpp:356
 msgid "Destroy Kerberos Ticket Cache?"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:307
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:307
+#: ../src/krb5ticketwatcher.cpp:308
 msgid "Destroy the Ticket"
 msgstr ""
 
 # power-off message
 #. message text
-#: ../src/krb5ticketwatcher.cpp:357
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:357
+#: ../src/krb5ticketwatcher.cpp:358
 #, fuzzy
 msgid "Do you want to destroy the ticket cache?"
 msgstr "Ingabe ufuna ukulumisa manje uhlelo?"
@@ -214,77 +190,64 @@ msgid "Enter new password:"
 msgstr "<Faka iphasiwedi entsha>"
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:365
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:365
+#: ../src/krb5ticketwatcher.cpp:366
 #, fuzzy
 msgid "Error !"
 msgstr "Iphutha!"
 
-#: ../src/krb5ticketwatcher.cpp:1084
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
+#: ../src/krb5ticketwatcher.cpp:1085
 #, fuzzy
 msgid "Error while setting cache flags"
 msgstr "Kwenzeke iphutha ngesikhathi inqunta isicelo."
 
-#: ../src/krb5ticketwatcher.cpp:1237
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1238
+#: ../src/krb5ticketwatcher.cpp:1238
 msgid "Expires"
 msgstr ""
 
 #. kdc unreachable, return
-#: ../src/krb5ticketwatcher.cpp:715 ../src/krb5ticketwatcher.cpp:827
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:715
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:827
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
 #, fuzzy
 msgid "Failure"
 msgstr "Kuhlulekile"
 
 #. Legend: Explain ticket flag "F"
-#: ../src/krb5ticketwatcher.cpp:231
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:231
+#: ../src/krb5ticketwatcher.cpp:232
 msgid "Forwardable"
 msgstr ""
 
 #. Legend: Explain ticket flag "f"
-#: ../src/krb5ticketwatcher.cpp:233
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:233
+#: ../src/krb5ticketwatcher.cpp:234
 msgid "Forwarded"
 msgstr ""
 
 #. Legend: Explain ticket flag "H"
-#: ../src/krb5ticketwatcher.cpp:249
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:249
+#: ../src/krb5ticketwatcher.cpp:250
 msgid "HW Auth"
 msgstr ""
 
 #: ../src/main.cpp:70
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
 msgstr ""
 
 #. Legend: Explain ticket flag "I"
-#: ../src/krb5ticketwatcher.cpp:247
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:247
+#: ../src/krb5ticketwatcher.cpp:248
 #, fuzzy
 msgid "Initial"
 msgstr "Ilungiselela ukuqala"
 
 #. Legend: Explain ticket flag "i"
-#: ../src/krb5ticketwatcher.cpp:243
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:243
+#: ../src/krb5ticketwatcher.cpp:244
 #, fuzzy
 msgid "Invalid"
 msgstr "I-KeyID engekho emthethweni."
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:570
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:570
+#: ../src/krb5ticketwatcher.cpp:571
 #, fuzzy
 msgid "Invalid Password"
 msgstr "Iphasiwedi ye-CA engekho emthethweni."
 
-#: ../src/krb5ticketwatcher.cpp:524
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:524
+#: ../src/krb5ticketwatcher.cpp:525
 #, fuzzy
 msgid "Invalid principal name"
 msgstr "Igama ledivayisi elingekho emthethweni."
@@ -297,8 +260,7 @@ msgstr ""
 msgid "Kerberos Ticket List"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1285
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1286
+#: ../src/krb5ticketwatcher.cpp:1286
 #, fuzzy
 msgid "Key Encryption Type"
 msgstr "Ukufaka Ikhodi Yokuphepha"
@@ -308,8 +270,7 @@ msgid "Lifetime:"
 msgstr ""
 
 #. Legend: Explain ticket flag "D"
-#: ../src/krb5ticketwatcher.cpp:239
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:239
+#: ../src/krb5ticketwatcher.cpp:240
 msgid "May Postdate"
 msgstr ""
 
@@ -317,25 +278,21 @@ msgstr ""
 msgid "New Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1420
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1394
+#: ../src/krb5ticketwatcher.cpp:1421
 msgid "No Credential Cache found"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1078
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
+#: ../src/krb5ticketwatcher.cpp:1079
 msgid "No credentials cache found"
 msgstr ""
 
 #. Legend: Explain ticket flag "O"
-#: ../src/krb5ticketwatcher.cpp:255
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:255
+#: ../src/krb5ticketwatcher.cpp:256
 #, fuzzy
 msgid "Ok as Delegate"
 msgstr "Susa"
 
-#: ../src/krb5ticketwatcher.cpp:900
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:900
+#: ../src/krb5ticketwatcher.cpp:901
 #, fuzzy
 msgid "Password change failed"
 msgstr "Ukushintsha kwephasiwedi kuyekiwe."
@@ -344,22 +301,19 @@ msgstr "Ukushintsha kwephasiwedi kuyekiwe."
 msgid "Password:"
 msgstr "Iphasiwedi:"
 
-#: ../src/krb5ticketwatcher.cpp:750
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:750
+#: ../src/krb5ticketwatcher.cpp:751
 #, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr "Sicela ufake iphasiwedi ye-\"%1\" ukuze uqhubeke."
 
 #. Legend: Explain ticket flag "d"
-#: ../src/krb5ticketwatcher.cpp:241
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:241
+#: ../src/krb5ticketwatcher.cpp:242
 #, fuzzy
 msgid "Postdated"
 msgstr "Ayijikeleziswanga"
 
 #. Legend: Explain ticket flag "A"
-#: ../src/krb5ticketwatcher.cpp:251
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:251
+#: ../src/krb5ticketwatcher.cpp:252
 msgid "Pre Auth"
 msgstr ""
 
@@ -367,31 +321,27 @@ msgstr ""
 msgid "Principal:"
 msgstr ""
 
-#: ../build/ui_mainwidget.h:132
+#: ../build/ui_mainwidget.h:135
 #, fuzzy
 msgid "Property"
 msgstr "Ama-property"
 
 #. Legend: Explain ticket flag "p"
-#: ../src/krb5ticketwatcher.cpp:235
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:235
+#: ../src/krb5ticketwatcher.cpp:236
 msgid "Proxiable"
 msgstr ""
 
 #. Legend: Explain ticket flag "P"
-#: ../src/krb5ticketwatcher.cpp:237
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:237
+#: ../src/krb5ticketwatcher.cpp:238
 #, fuzzy
 msgid "Proxy"
 msgstr "Ama-property"
 
-#: ../src/krb5ticketwatcher.cpp:317
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:317
+#: ../src/krb5ticketwatcher.cpp:318
 msgid "Quit krb5TicketWatcher"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:310
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:310
+#: ../src/krb5ticketwatcher.cpp:311
 msgid "Re&store"
 msgstr ""
 
@@ -400,58 +350,48 @@ msgstr ""
 msgid "Reenter password:"
 msgstr "Phinde Ufake Iphasiwedi Entsha:"
 
-#: ../src/krb5ticketwatcher.cpp:297
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:297
+#: ../src/krb5ticketwatcher.cpp:298
 msgid "Renew the Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1243
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1244
+#: ../src/krb5ticketwatcher.cpp:1244
 msgid "Renew until"
 msgstr ""
 
 #. Legend: Explain ticket flag "R"
-#: ../src/krb5ticketwatcher.cpp:245
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:245
+#: ../src/krb5ticketwatcher.cpp:246
 #, fuzzy
 msgid "Renewable"
 msgstr "kuvuliwe"
 
-#: ../build/ui_kinitdialog.h:295
+#: ../build/ui_kinitdialog.h:296
 msgid "Renewable for:"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:312
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:312
+#: ../src/krb5ticketwatcher.cpp:313
 msgid "Restore the Window"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1217
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1218
+#: ../src/krb5ticketwatcher.cpp:1218
 msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:69
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:69
 #, fuzzy
 msgid "Systray"
 msgstr "Isistimu"
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:704 ../src/krb5ticketwatcher.cpp:822
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:704
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:822
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
 msgid "The password you entered is invalid"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:863
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:863
+#: ../src/krb5ticketwatcher.cpp:864
 #, fuzzy
 msgid "The passwords are not equal"
 msgstr "Amaphasiwedi awafanelani"
 
-#: ../src/krb5ticketwatcher.cpp:1288
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1289
+#: ../src/krb5ticketwatcher.cpp:1289
 #, fuzzy
 msgid "Ticket Encryption Type"
 msgstr "Ukufaka Ikhodi Yokuphepha"
@@ -460,100 +400,80 @@ msgstr "Ukufaka Ikhodi Yokuphepha"
 msgid "Ticket Flags"
 msgstr ""
 
-#: ../build/ui_mainwidget.h:135
+#: ../build/ui_mainwidget.h:136
 msgid "Ticket Flags Legend"
 msgstr ""
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:367
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:367
+#: ../src/krb5ticketwatcher.cpp:368
 #, fuzzy
 msgid "Ticket cache cannot be destroyed."
 msgstr "iphrofayili esebenzayo ayinakususwa"
 
-#: ../src/krb5ticketwatcher.cpp:1078 ../src/krb5ticketwatcher.cpp:1084
-#: ../src/krb5ticketwatcher.cpp:1105
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1105
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
 #, qt-format
 msgid "Ticket cache: %1:%2"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1435
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1410
+#: ../src/krb5ticketwatcher.cpp:1436
 #, qt-format
 msgid "Ticket expires in %1"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1278
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1279
+#: ../src/krb5ticketwatcher.cpp:1279
 msgid "Ticket flags"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:396 ../src/krb5ticketwatcher.cpp:424
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:396
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:424
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
 msgid "Ticket renewed"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:397
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:425
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
 msgid "Ticket successfully renewed."
 msgstr ""
 
-#: ../build/ui_mainwidget.h:134
+#: ../build/ui_mainwidget.h:133
 msgid "Time Remaining"
 msgstr ""
 
 #. Legend: Explain ticket flag "T"
-#: ../src/krb5ticketwatcher.cpp:253
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:253
+#: ../src/krb5ticketwatcher.cpp:254
 msgid "Transit Policy Checked"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1353
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1354
+#: ../src/krb5ticketwatcher.cpp:1354
 #, fuzzy, qt-format
 msgid "Unknown address type %1"
 msgstr "uhlobo lomthombo wokwaziswa i-VAR1 olungaziwa"
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:582
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:582
+#: ../src/krb5ticketwatcher.cpp:583
 #, fuzzy
 msgid "Unknown principal"
 msgstr "Okukhethiwe okungaziwa"
 
-#: ../src/krb5ticketwatcher.cpp:585
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:585
+#: ../src/krb5ticketwatcher.cpp:586
 #, fuzzy
 msgid "Unknown realm"
 msgstr "Akwaziwa"
 
-#: ../src/krb5ticketwatcher.cpp:1233
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1234
+#: ../src/krb5ticketwatcher.cpp:1234
 msgid "Valid starting"
 msgstr ""
 
-#: ../build/ui_mainwidget.h:133
+#: ../build/ui_mainwidget.h:134
 msgid "Value"
 msgstr "I-value"
 
-#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:940
-#: ../src/krb5ticketwatcher.cpp:966 ../src/krb5ticketwatcher.cpp:1005
-#: ../src/krb5ticketwatcher.cpp:1020
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:157
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:940
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:966
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1005
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1020
-#: ../build/ui_kinitdialog.h:290 ../build/ui_kinitdialog.h:298
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
 msgid "days"
 msgstr ""
 
-#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:296
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
 #, fuzzy
 msgid "default"
 msgstr "Okufike Nohlelo (default)"
@@ -563,25 +483,16 @@ msgid "forwardable"
 msgstr ""
 
 #. init with translations
-#: ../src/krb5ticketwatcher.cpp:156 ../src/krb5ticketwatcher.cpp:944
-#: ../src/krb5ticketwatcher.cpp:970 ../src/krb5ticketwatcher.cpp:1004
-#: ../src/krb5ticketwatcher.cpp:1019
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:156
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:944
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:970
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1004
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:291 ../build/ui_kinitdialog.h:299
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
 msgid "hours"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:948 ../src/krb5ticketwatcher.cpp:974
-#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:948
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:974
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1003
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:292 ../build/ui_kinitdialog.h:300
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
 msgid "minutes"
 msgstr ""
 
@@ -589,12 +500,8 @@ msgstr ""
 msgid "proxiable"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:953 ../src/krb5ticketwatcher.cpp:979
-#: ../src/krb5ticketwatcher.cpp:1002 ../src/krb5ticketwatcher.cpp:1017
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:953
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:979
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1002
-#: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1017
-#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:301
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
 msgid "seconds"
 msgstr "kwemizuzu"
