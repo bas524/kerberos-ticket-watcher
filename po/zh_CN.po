@@ -1,76 +1,82 @@
-# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
-# This file is distributed under the same license as the package.
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 #
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+# margurite <i@marguerite.su>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: krb5-ticket-watcher\n"
+"Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-18 18:48+0200\n"
-"PO-Revision-Date: 2009-01-23 07:18\n"
-"Last-Translator: Novell Language <language@novell.com>\n"
-"Language-Team: Novell Language <language@novell.com>\n"
+"PO-Revision-Date: 2012-05-24 06:37+0800\n"
+"Last-Translator: margurite <i@marguerite.su>\n"
+"Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../src/krb5ticketwatcher.cpp:1194
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1194
 #, qt-format
 msgid " for client %1"
-msgstr " 对于客户端 %1"
+msgstr "  用于客户端 %1"
 
 #: ../build/ui_pwchangedialog.h:173 ../build/ui_pwdialog.h:157
 #: ../build/ui_kinitdialog.h:303
 msgid "&Cancel"
-msgstr "取消(&C)"
+msgstr "取消 (&C)"
 
 #: ../src/krb5ticketwatcher.cpp:300
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:300
 msgid "&Change Kerberos Password"
-msgstr "更改 Kerberos 密码(&C)"
+msgstr "更改 Kerberos 密钥 (&C)"
 
 #: ../build/ui_mainwidget.h:139
 msgid "&Close"
-msgstr "关闭(&C)"
+msgstr "关闭 (&C)"
 
 #: ../src/krb5ticketwatcher.cpp:305
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:305
 msgid "&Destroy Ticket"
-msgstr "清空票据(&D)"
+msgstr "销毁问题 (&D)"
 
 #: ../build/ui_kinitdialog.h:281
 msgid "&Details..."
-msgstr "细节(&D)..."
+msgstr "细节 (&D)"
 
 #: ../src/krb5ticketwatcher.cpp:290
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:290
 msgid "&New Ticket"
-msgstr "新建票据(&N)"
+msgstr "新问题 (&N)"
 
 #: ../build/ui_pwchangedialog.h:175 ../build/ui_pwdialog.h:155
 #: ../build/ui_kinitdialog.h:305
 msgid "&Ok"
-msgstr "确定(&O)"
+msgstr "好的 (&O)"
 
 #: ../src/krb5ticketwatcher.cpp:315
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:315
 msgid "&Quit"
-msgstr "退出(&Q)"
+msgstr "退出 (&Q)"
 
 #: ../build/ui_mainwidget.h:137
 msgid "&Refresh"
-msgstr "刷新(&R)"
+msgstr "刷新 (&R)"
 
 #: ../src/krb5ticketwatcher.cpp:295
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:295
 msgid "&Renew Ticket"
-msgstr "续订票据(&R)"
+msgstr "更新问题 (&R)"
 
 #: ../src/krb5ticketwatcher.cpp:1297 ../src/krb5ticketwatcher.cpp:1357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1298
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1358
 msgid "(none)"
-msgstr "（无）"
+msgstr "(无)"
 
 #: ../build/ui_kinitdialog.h:279
 msgid "@"
@@ -109,27 +115,27 @@ msgstr "匿名"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1335
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "损坏的地址（类型 %1 长度 %2）"
+msgstr "损坏地址 (类型 %1 长度 %2)"
 
 #: ../build/ui_pwchangedialog.h:172
 msgid "Change Kerberos Password"
-msgstr "更改 Kerberos 密码"
+msgstr "更改 Kerberos 密钥"
 
 #: ../src/krb5ticketwatcher.cpp:302
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:302
 msgid "Change the Kerberos Password"
-msgstr "更改 Kerberos 密码"
+msgstr "更改 Kerberos 密钥"
 
 #: ../src/krb5ticketwatcher.cpp:859
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:859
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "为主体 <b>%1</b> 更改密码"
+msgstr "更改身份 <b>%1</b> 的密钥"
 
 #: ../src/krb5ticketwatcher.cpp:292
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:292
 msgid "Create a new Ticket"
-msgstr "创建新票据"
+msgstr "创建新问题"
 
 #: ../src/krb5ticketwatcher.cpp:301
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:301
@@ -162,56 +168,55 @@ msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: ../src/krb5ticketwatcher.cpp:1403
-#, fuzzy
 msgid "Day(s)"
-msgstr "天"
+msgstr "日"
 
 #: ../build/ui_mainwidget.h:130
 msgid "Default credential cache"
-msgstr "默认身份凭证超速缓存"
+msgstr "默认凭据缓存"
 
 #: ../src/krb5ticketwatcher.cpp:1109
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1109
 #, qt-format
 msgid "Default principal: %3"
-msgstr "默认主体：%3"
+msgstr "默认身份：%3"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:355
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:355
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "是否清空 Kerberos 票据超速缓存？"
+msgstr "销毁 Kerberos 问题缓存？"
 
 #: ../src/krb5ticketwatcher.cpp:307
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:307
 msgid "Destroy the Ticket"
-msgstr "清空票据"
+msgstr "销毁问题"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:357
 msgid "Do you want to destroy the ticket cache?"
-msgstr "是否要清空票据超速缓存？"
+msgstr "你确实想要销毁问题缓存吗？"
 
 #: ../build/ui_pwchangedialog.h:177
 msgid "Enter new password:"
-msgstr "输入新密码："
+msgstr "输入新密钥："
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:365
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:365
 msgid "Error !"
-msgstr "错误！"
+msgstr "错误 ！"
 
 #: ../src/krb5ticketwatcher.cpp:1084
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
 msgid "Error while setting cache flags"
-msgstr "设置超速缓存标志时出错"
+msgstr "设置缓存标记时出错"
 
 #: ../src/krb5ticketwatcher.cpp:1237
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1238
 msgid "Expires"
-msgstr "失效"
+msgstr "过期"
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:715 ../src/krb5ticketwatcher.cpp:827
@@ -224,30 +229,30 @@ msgstr "失败"
 #: ../src/krb5ticketwatcher.cpp:231
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:231
 msgid "Forwardable"
-msgstr "可转发"
+msgstr "可展期的"
 
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:233
 msgid "Forwarded"
-msgstr "已转发"
+msgstr "已展期"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:249
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:249
 msgid "HW Auth"
-msgstr "HW 身份验证"
+msgstr "HW 认证"
 
 #: ../src/main.cpp:70
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
-msgstr "我无法在此系统上检测到任何系统盘。"
+msgstr "不能在本系统上检测到系统托盘。"
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:247
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:247
 msgid "Initial"
-msgstr "初始"
+msgstr "初始化"
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:243
@@ -259,20 +264,20 @@ msgstr "无效"
 #: ../src/krb5ticketwatcher.cpp:570
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:570
 msgid "Invalid Password"
-msgstr "密码无效"
+msgstr "无效密钥"
 
 #: ../src/krb5ticketwatcher.cpp:524
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:524
 msgid "Invalid principal name"
-msgstr "主体名称无效"
+msgstr "无效身份名称"
 
 #: ../build/ui_pwdialog.h:154
 msgid "Kerberos Password Dialog"
-msgstr "Kerberos 密码对话框"
+msgstr "Kerberos 密钥对话框"
 
 #: ../build/ui_mainwidget.h:129
 msgid "Kerberos Ticket List"
-msgstr "Kerberos 票据列表"
+msgstr "Kerberos 问题列表"
 
 #: ../src/krb5ticketwatcher.cpp:1285
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1286
@@ -287,58 +292,58 @@ msgstr "有效期："
 #: ../src/krb5ticketwatcher.cpp:239
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:239
 msgid "May Postdate"
-msgstr "可能延期"
+msgstr "可能的发布日期"
 
 #: ../build/ui_kinitdialog.h:276
 msgid "New Ticket"
-msgstr "新建票据"
+msgstr "新问题"
 
 #: ../src/krb5ticketwatcher.cpp:1420
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1394
 msgid "No Credential Cache found"
-msgstr "未找到任何身份凭证超速缓存"
+msgstr "找不到凭证缓存"
 
 #: ../src/krb5ticketwatcher.cpp:1078
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
 msgid "No credentials cache found"
-msgstr "未找到任何身份凭证超速缓存"
+msgstr "找不到凭证缓存"
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:255
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:255
 msgid "Ok as Delegate"
-msgstr "可以委托"
+msgstr "确认以执行"
 
 #: ../src/krb5ticketwatcher.cpp:900
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:900
 msgid "Password change failed"
-msgstr "密码更改失败"
+msgstr "更改密钥失败"
 
 #: ../build/ui_kinitdialog.h:280
 msgid "Password:"
-msgstr "密码："
+msgstr "密钥："
 
 #: ../src/krb5ticketwatcher.cpp:750
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:750
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "请为 <b>%1</b> 输入 Kerberos 密码"
+msgstr "请输入 <b>%1</b> 的 Kerberos 密钥"
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:241
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:241
 msgid "Postdated"
-msgstr "延期"
+msgstr "发布日期"
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:251
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:251
 msgid "Pre Auth"
-msgstr "预身份验证"
+msgstr "预认证"
 
 #: ../build/ui_kinitdialog.h:278
 msgid "Principal:"
-msgstr "主体："
+msgstr "身份："
 
 #: ../build/ui_mainwidget.h:132
 msgid "Property"
@@ -348,7 +353,7 @@ msgstr "属性"
 #: ../src/krb5ticketwatcher.cpp:235
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:235
 msgid "Proxiable"
-msgstr "可代理"
+msgstr "可代理的"
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:237
@@ -364,31 +369,31 @@ msgstr "退出 krb5TicketWatcher"
 #: ../src/krb5ticketwatcher.cpp:310
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:310
 msgid "Re&store"
-msgstr "恢复(&S)"
+msgstr "回滚 (&R)"
 
 #: ../build/ui_pwchangedialog.h:178
 msgid "Reenter password:"
-msgstr "重新输入密码："
+msgstr "重新输入密钥： "
 
 #: ../src/krb5ticketwatcher.cpp:297
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:297
 msgid "Renew the Ticket"
-msgstr "续订票据"
+msgstr "更新问题"
 
 #: ../src/krb5ticketwatcher.cpp:1243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1244
 msgid "Renew until"
-msgstr "续订到"
+msgstr "更新到"
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:245
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:245
 msgid "Renewable"
-msgstr "可续订"
+msgstr "可更新的"
 
 #: ../build/ui_kinitdialog.h:295
 msgid "Renewable for:"
-msgstr "续订："
+msgstr "可更新的有："
 
 #: ../src/krb5ticketwatcher.cpp:312
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:312
@@ -398,43 +403,43 @@ msgstr "恢复窗口"
 #: ../src/krb5ticketwatcher.cpp:1217
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1218
 msgid "Service principal"
-msgstr "服务主体"
+msgstr "服务身份"
 
 #: ../src/main.cpp:69
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:69
 msgid "Systray"
-msgstr "系统盘"
+msgstr "系统托盘"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:704 ../src/krb5ticketwatcher.cpp:822
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:704
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:822
 msgid "The password you entered is invalid"
-msgstr "输入的密码无效"
+msgstr "您输入的密钥无效"
 
 #: ../src/krb5ticketwatcher.cpp:863
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:863
 msgid "The passwords are not equal"
-msgstr "密码不相同"
+msgstr "两次密码不一致。"
 
 #: ../src/krb5ticketwatcher.cpp:1288
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1289
 msgid "Ticket Encryption Type"
-msgstr "票据加密类型"
+msgstr "问题加密类型"
 
 #: ../build/ui_kinitdialog.h:284
 msgid "Ticket Flags"
-msgstr "票据标志"
+msgstr "问题标记"
 
 #: ../build/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "票据标志图例"
+msgstr "问题标记图示"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:367
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:367
 msgid "Ticket cache cannot be destroyed."
-msgstr "无法清空票据超速缓存。"
+msgstr "无法销毁问题缓存。"
 
 #: ../src/krb5ticketwatcher.cpp:1078 ../src/krb5ticketwatcher.cpp:1084
 #: ../src/krb5ticketwatcher.cpp:1105
@@ -443,30 +448,30 @@ msgstr "无法清空票据超速缓存。"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1105
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "票据超速缓存：%1:%2"
+msgstr "问题缓存：%1：%2"
 
 #: ../src/krb5ticketwatcher.cpp:1435
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1410
 #, qt-format
 msgid "Ticket expires in %1"
-msgstr "票据将于 %1 失效"
+msgstr "问题在 %1 过期"
 
 #: ../src/krb5ticketwatcher.cpp:1278
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1279
 msgid "Ticket flags"
-msgstr "票据标志"
+msgstr "问题标记"
 
 #: ../src/krb5ticketwatcher.cpp:396 ../src/krb5ticketwatcher.cpp:424
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:396
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:424
 msgid "Ticket renewed"
-msgstr "票据已续订"
+msgstr "问题已更新"
 
 #: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:397
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:425
 msgid "Ticket successfully renewed."
-msgstr "票据成功续订。"
+msgstr "问题成功更新。"
 
 #: ../build/ui_mainwidget.h:134
 msgid "Time Remaining"
@@ -476,19 +481,19 @@ msgstr "剩余时间"
 #: ../src/krb5ticketwatcher.cpp:253
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:253
 msgid "Transit Policy Checked"
-msgstr "已检查传送策略"
+msgstr "已检查的转换策略"
 
 #: ../src/krb5ticketwatcher.cpp:1353
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1354
 #, qt-format
 msgid "Unknown address type %1"
-msgstr "未知地址类型 %1"
+msgstr "未知的地址类型 %1"
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:582
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:582
 msgid "Unknown principal"
-msgstr "未知主体"
+msgstr "未知身份"
 
 #: ../src/krb5ticketwatcher.cpp:585
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:585
@@ -498,7 +503,7 @@ msgstr "未知领域"
 #: ../src/krb5ticketwatcher.cpp:1233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1234
 msgid "Valid starting"
-msgstr "有效启动"
+msgstr "有效开始"
 
 #: ../build/ui_mainwidget.h:133
 msgid "Value"
@@ -514,7 +519,7 @@ msgstr "值"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1020
 #: ../build/ui_kinitdialog.h:290 ../build/ui_kinitdialog.h:298
 msgid "days"
-msgstr "天"
+msgstr "日"
 
 #: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:296
 msgid "default"
@@ -522,7 +527,7 @@ msgstr "默认"
 
 #: ../build/ui_kinitdialog.h:285
 msgid "forwardable"
-msgstr "可转发"
+msgstr "可展期的"
 
 #. init with translations
 #: ../src/krb5ticketwatcher.cpp:156 ../src/krb5ticketwatcher.cpp:944
@@ -549,7 +554,7 @@ msgstr "分钟"
 
 #: ../build/ui_kinitdialog.h:286
 msgid "proxiable"
-msgstr "可代理"
+msgstr "可代理的"
 
 #: ../src/krb5ticketwatcher.cpp:953 ../src/krb5ticketwatcher.cpp:979
 #: ../src/krb5ticketwatcher.cpp:1002 ../src/krb5ticketwatcher.cpp:1017

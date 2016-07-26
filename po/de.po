@@ -1,17 +1,23 @@
-# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
-# This file is distributed under the same license as the package.
+# translation of krb5-ticket-watcher.de.po to German
 #
+#
+# Michael Skiba <trans@michael-skiba.de>, 2008.
+# Marko Schugardt <mail.sapex@gmx.de>, 2008, 2009.
+# Hermann-Josef Beckers <hj.beckers@onlinehome.de>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: krb5-ticket-watcher\n"
+"Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-18 18:48+0200\n"
-"PO-Revision-Date: 2009-01-08 15:19\n"
-"Last-Translator: Novell Language <language@novell.com>\n"
-"Language-Team: Novell Language <language@novell.com>\n"
+"PO-Revision-Date: 2009-10-19 19:51+0200\n"
+"Last-Translator: Hermann-Josef Beckers <hj.beckers@onlinehome.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ../src/krb5ticketwatcher.cpp:1194
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1194
@@ -36,11 +42,11 @@ msgstr "&Schließen"
 #: ../src/krb5ticketwatcher.cpp:305
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:305
 msgid "&Destroy Ticket"
-msgstr "Ticket &vernichten"
+msgstr "Ticket lösc&hen"
 
 #: ../build/ui_kinitdialog.h:281
 msgid "&Details..."
-msgstr "&Details..."
+msgstr "&Details ..."
 
 #: ../src/krb5ticketwatcher.cpp:290
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:290
@@ -50,7 +56,7 @@ msgstr "&Neues Ticket"
 #: ../build/ui_pwchangedialog.h:175 ../build/ui_pwdialog.h:155
 #: ../build/ui_kinitdialog.h:305
 msgid "&Ok"
-msgstr "&OK"
+msgstr "&Ok"
 
 #: ../src/krb5ticketwatcher.cpp:315
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:315
@@ -162,9 +168,8 @@ msgid "Ctrl+S"
 msgstr "Strg+S"
 
 #: ../src/krb5ticketwatcher.cpp:1403
-#, fuzzy
 msgid "Day(s)"
-msgstr "Tage"
+msgstr "Tag(e)"
 
 #: ../build/ui_mainwidget.h:130
 msgid "Default credential cache"
@@ -180,7 +185,7 @@ msgstr "Standard-Prinzipal: %3"
 #: ../src/krb5ticketwatcher.cpp:355
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:355
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "Kerberos Ticket-Cache leeren?"
+msgstr "Kerberos Ticket-Cache löschen?"
 
 #: ../src/krb5ticketwatcher.cpp:307
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:307
@@ -191,7 +196,7 @@ msgstr "Ticket löschen"
 #: ../src/krb5ticketwatcher.cpp:357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:357
 msgid "Do you want to destroy the ticket cache?"
-msgstr "Soll der Ticket-Cache geleert werden?"
+msgstr "Soll der Ticket-Cache gelöscht werden?"
 
 #: ../build/ui_pwchangedialog.h:177
 msgid "Enter new password:"
@@ -241,8 +246,7 @@ msgstr "HW Auth"
 #: ../src/main.cpp:70
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
-msgstr ""
-"Auf diesem System wurde kein Systemabschnitt der Kontrollleiste erkannt."
+msgstr "Auf diesem System wurde kein Systemabschnitt der Kontrollleiste erkannt."
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:247
@@ -308,7 +312,7 @@ msgstr "Kein Berechtigungsnachweis-Cache gefunden"
 #: ../src/krb5ticketwatcher.cpp:255
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:255
 msgid "Ok as Delegate"
-msgstr "OK als Delegat"
+msgstr "Ok als Delegat"
 
 #: ../src/krb5ticketwatcher.cpp:900
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:900
@@ -374,7 +378,7 @@ msgstr "Passwort erneut eingeben:"
 #: ../src/krb5ticketwatcher.cpp:297
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:297
 msgid "Renew the Ticket"
-msgstr "Ticket verlängern"
+msgstr "Ticket erneuern"
 
 #: ../src/krb5ticketwatcher.cpp:1243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1244
@@ -435,7 +439,7 @@ msgstr "Legende der Ticket-Flags"
 #: ../src/krb5ticketwatcher.cpp:367
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:367
 msgid "Ticket cache cannot be destroyed."
-msgstr "Ticket-Cache kann nicht vernichtet werden."
+msgstr "Ticket-Cache kann nicht gelöscht werden."
 
 #: ../src/krb5ticketwatcher.cpp:1078 ../src/krb5ticketwatcher.cpp:1084
 #: ../src/krb5ticketwatcher.cpp:1105
@@ -461,13 +465,13 @@ msgstr "Ticket-Flags"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:396
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:424
 msgid "Ticket renewed"
-msgstr "Ticket verlängert"
+msgstr "Ticket erneuert"
 
 #: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:397
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:425
 msgid "Ticket successfully renewed."
-msgstr "Ticket erfolgreich verlängert."
+msgstr "Ticket erfolgreich erneuert."
 
 #: ../build/ui_mainwidget.h:134
 msgid "Time Remaining"

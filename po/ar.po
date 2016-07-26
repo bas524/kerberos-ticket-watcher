@@ -1,17 +1,20 @@
-# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
-# This file is distributed under the same license as the package.
-#
+# Mohammad Alhargan <malham1@gmail.com>, 2011.
+# Mohammad Alhargan <malham1@hotmail.com>, 2012.
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: krb5-ticket-watcher\n"
+"Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-18 18:48+0200\n"
-"PO-Revision-Date: 2009-01-22 19:06\n"
-"Last-Translator: Novell Language <language@novell.com>\n"
-"Language-Team: Novell Language <language@novell.com>\n"
+"PO-Revision-Date: 2012-10-06 18:15+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: ../src/krb5ticketwatcher.cpp:1194
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1194
@@ -22,12 +25,12 @@ msgstr " للعميل %1"
 #: ../build/ui_pwchangedialog.h:173 ../build/ui_pwdialog.h:157
 #: ../build/ui_kinitdialog.h:303
 msgid "&Cancel"
-msgstr "إل&غاء"
+msgstr "إ&لغاء الأمر"
 
 #: ../src/krb5ticketwatcher.cpp:300
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:300
 msgid "&Change Kerberos Password"
-msgstr "&تغيير كلمة السر لـ Kerberos"
+msgstr "تغيير كلمة مرور Kerberos"
 
 #: ../build/ui_mainwidget.h:139
 msgid "&Close"
@@ -36,7 +39,7 @@ msgstr "إغلا&ق"
 #: ../src/krb5ticketwatcher.cpp:305
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:305
 msgid "&Destroy Ticket"
-msgstr "&إتلاف البطاقة"
+msgstr "& تدمير التذكرة"
 
 #: ../build/ui_kinitdialog.h:281
 msgid "&Details..."
@@ -45,17 +48,17 @@ msgstr "الت&فاصيل..."
 #: ../src/krb5ticketwatcher.cpp:290
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:290
 msgid "&New Ticket"
-msgstr "ب&طاقة جديدة"
+msgstr "& تذكرة جديدة"
 
 #: ../build/ui_pwchangedialog.h:175 ../build/ui_pwdialog.h:155
 #: ../build/ui_kinitdialog.h:305
 msgid "&Ok"
-msgstr "مواف&ق"
+msgstr "&موافق"
 
 #: ../src/krb5ticketwatcher.cpp:315
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:315
 msgid "&Quit"
-msgstr "إ&نهاء"
+msgstr "خروج"
 
 #: ../build/ui_mainwidget.h:137
 msgid "&Refresh"
@@ -64,7 +67,7 @@ msgstr "ت&جديد"
 #: ../src/krb5ticketwatcher.cpp:295
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:295
 msgid "&Renew Ticket"
-msgstr "&إعادة تجديد البطاقة"
+msgstr "&تجديد البطاقة"
 
 #: ../src/krb5ticketwatcher.cpp:1297 ../src/krb5ticketwatcher.cpp:1357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1298
@@ -79,25 +82,25 @@ msgstr "@"
 #: ../src/krb5ticketwatcher.cpp:1312
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1313
 msgid "Addresses"
-msgstr "العناوين"
+msgstr "عناوين"
 
 #: ../build/ui_pwchangedialog.h:174 ../build/ui_pwdialog.h:158
 #: ../build/ui_mainwidget.h:140 ../build/ui_kinitdialog.h:304
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr "Alt+ؤ"
 
 #: ../build/ui_kinitdialog.h:282
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr "Alt+ي"
 
 #: ../build/ui_pwchangedialog.h:176 ../build/ui_pwdialog.h:156
 #: ../build/ui_kinitdialog.h:306
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr "Alt+خ"
 
 #: ../build/ui_mainwidget.h:138
 msgid "Alt+R"
-msgstr "Alt+R"
+msgstr "Alt+ق"
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:257
@@ -109,93 +112,93 @@ msgstr "مجهول"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1335
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "عنوان غير صحيح (نوع %1 طول %2)"
+msgstr "عنوان غير صالح (نوع %1 طول %2)"
 
 #: ../build/ui_pwchangedialog.h:172
 msgid "Change Kerberos Password"
-msgstr "تغيير كلمة السر لـ Kerberos"
+msgstr "تغيير كلمة مرور Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:302
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:302
 msgid "Change the Kerberos Password"
-msgstr "تغيير كلمة السر لـ Kerberos"
+msgstr "تغيير كلمة مرور Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:859
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:859
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "تغيير كلمة السر لـ <b>%1</b> الرئيسي"
+msgstr "تغيير كلمة المرور الرئيسية <b>%1</b>"
 
 #: ../src/krb5ticketwatcher.cpp:292
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:292
 msgid "Create a new Ticket"
-msgstr "إنشاء بطاقة جديدة"
+msgstr "إنشاء تذكرة جديدة"
 
 #: ../src/krb5ticketwatcher.cpp:301
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:301
 msgid "Ctrl+C"
-msgstr "Ctrl+C"
+msgstr "Ctrl+ؤ"
 
 #: ../src/krb5ticketwatcher.cpp:306
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:306
 msgid "Ctrl+D"
-msgstr "Ctrl+D"
+msgstr "Ctrl+ي"
 
 #: ../src/krb5ticketwatcher.cpp:291
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:291
 msgid "Ctrl+N"
-msgstr "Ctrl+N"
+msgstr "Ctrl+ى"
 
 #: ../src/krb5ticketwatcher.cpp:316
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:316
 msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
+msgstr "Ctrl+ض"
 
 #: ../src/krb5ticketwatcher.cpp:296
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:296
 msgid "Ctrl+R"
-msgstr "Ctrl+R"
+msgstr "Ctrl+ق"
 
 #: ../src/krb5ticketwatcher.cpp:311
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:311
 msgid "Ctrl+S"
-msgstr "Ctrl+S"
+msgstr "Ctrl+س"
 
 #: ../src/krb5ticketwatcher.cpp:1403
-#, fuzzy
 msgid "Day(s)"
-msgstr "أيام"
+msgstr "يوم (s)"
 
 #: ../build/ui_mainwidget.h:130
 msgid "Default credential cache"
-msgstr "الذاكرة المؤقتة للصلاحيات الافتراضية"
+msgstr "بيانات الاعتماد المؤقت"
 
 #: ../src/krb5ticketwatcher.cpp:1109
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1109
 #, qt-format
 msgid "Default principal: %3"
-msgstr "المبدأ الافتراضي: %3"
+msgstr "الرئيسي الافتراضي: %3"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:355
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:355
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "هل تريد إتلاف الذاكرة المؤقتة لبطاقة Kerberos؟"
+msgstr "تدمير ذاكرة التخزين المؤقت لتذكرة Kerberos؟"
 
 #: ../src/krb5ticketwatcher.cpp:307
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:307
 msgid "Destroy the Ticket"
-msgstr "إتلاف البطاقة"
+msgstr "& تدمير التذكرة"
 
+# power-off message
 #. message text
 #: ../src/krb5ticketwatcher.cpp:357
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:357
 msgid "Do you want to destroy the ticket cache?"
-msgstr "هل تريد إتلاف الذاكرة المؤقتة للبطاقة؟"
+msgstr "هل تريد تدمير ذاكرة التخزين المؤقت للتذكرة؟"
 
 #: ../build/ui_pwchangedialog.h:177
 msgid "Enter new password:"
-msgstr "إدخال كلمة السر الجديدة:"
+msgstr "أدخل كلمة المرور الجديدة:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:365
@@ -206,12 +209,12 @@ msgstr "خطأ !"
 #: ../src/krb5ticketwatcher.cpp:1084
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1084
 msgid "Error while setting cache flags"
-msgstr "حدث خطأ أثناء إعداد علامات الذاكرة المؤقتة"
+msgstr "حدث خطأ أثناء تعيين إشارات ذاكرة التخزين المؤقت"
 
 #: ../src/krb5ticketwatcher.cpp:1237
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1238
 msgid "Expires"
-msgstr "انتهاء مدة الصلاحية"
+msgstr "تنتهي صلاحيتها"
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:715 ../src/krb5ticketwatcher.cpp:827
@@ -230,49 +233,49 @@ msgstr "قابل لإعادة التوجيه"
 #: ../src/krb5ticketwatcher.cpp:233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:233
 msgid "Forwarded"
-msgstr "معاد توجيهه"
+msgstr "اعيد توجيهه"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:249
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:249
 msgid "HW Auth"
-msgstr "تصديق الأجهزة"
+msgstr "بدون استيثاق"
 
 #: ../src/main.cpp:70
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
-msgstr "تعذر اكتشاف أية علبة نظام في هذا النظام."
+msgstr "لا يمكن الكشف عن أي صينية نظام على هذا النظام."
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:247
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:247
 msgid "Initial"
-msgstr "أولي"
+msgstr "بدائي"
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:243
 msgid "Invalid"
-msgstr "غير صالح"
+msgstr "غير صالحة"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:570
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:570
 msgid "Invalid Password"
-msgstr "كلمة السر غير صالحة"
+msgstr "كلمة المرور غير صالحة"
 
 #: ../src/krb5ticketwatcher.cpp:524
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:524
 msgid "Invalid principal name"
-msgstr "اسم أساسي غير صالح"
+msgstr "الاسم الأساسي غير صالح"
 
 #: ../build/ui_pwdialog.h:154
 msgid "Kerberos Password Dialog"
-msgstr "مربع حوار كلمة سر Kerberos"
+msgstr "حوار كلمة مرور Kerberos"
 
 #: ../build/ui_mainwidget.h:129
 msgid "Kerberos Ticket List"
-msgstr "قائمة بطاقات Kerberos"
+msgstr "قائمة تذكرة Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1285
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1286
@@ -281,114 +284,114 @@ msgstr "نوع تشفير المفتاح"
 
 #: ../build/ui_kinitdialog.h:287
 msgid "Lifetime:"
-msgstr "العمر:"
+msgstr "فترة الصلاحية:"
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:239
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:239
 msgid "May Postdate"
-msgstr "إمكانية التأريخ بتاريخ آجل"
+msgstr "تاريخي السابق"
 
 #: ../build/ui_kinitdialog.h:276
 msgid "New Ticket"
-msgstr "بطاقة جديدة"
+msgstr "تذكرة جديدة"
 
 #: ../src/krb5ticketwatcher.cpp:1420
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1394
 msgid "No Credential Cache found"
-msgstr "لم يتم العثور على ذاكرة مؤقتة للصلاحية"
+msgstr "لم يتم العثور على مؤهلات اعتماد التخزين المؤقت"
 
 #: ../src/krb5ticketwatcher.cpp:1078
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1078
 msgid "No credentials cache found"
-msgstr "لم يتم العثور على ذاكرة مؤقتة للصلاحيات"
+msgstr "لم يتم العثور على مؤهلات اعتماد التخزين المؤقت"
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:255
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:255
 msgid "Ok as Delegate"
-msgstr "موافق حسب التفويض"
+msgstr "موافق كمفوض"
 
 #: ../src/krb5ticketwatcher.cpp:900
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:900
 msgid "Password change failed"
-msgstr "فشل تغيير كلمة السر"
+msgstr "فشل تغيير كلمة المرور"
 
 #: ../build/ui_kinitdialog.h:280
 msgid "Password:"
-msgstr "كلمة السر:"
+msgstr "كلمة المرور:"
 
 #: ../src/krb5ticketwatcher.cpp:750
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:750
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "الرجاء إدخال كلمة سر Kerberos لـ <b>%1</b>"
+msgstr "الرجاء إدخال كلمة مرور Kerberos ل <b>%1</b>"
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:241
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:241
 msgid "Postdated"
-msgstr "مؤجل"
+msgstr "تاريخ السابق"
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:251
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:251
 msgid "Pre Auth"
-msgstr "تصديق مسبق"
+msgstr "ما قبل المصادقة"
 
 #: ../build/ui_kinitdialog.h:278
 msgid "Principal:"
-msgstr "أساسي:"
+msgstr "الرئيسي:"
 
 #: ../build/ui_mainwidget.h:132
 msgid "Property"
-msgstr "خاصية"
+msgstr "خصائص"
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:235
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:235
 msgid "Proxiable"
-msgstr "موكَّل"
+msgstr "قابل للخادم"
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:237
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:237
 msgid "Proxy"
-msgstr "وكيل"
+msgstr "الوكيل"
 
 #: ../src/krb5ticketwatcher.cpp:317
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:317
 msgid "Quit krb5TicketWatcher"
-msgstr "إنهاء krb5TicketWatcher"
+msgstr "قم بإنهاء krb5TicketWatcher"
 
 #: ../src/krb5ticketwatcher.cpp:310
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:310
 msgid "Re&store"
-msgstr "ا&ستعادة"
+msgstr "استعادة"
 
 #: ../build/ui_pwchangedialog.h:178
 msgid "Reenter password:"
-msgstr "إعادة إدخال كلمة السر:"
+msgstr "إعادة إدخال كلمة المرور:"
 
 #: ../src/krb5ticketwatcher.cpp:297
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:297
 msgid "Renew the Ticket"
-msgstr "إعادة تجديد البطاقة"
+msgstr "تجديد البطاقة"
 
 #: ../src/krb5ticketwatcher.cpp:1243
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1244
 msgid "Renew until"
-msgstr "إعادة التجديد حتى"
+msgstr "تجديد حتى"
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:245
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:245
 msgid "Renewable"
-msgstr "قابل للتجديد"
+msgstr "متجددة"
 
 #: ../build/ui_kinitdialog.h:295
 msgid "Renewable for:"
-msgstr "قابل للتجديد لـ:"
+msgstr "متجددة حتى:"
 
 #: ../src/krb5ticketwatcher.cpp:312
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:312
@@ -398,43 +401,43 @@ msgstr "استعادة الإطار"
 #: ../src/krb5ticketwatcher.cpp:1217
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1218
 msgid "Service principal"
-msgstr "خدمة أساسية"
+msgstr "الخدمة الرئيسية"
 
 #: ../src/main.cpp:69
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/main.cpp:69
 msgid "Systray"
-msgstr "علبة النظام"
+msgstr "صينية النظام"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:704 ../src/krb5ticketwatcher.cpp:822
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:704
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:822
 msgid "The password you entered is invalid"
-msgstr "كلمة السر التي تم إدخالها غير صالحة"
+msgstr "كلمة المرور المُدخلة غير صالحة"
 
 #: ../src/krb5ticketwatcher.cpp:863
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:863
 msgid "The passwords are not equal"
-msgstr "كلمتا السر غير متطابقين"
+msgstr "كلمتا المرور لا تتطابق"
 
 #: ../src/krb5ticketwatcher.cpp:1288
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1289
 msgid "Ticket Encryption Type"
-msgstr "نوع تشفير البطاقة"
+msgstr "نوع تشفير التذكرة"
 
 #: ../build/ui_kinitdialog.h:284
 msgid "Ticket Flags"
-msgstr "علامات البطاقة"
+msgstr "أعلام التذكرة"
 
 #: ../build/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "وسيلة إيضاح علامات البطاقة"
+msgstr "دليل مصطلحات أعلام التذكرة"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:367
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:367
 msgid "Ticket cache cannot be destroyed."
-msgstr "تعذر إتلاف الذاكرة المؤقتة للبطاقة."
+msgstr "لا يمكن تدمير ذاكرة التخزين المؤقت للتذكرة."
 
 #: ../src/krb5ticketwatcher.cpp:1078 ../src/krb5ticketwatcher.cpp:1084
 #: ../src/krb5ticketwatcher.cpp:1105
@@ -443,7 +446,7 @@ msgstr "تعذر إتلاف الذاكرة المؤقتة للبطاقة."
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1105
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "ذاكرة البطاقة المؤقتة: %1:%2"
+msgstr "تذكرة ذاكرة التخزين المؤقت: %1:%2"
 
 #: ../src/krb5ticketwatcher.cpp:1435
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1410
@@ -454,19 +457,19 @@ msgstr "تنتهي صلاحية البطاقة في %1"
 #: ../src/krb5ticketwatcher.cpp:1278
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1279
 msgid "Ticket flags"
-msgstr "علامات البطاقة"
+msgstr "أعلام التذكرة"
 
 #: ../src/krb5ticketwatcher.cpp:396 ../src/krb5ticketwatcher.cpp:424
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:396
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:424
 msgid "Ticket renewed"
-msgstr "تم تجديد البطاقة"
+msgstr "تذكرة مجددة"
 
 #: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:397
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:425
 msgid "Ticket successfully renewed."
-msgstr "تم تجديد البطاقة بنجاح."
+msgstr "تم تجديد التذكرة بنجاح."
 
 #: ../build/ui_mainwidget.h:134
 msgid "Time Remaining"
@@ -476,33 +479,33 @@ msgstr "الوقت المتبقي"
 #: ../src/krb5ticketwatcher.cpp:253
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:253
 msgid "Transit Policy Checked"
-msgstr "تم التحقق من سياسة الانتقال"
+msgstr "تحقق من سياسة العبور"
 
 #: ../src/krb5ticketwatcher.cpp:1353
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1354
 #, qt-format
 msgid "Unknown address type %1"
-msgstr "%1 نوع عنوان غير معروف"
+msgstr "نوع عنوان غير معروف %1"
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:582
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:582
 msgid "Unknown principal"
-msgstr "أساس غير معروف"
+msgstr "الرئيسي غير معروف"
 
 #: ../src/krb5ticketwatcher.cpp:585
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:585
 msgid "Unknown realm"
-msgstr "نطاق غير معروف"
+msgstr "حقل غير معروف"
 
 #: ../src/krb5ticketwatcher.cpp:1233
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1234
 msgid "Valid starting"
-msgstr "صلاحية البدء"
+msgstr "سارية المفعول ابتداء"
 
 #: ../build/ui_mainwidget.h:133
 msgid "Value"
-msgstr "قيمة"
+msgstr "القيمة"
 
 #: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:940
 #: ../src/krb5ticketwatcher.cpp:966 ../src/krb5ticketwatcher.cpp:1005
@@ -514,7 +517,7 @@ msgstr "قيمة"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1020
 #: ../build/ui_kinitdialog.h:290 ../build/ui_kinitdialog.h:298
 msgid "days"
-msgstr "أيام"
+msgstr "أيّام"
 
 #: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:296
 msgid "default"
@@ -522,7 +525,7 @@ msgstr "افتراضي"
 
 #: ../build/ui_kinitdialog.h:285
 msgid "forwardable"
-msgstr "قابل لإعادة التوجيه"
+msgstr "قادر على التوجيه"
 
 #. init with translations
 #: ../src/krb5ticketwatcher.cpp:156 ../src/krb5ticketwatcher.cpp:944
@@ -549,7 +552,7 @@ msgstr "دقائق"
 
 #: ../build/ui_kinitdialog.h:286
 msgid "proxiable"
-msgstr "موكَّل"
+msgstr "قابل للملقم"
 
 #: ../src/krb5ticketwatcher.cpp:953 ../src/krb5ticketwatcher.cpp:979
 #: ../src/krb5ticketwatcher.cpp:1002 ../src/krb5ticketwatcher.cpp:1017
@@ -559,4 +562,4 @@ msgstr "موكَّل"
 #: ../build/_CPack_Packages/Linux-Source/TBZ2/krb5-ticket-watcher-1.0.3/src/krb5ticketwatcher.cpp:1017
 #: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:301
 msgid "seconds"
-msgstr "ثوانٍ"
+msgstr "ثوان"

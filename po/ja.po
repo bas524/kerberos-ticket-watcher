@@ -1,13 +1,14 @@
 # translation of krb5-ticket-watcher.po to Japanese
-# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2008.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-18 18:48+0200\n"
-"PO-Revision-Date: 2008-09-22 22:04+0900\n"
+"PO-Revision-Date: 2009-10-20 19:31+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -163,7 +164,6 @@ msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
 #: ../src/krb5ticketwatcher.cpp:1403
-#, fuzzy
 msgid "Day(s)"
 msgstr "日"
 
