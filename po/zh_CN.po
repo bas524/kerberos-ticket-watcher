@@ -9,20 +9,21 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2012-05-24 06:37+0800\n"
-"Last-Translator: margurite <i@marguerite.su>\n"
-"Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2016-08-12 07:35+0000\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/krb5"
+"-ticket-watcher/master/zh_CN/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: ../src/krb5ticketwatcher.cpp:1195
 #, qt-format
 msgid " for client %1"
-msgstr "  用于客户端 %1"
+msgstr " 用于客户端 %1"
 
 #: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
 #: ../build/ui_pwchangedialog.h:173
@@ -43,7 +44,7 @@ msgstr "销毁问题 (&D)"
 
 #: ../build/ui_kinitdialog.h:281
 msgid "&Details..."
-msgstr "细节 (&D)"
+msgstr "细节(&D)..."
 
 #: ../src/krb5ticketwatcher.cpp:291
 msgid "&New Ticket"
@@ -323,7 +324,7 @@ msgstr "回滚 (&R)"
 
 #: ../build/ui_pwchangedialog.h:178
 msgid "Reenter password:"
-msgstr "重新输入密钥： "
+msgstr "再次输入密码："
 
 #: ../src/krb5ticketwatcher.cpp:298
 msgid "Renew the Ticket"
@@ -361,7 +362,7 @@ msgstr "您输入的密钥无效"
 
 #: ../src/krb5ticketwatcher.cpp:864
 msgid "The passwords are not equal"
-msgstr "两次密码不一致。"
+msgstr "密码不相符"
 
 #: ../src/krb5ticketwatcher.cpp:1289
 msgid "Ticket Encryption Type"
