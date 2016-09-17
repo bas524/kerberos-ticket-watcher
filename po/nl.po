@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: krb5-ticket-watcher.nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2009-10-16 10:09+0200\n"
+"PO-Revision-Date: 2016-09-17 11:44+0000\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <opensuse-nl@opensuse.org>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/krb5-ticket-"
+"watcher/master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=2; plural= n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: ../src/krb5ticketwatcher.cpp:1195
 #, qt-format
@@ -294,7 +295,7 @@ msgstr "Latere datum gebruikt"
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:252
 msgid "Pre Auth"
-msgstr "Pre Auth"
+msgstr "Voor Auth"
 
 #: ../build/ui_kinitdialog.h:278
 msgid "Principal:"
