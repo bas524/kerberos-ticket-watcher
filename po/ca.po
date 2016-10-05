@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2014-09-12 18:52+0100\n"
-"Last-Translator: David Medina <opensusecatala@gmail.com>\n"
-"Language-Team: Catalan\n"
-"Language: \n"
+"PO-Revision-Date: 2016-10-05 15:41+0000\n"
+"Last-Translator: David Medina <medipas@gmail.com>\n"
+"Language-Team: Catalan <https://l10n.opensuse.org/projects/krb5-ticket-"
+"watcher/master/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: ../src/krb5ticketwatcher.cpp:1195
 #, qt-format
@@ -205,7 +206,7 @@ msgstr "Reenviat"
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:250
 msgid "HW Auth"
-msgstr "HW Auth"
+msgstr "Auth HW"
 
 #: ../src/main.cpp:70
 msgid "I couldn't detect any system tray on this system."
@@ -319,7 +320,7 @@ msgstr "&Restaura"
 
 #: ../build/ui_pwchangedialog.h:178
 msgid "Reenter password:"
-msgstr "Torneu a introduir la contrasenya: "
+msgstr "Torneu a escriure la contrasenya:"
 
 #: ../src/krb5ticketwatcher.cpp:298
 msgid "Renew the Ticket"
@@ -348,7 +349,7 @@ msgstr "Servei principal"
 
 #: ../src/main.cpp:69
 msgid "Systray"
-msgstr "Systray"
+msgstr "Safata de sistema"
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
@@ -374,7 +375,7 @@ msgstr "Llegenda de les banderes dels tiquets"
 #. message text
 #: ../src/krb5ticketwatcher.cpp:368
 msgid "Ticket cache cannot be destroyed."
-msgstr "No es pot destruir la memòria cau de tiquets"
+msgstr "No es pot destruir la memòria cau de tiquets."
 
 #: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
 #: ../src/krb5ticketwatcher.cpp:1106
@@ -397,7 +398,7 @@ msgstr "Tiquet renovat"
 
 #: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
 msgid "Ticket successfully renewed."
-msgstr "Tiquet renovat amb èxit"
+msgstr "Tiquet renovat amb èxit."
 
 #: ../build/ui_mainwidget.h:133
 msgid "Time Remaining"
