@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2017-02-26 23:25+0000\n"
+"PO-Revision-Date: 2017-02-27 05:41+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/krb5-ticket-"
 "watcher/master/bg/>\n"
@@ -427,7 +427,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:1354
 #, qt-format
 msgid "Unknown address type %1"
-msgstr ""
+msgstr "Непознат адрес тип %1"
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:583
