@@ -4,14 +4,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2016-11-14 22:03+0700\n"
-"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
-"Language-Team: Indonesian <i18n@suse.de>\n"
+"PO-Revision-Date: 2017-04-11 22:48+0000\n"
+"Last-Translator: Wanto Yo <wantoyek@gmail.com>\n"
+"Language-Team: Indonesian <https://l10n.opensuse.org/projects/krb5-ticket-"
+"watcher/master/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: ../src/krb5ticketwatcher.cpp:1195
 #, qt-format
@@ -26,7 +28,7 @@ msgstr "&Batal"
 
 #: ../src/krb5ticketwatcher.cpp:301
 msgid "&Change Kerberos Password"
-msgstr "&bah Kata Sandi Kerberos"
+msgstr "&Ubah Sandi Kerberos"
 
 #: ../build/ui_mainwidget.h:140
 msgid "&Close"
