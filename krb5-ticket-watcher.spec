@@ -15,7 +15,8 @@ Patch2: krb5-ticket-watcher-1.0-alt-date-fix.patch
 Patch3: krb5-ticket-watcher-1.0.3-alt-fix-includes.patch
 Patch4: krb5-ticket-watcher-1.0.3-alt-fix-desktop-category.patch
 
-BuildRequires: kde-common-devel rpm-build-licenses rpm-build-ubt libkrb5-devel libkeyutils-devel
+BuildRequires(pre): rpm-build-ubt
+BuildRequires: kde-common-devel rpm-build-licenses libkrb5-devel libkeyutils-devel
 BuildRequires: cmake gcc-c++ libcom_err-devel qt5-base-devel
 
 %description
