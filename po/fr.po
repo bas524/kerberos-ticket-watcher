@@ -1,0 +1,472 @@
+# Copyright (C) 2006 SuSE Linux Products GmbH, Nuernberg
+# This file is distributed under the same license as the package.
+#
+# Guillaume GARDET <guillaume.gardet@opensuse.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: krb5-ticket-watcher\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"PO-Revision-Date: 2012-05-29 10:57+0200\n"
+"Last-Translator: Guillaume GARDET <guillaume.gardet@opensuse.org>\n"
+"Language-Team: French <opensuse-fr@opensuse.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../src/krb5ticketwatcher.cpp:1195
+#, qt-format
+msgid " for client %1"
+msgstr " pour le client %1"
+
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
+msgid "&Cancel"
+msgstr "&Annuler"
+
+#: ../src/krb5ticketwatcher.cpp:301
+msgid "&Change Kerberos Password"
+msgstr "&Changer le mot de passe Kerberos"
+
+#: ../build/ui_mainwidget.h:140
+msgid "&Close"
+msgstr "&Fermer"
+
+#: ../src/krb5ticketwatcher.cpp:306
+msgid "&Destroy Ticket"
+msgstr "&Détruire le ticket"
+
+#: ../build/ui_kinitdialog.h:281
+msgid "&Details..."
+msgstr "&Détails..."
+
+#: ../src/krb5ticketwatcher.cpp:291
+msgid "&New Ticket"
+msgstr "&Nouveau ticket"
+
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
+msgid "&Ok"
+msgstr "&OK"
+
+#: ../src/krb5ticketwatcher.cpp:316
+msgid "&Quit"
+msgstr "&Quitter"
+
+#: ../build/ui_mainwidget.h:138
+msgid "&Refresh"
+msgstr "Actualise&r"
+
+#: ../src/krb5ticketwatcher.cpp:296
+msgid "&Renew Ticket"
+msgstr "&Renouveler le ticket"
+
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+msgid "(none)"
+msgstr "(aucun)"
+
+#: ../build/ui_kinitdialog.h:279
+msgid "@"
+msgstr "@"
+
+#: ../src/krb5ticketwatcher.cpp:1313
+msgid "Addresses"
+msgstr "Adresses"
+
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../build/ui_kinitdialog.h:282
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../build/ui_mainwidget.h:139
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#. Legend: Explain ticket flag "a"
+#: ../src/krb5ticketwatcher.cpp:258
+msgid "Anonymous"
+msgstr "Anonyme"
+
+#: ../src/krb5ticketwatcher.cpp:1335
+#, qt-format
+msgid "Broken address (type %1 length %2)"
+msgstr "Adresse cassée (type %1 longueur %2)"
+
+#: ../build/ui_pwchangedialog.h:172
+msgid "Change Kerberos Password"
+msgstr "Changer le mot de passe Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:303
+msgid "Change the Kerberos Password"
+msgstr "Changer le mot de passe Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:860
+#, qt-format
+msgid "Change the password for principal <b>%1</b>"
+msgstr "Modifier le mot de passe pour le principal <b>%1</b>"
+
+#: ../src/krb5ticketwatcher.cpp:293
+msgid "Create a new Ticket"
+msgstr "Créer un nouveau ticket"
+
+#: ../src/krb5ticketwatcher.cpp:302
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: ../src/krb5ticketwatcher.cpp:307
+msgid "Ctrl+D"
+msgstr "Ctrl+D"
+
+#: ../src/krb5ticketwatcher.cpp:292
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../src/krb5ticketwatcher.cpp:317
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../src/krb5ticketwatcher.cpp:297
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: ../src/krb5ticketwatcher.cpp:312
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: ../src/krb5ticketwatcher.cpp:1404
+msgid "Day(s)"
+msgstr "jour(s)"
+
+#: ../build/ui_mainwidget.h:130
+msgid "Default credential cache"
+msgstr "Cache d'informations d'identification par défaut"
+
+#: ../src/krb5ticketwatcher.cpp:1110
+#, qt-format
+msgid "Default principal: %3"
+msgstr "Principal par défaut : %3"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:356
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "Détruire le cache des tickets kerberos ?"
+
+#: ../src/krb5ticketwatcher.cpp:308
+msgid "Destroy the Ticket"
+msgstr "Détruire le ticket"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:358
+msgid "Do you want to destroy the ticket cache?"
+msgstr "Voulez-vous détruire le cache du ticket ?"
+
+#: ../build/ui_pwchangedialog.h:177
+msgid "Enter new password:"
+msgstr "Entrer le nouveau mot de passe :"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:366
+msgid "Error !"
+msgstr "Erreur !"
+
+#: ../src/krb5ticketwatcher.cpp:1085
+msgid "Error while setting cache flags"
+msgstr "Erreur lors de la définition des drapeaux de cache"
+
+#: ../src/krb5ticketwatcher.cpp:1238
+msgid "Expires"
+msgstr "Expire"
+
+#. kdc unreachable, return
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+msgid "Failure"
+msgstr "Échec"
+
+#. Legend: Explain ticket flag "F"
+#: ../src/krb5ticketwatcher.cpp:232
+msgid "Forwardable"
+msgstr "Transmissible"
+
+#. Legend: Explain ticket flag "f"
+#: ../src/krb5ticketwatcher.cpp:234
+msgid "Forwarded"
+msgstr "Transmis"
+
+#. Legend: Explain ticket flag "H"
+#: ../src/krb5ticketwatcher.cpp:250
+msgid "HW Auth"
+msgstr "Auth HW"
+
+#: ../src/main.cpp:70
+msgid "I couldn't detect any system tray on this system."
+msgstr "Je n'ai pu détecter aucune barre d'état système sur ce système."
+
+#. Legend: Explain ticket flag "I"
+#: ../src/krb5ticketwatcher.cpp:248
+msgid "Initial"
+msgstr "Initial"
+
+#. Legend: Explain ticket flag "i"
+#: ../src/krb5ticketwatcher.cpp:244
+msgid "Invalid"
+msgstr "Non valide"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:571
+msgid "Invalid Password"
+msgstr "Mot de passe incorrect"
+
+#: ../src/krb5ticketwatcher.cpp:525
+msgid "Invalid principal name"
+msgstr "Nom principal invalide"
+
+#: ../build/ui_pwdialog.h:154
+msgid "Kerberos Password Dialog"
+msgstr "Boîte de dialogue du mot de passe Kerberos"
+
+#: ../build/ui_mainwidget.h:129
+msgid "Kerberos Ticket List"
+msgstr "Liste des tickets Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:1286
+msgid "Key Encryption Type"
+msgstr "Type de clé de chiffrement"
+
+#: ../build/ui_kinitdialog.h:287
+msgid "Lifetime:"
+msgstr "Durée de vie :"
+
+#. Legend: Explain ticket flag "D"
+#: ../src/krb5ticketwatcher.cpp:240
+msgid "May Postdate"
+msgstr "Peut postdater"
+
+#: ../build/ui_kinitdialog.h:276
+msgid "New Ticket"
+msgstr "Nouveau ticket"
+
+#: ../src/krb5ticketwatcher.cpp:1421
+msgid "No Credential Cache found"
+msgstr "Aucun cache d'information d'identification trouvé"
+
+#: ../src/krb5ticketwatcher.cpp:1079
+msgid "No credentials cache found"
+msgstr "Aucun cache d'informations d'identification trouvé"
+
+#. Legend: Explain ticket flag "O"
+#: ../src/krb5ticketwatcher.cpp:256
+msgid "Ok as Delegate"
+msgstr "Ok en tant que délégué"
+
+#: ../src/krb5ticketwatcher.cpp:901
+msgid "Password change failed"
+msgstr "Échec de la modification du mot de passe"
+
+#: ../build/ui_kinitdialog.h:280
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: ../src/krb5ticketwatcher.cpp:751
+#, qt-format
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr "Saisissez le mot de passe Kerberos pour <b>%1</b>"
+
+#. Legend: Explain ticket flag "d"
+#: ../src/krb5ticketwatcher.cpp:242
+msgid "Postdated"
+msgstr "Postdaté"
+
+#. Legend: Explain ticket flag "A"
+#: ../src/krb5ticketwatcher.cpp:252
+msgid "Pre Auth"
+msgstr "Pré Auth"
+
+#: ../build/ui_kinitdialog.h:278
+msgid "Principal:"
+msgstr "Principal :"
+
+#: ../build/ui_mainwidget.h:135
+msgid "Property"
+msgstr "Propriétés"
+
+#. Legend: Explain ticket flag "p"
+#: ../src/krb5ticketwatcher.cpp:236
+msgid "Proxiable"
+msgstr "Proxiable"
+
+#. Legend: Explain ticket flag "P"
+#: ../src/krb5ticketwatcher.cpp:238
+msgid "Proxy"
+msgstr "Proxy"
+
+#: ../src/krb5ticketwatcher.cpp:318
+msgid "Quit krb5TicketWatcher"
+msgstr "Quitter krb5TicketWatcher"
+
+#: ../src/krb5ticketwatcher.cpp:311
+msgid "Re&store"
+msgstr "Re&staurer"
+
+#: ../build/ui_pwchangedialog.h:178
+msgid "Reenter password:"
+msgstr "Retaper le mot de passe :"
+
+#: ../src/krb5ticketwatcher.cpp:298
+msgid "Renew the Ticket"
+msgstr "Renouveler le ticket"
+
+#: ../src/krb5ticketwatcher.cpp:1244
+msgid "Renew until"
+msgstr "Renouveler jusqu'à"
+
+#. Legend: Explain ticket flag "R"
+#: ../src/krb5ticketwatcher.cpp:246
+msgid "Renewable"
+msgstr "Renouvelable"
+
+#: ../build/ui_kinitdialog.h:296
+msgid "Renewable for:"
+msgstr "Renouvelable pour :"
+
+#: ../src/krb5ticketwatcher.cpp:313
+msgid "Restore the Window"
+msgstr "Restaurer la fenêtre"
+
+#: ../src/krb5ticketwatcher.cpp:1218
+msgid "Service principal"
+msgstr "Principal service"
+
+#: ../src/main.cpp:69
+msgid "Systray"
+msgstr "Zone de notification"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+msgid "The password you entered is invalid"
+msgstr "Le mot de passe que vous avez entré est invalide"
+
+#: ../src/krb5ticketwatcher.cpp:864
+msgid "The passwords are not equal"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: ../src/krb5ticketwatcher.cpp:1289
+msgid "Ticket Encryption Type"
+msgstr "Type de chiffrement de ticket"
+
+#: ../build/ui_kinitdialog.h:284
+msgid "Ticket Flags"
+msgstr "Drapeaux de ticket"
+
+#: ../build/ui_mainwidget.h:136
+msgid "Ticket Flags Legend"
+msgstr "Légendes de drapeaux de ticket"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:368
+msgid "Ticket cache cannot be destroyed."
+msgstr "Le cache de ticket ne peut pas être détruit."
+
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
+#, qt-format
+msgid "Ticket cache: %1:%2"
+msgstr "Cache de ticket : %1:%2"
+
+#: ../src/krb5ticketwatcher.cpp:1436
+#, qt-format
+msgid "Ticket expires in %1"
+msgstr "Le ticket expire dans %1"
+
+#: ../src/krb5ticketwatcher.cpp:1279
+msgid "Ticket flags"
+msgstr "Drapeaux de ticket"
+
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+msgid "Ticket renewed"
+msgstr "Ticket renouvelé"
+
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket successfully renewed."
+msgstr "Ticket renouvelé avec succès."
+
+#: ../build/ui_mainwidget.h:133
+msgid "Time Remaining"
+msgstr "Temps restant"
+
+#. Legend: Explain ticket flag "T"
+#: ../src/krb5ticketwatcher.cpp:254
+msgid "Transit Policy Checked"
+msgstr "Stratégie de transit vérifiée"
+
+#: ../src/krb5ticketwatcher.cpp:1354
+#, qt-format
+msgid "Unknown address type %1"
+msgstr "Type d'adresse %1 inconnu"
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:583
+msgid "Unknown principal"
+msgstr "Principal inconnu"
+
+#: ../src/krb5ticketwatcher.cpp:586
+msgid "Unknown realm"
+msgstr "Realm inconnu"
+
+#: ../src/krb5ticketwatcher.cpp:1234
+msgid "Valid starting"
+msgstr "Démarrage valide"
+
+#: ../build/ui_mainwidget.h:134
+msgid "Value"
+msgstr "Valeur"
+
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
+msgid "days"
+msgstr "jours"
+
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+msgid "default"
+msgstr "par défaut"
+
+#: ../build/ui_kinitdialog.h:285
+msgid "forwardable"
+msgstr "Expédiable"
+
+#. init with translations
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
+msgid "hours"
+msgstr "heures"
+
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+msgid "minutes"
+msgstr "minutes"
+
+#: ../build/ui_kinitdialog.h:286
+msgid "proxiable"
+msgstr "proxiable"
+
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+msgid "seconds"
+msgstr "secondes"

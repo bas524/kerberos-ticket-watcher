@@ -1,0 +1,481 @@
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
+#
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"PO-Revision-Date: 2016-07-28 18:28+0000\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <https://l10n.opensuse.org/projects/krb5-ticket-"
+"watcher/master/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.6\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
+
+#: ../src/krb5ticketwatcher.cpp:1195
+#, qt-format
+msgid " for client %1"
+msgstr " pre klienta %1"
+
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
+msgid "&Cancel"
+msgstr "&Zrušiť"
+
+#: ../src/krb5ticketwatcher.cpp:301
+msgid "&Change Kerberos Password"
+msgstr "&Zmeniť Kerberos heslo"
+
+#: ../build/ui_mainwidget.h:140
+msgid "&Close"
+msgstr "&Zatvoriť"
+
+#: ../src/krb5ticketwatcher.cpp:306
+msgid "&Destroy Ticket"
+msgstr "&Zničiť tiket"
+
+#: ../build/ui_kinitdialog.h:281
+msgid "&Details..."
+msgstr "&Detaily..."
+
+#: ../src/krb5ticketwatcher.cpp:291
+msgid "&New Ticket"
+msgstr "&Nový tiket"
+
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
+msgid "&Ok"
+msgstr "&OK"
+
+#: ../src/krb5ticketwatcher.cpp:316
+msgid "&Quit"
+msgstr "&Ukončiť"
+
+#: ../build/ui_mainwidget.h:138
+msgid "&Refresh"
+msgstr "&Obnoviť"
+
+#: ../src/krb5ticketwatcher.cpp:296
+msgid "&Renew Ticket"
+msgstr "&Obnoviť tiket"
+
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+msgid "(none)"
+msgstr "(nič)"
+
+#: ../build/ui_kinitdialog.h:279
+msgid "@"
+msgstr "@"
+
+#: ../src/krb5ticketwatcher.cpp:1313
+msgid "Addresses"
+msgstr "Adresy"
+
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../build/ui_kinitdialog.h:282
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../build/ui_mainwidget.h:139
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#. Legend: Explain ticket flag "a"
+#: ../src/krb5ticketwatcher.cpp:258
+msgid "Anonymous"
+msgstr "Anonymný"
+
+#: ../src/krb5ticketwatcher.cpp:1335
+#, qt-format
+msgid "Broken address (type %1 length %2)"
+msgstr "Neplatná adresa (typ %1 dĺžka %2)"
+
+#: ../build/ui_pwchangedialog.h:172
+msgid "Change Kerberos Password"
+msgstr "Zmeniť Kerberos heslo"
+
+#: ../src/krb5ticketwatcher.cpp:303
+msgid "Change the Kerberos Password"
+msgstr "Zmeniť Kerberos heslo"
+
+#: ../src/krb5ticketwatcher.cpp:860
+#, qt-format
+msgid "Change the password for principal <b>%1</b>"
+msgstr "Zmeniť heslo pre hlavné <b>%1</b>"
+
+#: ../src/krb5ticketwatcher.cpp:293
+msgid "Create a new Ticket"
+msgstr "Vytvoriť nový tiket"
+
+#: ../src/krb5ticketwatcher.cpp:302
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: ../src/krb5ticketwatcher.cpp:307
+msgid "Ctrl+D"
+msgstr "Ctrl+D"
+
+#: ../src/krb5ticketwatcher.cpp:292
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../src/krb5ticketwatcher.cpp:317
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../src/krb5ticketwatcher.cpp:297
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: ../src/krb5ticketwatcher.cpp:312
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: ../src/krb5ticketwatcher.cpp:1404
+msgid "Day(s)"
+msgstr "Deň(dní)"
+
+#: ../build/ui_mainwidget.h:130
+msgid "Default credential cache"
+msgstr "Štandardne poverená medzipamäť"
+
+#: ../src/krb5ticketwatcher.cpp:1110
+#, qt-format
+msgid "Default principal: %3"
+msgstr "Predvolené hlavné: %3"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:356
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "Zničiť vyrovnávaciu pamäť tiketu Kerberos?"
+
+#: ../src/krb5ticketwatcher.cpp:308
+msgid "Destroy the Ticket"
+msgstr "Zničiť tiket"
+
+# power-off message
+#. message text
+#: ../src/krb5ticketwatcher.cpp:358
+msgid "Do you want to destroy the ticket cache?"
+msgstr "Chcete zničiť medzipamäť tiketu?"
+
+#  Maximum length: 60  characters
+#: ../build/ui_pwchangedialog.h:177
+msgid "Enter new password:"
+msgstr "Zadajte nové heslo:"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:366
+msgid "Error !"
+msgstr "Chyba !"
+
+#: ../src/krb5ticketwatcher.cpp:1085
+msgid "Error while setting cache flags"
+msgstr "Chyba počas nastavovania príznakov medzipamäte"
+
+#: ../src/krb5ticketwatcher.cpp:1238
+msgid "Expires"
+msgstr "Vyprší"
+
+#. kdc unreachable, return
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+msgid "Failure"
+msgstr "Zlyhanie"
+
+#. Legend: Explain ticket flag "F"
+#: ../src/krb5ticketwatcher.cpp:232
+msgid "Forwardable"
+msgstr "Preposielateľný"
+
+#. Legend: Explain ticket flag "f"
+#: ../src/krb5ticketwatcher.cpp:234
+msgid "Forwarded"
+msgstr "Preposlaný"
+
+#. Legend: Explain ticket flag "H"
+#: ../src/krb5ticketwatcher.cpp:250
+msgid "HW Auth"
+msgstr "HW overenie"
+
+#: ../src/main.cpp:70
+msgid "I couldn't detect any system tray on this system."
+msgstr "Nemohol som detekovať žiadnu systémovú lištu na tomto systéme."
+
+#. Legend: Explain ticket flag "I"
+#: ../src/krb5ticketwatcher.cpp:248
+msgid "Initial"
+msgstr "Počiatočný"
+
+#. Legend: Explain ticket flag "i"
+#: ../src/krb5ticketwatcher.cpp:244
+msgid "Invalid"
+msgstr "Neplatná"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:571
+msgid "Invalid Password"
+msgstr "Neplatné heslo"
+
+#: ../src/krb5ticketwatcher.cpp:525
+msgid "Invalid principal name"
+msgstr "Neplatné meno pre hlavné"
+
+#: ../build/ui_pwdialog.h:154
+msgid "Kerberos Password Dialog"
+msgstr "Kerberos dialóg pre heslo"
+
+#: ../build/ui_mainwidget.h:129
+msgid "Kerberos Ticket List"
+msgstr "Zoznam Kerberos tiketov"
+
+#: ../src/krb5ticketwatcher.cpp:1286
+msgid "Key Encryption Type"
+msgstr "Typ šifrovacieho kľúča"
+
+#: ../build/ui_kinitdialog.h:287
+msgid "Lifetime:"
+msgstr "Platnosť:"
+
+#. Legend: Explain ticket flag "D"
+#: ../src/krb5ticketwatcher.cpp:240
+msgid "May Postdate"
+msgstr "Môže byť z neskoršej doby"
+
+#: ../build/ui_kinitdialog.h:276
+msgid "New Ticket"
+msgstr "Nový tiket"
+
+#: ../src/krb5ticketwatcher.cpp:1421
+msgid "No Credential Cache found"
+msgstr "Nenájdená žiadna poverená medzipamäť"
+
+#: ../src/krb5ticketwatcher.cpp:1079
+msgid "No credentials cache found"
+msgstr "Nenájdená žiadna poverené medzipamäte"
+
+#. Legend: Explain ticket flag "O"
+#: ../src/krb5ticketwatcher.cpp:256
+msgid "Ok as Delegate"
+msgstr "Ok ako delegát"
+
+#: ../src/krb5ticketwatcher.cpp:901
+msgid "Password change failed"
+msgstr "Zmena hesla zlyhala"
+
+#: ../build/ui_kinitdialog.h:280
+msgid "Password:"
+msgstr "Heslo:"
+
+#: ../src/krb5ticketwatcher.cpp:751
+#, qt-format
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr "Zadajte Kerberos heslo pre <b>%1</b>"
+
+#. Legend: Explain ticket flag "d"
+#: ../src/krb5ticketwatcher.cpp:242
+msgid "Postdated"
+msgstr "Z neskoršej doby"
+
+#. Legend: Explain ticket flag "A"
+#: ../src/krb5ticketwatcher.cpp:252
+msgid "Pre Auth"
+msgstr "Pre Auth"
+
+#: ../build/ui_kinitdialog.h:278
+msgid "Principal:"
+msgstr "Hlavné:"
+
+#  Maximum length: 40  characters
+#: ../build/ui_mainwidget.h:135
+msgid "Property"
+msgstr "Vlastnosť"
+
+#. Legend: Explain ticket flag "p"
+#: ../src/krb5ticketwatcher.cpp:236
+msgid "Proxiable"
+msgstr "Splnomocniteľné"
+
+#  Maximum length: 40  characters
+#. Legend: Explain ticket flag "P"
+#: ../src/krb5ticketwatcher.cpp:238
+msgid "Proxy"
+msgstr "Proxy"
+
+#: ../src/krb5ticketwatcher.cpp:318
+msgid "Quit krb5TicketWatcher"
+msgstr "Ukončiť krb5TicketWatcher"
+
+#: ../src/krb5ticketwatcher.cpp:311
+msgid "Re&store"
+msgstr "Ob&noviť"
+
+#: ../build/ui_pwchangedialog.h:178
+msgid "Reenter password:"
+msgstr "Zopakujte heslo:"
+
+#: ../src/krb5ticketwatcher.cpp:298
+msgid "Renew the Ticket"
+msgstr "Obnoviť tiket"
+
+#: ../src/krb5ticketwatcher.cpp:1244
+msgid "Renew until"
+msgstr "Obnoviť až do"
+
+#. Legend: Explain ticket flag "R"
+#: ../src/krb5ticketwatcher.cpp:246
+msgid "Renewable"
+msgstr "Obnoviteľný"
+
+#: ../build/ui_kinitdialog.h:296
+msgid "Renewable for:"
+msgstr "Obnoviteľný pre:"
+
+#: ../src/krb5ticketwatcher.cpp:313
+msgid "Restore the Window"
+msgstr "Obnoviť okno"
+
+#: ../src/krb5ticketwatcher.cpp:1218
+msgid "Service principal"
+msgstr "Služba pre hlavné"
+
+#: ../src/main.cpp:69
+msgid "Systray"
+msgstr "Systémová lišta"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+msgid "The password you entered is invalid"
+msgstr "Heslo, ktoré ste zadali, je neplatné"
+
+#: ../src/krb5ticketwatcher.cpp:864
+msgid "The passwords are not equal"
+msgstr "Heslá nesúhlasia"
+
+#: ../src/krb5ticketwatcher.cpp:1289
+msgid "Ticket Encryption Type"
+msgstr "Typ šifrovacieho tiketu"
+
+#: ../build/ui_kinitdialog.h:284
+msgid "Ticket Flags"
+msgstr "Príznaky tiketu"
+
+#: ../build/ui_mainwidget.h:136
+msgid "Ticket Flags Legend"
+msgstr "Legenda príznakov tiketov"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:368
+msgid "Ticket cache cannot be destroyed."
+msgstr "Medzipamäť tiketu nemôže byť zničená."
+
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
+#, qt-format
+msgid "Ticket cache: %1:%2"
+msgstr "Medzipamäť tiketu: %1:%2"
+
+#: ../src/krb5ticketwatcher.cpp:1436
+#, qt-format
+msgid "Ticket expires in %1"
+msgstr "Tiket vyprší o %1"
+
+#: ../src/krb5ticketwatcher.cpp:1279
+msgid "Ticket flags"
+msgstr "Príznaky tiketu"
+
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+msgid "Ticket renewed"
+msgstr "Tiket obnovený"
+
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket successfully renewed."
+msgstr "Tiket úspešne obnovený."
+
+#: ../build/ui_mainwidget.h:133
+msgid "Time Remaining"
+msgstr "Zostávajúci čas"
+
+#. Legend: Explain ticket flag "T"
+#: ../src/krb5ticketwatcher.cpp:254
+msgid "Transit Policy Checked"
+msgstr "Skontrolovaná prenosová politika"
+
+#: ../src/krb5ticketwatcher.cpp:1354
+#, qt-format
+msgid "Unknown address type %1"
+msgstr "Neznámy typ adresy %1"
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:583
+msgid "Unknown principal"
+msgstr "Neznáme hlavné"
+
+#: ../src/krb5ticketwatcher.cpp:586
+msgid "Unknown realm"
+msgstr "Neznáma sféra"
+
+#: ../src/krb5ticketwatcher.cpp:1234
+msgid "Valid starting"
+msgstr "Platný štart"
+
+#: ../build/ui_mainwidget.h:134
+msgid "Value"
+msgstr "Hodnota"
+
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
+msgid "days"
+msgstr "dni"
+
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+msgid "default"
+msgstr "štandardne"
+
+#: ../build/ui_kinitdialog.h:285
+msgid "forwardable"
+msgstr "preposielateľný"
+
+#. init with translations
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
+msgid "hours"
+msgstr "hodiny/hodín"
+
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+msgid "minutes"
+msgstr "minút(y)"
+
+#: ../build/ui_kinitdialog.h:286
+msgid "proxiable"
+msgstr "splnomocniteľné"
+
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+msgid "seconds"
+msgstr "sekúnd(y)"

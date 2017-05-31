@@ -1,0 +1,490 @@
+# Translator(s):
+#
+# xdaiana <xdaiana@yahoo.com>
+# Alexandru Szasz <alexxed@gmail.com>
+# Lucian Oprea <oprea.luci@gmail.com>
+# danniel <receivefor-ubunturo@yahoo.de>
+# Laudatti <Laudatti@gmail.com>
+# nicubunu <nicubunu@gmail.com>
+# raulmalea <raul.malea@gmail.com>
+#
+# Reviewer(s):
+#
+# xdaiana <xdaiana@yahoo.com>
+# Lucian Oprea <oprea.luci@gmail.com>
+# Alexandru Szasz <alexxed@gmail.com>
+# strainu <narro@strainu.ro>
+#
+# Comunitatea romana openSUSE - www.suseromania.ro
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenSUSE\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"PO-Revision-Date: 2012-11-19 14:59+0200\n"
+"Last-Translator: Lucian Oprea <oprea.luci@gmail.com>\n"
+"Language-Team: Romanian <LL@li.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Narro 2.0 on http://tradu.softwareliber.ro\n"
+"Plural-Forms:  nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Narro 2.0 on http://tradu.softwareliber.ro\n"
+
+#: ../src/krb5ticketwatcher.cpp:1195
+#, qt-format
+msgid " for client %1"
+msgstr " pentru clientul %1"
+
+# cancel button label
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
+msgid "&Cancel"
+msgstr "&Renunțare"
+
+#: ../src/krb5ticketwatcher.cpp:301
+msgid "&Change Kerberos Password"
+msgstr "Modifi&că parola Kerberos"
+
+#: ../build/ui_mainwidget.h:140
+msgid "&Close"
+msgstr "În&chidere"
+
+#: ../src/krb5ticketwatcher.cpp:306
+msgid "&Destroy Ticket"
+msgstr "Distrugere tichet"
+
+#: ../build/ui_kinitdialog.h:281
+msgid "&Details..."
+msgstr "&Detalii..."
+
+#: ../src/krb5ticketwatcher.cpp:291
+msgid "&New Ticket"
+msgstr "Tichet &nou"
+
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
+msgid "&Ok"
+msgstr "&Ok"
+
+#: ../src/krb5ticketwatcher.cpp:316
+msgid "&Quit"
+msgstr "&Ieșire"
+
+#: ../build/ui_mainwidget.h:138
+msgid "&Refresh"
+msgstr "Reîmprospătează"
+
+#: ../src/krb5ticketwatcher.cpp:296
+msgid "&Renew Ticket"
+msgstr "Reînnoiește tichetul"
+
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+msgid "(none)"
+msgstr "(nimic)"
+
+#: ../build/ui_kinitdialog.h:279
+msgid "@"
+msgstr "@"
+
+#: ../src/krb5ticketwatcher.cpp:1313
+msgid "Addresses"
+msgstr "Adrese"
+
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../build/ui_kinitdialog.h:282
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../build/ui_mainwidget.h:139
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#. Legend: Explain ticket flag "a"
+#: ../src/krb5ticketwatcher.cpp:258
+msgid "Anonymous"
+msgstr "Anonim"
+
+#: ../src/krb5ticketwatcher.cpp:1335
+#, qt-format
+msgid "Broken address (type %1 length %2)"
+msgstr "Adresă coruptă (tip %1 lungime %2)"
+
+#: ../build/ui_pwchangedialog.h:172
+msgid "Change Kerberos Password"
+msgstr "Modifică parola Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:303
+msgid "Change the Kerberos Password"
+msgstr "Modifică parola Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:860
+#, qt-format
+msgid "Change the password for principal <b>%1</b>"
+msgstr "Modifică parola pentru entitatea <b>%1</b>"
+
+#: ../src/krb5ticketwatcher.cpp:293
+msgid "Create a new Ticket"
+msgstr "Creează un tichet nou"
+
+#: ../src/krb5ticketwatcher.cpp:302
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: ../src/krb5ticketwatcher.cpp:307
+msgid "Ctrl+D"
+msgstr "Ctrl+D"
+
+#: ../src/krb5ticketwatcher.cpp:292
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../src/krb5ticketwatcher.cpp:317
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../src/krb5ticketwatcher.cpp:297
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: ../src/krb5ticketwatcher.cpp:312
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: ../src/krb5ticketwatcher.cpp:1404
+msgid "Day(s)"
+msgstr "Zi(le)"
+
+#: ../build/ui_mainwidget.h:130
+msgid "Default credential cache"
+msgstr "Cache implicit pentru date de acces"
+
+#: ../src/krb5ticketwatcher.cpp:1110
+#, qt-format
+msgid "Default principal: %3"
+msgstr "Entitate implicită: %3"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:356
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "Să distrug cache-ul pentru tichete Kerberos?"
+
+#: ../src/krb5ticketwatcher.cpp:308
+msgid "Destroy the Ticket"
+msgstr "Distruge tichetul"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:358
+msgid "Do you want to destroy the ticket cache?"
+msgstr "Doriți să distrugeți cache-ul pentru tichete?"
+
+#: ../build/ui_pwchangedialog.h:177
+msgid "Enter new password:"
+msgstr "Introduceți noua parolă:"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:366
+msgid "Error !"
+msgstr "Eroare !"
+
+#: ../src/krb5ticketwatcher.cpp:1085
+msgid "Error while setting cache flags"
+msgstr "Eroare la setarea indicatorilor de cache"
+
+#: ../src/krb5ticketwatcher.cpp:1238
+msgid "Expires"
+msgstr "Expiră"
+
+#. kdc unreachable, return
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+msgid "Failure"
+msgstr "Eșec"
+
+#. Legend: Explain ticket flag "F"
+#: ../src/krb5ticketwatcher.cpp:232
+msgid "Forwardable"
+msgstr "Redirectabil"
+
+#. Legend: Explain ticket flag "f"
+#: ../src/krb5ticketwatcher.cpp:234
+msgid "Forwarded"
+msgstr "Redirectat"
+
+#. Legend: Explain ticket flag "H"
+#: ../src/krb5ticketwatcher.cpp:250
+msgid "HW Auth"
+msgstr "Autentificare HW"
+
+#: ../src/main.cpp:70
+msgid "I couldn't detect any system tray on this system."
+msgstr "Nu s-a putut detecta nicio tavă de sistem pe acest sistem."
+
+#. Legend: Explain ticket flag "I"
+#: ../src/krb5ticketwatcher.cpp:248
+msgid "Initial"
+msgstr "Inițial"
+
+#. Legend: Explain ticket flag "i"
+#: ../src/krb5ticketwatcher.cpp:244
+msgid "Invalid"
+msgstr "Invalid"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:571
+msgid "Invalid Password"
+msgstr "Parolă invalidă."
+
+#: ../src/krb5ticketwatcher.cpp:525
+msgid "Invalid principal name"
+msgstr "Nume de entitate invalid"
+
+#: ../build/ui_pwdialog.h:154
+msgid "Kerberos Password Dialog"
+msgstr "Dialog parolă Kerberos"
+
+#: ../build/ui_mainwidget.h:129
+msgid "Kerberos Ticket List"
+msgstr "Listă tichete Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:1286
+msgid "Key Encryption Type"
+msgstr "Tip criptare cheie"
+
+#: ../build/ui_kinitdialog.h:287
+msgid "Lifetime:"
+msgstr "Durată de viață:"
+
+#. Legend: Explain ticket flag "D"
+#: ../src/krb5ticketwatcher.cpp:240
+msgid "May Postdate"
+msgstr "Poate postdata"
+
+#: ../build/ui_kinitdialog.h:276
+msgid "New Ticket"
+msgstr "Tichet nou"
+
+#: ../src/krb5ticketwatcher.cpp:1421
+msgid "No Credential Cache found"
+msgstr "Nu s-a găsit niciun cache pentru date de acces"
+
+#: ../src/krb5ticketwatcher.cpp:1079
+msgid "No credentials cache found"
+msgstr "Nu s-a găsit niciun cache pentru date de acces"
+
+#. Legend: Explain ticket flag "O"
+#: ../src/krb5ticketwatcher.cpp:256
+msgid "Ok as Delegate"
+msgstr "Ok ca delegat"
+
+#: ../src/krb5ticketwatcher.cpp:901
+msgid "Password change failed"
+msgstr "Modificarea parolei a eșuat"
+
+# password dialog title
+#: ../build/ui_kinitdialog.h:280
+msgid "Password:"
+msgstr "Parolă:"
+
+#: ../src/krb5ticketwatcher.cpp:751
+#, qt-format
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr "Introduceți parola Kerberos pentru <b>%1</b>"
+
+#. Legend: Explain ticket flag "d"
+#: ../src/krb5ticketwatcher.cpp:242
+msgid "Postdated"
+msgstr "Postdatat"
+
+#. Legend: Explain ticket flag "A"
+#: ../src/krb5ticketwatcher.cpp:252
+msgid "Pre Auth"
+msgstr "Pre-autentificare"
+
+#: ../build/ui_kinitdialog.h:278
+msgid "Principal:"
+msgstr "Entitate:"
+
+#: ../build/ui_mainwidget.h:135
+msgid "Property"
+msgstr "Proprietate"
+
+#. Legend: Explain ticket flag "p"
+#: ../src/krb5ticketwatcher.cpp:236
+msgid "Proxiable"
+msgstr "Posibilitate de proxy"
+
+#. Legend: Explain ticket flag "P"
+#: ../src/krb5ticketwatcher.cpp:238
+msgid "Proxy"
+msgstr "Proxy"
+
+#: ../src/krb5ticketwatcher.cpp:318
+msgid "Quit krb5TicketWatcher"
+msgstr "Părăsește krb5TicketWatcher"
+
+#: ../src/krb5ticketwatcher.cpp:311
+msgid "Re&store"
+msgstr "Re&staurează"
+
+#: ../build/ui_pwchangedialog.h:178
+msgid "Reenter password:"
+msgstr "Reintroduceți parola:"
+
+#: ../src/krb5ticketwatcher.cpp:298
+msgid "Renew the Ticket"
+msgstr "Reînnoiește tichetul"
+
+#: ../src/krb5ticketwatcher.cpp:1244
+msgid "Renew until"
+msgstr "Reînnoiește până la"
+
+#. Legend: Explain ticket flag "R"
+#: ../src/krb5ticketwatcher.cpp:246
+msgid "Renewable"
+msgstr "Poate fi reînnoit"
+
+#: ../build/ui_kinitdialog.h:296
+msgid "Renewable for:"
+msgstr "Poate fi reînnoit pentru:"
+
+#: ../src/krb5ticketwatcher.cpp:313
+msgid "Restore the Window"
+msgstr "Restaurează fereastra"
+
+#: ../src/krb5ticketwatcher.cpp:1218
+msgid "Service principal"
+msgstr "Entitate serviciu"
+
+#: ../src/main.cpp:69
+msgid "Systray"
+msgstr "Tavă sistem"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+msgid "The password you entered is invalid"
+msgstr "Parola introdusă nu este validă"
+
+#: ../src/krb5ticketwatcher.cpp:864
+msgid "The passwords are not equal"
+msgstr "Parolele nu coincid"
+
+#: ../src/krb5ticketwatcher.cpp:1289
+msgid "Ticket Encryption Type"
+msgstr "Tip criptare tichet"
+
+#: ../build/ui_kinitdialog.h:284
+msgid "Ticket Flags"
+msgstr "Indicatori tichet"
+
+#: ../build/ui_mainwidget.h:136
+msgid "Ticket Flags Legend"
+msgstr "Legendă indicatori tichet"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:368
+msgid "Ticket cache cannot be destroyed."
+msgstr "Cache-ul pentru tichete nu poate fi distrus."
+
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
+#, qt-format
+msgid "Ticket cache: %1:%2"
+msgstr "Cache tichet: %1:%2"
+
+#: ../src/krb5ticketwatcher.cpp:1436
+#, qt-format
+msgid "Ticket expires in %1"
+msgstr "Tichetul expiră în %1"
+
+#: ../src/krb5ticketwatcher.cpp:1279
+msgid "Ticket flags"
+msgstr "Indicatori tichet"
+
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+msgid "Ticket renewed"
+msgstr "Tichet reînnoit"
+
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket successfully renewed."
+msgstr "Tichet reînnoit cu succes."
+
+#: ../build/ui_mainwidget.h:133
+msgid "Time Remaining"
+msgstr "Timp rămas"
+
+#. Legend: Explain ticket flag "T"
+#: ../src/krb5ticketwatcher.cpp:254
+msgid "Transit Policy Checked"
+msgstr "Regulă tranzit verificată"
+
+#: ../src/krb5ticketwatcher.cpp:1354
+#, qt-format
+msgid "Unknown address type %1"
+msgstr "Tip de adresă necunoscut %1"
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:583
+msgid "Unknown principal"
+msgstr "Entitate necunoscută"
+
+#: ../src/krb5ticketwatcher.cpp:586
+msgid "Unknown realm"
+msgstr "Domeniu necunoscut"
+
+#: ../src/krb5ticketwatcher.cpp:1234
+msgid "Valid starting"
+msgstr "Pornire validă"
+
+#: ../build/ui_mainwidget.h:134
+msgid "Value"
+msgstr "Valoare"
+
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
+msgid "days"
+msgstr "zile"
+
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+msgid "default"
+msgstr "implicit"
+
+#: ../build/ui_kinitdialog.h:285
+msgid "forwardable"
+msgstr "redirectabil"
+
+#. init with translations
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
+msgid "hours"
+msgstr "ore"
+
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+msgid "minutes"
+msgstr "minute"
+
+#: ../build/ui_kinitdialog.h:286
+msgid "proxiable"
+msgstr "posibilitate de proxy"
+
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+msgid "seconds"
+msgstr "secunde"

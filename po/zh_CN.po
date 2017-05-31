@@ -1,0 +1,475 @@
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
+#
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+# margurite <i@marguerite.su>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"PO-Revision-Date: 2016-08-12 07:35+0000\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/krb5"
+"-ticket-watcher/master/zh_CN/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.6\n"
+
+#: ../src/krb5ticketwatcher.cpp:1195
+#, qt-format
+msgid " for client %1"
+msgstr " 用于客户端 %1"
+
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
+msgid "&Cancel"
+msgstr "取消 (&C)"
+
+#: ../src/krb5ticketwatcher.cpp:301
+msgid "&Change Kerberos Password"
+msgstr "更改 Kerberos 密钥 (&C)"
+
+#: ../build/ui_mainwidget.h:140
+msgid "&Close"
+msgstr "关闭 (&C)"
+
+#: ../src/krb5ticketwatcher.cpp:306
+msgid "&Destroy Ticket"
+msgstr "销毁问题 (&D)"
+
+#: ../build/ui_kinitdialog.h:281
+msgid "&Details..."
+msgstr "细节(&D)..."
+
+#: ../src/krb5ticketwatcher.cpp:291
+msgid "&New Ticket"
+msgstr "新问题 (&N)"
+
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
+msgid "&Ok"
+msgstr "好的 (&O)"
+
+#: ../src/krb5ticketwatcher.cpp:316
+msgid "&Quit"
+msgstr "退出 (&Q)"
+
+#: ../build/ui_mainwidget.h:138
+msgid "&Refresh"
+msgstr "刷新 (&R)"
+
+#: ../src/krb5ticketwatcher.cpp:296
+msgid "&Renew Ticket"
+msgstr "更新问题 (&R)"
+
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+msgid "(none)"
+msgstr "(无)"
+
+#: ../build/ui_kinitdialog.h:279
+msgid "@"
+msgstr "@"
+
+#: ../src/krb5ticketwatcher.cpp:1313
+msgid "Addresses"
+msgstr "地址"
+
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../build/ui_kinitdialog.h:282
+msgid "Alt+D"
+msgstr "Alt+D"
+
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: ../build/ui_mainwidget.h:139
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#. Legend: Explain ticket flag "a"
+#: ../src/krb5ticketwatcher.cpp:258
+msgid "Anonymous"
+msgstr "匿名"
+
+#: ../src/krb5ticketwatcher.cpp:1335
+#, qt-format
+msgid "Broken address (type %1 length %2)"
+msgstr "损坏地址 (类型 %1 长度 %2)"
+
+#: ../build/ui_pwchangedialog.h:172
+msgid "Change Kerberos Password"
+msgstr "更改 Kerberos 密钥"
+
+#: ../src/krb5ticketwatcher.cpp:303
+msgid "Change the Kerberos Password"
+msgstr "更改 Kerberos 密钥"
+
+#: ../src/krb5ticketwatcher.cpp:860
+#, qt-format
+msgid "Change the password for principal <b>%1</b>"
+msgstr "更改身份 <b>%1</b> 的密钥"
+
+#: ../src/krb5ticketwatcher.cpp:293
+msgid "Create a new Ticket"
+msgstr "创建新问题"
+
+#: ../src/krb5ticketwatcher.cpp:302
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: ../src/krb5ticketwatcher.cpp:307
+msgid "Ctrl+D"
+msgstr "Ctrl+D"
+
+#: ../src/krb5ticketwatcher.cpp:292
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../src/krb5ticketwatcher.cpp:317
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../src/krb5ticketwatcher.cpp:297
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: ../src/krb5ticketwatcher.cpp:312
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: ../src/krb5ticketwatcher.cpp:1404
+msgid "Day(s)"
+msgstr "日"
+
+#: ../build/ui_mainwidget.h:130
+msgid "Default credential cache"
+msgstr "默认凭据缓存"
+
+#: ../src/krb5ticketwatcher.cpp:1110
+#, qt-format
+msgid "Default principal: %3"
+msgstr "默认身份：%3"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:356
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "销毁 Kerberos 问题缓存？"
+
+#: ../src/krb5ticketwatcher.cpp:308
+msgid "Destroy the Ticket"
+msgstr "销毁问题"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:358
+msgid "Do you want to destroy the ticket cache?"
+msgstr "你确实想要销毁问题缓存吗？"
+
+#: ../build/ui_pwchangedialog.h:177
+msgid "Enter new password:"
+msgstr "输入新密钥："
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:366
+msgid "Error !"
+msgstr "错误 ！"
+
+#: ../src/krb5ticketwatcher.cpp:1085
+msgid "Error while setting cache flags"
+msgstr "设置缓存标记时出错"
+
+#: ../src/krb5ticketwatcher.cpp:1238
+msgid "Expires"
+msgstr "过期"
+
+#. kdc unreachable, return
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+msgid "Failure"
+msgstr "失败"
+
+#. Legend: Explain ticket flag "F"
+#: ../src/krb5ticketwatcher.cpp:232
+msgid "Forwardable"
+msgstr "可展期的"
+
+#. Legend: Explain ticket flag "f"
+#: ../src/krb5ticketwatcher.cpp:234
+msgid "Forwarded"
+msgstr "已展期"
+
+#. Legend: Explain ticket flag "H"
+#: ../src/krb5ticketwatcher.cpp:250
+msgid "HW Auth"
+msgstr "HW 认证"
+
+#: ../src/main.cpp:70
+msgid "I couldn't detect any system tray on this system."
+msgstr "不能在本系统上检测到系统托盘。"
+
+#. Legend: Explain ticket flag "I"
+#: ../src/krb5ticketwatcher.cpp:248
+msgid "Initial"
+msgstr "初始化"
+
+#. Legend: Explain ticket flag "i"
+#: ../src/krb5ticketwatcher.cpp:244
+msgid "Invalid"
+msgstr "无效"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:571
+msgid "Invalid Password"
+msgstr "无效密钥"
+
+#: ../src/krb5ticketwatcher.cpp:525
+msgid "Invalid principal name"
+msgstr "无效身份名称"
+
+#: ../build/ui_pwdialog.h:154
+msgid "Kerberos Password Dialog"
+msgstr "Kerberos 密钥对话框"
+
+#: ../build/ui_mainwidget.h:129
+msgid "Kerberos Ticket List"
+msgstr "Kerberos 问题列表"
+
+#: ../src/krb5ticketwatcher.cpp:1286
+msgid "Key Encryption Type"
+msgstr "密钥加密类型"
+
+#: ../build/ui_kinitdialog.h:287
+msgid "Lifetime:"
+msgstr "有效期："
+
+#. Legend: Explain ticket flag "D"
+#: ../src/krb5ticketwatcher.cpp:240
+msgid "May Postdate"
+msgstr "可能的发布日期"
+
+#: ../build/ui_kinitdialog.h:276
+msgid "New Ticket"
+msgstr "新问题"
+
+#: ../src/krb5ticketwatcher.cpp:1421
+msgid "No Credential Cache found"
+msgstr "找不到凭证缓存"
+
+#: ../src/krb5ticketwatcher.cpp:1079
+msgid "No credentials cache found"
+msgstr "找不到凭证缓存"
+
+#. Legend: Explain ticket flag "O"
+#: ../src/krb5ticketwatcher.cpp:256
+msgid "Ok as Delegate"
+msgstr "确认以执行"
+
+#: ../src/krb5ticketwatcher.cpp:901
+msgid "Password change failed"
+msgstr "更改密钥失败"
+
+#: ../build/ui_kinitdialog.h:280
+msgid "Password:"
+msgstr "密钥："
+
+#: ../src/krb5ticketwatcher.cpp:751
+#, qt-format
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr "请输入 <b>%1</b> 的 Kerberos 密钥"
+
+#. Legend: Explain ticket flag "d"
+#: ../src/krb5ticketwatcher.cpp:242
+msgid "Postdated"
+msgstr "发布日期"
+
+#. Legend: Explain ticket flag "A"
+#: ../src/krb5ticketwatcher.cpp:252
+msgid "Pre Auth"
+msgstr "预认证"
+
+#: ../build/ui_kinitdialog.h:278
+msgid "Principal:"
+msgstr "身份："
+
+#: ../build/ui_mainwidget.h:135
+msgid "Property"
+msgstr "属性"
+
+#. Legend: Explain ticket flag "p"
+#: ../src/krb5ticketwatcher.cpp:236
+msgid "Proxiable"
+msgstr "可代理的"
+
+#. Legend: Explain ticket flag "P"
+#: ../src/krb5ticketwatcher.cpp:238
+msgid "Proxy"
+msgstr "代理"
+
+#: ../src/krb5ticketwatcher.cpp:318
+msgid "Quit krb5TicketWatcher"
+msgstr "退出 krb5TicketWatcher"
+
+#: ../src/krb5ticketwatcher.cpp:311
+msgid "Re&store"
+msgstr "回滚 (&R)"
+
+#: ../build/ui_pwchangedialog.h:178
+msgid "Reenter password:"
+msgstr "再次输入密码："
+
+#: ../src/krb5ticketwatcher.cpp:298
+msgid "Renew the Ticket"
+msgstr "更新问题"
+
+#: ../src/krb5ticketwatcher.cpp:1244
+msgid "Renew until"
+msgstr "更新到"
+
+#. Legend: Explain ticket flag "R"
+#: ../src/krb5ticketwatcher.cpp:246
+msgid "Renewable"
+msgstr "可更新的"
+
+#: ../build/ui_kinitdialog.h:296
+msgid "Renewable for:"
+msgstr "可更新的有："
+
+#: ../src/krb5ticketwatcher.cpp:313
+msgid "Restore the Window"
+msgstr "恢复窗口"
+
+#: ../src/krb5ticketwatcher.cpp:1218
+msgid "Service principal"
+msgstr "服务身份"
+
+#: ../src/main.cpp:69
+msgid "Systray"
+msgstr "系统托盘"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+msgid "The password you entered is invalid"
+msgstr "您输入的密钥无效"
+
+#: ../src/krb5ticketwatcher.cpp:864
+msgid "The passwords are not equal"
+msgstr "密码不相符"
+
+#: ../src/krb5ticketwatcher.cpp:1289
+msgid "Ticket Encryption Type"
+msgstr "问题加密类型"
+
+#: ../build/ui_kinitdialog.h:284
+msgid "Ticket Flags"
+msgstr "问题标记"
+
+#: ../build/ui_mainwidget.h:136
+msgid "Ticket Flags Legend"
+msgstr "问题标记图示"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:368
+msgid "Ticket cache cannot be destroyed."
+msgstr "无法销毁问题缓存。"
+
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
+#, qt-format
+msgid "Ticket cache: %1:%2"
+msgstr "问题缓存：%1：%2"
+
+#: ../src/krb5ticketwatcher.cpp:1436
+#, qt-format
+msgid "Ticket expires in %1"
+msgstr "问题在 %1 过期"
+
+#: ../src/krb5ticketwatcher.cpp:1279
+msgid "Ticket flags"
+msgstr "问题标记"
+
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+msgid "Ticket renewed"
+msgstr "问题已更新"
+
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket successfully renewed."
+msgstr "问题成功更新。"
+
+#: ../build/ui_mainwidget.h:133
+msgid "Time Remaining"
+msgstr "剩余时间"
+
+#. Legend: Explain ticket flag "T"
+#: ../src/krb5ticketwatcher.cpp:254
+msgid "Transit Policy Checked"
+msgstr "已检查的转换策略"
+
+#: ../src/krb5ticketwatcher.cpp:1354
+#, qt-format
+msgid "Unknown address type %1"
+msgstr "未知的地址类型 %1"
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:583
+msgid "Unknown principal"
+msgstr "未知身份"
+
+#: ../src/krb5ticketwatcher.cpp:586
+msgid "Unknown realm"
+msgstr "未知领域"
+
+#: ../src/krb5ticketwatcher.cpp:1234
+msgid "Valid starting"
+msgstr "有效开始"
+
+#: ../build/ui_mainwidget.h:134
+msgid "Value"
+msgstr "值"
+
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
+msgid "days"
+msgstr "日"
+
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+msgid "default"
+msgstr "默认"
+
+#: ../build/ui_kinitdialog.h:285
+msgid "forwardable"
+msgstr "可展期的"
+
+#. init with translations
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
+msgid "hours"
+msgstr "小时"
+
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+msgid "minutes"
+msgstr "分钟"
+
+#: ../build/ui_kinitdialog.h:286
+msgid "proxiable"
+msgstr "可代理的"
+
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+msgid "seconds"
+msgstr "秒"

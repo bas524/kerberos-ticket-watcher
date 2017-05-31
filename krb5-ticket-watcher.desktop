@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=krb5-ticket-watcher -i 31
+Type=Application
+MimeType=
+Terminal=false
+Icon=krb5-ticket-watcher
+GenericName=Kerberos Ticket Watcher
+Name=Kerberos Ticket Watcher
+X-KDE-StartupNotify=false
+Categories=System

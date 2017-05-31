@@ -1,0 +1,490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"PO-Revision-Date: 2017-02-27 05:41+0000\n"
+"Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
+"Language-Team: Bulgarian <https://l10n.opensuse.org/projects/krb5-ticket-"
+"watcher/master/bg/>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.6\n"
+
+#: ../src/krb5ticketwatcher.cpp:1195
+#, qt-format
+msgid " for client %1"
+msgstr " за клиент %1"
+
+#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
+#: ../build/ui_pwchangedialog.h:173
+msgid "&Cancel"
+msgstr "&Отказ"
+
+#: ../src/krb5ticketwatcher.cpp:301
+#, fuzzy
+msgid "&Change Kerberos Password"
+msgstr "<Променете паролата Керберос>"
+
+#: ../build/ui_mainwidget.h:140
+msgid "&Close"
+msgstr "&Затвори"
+
+#: ../src/krb5ticketwatcher.cpp:306
+#, fuzzy
+msgid "&Destroy Ticket"
+msgstr "&Унищожи задача"
+
+#: ../build/ui_kinitdialog.h:281
+#, fuzzy
+msgid "&Details..."
+msgstr "&Параметри..."
+
+#: ../src/krb5ticketwatcher.cpp:291
+msgid "&New Ticket"
+msgstr "&Нова задача"
+
+#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
+#: ../build/ui_pwchangedialog.h:175
+msgid "&Ok"
+msgstr "&ОК"
+
+#: ../src/krb5ticketwatcher.cpp:316
+msgid "&Quit"
+msgstr "&Изход"
+
+#: ../build/ui_mainwidget.h:138
+msgid "&Refresh"
+msgstr "&Опресни"
+
+#: ../src/krb5ticketwatcher.cpp:296
+msgid "&Renew Ticket"
+msgstr "&Обнови задачата"
+
+#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+msgid "(none)"
+msgstr "(нито едно)"
+
+#: ../build/ui_kinitdialog.h:279
+msgid "@"
+msgstr "@"
+
+#: ../src/krb5ticketwatcher.cpp:1313
+msgid "Addresses"
+msgstr "Адреси"
+
+#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
+#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: ../build/ui_kinitdialog.h:282
+msgid "Alt+D"
+msgstr ""
+
+#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
+#: ../build/ui_pwchangedialog.h:176
+msgid "Alt+O"
+msgstr ""
+
+#: ../build/ui_mainwidget.h:139
+msgid "Alt+R"
+msgstr "Alt+R"
+
+#. Legend: Explain ticket flag "a"
+#: ../src/krb5ticketwatcher.cpp:258
+msgid "Anonymous"
+msgstr "Анонимен"
+
+#: ../src/krb5ticketwatcher.cpp:1335
+#, qt-format
+msgid "Broken address (type %1 length %2)"
+msgstr "Невалиден адрес (type %1 length %2)"
+
+#: ../build/ui_pwchangedialog.h:172
+#, fuzzy
+msgid "Change Kerberos Password"
+msgstr "<Променете паролата>"
+
+#: ../src/krb5ticketwatcher.cpp:303
+msgid "Change the Kerberos Password"
+msgstr "<Променете паролата Керберос>"
+
+#: ../src/krb5ticketwatcher.cpp:860
+#, fuzzy, qt-format
+msgid "Change the password for principal <b>%1</b>"
+msgstr "Въведете паролата за Интернет доставчика '%1':"
+
+#: ../src/krb5ticketwatcher.cpp:293
+msgid "Create a new Ticket"
+msgstr "Създай нова задача"
+
+#: ../src/krb5ticketwatcher.cpp:302
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: ../src/krb5ticketwatcher.cpp:307
+msgid "Ctrl+D"
+msgstr "Ctrl+D"
+
+#: ../src/krb5ticketwatcher.cpp:292
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: ../src/krb5ticketwatcher.cpp:317
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+#: ../src/krb5ticketwatcher.cpp:297
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: ../src/krb5ticketwatcher.cpp:312
+msgid "Ctrl+S"
+msgstr "Ctrl+S"
+
+#: ../src/krb5ticketwatcher.cpp:1404
+msgid "Day(s)"
+msgstr "Ден/Дни"
+
+#: ../build/ui_mainwidget.h:130
+#, fuzzy
+msgid "Default credential cache"
+msgstr "Кеш за пароли по подразбиране"
+
+#: ../src/krb5ticketwatcher.cpp:1110
+#, fuzzy, qt-format
+msgid "Default principal: %3"
+msgstr "Интернет доставчик по подразбиране: %3"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:356
+msgid "Destroy Kerberos Ticket Cache?"
+msgstr "Сигурни ли сте, че искате да изтриете кеша за задачата Керберос?"
+
+#: ../src/krb5ticketwatcher.cpp:308
+msgid "Destroy the Ticket"
+msgstr "Унищожи задачата"
+
+# power-off message
+#. message text
+#: ../src/krb5ticketwatcher.cpp:358
+#, fuzzy
+msgid "Do you want to destroy the ticket cache?"
+msgstr "Желаете ли да унищожите кешът за задачата?"
+
+#: ../build/ui_pwchangedialog.h:177
+#, fuzzy
+msgid "Enter new password:"
+msgstr "<Въведете нова парола>"
+
+#. title
+#: ../src/krb5ticketwatcher.cpp:366
+msgid "Error !"
+msgstr "Грешка!"
+
+#: ../src/krb5ticketwatcher.cpp:1085
+msgid "Error while setting cache flags"
+msgstr "Възникнала е грешка при настройването на кеш флаговете"
+
+#: ../src/krb5ticketwatcher.cpp:1238
+msgid "Expires"
+msgstr "Времето изтече"
+
+#. kdc unreachable, return
+#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+msgid "Failure"
+msgstr "Неуспешно"
+
+#. Legend: Explain ticket flag "F"
+#: ../src/krb5ticketwatcher.cpp:232
+msgid "Forwardable"
+msgstr "Пренасочваемо"
+
+#. Legend: Explain ticket flag "f"
+#: ../src/krb5ticketwatcher.cpp:234
+#, fuzzy
+msgid "Forwarded"
+msgstr "Напреднал"
+
+#. Legend: Explain ticket flag "H"
+#: ../src/krb5ticketwatcher.cpp:250
+msgid "HW Auth"
+msgstr ""
+
+#: ../src/main.cpp:70
+#, fuzzy
+msgid "I couldn't detect any system tray on this system."
+msgstr "Не е установено известяване в тази система."
+
+#. Legend: Explain ticket flag "I"
+#: ../src/krb5ticketwatcher.cpp:248
+msgid "Initial"
+msgstr "Инициализация"
+
+#. Legend: Explain ticket flag "i"
+#: ../src/krb5ticketwatcher.cpp:244
+msgid "Invalid"
+msgstr "Невалиден вход."
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:571
+msgid "Invalid Password"
+msgstr "Невалидна парола"
+
+#: ../src/krb5ticketwatcher.cpp:525
+msgid "Invalid principal name"
+msgstr "Невалидно име на доставчик"
+
+#: ../build/ui_pwdialog.h:154
+msgid "Kerberos Password Dialog"
+msgstr "Диалог Керберос парола"
+
+#: ../build/ui_mainwidget.h:129
+msgid "Kerberos Ticket List"
+msgstr "Списък със задачи Керберос"
+
+#: ../src/krb5ticketwatcher.cpp:1286
+msgid "Key Encryption Type"
+msgstr "Тип криптиране на ключ"
+
+#: ../build/ui_kinitdialog.h:287
+msgid "Lifetime:"
+msgstr "Валидност:"
+
+#. Legend: Explain ticket flag "D"
+#: ../src/krb5ticketwatcher.cpp:240
+#, fuzzy
+msgid "May Postdate"
+msgstr "Дата на изпращане"
+
+#: ../build/ui_kinitdialog.h:276
+msgid "New Ticket"
+msgstr "Нова задача"
+
+#: ../src/krb5ticketwatcher.cpp:1421
+msgid "No Credential Cache found"
+msgstr "Не е намерен сертификат за сигурност"
+
+#: ../src/krb5ticketwatcher.cpp:1079
+msgid "No credentials cache found"
+msgstr "Не е намерен сертификат за сигурност"
+
+#. Legend: Explain ticket flag "O"
+#: ../src/krb5ticketwatcher.cpp:256
+msgid "Ok as Delegate"
+msgstr "Потвърди като делегиращ"
+
+#: ../src/krb5ticketwatcher.cpp:901
+msgid "Password change failed"
+msgstr "Промяната на паролата е неуспешна"
+
+#: ../build/ui_kinitdialog.h:280
+msgid "Password:"
+msgstr "Парола:"
+
+#: ../src/krb5ticketwatcher.cpp:751
+#, qt-format
+msgid "Please enter the Kerberos password for <b>%1</b>"
+msgstr "Моля, въведи паролата за Керберос <b>%1</b>"
+
+#. Legend: Explain ticket flag "d"
+#: ../src/krb5ticketwatcher.cpp:242
+msgid "Postdated"
+msgstr "С бъдеща дата"
+
+#. Legend: Explain ticket flag "A"
+#: ../src/krb5ticketwatcher.cpp:252
+msgid "Pre Auth"
+msgstr "Предварителна аутентикация"
+
+#: ../build/ui_kinitdialog.h:278
+msgid "Principal:"
+msgstr ""
+
+#: ../build/ui_mainwidget.h:135
+msgid "Property"
+msgstr "Свойства"
+
+#. Legend: Explain ticket flag "p"
+#: ../src/krb5ticketwatcher.cpp:236
+msgid "Proxiable"
+msgstr "Упълномощен"
+
+#. Legend: Explain ticket flag "P"
+#: ../src/krb5ticketwatcher.cpp:238
+#, fuzzy
+msgid "Proxy"
+msgstr "Пълномощник"
+
+#: ../src/krb5ticketwatcher.cpp:318
+msgid "Quit krb5TicketWatcher"
+msgstr "Излез от krb5TicketWatcher"
+
+#: ../src/krb5ticketwatcher.cpp:311
+msgid "Re&store"
+msgstr "Възстанови"
+
+#: ../build/ui_pwchangedialog.h:178
+msgid "Reenter password:"
+msgstr "Въведете отново паролата:"
+
+#: ../src/krb5ticketwatcher.cpp:298
+msgid "Renew the Ticket"
+msgstr "Обнови задачата"
+
+#: ../src/krb5ticketwatcher.cpp:1244
+msgid "Renew until"
+msgstr "Обнови се докато"
+
+#. Legend: Explain ticket flag "R"
+#: ../src/krb5ticketwatcher.cpp:246
+msgid "Renewable"
+msgstr "Обновяемо"
+
+#: ../build/ui_kinitdialog.h:296
+msgid "Renewable for:"
+msgstr "Обновяемо за:"
+
+#: ../src/krb5ticketwatcher.cpp:313
+msgid "Restore the Window"
+msgstr "Възстанови прозореца"
+
+#: ../src/krb5ticketwatcher.cpp:1218
+#, fuzzy
+msgid "Service principal"
+msgstr "Интернет доставчик"
+
+#: ../src/main.cpp:69
+#, fuzzy
+msgid "Systray"
+msgstr "Система за известяване"
+
+#. Invalid password, try again.
+#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+msgid "The password you entered is invalid"
+msgstr "Паролата, която въведохте е невалидна"
+
+#: ../src/krb5ticketwatcher.cpp:864
+msgid "The passwords are not equal"
+msgstr "Паролите не съответстват"
+
+#: ../src/krb5ticketwatcher.cpp:1289
+msgid "Ticket Encryption Type"
+msgstr "Тип криптиране на задачи"
+
+#: ../build/ui_kinitdialog.h:284
+#, fuzzy
+msgid "Ticket Flags"
+msgstr "Флагове на задачи"
+
+#: ../build/ui_mainwidget.h:136
+#, fuzzy
+msgid "Ticket Flags Legend"
+msgstr "Легенда на флаговете на задачи"
+
+#. message text
+#: ../src/krb5ticketwatcher.cpp:368
+#, fuzzy
+msgid "Ticket cache cannot be destroyed."
+msgstr "%s е заключен и не може да бъде деинсталиран."
+
+#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:1106
+#, fuzzy, qt-format
+msgid "Ticket cache: %1:%2"
+msgstr "Кеш задача: %1:%2"
+
+#: ../src/krb5ticketwatcher.cpp:1436
+#, qt-format
+msgid "Ticket expires in %1"
+msgstr "Задачата изтича след %1"
+
+#: ../src/krb5ticketwatcher.cpp:1279
+msgid "Ticket flags"
+msgstr "Флагове на задачи"
+
+#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+msgid "Ticket renewed"
+msgstr "Задачата е обновена"
+
+#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+msgid "Ticket successfully renewed."
+msgstr "Задачата е успешно обновена."
+
+#: ../build/ui_mainwidget.h:133
+msgid "Time Remaining"
+msgstr "Оставащо време"
+
+#. Legend: Explain ticket flag "T"
+#: ../src/krb5ticketwatcher.cpp:254
+msgid "Transit Policy Checked"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1354
+#, qt-format
+msgid "Unknown address type %1"
+msgstr "Непознат адрес тип %1"
+
+#. principal unknown
+#: ../src/krb5ticketwatcher.cpp:583
+#, fuzzy
+msgid "Unknown principal"
+msgstr "Непознат монитор:"
+
+#: ../src/krb5ticketwatcher.cpp:586
+#, fuzzy
+msgid "Unknown realm"
+msgstr "Неизвестно"
+
+#: ../src/krb5ticketwatcher.cpp:1234
+msgid "Valid starting"
+msgstr ""
+
+#: ../build/ui_mainwidget.h:134
+msgid "Value"
+msgstr "Стойност"
+
+#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
+#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
+#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
+#: ../build/ui_kinitdialog.h:300
+msgid "days"
+msgstr ""
+
+#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+#, fuzzy
+msgid "default"
+msgstr "Маршрутизиране по подразбиране"
+
+#: ../build/ui_kinitdialog.h:285
+msgid "forwardable"
+msgstr ""
+
+#. init with translations
+#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
+#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
+#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
+#: ../build/ui_kinitdialog.h:301
+msgid "hours"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
+#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
+#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+#, fuzzy
+msgid "minutes"
+msgstr "Минути"
+
+#: ../build/ui_kinitdialog.h:286
+msgid "proxiable"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
+#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
+#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+msgid "seconds"
+msgstr ""

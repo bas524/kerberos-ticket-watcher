@@ -1,2 +1,0 @@
-copy: *.patch
-tar: v@version@:krb5-ticket-watcher
