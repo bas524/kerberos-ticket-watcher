@@ -1,0 +1,121 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -45,7 +45,10 @@ SET( QT_USE_QTNETWORK TRUE )
+   
+ # this command finds Qt4 libraries and sets all required variables
+ # note that it's Qt4, not QT4 or qt4
+-FIND_PACKAGE( Qt4 REQUIRED )
++FIND_PACKAGE( Qt5Core REQUIRED )
++FIND_PACKAGE( Qt5Network REQUIRED )
++FIND_PACKAGE( Qt5Gui REQUIRED )
++FIND_PACKAGE( Qt5Widgets REQUIRED )
+   
+ FIND_PACKAGE( Gettext REQUIRED )
+ IF (GETTEXT_FOUND)
+@@ -57,13 +60,13 @@ ENDIF (GETTEXT_FOUND)
+ 
+ # add some useful macros and variables
+ # (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt4 ) that contains a path to CMake script)
+-INCLUDE( ${QT_USE_FILE} )
++#INCLUDE( ${QT_USE_FILE} )
+   
+ # this will run uic on .ui files:
+-QT4_WRAP_UI( KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
++QT5_WRAP_UI( KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
+   
+ # and finally this will run moc:
+-QT4_WRAP_CPP( KTW_MOC_SRCS ${KTW_MOC_HDRS} )
++QT5_WRAP_CPP( KTW_MOC_SRCS ${KTW_MOC_HDRS} )
+   
+ # we need this to be able to include headers produced by uic in our code
+ # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
+@@ -96,6 +99,7 @@ ADD_CUSTOM_TARGET(backupclean find ${CMA
+ 
+ # here we instruct CMake to build "krb5-ticket-watcher" executable from all of the source files
+ ADD_EXECUTABLE( krb5-ticket-watcher ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS} )
++qt5_use_modules(krb5-ticket-watcher Core Gui Widgets Network)
+   
+ SET (LIBS ${LIBS} ${QT_LIBRARIES})
+ 
+--- a/src/kinitdialog.h
++++ b/src/kinitdialog.h
+@@ -15,7 +15,7 @@ class KinitDialog : public QDialog, priv
+ 
+ 	public:
+ 	KinitDialog(QWidget* parent = 0, const char* name = 0,
+-	            bool modal = FALSE, Qt::WindowFlags fl = 0 );
++	            bool modal = false, Qt::WindowFlags fl = 0 );
+ 	~KinitDialog();
+ 
+ 	void errorLabelSetText(const QString& text)
+--- a/src/pwdialog.h
++++ b/src/pwdialog.h
+@@ -15,7 +15,7 @@ class PWDialog : public QDialog, private
+ 
+ public:
+     PWDialog( QWidget* parent = 0, const char* name = 0,
+-             bool modal = FALSE, Qt::WindowFlags fl = 0 )
++             bool modal = false, Qt::WindowFlags fl = 0 )
+     	: QDialog(parent, fl)
+ 	{
+ 		setModal(modal);
+--- a/src/pwchangedialog.h
++++ b/src/pwchangedialog.h
+@@ -14,7 +14,7 @@ class PWChangeDialog : public QDialog, p
+ 
+ public:
+     PWChangeDialog( QWidget* parent = 0, const char* name = 0,
+-                   bool modal = FALSE, Qt::WindowFlags fl = 0 )
++                   bool modal = false, Qt::WindowFlags fl = 0 )
+     	: QDialog(parent, fl)
+ 	{
+ 		setModal(modal);
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -29,30 +29,31 @@
+ 
+ #include <QtGui>
+ #include <QApplication>
++#include <QMessageBox>
+ 
+ #include "krb5ticketwatcher.h"
+ 
+-void myMessageOutput( QtMsgType type, const char *msg )
++void myMessageOutput( QtMsgType type, const QMessageLogContext &context, const QString &msg )
+ {
+ 	switch ( type ) {
+ 		case QtDebugMsg:
+ #ifdef DEBUG			
+-			fprintf( stderr, "Debug: %s\n", msg );
++			fprintf( stderr, "Debug: %s\n", qPrintable(msg) );
+ #endif
+ 			break;
+ 		case QtWarningMsg:
+-			fprintf( stderr, "Warning: %s\n", msg );
++			fprintf( stderr, "Warning: %s\n", qPrintable(msg) );
+ 			break;
+ 		case QtFatalMsg:
+-			fprintf( stderr, "Fatal: %s\n", msg );
++			fprintf( stderr, "Fatal: %s\n", qPrintable(msg) );
+ 			abort();                    // deliberately core dump
+ 			break;
+ 		case QtCriticalMsg:
+-			fprintf( stderr, "Critical: %s\n", msg );
++			fprintf( stderr, "Critical: %s\n", qPrintable(msg) );
+ 			break;
+ 			/*
+ 			  case QtSystemMsg:
+-			  fprintf( stderr, "System: %s\n", msg );
++			  fprintf( stderr, "System: %s\n", qPrintable(msg) );
+ 			  break;
+ 			*/
+ 	}
+@@ -60,7 +61,7 @@ void myMessageOutput( QtMsgType type, co
+ 
+ int main( int argc, char **argv )
+ {
+-	qInstallMsgHandler( myMessageOutput );
++	qInstallMessageHandler( myMessageOutput );
+ 
+ 	QApplication app(argc, argv);
+ 
