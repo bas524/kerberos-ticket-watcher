@@ -7,8 +7,6 @@ Url: http://sourceforge.net/projects/krb5ticketwatch
 License: %gpl2plus
 Group: System/X11
 
-Packager: Andriy Stepanov <stanv@altlinux.ru>
-
 Source: %name-%version.tar
 Patch1: 0001-made-default-realm-the-first-one-in-list.patch
 Patch2: krb5-ticket-watcher-1.0-alt-date-fix.patch
@@ -17,7 +15,7 @@ Patch4: krb5-ticket-watcher-1.0.3-alt-fix-desktop-category.patch
 
 BuildRequires(pre): rpm-build-ubt
 BuildRequires: kde-common-devel rpm-build-licenses libkrb5-devel libkeyutils-devel
-BuildRequires: cmake gcc-c++ libcom_err-devel qt5-base-devel
+BuildRequires: cmake gcc-c++ libcom_err-devel libqt4-devel
 
 %description
 A tray applet for watching, renewing, and reinitializing Kerberos
