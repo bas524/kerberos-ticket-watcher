@@ -1,0 +1,12 @@
+diff -ruN krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp krb5-ticket-watcher-1.0.2-new/src/krb5ticketwatcher.cpp
+--- krb5-ticket-watcher-1.0.2/src/krb5ticketwatcher.cpp	2009-04-08 15:22:14 +0400
++++ krb5-ticket-watcher-1.0.2-new/src/krb5ticketwatcher.cpp	2009-04-08 15:52:32 +0400
+@@ -1374,7 +1374,7 @@
+ 	if (!krb5_timestamp_to_sfstring((krb5_timestamp) tv,
+ 	                                timestring, 29, &fill))
+ 	{
+-		return timestring;
++		return QString::fromLocal8Bit(timestring);
+ 	}
+ 	return "";
+ }

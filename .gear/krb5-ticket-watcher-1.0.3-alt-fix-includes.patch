@@ -1,0 +1,10 @@
+--- a/krb5-ticket-watcher/src/krb5ticketwatcher.cpp
++++ b/krb5-ticket-watcher/src/krb5ticketwatcher.cpp
+@@ -49,6 +49,7 @@
+ #include "pwchangedialog.h"
+ #include "kinitdialog.h"
+ 
++#include <unistd.h>
+ #include <pwd.h>
+ 
+ static const unsigned char trayimage[] = { 

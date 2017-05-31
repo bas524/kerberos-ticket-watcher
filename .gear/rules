@@ -1,0 +1,3 @@
+copy: .gear/*.patch
+tar: .
+spec: .gear/krb5-ticket-watcher.spec
