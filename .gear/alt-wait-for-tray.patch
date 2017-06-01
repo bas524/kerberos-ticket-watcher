@@ -1,0 +1,27 @@
+--- a/src/main.cpp
++++ a/src/main.cpp
+@@ -65,12 +65,22 @@ int main( int argc, char **argv )
+ 
+ 	QApplication app(argc, argv);
+ 
+-	if (!QSystemTrayIcon::isSystemTrayAvailable())
+-	{
++	bool systray_available = QSystemTrayIcon::isSystemTrayAvailable();
++	if( !systray_available ) {
++	    for( int i=0; i<20 && !systray_available; i++ ) {
++#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
++		QThread::sleep(3);
++#else
++		::sleep(3);
++#endif
++		systray_available = QSystemTrayIcon::isSystemTrayAvailable();
++	    }
++	    if( !systray_available ) {
+ 		QMessageBox::critical(0, ki18n("Systray"),
+ 		                      ki18n("I couldn't detect any system tray "
+ 								   "on this system."));
+ 		return 1;
++	    }
+ 	}
+ 	QApplication::setQuitOnLastWindowClosed(false);
+ 
