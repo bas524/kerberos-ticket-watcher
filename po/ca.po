@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-07-26 14:36+0200\n"
-"PO-Revision-Date: 2016-10-05 15:41+0000\n"
+"PO-Revision-Date: 2017-06-10 12:59+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/krb5-ticket-"
 "watcher/master/ca/>\n"
@@ -366,11 +366,11 @@ msgstr "Tipus de xifratge del tiquet"
 
 #: ../build/ui_kinitdialog.h:284
 msgid "Ticket Flags"
-msgstr "Banderes dels tiquets"
+msgstr "Banderes de tiquets"
 
 #: ../build/ui_mainwidget.h:136
 msgid "Ticket Flags Legend"
-msgstr "Llegenda de les banderes dels tiquets"
+msgstr "Llegenda de les banderes de tiquets"
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:368
