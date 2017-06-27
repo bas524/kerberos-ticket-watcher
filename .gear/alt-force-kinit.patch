@@ -1,29 +1,3 @@
---- a/src/krb5ticketwatcher.cpp
-+++ b/src/krb5ticketwatcher.cpp
-@@ -42,6 +42,7 @@
- #include <QMenu>
- #include <QTreeWidget>
- #include <QTreeWidgetItem>
-+#include <QFileInfo>
- 
- #include "krb5ticketwatcher.h"
- #include "v5.h"
-@@ -429,6 +430,15 @@ Ktw::initWorkflow(int type)
- 					                  QSystemTrayIcon::Information, 5000 );
- 					break;
- 				}
-+				else if(type == 69)
-+				{
-+				    // ugly check of the need for authorization
-+				    if( QFileInfo::exists("/usr/libexec/sssd/gpo_child") ) {
-+					kinit();
-+				    }
-+				    retval = 0;
-+				    break;
-+				}
- 			}
- 	}
- 	
 --- a/src/main.cpp
 +++ b/src/main.cpp
 @@ -83,6 +83,6 @@ int main( int argc, char **argv )
@@ -34,3 +8,41 @@
 +	w.initWorkflow(69);
  	return app.exec();
  }
+--- a/src/krb5ticketwatcher.cpp
++++ b/src/krb5ticketwatcher.cpp
+@@ -42,6 +42,7 @@
+ #include <QMenu>
+ #include <QTreeWidget>
+ #include <QTreeWidgetItem>
++#include <QFileInfo>
+ 
+ #include "krb5ticketwatcher.h"
+ #include "v5.h"
+@@ -424,11 +425,27 @@ Ktw::initWorkflow(int type)
+ 				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
+ 				if(!retval)
+ 				{
++				    if( type != 69 )
++				    {
+ 					tray->showMessage(ki18n("Ticket renewed"),
+ 					                  ki18n("Ticket successfully renewed."),
+ 					                  QSystemTrayIcon::Information, 5000 );
++				    }
+ 					break;
+ 				}
++				else if(type == 69)
++				{
++				    char *r = NULL;
++				    krb5_get_default_realm(kcontext, &r);
++				    QString defRealm(r);
++				    krb5_free_default_realm(kcontext, r);
++				    // ugly check of the need for authorization
++				    if( !defRealm.isEmpty() || QFileInfo::exists("/usr/libexec/sssd/gpo_child") ) {
++					kinit();
++				    }
++				    retval = 0;
++				    break;
++				}
+ 			}
+ 	}
+ 	
