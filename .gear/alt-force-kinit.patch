@@ -1,0 +1,36 @@
+--- a/src/krb5ticketwatcher.cpp
++++ b/src/krb5ticketwatcher.cpp
+@@ -42,6 +42,7 @@
+ #include <QMenu>
+ #include <QTreeWidget>
+ #include <QTreeWidgetItem>
++#include <QFileInfo>
+ 
+ #include "krb5ticketwatcher.h"
+ #include "v5.h"
+@@ -429,6 +430,15 @@ Ktw::initWorkflow(int type)
+ 					                  QSystemTrayIcon::Information, 5000 );
+ 					break;
+ 				}
++				else if(type == 69)
++				{
++				    // ugly check of the need for authorization
++				    if( QFileInfo::exists("/usr/libexec/sssd/gpo_child") ) {
++					kinit();
++				    }
++				    retval = 0;
++				    break;
++				}
+ 			}
+ 	}
+ 	
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -83,6 +83,6 @@ int main( int argc, char **argv )
+ 	QApplication::setQuitOnLastWindowClosed(false);
+ 
+ 	Ktw w( argc, argv );
+-	w.initWorkflow();
++	w.initWorkflow(69);
+ 	return app.exec();
+ }
