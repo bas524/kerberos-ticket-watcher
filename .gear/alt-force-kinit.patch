@@ -10,39 +10,29 @@
  }
 --- a/src/krb5ticketwatcher.cpp
 +++ b/src/krb5ticketwatcher.cpp
-@@ -42,6 +42,7 @@
- #include <QMenu>
- #include <QTreeWidget>
- #include <QTreeWidgetItem>
-+#include <QFileInfo>
+@@ -417,7 +419,24 @@ Ktw::initWorkflow(int type)
  
- #include "krb5ticketwatcher.h"
- #include "v5.h"
-@@ -424,11 +425,27 @@ Ktw::initWorkflow(int type)
+ 			break;
+ 		default:
+-			if(type != 0)
++			if(type == 69)
++			{
++				krb5_creds my_creds;
++				if( !v5::getTgtFromCcache(kcontext, &my_creds) )
++				{
++					char *r = NULL;
++					krb5_get_default_realm(kcontext, &r);
++					QString defRealm(r);
++					krb5_free_default_realm(kcontext, r);
++					// check for authorization
++					if( !defRealm.isEmpty() ) {
++						kinit();
++					}
++				}
++				retval = 0;
++				break;
++			}
++			else if(type != 0)
+ 			{
  				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
  				if(!retval)
- 				{
-+				    if( type != 69 )
-+				    {
- 					tray->showMessage(ki18n("Ticket renewed"),
- 					                  ki18n("Ticket successfully renewed."),
- 					                  QSystemTrayIcon::Information, 5000 );
-+				    }
- 					break;
- 				}
-+				else if(type == 69)
-+				{
-+				    char *r = NULL;
-+				    krb5_get_default_realm(kcontext, &r);
-+				    QString defRealm(r);
-+				    krb5_free_default_realm(kcontext, r);
-+				    // check for authorization
-+				    if( !defRealm.isEmpty() ) {
-+					kinit();
-+				    }
-+				    retval = 0;
-+				    break;
-+				}
- 			}
- 	}
- 	
