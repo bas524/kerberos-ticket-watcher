@@ -36,8 +36,8 @@
 +				    krb5_get_default_realm(kcontext, &r);
 +				    QString defRealm(r);
 +				    krb5_free_default_realm(kcontext, r);
-+				    // ugly check of the need for authorization
-+				    if( !defRealm.isEmpty() || QFileInfo::exists("/usr/libexec/sssd/gpo_child") ) {
++				    // check for authorization
++				    if( !defRealm.isEmpty() ) {
 +					kinit();
 +				    }
 +				    retval = 0;
