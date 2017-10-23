@@ -59,7 +59,7 @@ desktop-file-install --dir %buildroot/%_xdgconfigdir/autostart \
 
 %changelog
 * Mon Oct 23 2017 Sergey V Turchin <zerg at altlinux dot org> 1.0.3-alt10%ubt
-- set password dialog on top
+- set password dialog on top (ALT#34001)
 
 * Mon Jul 24 2017 Sergey V Turchin <zerg at altlinux dot org> 1.0.3-alt9%ubt
 - fix check for auth at start
