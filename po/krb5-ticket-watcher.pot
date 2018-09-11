@@ -104,12 +104,20 @@ msgstr ""
 msgid "Broken address (type %1 length %2)"
 msgstr ""
 
+#: ../src/krb5ticketwatcher.cpp:791
+msgid "Can not check the password lifetime."
+msgstr ""
+
 #: ../build/ui_pwchangedialog.h:172
 msgid "Change Kerberos Password"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:303
 msgid "Change the Kerberos Password"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:498
+msgid "Change the password"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:860
@@ -232,6 +240,10 @@ msgstr ""
 msgid "Invalid principal name"
 msgstr ""
 
+#: ../src/krb5ticketwatcher.cpp:499
+msgid " days before Kerberos password expiration."
+msgstr ""
+
 #: ../build/ui_pwdialog.h:154
 msgid "Kerberos Password Dialog"
 msgstr ""
@@ -276,6 +288,10 @@ msgstr ""
 
 #: ../build/ui_kinitdialog.h:280
 msgid "Password:"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:790
+msgid "Password check failed"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:751
