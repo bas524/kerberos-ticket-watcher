@@ -1,0 +1,108 @@
+diff -ruN krb5-ticket-watcher/src/krb5ticketwatcher.cpp new_krb5-ticket-watcher/src/krb5ticketwatcher.cpp
+--- krb5-ticket-watcher/src/krb5ticketwatcher.cpp	2018-09-11 12:36:20.320964956 +0300
++++ new_krb5-ticket-watcher/src/krb5ticketwatcher.cpp	2018-09-11 12:35:58.531966972 +0300
+@@ -52,6 +52,8 @@
+ #include <pwd.h>
+ #include <unistd.h>
+ 
++static int pw_exp;
++
+ static const unsigned char trayimage[] = { 
+     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
+     0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00, 0x16,
+@@ -449,6 +451,63 @@
+ 	tray->setIcon(QIcon(path));
+ }
+ 
++void
++Ktw::expire_cb(krb5_context context, void *data, krb5_timestamp password_expiration,
++			   krb5_timestamp account_expiration, krb5_boolean is_last_req) {
++
++	if (password_expiration !=0 ) {
++		pw_exp = password_expiration;
++	}
++
++}
++
++krb5_error_code
++Ktw::get_pw_exp(krb5_context context,
++				krb5_principal client_princ, char* pass) {
++
++	krb5_error_code retval;
++	krb5_get_init_creds_opt *opt = NULL;
++	krb5_creds creds;
++	double days;
++	char ts[256], buff[512];
++
++	memset(&creds, 0, sizeof(creds));
++	retval = krb5_get_init_creds_opt_alloc(context, &opt);
++	if (retval)
++		goto cleanup;
++
++	retval = krb5_get_init_creds_opt_set_expire_callback(context, opt,
++														 expire_cb, NULL);
++
++	if (retval)
++		goto cleanup;
++
++	retval = krb5_get_init_creds_password(context, &creds, client_princ,
++										  pass, NULL, NULL, 0, NULL, opt);
++
++	if (pw_exp == 0) {
++		retval = 1;
++		goto cleanup;
++	}
++
++	if (!retval) {
++		days = ((pw_exp - v5::getNow(kcontext)) / (60 * 60 * 24));
++
++		if (days < 7) {
++			krb5_timestamp_to_string(pw_exp, ts, sizeof(ts));
++			strcpy(buff, "Password expires on ");
++			strcat(buff, ts);
++			tray->showMessage(ki18n("Change the password"), ki18n(buff), QSystemTrayIcon::Warning, 5000);
++			changePassword(pass);
++		}
++	}
++
++	cleanup:
++		krb5_get_init_creds_opt_free(context, opt);
++		krb5_free_cred_contents(context, &creds);
++		return retval;
++}
++
+ 
+ // public slots ------------------------------------------------------------- 
+ 
+@@ -725,6 +784,12 @@
+ 		else
+ 		{
+ 			repeat = false;
++
++			int ret = get_pw_exp(kcontext, kprincipal, passwd.toUtf8().data());
++			if (ret)
++				tray->showMessage("Password check failed",
++								  "Can not check the password lifetime.",
++								  QSystemTrayIcon::Warning, 3000);
+ 		}
+ 		
+ 		// if we repeat this task, we should ask again for the password
+diff -ruN krb5-ticket-watcher/src/krb5ticketwatcher.h new_krb5-ticket-watcher/src/krb5ticketwatcher.h
+--- krb5-ticket-watcher/src/krb5ticketwatcher.h	2018-09-11 12:36:20.321964956 +0300
++++ new_krb5-ticket-watcher/src/krb5ticketwatcher.h	2018-09-11 12:35:58.531966972 +0300
+@@ -92,7 +92,14 @@
+ 
+ 	void
+ 	setOptions(krb5_context, krb5_get_init_creds_opt *opts);
+-	
++
++	krb5_error_code
++	get_pw_exp(krb5_context context, krb5_principal client_princ, char* pass);
++
++    static void
++    expire_cb(krb5_context context, void *data, krb5_timestamp password_expiration,
++              krb5_timestamp account_expiration, krb5_boolean is_last_req);
++
+ 	QSystemTrayIcon *tray;
+ 	QMenu           *trayMenu;
+ 
