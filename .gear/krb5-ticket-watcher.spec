@@ -1,7 +1,7 @@
 BuildRequires: desktop-file-utils
 Name: krb5-ticket-watcher
 Version: 1.0.3
-Release: alt12%ubt
+Release: alt13.1%ubt
 Summary: A Tray Applet for Watching, Renewing, and Reinitializing Kerberos Tickets
 Url: http://sourceforge.net/projects/krb5ticketwatch
 License: %gpl2plus
@@ -17,6 +17,7 @@ Patch6: alt-tray-icon.patch
 Patch7: alt-wait-for-tray.patch
 Patch8: alt-force-kinit.patch
 Patch9: alt-password-dialog-ontop.patch
+Patch10: krb5-ticket-watcher-add-pw-exp-notif.patch
 
 BuildRequires(pre): rpm-build-ubt
 BuildRequires: kde-common-devel rpm-build-licenses rpm-build-xdg libkrb5-devel libkeyutils-devel
@@ -37,6 +38,7 @@ tickets.
 %patch7 -p1
 %patch8 -p1
 %patch9 -p1
+%patch10 -p1
 
 %build
 %add_optflags -DDEBUG -I%_includedir/krb5
@@ -58,6 +60,9 @@ desktop-file-install --dir %buildroot/%_xdgconfigdir/autostart \
 %doc COPYING Changes News TODO
 
 %changelog
+* Tue Sep 11 2018 Andrey Bychkov <mrdrew@altlinux.org> 1.0.3-alt13.1%ubt
+- add password expires notification
+
 * Fri Apr 13 2018 Sergey V Turchin <zerg at altlinux dot org> 1.0.3-alt12%ubt
 - change system tray icon
 
