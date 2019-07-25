@@ -1,0 +1,265 @@
+From a3217a952a1c331b72d70059d203e6dee9cbd571 Mon Sep 17 00:00:00 2001
+From: Andrey Bychkov <mrdrew@altlinux.org>
+Date: Thu, 25 Jul 2019 10:49:11 +0300
+Subject: [PATCH] fix deprecated krb5 api meth
+
+---
+ src/krb5ticketwatcher.cpp | 152 ++++++++++++++++++--------------------
+ src/v5.cpp                |   2 -
+ 2 files changed, 71 insertions(+), 83 deletions(-)
+
+diff --git a/src/krb5ticketwatcher.cpp b/src/krb5ticketwatcher.cpp
+index d5393f8..133411a 100644
+--- a/src/krb5ticketwatcher.cpp
++++ b/src/krb5ticketwatcher.cpp
+@@ -381,76 +381,59 @@ Ktw::destroyCredential()
+ void
+ Ktw::initWorkflow(int type)
+ {
+-	bool have_tgt = FALSE;
++	krb5_error_code  retval = 0;
+ 	krb5_creds creds;
++	krb5_timestamp tgtEndtime;
++	char *r = NULL;
+ 
+-	have_tgt = v5::getTgtFromCcache(kcontext, &creds);
+-	if (have_tgt)
+-	{
+-		krb5_copy_principal(kcontext, creds.client, &kprincipal);
+-		krb5_free_cred_contents (kcontext, &creds);
+-	}
+-	
+-	int  retval = 0;
+-	switch(v5::credentialCheck(kcontext, kprincipal, promptInterval, &tgtEndtime))
+-	{
+-		case renew:
+-			retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
+-			if(!retval)
+-			{
+-				tray->showMessage(ki18n("Ticket renewed"),
+-				                  ki18n("Ticket successfully renewed."),
+-				                  QSystemTrayIcon::Information, 5000 );
+-				break;
+-			}
+-		case reinit:
+-			qDebug("stop the timer");
+-			waitTimer.stop();
++	reReadCache();
+ 
+-			retval = reinitCredential();
+-			
+-			if(retval == KRB5_KDC_UNREACH)
+-			{
+-				// cannot reach the KDC sleeping. Try next time
+-				qWarning("cannot reach the KDC. Sleeping ...");
+-				retval = 0;
+-			}
+-			
+-			qDebug("start the timer");
+-			waitTimer.start( promptInterval*60*1000); // retryTime is in minutes
++	v5::getTgtFromCcache(kcontext, &creds);
++
++	krb5_get_default_realm(kcontext, &r);
++	QString defRealm(r);
++	krb5_free_default_realm(kcontext, r);
++
++	if ( ((creds.times.endtime - v5::getNow(kcontext)) < 0) && (!defRealm.isEmpty()) ) {
++	    kinit();
++	} else if (promptInterval*60 >= (creds.times.endtime - v5::getNow(kcontext))) {
++	    qDebug("stop the timer");
++
++	    waitTimer.stop();
++	    retval = reinitCredential();
++
++        if (retval == KRB5_KDC_UNREACH)
++        {
++            qWarning("cannot reach the KDC. Sleeping ...");
++            retval = 0;
++        }
++
++        waitTimer.start(promptInterval * 60 * 1000);
++    } else {
++        if(type == 69)
++        {
++            krb5_creds my_creds;
++            if( !v5::getTgtFromCcache(kcontext, &my_creds) )
++            {
++                char *r = NULL;
++                krb5_get_default_realm(kcontext, &r);
++                QString defRealm(r);
++                krb5_free_default_realm(kcontext, r);
++                // check for authorization
++                if( !defRealm.isEmpty() ) {
++                    kinit();
++                }
++            }
++            retval = 0;
++        } else
++            retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
++
++        if(!retval)
++            tray->showMessage(ki18n("Ticket renewed"),
++                              ki18n("Ticket successfully renewed."),
++                              QSystemTrayIcon::Information, 5000 );
++    }
+ 
+-			break;
+-		default:
+-			if(type == 69)
+-			{
+-				krb5_creds my_creds;
+-				if( !v5::getTgtFromCcache(kcontext, &my_creds) )
+-				{
+-					char *r = NULL;
+-					krb5_get_default_realm(kcontext, &r);
+-					QString defRealm(r);
+-					krb5_free_default_realm(kcontext, r);
+-					// check for authorization
+-					if( !defRealm.isEmpty() ) {
+-						kinit();
+-					}
+-				}
+-				retval = 0;
+-				break;
+-			}
+-			else if(type != 0)
+-			{
+-				retval = v5::renewCredential(kcontext, kprincipal, &tgtEndtime);
+-				if(!retval)
+-				{
+-					tray->showMessage(ki18n("Ticket renewed"),
+-					                  ki18n("Ticket successfully renewed."),
+-					                  QSystemTrayIcon::Information, 5000 );
+-					break;
+-				}
+-			}
+-	}
+-	
+ 	qDebug("Workflow finished");
+ }
+ 
+@@ -533,14 +516,16 @@ Ktw::get_pw_exp(krb5_context context,
+ void
+ Ktw::kinit()
+ {
+-	krb5_get_init_creds_opt opts;
++	krb5_get_init_creds_opt *opts = NULL;
+ 
+ 	krb5_error_code retval;
+ 	bool ok = false;
+ 	QString errorTxt;
+ 	char *r = NULL;
+ 
+-	krb5_get_init_creds_opt_init(&opts);
++	retval = krb5_get_init_creds_opt_alloc(kcontext, &opts);
++	if (retval)
++	    return;
+ 	
+ 	krb5_get_default_realm(kcontext, &r);
+ 	QString defRealm(r);
+@@ -631,10 +616,10 @@ Ktw::kinit()
+ 			renewtime = 0;
+ 		}
+ 
+-		setOptions(kcontext, &opts);
++		setOptions(kcontext, opts);
+ 		
+ 		retval = v5::initCredential(kcontext, kprincipal,
+-		                            &opts, dlg->passwordLineEditText(),
++		                            opts, dlg->passwordLineEditText(),
+ 		                            &tgtEndtime);
+ 		if (retval)
+ 		{
+@@ -724,7 +709,7 @@ Ktw::reinitCredential(const QString& password)
+ {
+ 	krb5_error_code retval;
+ 	krb5_creds my_creds;
+-	krb5_get_init_creds_opt opts;
++	krb5_get_init_creds_opt *opts = NULL;
+ 
+ 	QString passwd = password;
+ 	
+@@ -741,9 +726,11 @@ Ktw::reinitCredential(const QString& password)
+ 		}
+ 	}
+ 
+-	krb5_get_init_creds_opt_init(&opts);
++	retval = krb5_get_init_creds_opt_alloc(kcontext, &opts);
++	if (retval)
++	    return retval;
+ 
+-	setOptions(kcontext, &opts);
++	setOptions(kcontext, opts);
+ 	
+ 	if (v5::getTgtFromCcache (kcontext, &my_creds))
+ 	{
+@@ -769,7 +756,7 @@ Ktw::reinitCredential(const QString& password)
+ 				return -1;
+ 		}
+ 		
+-		retval = v5::initCredential(kcontext, kprincipal, &opts, passwd, &tgtEndtime);
++		retval = v5::initCredential(kcontext, kprincipal, opts, passwd, &tgtEndtime);
+ 		
+ 		if(retval)
+ 		{
+@@ -855,7 +842,7 @@ Ktw::changePassword(const QString &oldpw)
+ {
+ 	krb5_error_code retval;
+ 	krb5_creds my_creds;
+-	krb5_get_init_creds_opt opts;
++	krb5_get_init_creds_opt *opts = NULL;
+ 	QString oldPasswd( oldpw );
+ 	
+ 	qDebug("changePassword called");
+@@ -870,11 +857,14 @@ Ktw::changePassword(const QString &oldpw)
+ 		}
+ 	}
+ 
+-	krb5_get_init_creds_opt_init(&opts);
+-	krb5_get_init_creds_opt_set_tkt_life(&opts, 5*60);
+-	krb5_get_init_creds_opt_set_renew_life(&opts, 0);
+-	krb5_get_init_creds_opt_set_forwardable(&opts, 0);
+-	krb5_get_init_creds_opt_set_proxiable(&opts, 0);
++	retval = krb5_get_init_creds_opt_alloc(kcontext, &opts);
++	if (retval)
++	    return retval;
++
++	krb5_get_init_creds_opt_set_tkt_life(opts, 5*60);
++	krb5_get_init_creds_opt_set_renew_life(opts, 0);
++	krb5_get_init_creds_opt_set_forwardable(opts, 0);
++	krb5_get_init_creds_opt_set_proxiable(opts, 0);
+ 
+ 	QString errorText = QString::null;
+ 	do
+@@ -897,7 +887,7 @@ Ktw::changePassword(const QString &oldpw)
+ 		                                      NULL,
+ 		                                      0,
+ 		                                      srv.toUtf8().data(),
+-		                                      &opts);
++		                                      opts);
+ 		if(retval)
+ 		{
+ 			switch(retval)
+diff --git a/src/v5.cpp b/src/v5.cpp
+index d09ba2d..c225e95 100644
+--- a/src/v5.cpp
++++ b/src/v5.cpp
+@@ -126,7 +126,6 @@ v5::renewCredential(krb5_context kcontext, krb5_principal kprincipal, krb5_times
+ 	krb5_error_code         retval;
+ 	krb5_creds              my_creds;
+ 	krb5_ccache             ccache;
+-	krb5_get_init_creds_opt opts;
+ 	
+ 	qDebug("renew called");
+ 
+@@ -137,7 +136,6 @@ v5::renewCredential(krb5_context kcontext, krb5_principal kprincipal, krb5_times
+ 		return KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN;
+ 	}
+ 
+-	krb5_get_init_creds_opt_init(&opts);
+ 	if (getTgtFromCcache (kcontext, &my_creds))
+ 	{
+ 		qDebug("got tgt from ccache");
+-- 
+2.21.0
+
