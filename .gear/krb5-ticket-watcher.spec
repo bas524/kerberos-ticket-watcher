@@ -56,13 +56,13 @@ desktop-file-install --dir %buildroot%_desktopdir \
 	%buildroot%_desktopdir/krb5-ticket-watcher.desktop
 desktop-file-install --dir %buildroot/%_xdgconfigdir/autostart \
 	%buildroot/%_desktopdir/krb5-ticket-watcher.desktop
+%find_lang --all-name %name
 
-%files
+%files -f %name.lang
 %_bindir/krb5-ticket-watcher
 %_pixmapsdir/krb5-ticket-watcher.png
 %_desktopdir/krb5-ticket-watcher.desktop
 %_xdgconfigdir/autostart/krb5-ticket-watcher.desktop
-%{_datadir}/locale/*/*/*.mo
 %doc COPYING Changes News TODO
 
 %changelog
