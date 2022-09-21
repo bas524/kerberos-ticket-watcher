@@ -7,7 +7,6 @@
 
 #include "krb5fwd.h"
 #include "krb5creds.h"
-#include <nonstd/optional.hpp>
 
 namespace v5 {
 class CCache;
@@ -32,7 +31,7 @@ class Cursor {
     Iterator(Iterator &&) = default;
     ~Iterator() noexcept;
     Creds &operator*();
-    Iterator& operator++();
+    Iterator &operator++();
     bool operator==(const Iterator &o) const;
     bool operator!=(const Iterator &o) const;
   };
