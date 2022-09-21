@@ -9,43 +9,30 @@
 
 #include "ui_pwdialog.h"
 
-class PWDialog : public QDialog, private Ui::PWDialog
-{
-    Q_OBJECT
+class PWDialog : public QDialog, private Ui::PWDialog {
+  Q_OBJECT
 
-public:
-    PWDialog( QWidget* parent = 0, const char* name = 0,
-             bool modal = FALSE, Qt::WindowFlags fl = 0 )
-    	: QDialog(parent, fl)
-	{
-		setModal(modal);
-		setAccessibleName(name);
-		setupUi(this);
-	}
-	
-	~PWDialog(){}
+ public:
+  explicit PWDialog(QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowType::Widget)
+      : QDialog(parent, fl) {
+    setModal(modal);
+    setAccessibleName(name);
+    setupUi(this);
+    QWidget* wnd = window();
+    if (wnd) {
+      wnd->setWindowFlags(wnd->windowFlags() | Qt::WindowStaysOnTopHint);
+    }
+  }
 
-	void krb5promptSetText(const QString& text)
-	{
-		krb5prompt->setText(text);
-	}
+  ~PWDialog() {}
 
-	void promptEditSetEchoMode(QLineEdit::EchoMode mode)
-	{
-		promptEdit->setEchoMode(mode);
-	}
+  void krb5promptSetText(const QString& text) { krb5prompt->setText(text); }
 
-	QString promptEditText() const
-	{
-		return promptEdit->text();
-	}
-	
-	void errorLabelSetText(const QString& text)
-	{
-		errorLabel->setText(text);
-	}
-	
-	
+  void promptEditSetEchoMode(QLineEdit::EchoMode mode) { promptEdit->setEchoMode(mode); }
+
+  QString promptEditText() const { return promptEdit->text(); }
+
+  void errorLabelSetText(const QString& text) { errorLabel->setText(text); }
 };
 
-#endif // PWDIALOG_H
+#endif  // PWDIALOG_H

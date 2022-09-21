@@ -29,51 +29,64 @@
 
 #include <QtGui>
 #include <QApplication>
+#include <QMessageBox>
 
 #include "krb5ticketwatcher.h"
 
-void myMessageOutput( QtMsgType type, const char *msg )
-{
-	switch ( type ) {
-		case QtDebugMsg:
-#ifdef DEBUG			
-			fprintf( stderr, "Debug: %s\n", msg );
+void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
+  switch (type) {
+    case QtDebugMsg:
+#ifdef DEBUG
+      fprintf(stderr, "Debug: %s\n", qPrintable(msg));
 #endif
-			break;
-		case QtWarningMsg:
-			fprintf( stderr, "Warning: %s\n", msg );
-			break;
-		case QtFatalMsg:
-			fprintf( stderr, "Fatal: %s\n", msg );
-			abort();                    // deliberately core dump
-			break;
-		case QtCriticalMsg:
-			fprintf( stderr, "Critical: %s\n", msg );
-			break;
-			/*
-			  case QtSystemMsg:
-			  fprintf( stderr, "System: %s\n", msg );
-			  break;
-			*/
-	}
+      break;
+    case QtWarningMsg:
+      fprintf(stderr, "Warning: %s\n", qPrintable(msg));
+      break;
+    case QtFatalMsg:
+      fprintf(stderr, "Fatal: %s\n", qPrintable(msg));
+      abort();  // deliberately core dump
+      break;
+    case QtCriticalMsg:
+      fprintf(stderr, "Critical: %s\n", qPrintable(msg));
+      break;
+    case QtInfoMsg:
+      fprintf(stdout, "Info: %s\n", qPrintable(msg));
+      break;
+      /*
+        case QtSystemMsg:
+        fprintf( stderr, "System: %s\n", qPrintable(msg) );
+        break;
+      */
+  }
 }
 
-int main( int argc, char **argv )
-{
-	qInstallMsgHandler( myMessageOutput );
+int main(int argc, char **argv) {
+  qInstallMessageHandler(myMessageOutput);
 
-	QApplication app(argc, argv);
+  QApplication app(argc, argv);
 
-	if (!QSystemTrayIcon::isSystemTrayAvailable())
-	{
-		QMessageBox::critical(0, ki18n("Systray"),
-		                      ki18n("I couldn't detect any system tray "
-								   "on this system."));
-		return 1;
-	}
-	QApplication::setQuitOnLastWindowClosed(false);
+  bool systray_available = QSystemTrayIcon::isSystemTrayAvailable();
+  if (!systray_available) {
+    for (int i = 0; i < 20 && !systray_available; i++) {
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+      QThread::sleep(3);
+#else
+      ::sleep(3);
+#endif
+      systray_available = QSystemTrayIcon::isSystemTrayAvailable();
+    }
+    if (!systray_available) {
+      QMessageBox::critical(0,
+                            ki18n("Systray"),
+                            ki18n("I couldn't detect any system tray "
+                                  "on this system."));
+      return 1;
+    }
+  }
+  QApplication::setQuitOnLastWindowClosed(false);
 
-	Ktw w( argc, argv );
-	w.initWorkflow();
-	return app.exec();
+  Ktw w(argc, argv);
+  w.initWorkflow(69);
+  return app.exec();
 }

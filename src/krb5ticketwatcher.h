@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef  KRB5_TICKET_WATCHER_H
-#define  KRB5_TICKET_WATCHER_H
+#ifndef KRB5_TICKET_WATCHER_H
+#define KRB5_TICKET_WATCHER_H
 
 #include <QString>
 #include <QTimer>
@@ -31,6 +31,10 @@
 
 #include "krb5_tw_gettext.h"
 
+#include "krb5context.h"
+#include "krb5principal.h"
+#include "krb5creds.h"
+
 #include "ui_mainwidget.h"
 
 class QAction;
@@ -38,88 +42,92 @@ class QSystemTrayIcon;
 class QMenu;
 class QEvent;
 
-class Ktw : public QWidget, private Ui::MainWidget
-{
-	Q_OBJECT
-	
-public:
-	Ktw(int & argc, char ** argv,
-	    QWidget* parent = 0, Qt::WindowFlags fl = 0  );
-	~Ktw();
-	
-	enum reqAction {none, renew, reinit};
+class Ktw : public QWidget, private Ui::MainWidget {
+  Q_OBJECT
 
-public slots:
-    void forceRenewCredential();
-    void destroyCredential();
-	void initWorkflow(int type = 0);
-	void trayClicked(QSystemTrayIcon::ActivationReason reason);
-	void restore();
-	void kinit();
-	void setTrayToolTip(const QString& text);
-	void setTrayIcon(const QString&);
-	void reReadCache();
+ public:
+  Ktw(int &argc, char **argv, QWidget *parent = nullptr, Qt::WindowFlags fl = Qt::WindowType::Widget);
+  ~Ktw() override;
 
-protected:
-	bool eventFilter(QObject *obj, QEvent *ev);
+  enum reqAction { none, renew, reinit };
 
-private slots:
-	int
-	changePassword(const QString& oldpw = QString::null);
+ public slots:
+  void forceRenewCredential();
+  void destroyCredential();
+  void initWorkflow(int type = 0);
+  void trayClicked(QSystemTrayIcon::ActivationReason reason);
+  void restore();
+  void kinit();
+  void setTrayToolTip(const QString &text);
+  void setTrayIcon(const QString &);
+  void reReadCache();
 
-private:
-	void createTrayMenu();
-	void initMainWindow();
-	void initTray();
-	QString buildCcacheInfos();
-	QString showCredential(krb5_creds *cred, char *defname);
+ protected:
+  bool eventFilter(QObject *obj, QEvent *ev) override;
 
-	QString printtime(time_t tv);
-	QString oneAddr(krb5_address *a);
-	QString printInterval(krb5_timestamp time);
+ private slots:
+  void changePassword(const QString &oldpw = QString());
 
-	QString
-	passwordDialog(const QString& errorText = QString::null) const;
-	
-	static const char *
-	getUserName();
+ private:
+  void createTrayMenu();
+  void initMainWindow();
+  void initTray();
+  void buildCcacheInfos();
+  void showCredential(v5::Creds &cred, const QString &defname);
 
-	int
-	reinitCredential(const QString &password = QString::null);
+  QString printtime(time_t tv);
+  QString oneAddr(krb5_address *a);
+  QString printInterval(krb5_timestamp time);
 
-	void
-	setDefaultOptionsUsingCreds(krb5_context);
+  QString passwordDialog(const QString &errorText = QString()) const;
 
-	void
-	setOptions(krb5_context, krb5_get_init_creds_opt *opts);
-	
-	QSystemTrayIcon *tray;
-	QMenu           *trayMenu;
+  static QString getUserName();
 
-	QAction         *kinitAction;
-	QAction         *renewAction;
-	QAction         *cpwAction;
-	QAction         *destroyAction;
-	QAction         *restoreAction;
-	QAction         *quitAction;
-		
-	QTimer        waitTimer;
-	QTranslator   translator;
+  void reinitCredential(const QString &password = QString());
 
-	krb5_context   kcontext;
-	krb5_principal kprincipal;
-	krb5_timestamp tgtEndtime;
+  void setDefaultOptionsUsingCreds();
 
-	bool           forwardable;
-	bool           proxiable;
-	
-	krb5_deltat    lifetime;      // 0 default
-	QString        lifetimeUnit;
-	krb5_deltat    renewtime;     // 0 default, -1 no renewtime
-	QString        renewtimeUnit;
-	
-	int            promptInterval;
-	
+  void setOptions(v5::CredsOpts &opts);
+
+  QPixmap generateTrayIcon(long days);
+  void paintFace(QPainter &painter, const QString &text, int iconSize, const QColor &textColor, const QColor &fillColor);
+
+  /// get_pw_exp
+  /// \param pass
+  /// \return count of days
+  long get_pw_exp(const QString &pass);
+
+  static void expire_cb(
+      krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req);
+
+  QSystemTrayIcon *tray;
+  QMenu *trayMenu;
+
+  QAction *kinitAction{};
+  QAction *renewAction{};
+  QAction *cpwAction{};
+  QAction *destroyAction{};
+  QAction *restoreAction{};
+  QAction *quitAction{};
+
+  QTimer waitTimer;
+  QTranslator translator;
+
+  //  krb5_context kcontext;
+  v5::Context _context;
+  std::unique_ptr<v5::Principal> _principal;
+  //  krb5_principal kprincipal;
+  krb5_timestamp tgtEndtime;
+
+  bool forwardable;
+  bool proxiable;
+
+  krb5_deltat lifetime;  // 0 default
+  QString lifetimeUnit;
+  krb5_deltat renewtime;  // 0 default, -1 no renewtime
+  QString renewtimeUnit;
+
+  int promptInterval;
 };
 
-#endif //KRB5_TICKET_WATCHER_H
+#endif  // KRB5_TICKET_WATCHER_H

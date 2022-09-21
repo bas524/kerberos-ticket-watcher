@@ -8,42 +8,26 @@
 
 #include "ui_pwchangedialog.h"
 
-class PWChangeDialog : public QDialog, private Ui::PWChangeDialog
-{
-    Q_OBJECT
+class PWChangeDialog : public QDialog, private Ui::PWChangeDialog {
+  Q_OBJECT
 
-public:
-    PWChangeDialog( QWidget* parent = 0, const char* name = 0,
-                   bool modal = FALSE, Qt::WindowFlags fl = 0 )
-    	: QDialog(parent, fl)
-	{
-		setModal(modal);
-		setAccessibleName(name);
-		setupUi(this);
-	}
-	
-	~PWChangeDialog() {}
+ public:
+  explicit PWChangeDialog(QWidget* parent = nullptr, const char* name = nullptr, bool modal = false, Qt::WindowFlags fl = Qt::WindowType::Widget)
+      : QDialog(parent, fl) {
+    setModal(modal);
+    setAccessibleName(name);
+    setupUi(this);
+  }
 
-	void titleTextLabelSetText(const QString& text)
-	{
-		titleTextLabel->setText(text);
-	}
+  ~PWChangeDialog() {}
 
-	void errorLabelSetText(const QString& text)
-	{
-		errorLabel->setText(text);
-	}
+  void titleTextLabelSetText(const QString& text) { titleTextLabel->setText(text); }
 
-	QString pwEdit1Text() const
-	{
-		return pwEdit1->text();
-	}
+  void errorLabelSetText(const QString& text) { errorLabel->setText(text); }
 
-	QString pwEdit2Text() const
-	{
-		return pwEdit2->text();
-	}
+  QString pwEdit1Text() const { return pwEdit1->text(); }
 
+  QString pwEdit2Text() const { return pwEdit2->text(); }
 };
 
-#endif // PWCHANGEDIALOG_H
+#endif  // PWCHANGEDIALOG_H

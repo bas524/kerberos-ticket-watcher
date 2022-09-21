@@ -12,45 +12,33 @@
 
 #include "kinitdialog.h"
 
-KinitDialog::KinitDialog( QWidget* parent, const char* name,
-                         bool modal, Qt::WindowFlags fl)
-	: QDialog(parent, fl)
-{
-	setModal(modal);
-	setAccessibleName(name);
-	setupUi(this);
-    changeDetailsState(Qt::Unchecked);
-    changeRenewState(Qt::Checked);
+KinitDialog::KinitDialog(QWidget* parent, const char* name, bool modal, Qt::WindowFlags fl) : QDialog(parent, fl) {
+  setModal(modal);
+  setAccessibleName(name);
+  setupUi(this);
+  changeDetailsState(Qt::Unchecked);
+  changeRenewState(Qt::Checked);
 }
 
-KinitDialog::~KinitDialog() {}
+KinitDialog::~KinitDialog() = default;
 
-void KinitDialog::changeDetailsState( int state )
-{
-	qDebug("changeDetailsState called");
-	if(state == Qt::Checked)
-	{
-		detailsBox->show();
-	}
-	else if(state == Qt::Unchecked)
-	{
-		detailsBox->hide();
-	}
-	adjustSize();
+void KinitDialog::changeDetailsState(int state) {
+  qDebug("changeDetailsState called");
+  if (state == Qt::Checked) {
+    detailsBox->show();
+  } else if (state == Qt::Unchecked) {
+    detailsBox->hide();
+  }
+  adjustSize();
 }
 
-
-void KinitDialog::changeRenewState(int state)
-{
-	qDebug("changeRenewState called");
-	if(state == Qt::Checked)
-	{
-		renewtimeSpinBox->setEnabled(true);
-		renewUnitComboBox->setEnabled(true);
-	}
-	else if(state == Qt::Unchecked)
-	{
-		renewtimeSpinBox->setEnabled(false);
-		renewUnitComboBox->setEnabled(false);
-	}
+void KinitDialog::changeRenewState(int state) {
+  qDebug("changeRenewState called");
+  if (state == Qt::Checked) {
+    renewtimeSpinBox->setEnabled(true);
+    renewUnitComboBox->setEnabled(true);
+  } else if (state == Qt::Unchecked) {
+    renewtimeSpinBox->setEnabled(false);
+    renewUnitComboBox->setEnabled(false);
+  }
 }

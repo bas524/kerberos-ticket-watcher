@@ -13,63 +13,62 @@
 #    building the default target.
 
 
+find_program(GETTEXT_MSGMERGE_EXECUTABLE msgmerge)
 
-FIND_PROGRAM(GETTEXT_MSGMERGE_EXECUTABLE msgmerge)
+find_program(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
 
-FIND_PROGRAM(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
+macro(gettext_create_translations _potFile _allOption)
 
-MACRO(GETTEXT_CREATE_TRANSLATIONS _potFile _allOption)
+  set(_gmoFiles)
+  get_filename_component(_potBasename ${_potFile} NAME_WE)
+  get_filename_component(_absPotFile ${_potFile} ABSOLUTE)
 
-   SET(_gmoFiles)
-   GET_FILENAME_COMPONENT(_potBasename ${_potFile} NAME_WE)
-   GET_FILENAME_COMPONENT(_absPotFile ${_potFile} ABSOLUTE)
+  set(_addToAll)
+  set(_firstPoFile)
+  if (${_allOption} STREQUAL "ALL")
+    set(_addToAll "ALL")
+  else (${_allOption} STREQUAL "ALL")
+    set(_firstPoFile ${_allOption})
+  endif (${_allOption} STREQUAL "ALL")
 
-   SET(_addToAll)
-   SET(_firstPoFile)
-   IF(${_allOption} STREQUAL "ALL")
-      SET(_addToAll "ALL")
-   ELSE(${_allOption} STREQUAL "ALL")
-      SET(_firstPoFile ${_allOption})
-   ENDIF(${_allOption} STREQUAL "ALL")
+  foreach (_currentPoFile ${_firstPoFile} ${ARGN})
 
-   FOREACH (_currentPoFile ${_firstPoFile} ${ARGN})
+    #MESSAGE( STATUS "${_currentPoFile}" )
 
-      #MESSAGE( STATUS "${_currentPoFile}" )
+    get_filename_component(_absFile ${_currentPoFile} ABSOLUTE)
+    get_filename_component(_abs_PATH ${_absFile} PATH)
+    get_filename_component(_lang ${_absFile} NAME_WE)
 
-      GET_FILENAME_COMPONENT(_absFile ${_currentPoFile} ABSOLUTE)
-      GET_FILENAME_COMPONENT(_abs_PATH ${_absFile} PATH)
-      GET_FILENAME_COMPONENT(_lang ${_absFile} NAME_WE)
+    #MESSAGE( STATUS "LANG: ${_lang}")
 
-      #MESSAGE( STATUS "LANG: ${_lang}")
+    set(_gmoFile ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo)
 
-      SET(_gmoFile ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo)
+    #MESSAGE( STATUS "GMO: ${_gmoFile}" )
 
-      #MESSAGE( STATUS "GMO: ${_gmoFile}" )
+    add_custom_command(
+            OUTPUT ${_gmoFile}
+            COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${_absFile} ${_absPotFile}
+            COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${_gmoFile} ${_absFile}
+            DEPENDS ${_absPotFile} ${_absFile}
+    )
 
-      ADD_CUSTOM_COMMAND( 
-         OUTPUT ${_gmoFile} 
-         COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${_absFile} ${_absPotFile}
-         COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${_gmoFile} ${_absFile}
-         DEPENDS ${_absPotFile} ${_absFile} 
-      )
+    install(FILES ${_gmoFile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME ${_potBasename}.mo)
+    set(_gmoFiles ${_gmoFiles} ${_gmoFile})
 
-      INSTALL(FILES ${_gmoFile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME ${_potBasename}.mo) 
-      SET(_gmoFiles ${_gmoFiles} ${_gmoFile})
+  endforeach (_currentPoFile)
 
-   ENDFOREACH (_currentPoFile )
+  add_custom_target(translations ${_addToAll} DEPENDS ${_gmoFiles})
 
-   ADD_CUSTOM_TARGET(translations ${_addToAll} DEPENDS ${_gmoFiles})
+endmacro(gettext_create_translations)
 
-ENDMACRO(GETTEXT_CREATE_TRANSLATIONS )
-
-IF (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE )
-   SET(GETTEXT_FOUND TRUE)
-ELSE (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE )
-   SET(GETTEXT_FOUND FALSE)
-   IF (GetText_REQUIRED)
-      MESSAGE(FATAL_ERROR "GetText not found")
-   ENDIF (GetText_REQUIRED)
-ENDIF (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE )
+if (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE)
+  set(GETTEXT_FOUND TRUE)
+else (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE)
+  set(GETTEXT_FOUND FALSE)
+  if (GetText_REQUIRED)
+    message(FATAL_ERROR "GetText not found")
+  endif (GetText_REQUIRED)
+endif (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE)
 
 
 
