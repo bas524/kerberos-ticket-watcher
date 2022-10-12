@@ -15,7 +15,7 @@ namespace v5 {
 Cursor::Cursor(v5::CCache &cCache) : _cCache(cCache), _cur(nullptr) {
   krb5_error_code code = krb5_cc_start_seq_get(_cCache.context()(), _cCache(), &_cur);
   if (code) {
-    throw KRB5EXCEPTION(code, "Error while starting to retrieve tickets");
+    throw KRB5EXCEPTION(code, _cCache.context(), "Error while starting to retrieve tickets");
   }
 }
 Cursor::~Cursor() noexcept {
@@ -41,11 +41,11 @@ Cursor::Iterator Cursor::next() {
     return Cursor::Iterator(*this, {}, code);
   }
   if (code != 0) {
-    throw KRB5EXCEPTION(code, "Error while retrieving a ticket");
+    throw KRB5EXCEPTION(code, _cCache.context(), "Error while retrieving a ticket");
   }
   return Cursor::Iterator(*this, std::make_unique<Creds>(Creds(_cCache.context(), std::move(cred))), code);
 }
-Cursor::Iterator& Cursor::Iterator::operator++() {
+Cursor::Iterator &Cursor::Iterator::operator++() {
   auto item = _cursor.next();
   this->_code = item._code;
   this->_creds = std::move(item._creds);

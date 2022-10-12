@@ -1,5 +1,8 @@
 krb5-ticket-watcher
 
+Version 1.0.6
+- refactor code to be more c++
+
 Version 1.0.3
 - replace realm list in kinit with default realm only
   to build with krb5 1.7

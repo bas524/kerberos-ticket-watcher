@@ -1,17 +1,18 @@
 # set project's name
 project(krb5-ticket-watcher)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
-cmake_minimum_required(VERSION 2.6)
-
+cmake_minimum_required(VERSION 3.0)
+cmake_policy(SET CMP0075 NEW)
 
 set(PACKAGE krb5-ticket-watcher)
-set(VERSION 1.0.3)
+set(VERSION 1.0.4)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# with SET() command you can change variables or define new ones
-# here we define KTW_SRCS variable that contains a list of all .cpp files
-# note that we don't need \ at the end of line
 include_directories(src)
+
+add_executable(krb5-ticket-watcher)
 
 set(KTW_SRCS
     src/kinitdialog.cpp
@@ -38,6 +39,7 @@ set(KTW_SRCS
     src/krb5credsopts.h
     src/krb5timestamphelper.cpp
     src/krb5timestamphelper.h
+    src/stacktrace.h
     )
 
 # another list, this time it includes all header files that should be treated with moc
@@ -59,18 +61,8 @@ set(KTW_UIS
 
 # enable warnings
 add_definitions(-Wall -DTEXTDOMAIN=krb5-ticket-watcher)
-#ADD_DEFINITIONS( -DDEBUG )
 
-# by default only QtCore and QtGui modules are enabled
-# other modules must be enabled like this:
-set(QT_USE_QTNETWORK TRUE)
-
-# this command finds Qt4 libraries and sets all required variables
-# note that it's Qt4, not QT4 or qt4
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Network REQUIRED)
-find_package(Qt5Gui REQUIRED)
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets Gui Network REQUIRED)
 
 find_package(Gettext REQUIRED)
 if (GETTEXT_FOUND)
@@ -79,9 +71,6 @@ if (GETTEXT_FOUND)
 else (GETTEXT_FOUND)
   message(FATAL_ERROR "Gettext not found")
 endif (GETTEXT_FOUND)
-
-# add some useful macros and variables
-# (QT_USE_FILE is a variable defined by FIND_PACKAGE( Qt4 ) that contains a path to CMake script)
 
 # this will run uic on .ui files:
 qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
@@ -93,21 +82,9 @@ qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
 include_directories(${CMAKE_BINARY_DIR})
 
+find_package(KRB5 REQUIRED krb5)
+target_include_directories(krb5-ticket-watcher PRIVATE ${KRB5_INCLUDE_DIRS})
 
-find_program(KRB5-CONFIG krb5-config /usr/lib/mit/bin/)
-if (NOT KRB5-CONFIG)
-  message(FATAL_ERROR "krb5-config not found")
-endif (NOT KRB5-CONFIG)
-
-execute_process(COMMAND ${KRB5-CONFIG} --libs krb5 OUTPUT_VARIABLE KRB5-LIBS RESULT_VARIABLE RET)
-
-set(LIBS "")
-if (NOT RET)
-  string(STRIP ${KRB5-LIBS} KRB5LIBS)
-  set(LIBS ${LIBS} ${KRB5LIBS})
-else (NOT RET)
-  message(STATUS "krb5 libs not found ${KRB5-LIBS} ${RET}")
-endif (NOT RET)
 
 find_program(CREATEPOT createPot ${CMAKE_SOURCE_DIR}/po)
 if (NOT CREATEPOT)
@@ -119,14 +96,9 @@ add_custom_target(pot ${CREATEPOT} ${CMAKE_SOURCE_DIR}/po
 add_custom_target(backupclean find ${CMAKE_SOURCE_DIR} -name "*~" -print0 | xargs -0 rm -f)
 
 # here we instruct CMake to build "krb5-ticket-watcher" executable from all of the source files
-add_executable(krb5-ticket-watcher ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS})
-qt5_use_modules(krb5-ticket-watcher Core Gui Widgets Network)
-
-set(LIBS ${LIBS} ${QT_LIBRARIES})
-
-# last thing we have to do is to tell CMake what libraries our executable needs,
-# luckily FIND_PACKAGE prepared QT_LIBRARIES variable for us:
-target_link_libraries(krb5-ticket-watcher ${LIBS})
+target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS})
+target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
+target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
 
 install(TARGETS krb5-ticket-watcher RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/)

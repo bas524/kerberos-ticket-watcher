@@ -139,7 +139,11 @@ Ktw::Ktw(int &argc, char **argv, QWidget *parent, Qt::WindowFlags fl)
 
   qDebug("PromptInterval is %d min.", promptInterval);
 
-  setDefaultOptionsUsingCreds();
+  try {
+    setDefaultOptionsUsingCreds();
+  } catch (v5::Exception &ex) {
+    qDebug() << "setDefaultOptionsUsingCreds error : " << ex.what();
+  }
   initMainWindow();
   createTrayMenu();
   initTray();
@@ -156,11 +160,8 @@ Ktw::~Ktw() { _principal.reset(); }
 // private ------------------------------------------------------------------
 
 void Ktw::initTray() {
-  //  QPixmap pix(48, 24);
-  //  pix.loadFromData(trayimage, sizeof(trayimage), "PNG");
-  QPixmap pix = generateTrayIcon(0);
+  QPixmap pix = generateTrayIcon(-1);
   tray = new QSystemTrayIcon(QIcon(pix), this);
-  //  tray = new QSystemTrayIcon(QIcon::fromTheme("password-copy", QIcon(pix)), this);
   connect(tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), SLOT(trayClicked(QSystemTrayIcon::ActivationReason)));
   setTrayToolTip("");
   tray->setContextMenu(trayMenu);
@@ -307,15 +308,26 @@ void Ktw::destroyCredential() {
 
 void Ktw::initWorkflow(int type) {
   krb5_error_code retval = 0;
-  v5::Creds creds = v5::Creds::FromCCache(_context);
-
-  reReadCache();
-
+  bool isTicketExpired = false;
+  bool isPromptIntervalMoreThanTicketLifeTime = true;
   QString defRealm = _context.defaultRealm();
 
-  if (((creds.ticketEndTime() - _context.currentDateTime()) < 0) && (!defRealm.isEmpty())) {
+  if (type == 69 && !defRealm.isEmpty()) {
     kinit();
-  } else if (promptInterval * 60 >= (creds.ticketEndTime() - _context.currentDateTime())) {
+  }
+
+  try {
+    v5::Creds creds = v5::Creds::FromCCache(_context);
+    isTicketExpired = ((creds.ticketEndTime() - _context.currentDateTime()) < 0);
+    isPromptIntervalMoreThanTicketLifeTime = promptInterval * 60 >= (creds.ticketEndTime() - _context.currentDateTime());
+    reReadCache();
+  } catch (v5::Exception &ex) {
+    qWarning() << ex.what();
+  }
+
+  if (isTicketExpired && !defRealm.isEmpty()) {
+    kinit();
+  } else if (isPromptIntervalMoreThanTicketLifeTime) {
     qDebug("stop the timer");
 
     waitTimer.stop();
@@ -326,28 +338,28 @@ void Ktw::initWorkflow(int type) {
       if (ex.retval() == KRB5_KDC_UNREACH) {
         qWarning("cannot reach the KDC. Sleeping ...");
         retval = 0;
+      } else {
+        ex.rethrow();
       }
     }
     waitTimer.start(promptInterval * 60 * 1000);
   } else {
-    if (type == 69) {
-      v5::Creds my_creds = v5::Creds::FromCCache(_context);
-      // check for authorization
-      if (!_context.defaultRealm().isEmpty()) {
-        kinit();
-      }
-      retval = 0;
-    } else {
+    if (type != 69) {
       auto cCache = _context.ccache();
       if (_principal != nullptr) {
         auto newCreds = cCache.renewCredentials(*_principal);
-        tgtEndtime = creds.ticketEndTime();
+        tgtEndtime = newCreds.ticketEndTime();
         retval = 0;
       } else {
         retval = KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN;
       }
     }
 
+    try {
+      getPwExp(QString{});
+    } catch (std::exception &ex) {
+      qDebug() << ex.what();
+    }
     if (!retval) tray->showMessage(ki18n("Ticket renewed"), ki18n("Ticket successfully renewed."), QSystemTrayIcon::Information, 5000);
   }
 
@@ -368,15 +380,17 @@ void Ktw::expire_cb(
   }
 }
 
-long Ktw::get_pw_exp(const QString &pass) {
-  v5::CredsOpts opts = _context.credsOpts();
-  opts.setExpireCallback(expire_cb, nullptr);
-  v5::Creds creds = _context.initCreds(*_principal, opts, pass);
+long Ktw::getPwExp(const QString &pass) {
+  if (!pass.isEmpty()) {
+    v5::CredsOpts opts = _context.credsOpts();
+    opts.setExpireCallback(expire_cb, nullptr);
+    v5::Creds creds = _context.initCreds(*_principal, opts, pass);
+  }
   if (pw_exp == 0) {
-    throw KRB5EXCEPTION(1, "Password expiration time is 0, thats a problem");
+    throw KRB5EXCEPTION(1, _context, "Password expiration time is 0, thats a problem");
   }
 
-  long days = ((pw_exp - _context.currentDateTime()) / (60 * 60 * 24));
+  long days = daysToPwdExpire();
   QString ts = v5::TimestampHelper::toString(pw_exp);
   QString buff = ki18n("Password expires on %1").arg(ts);
 
@@ -384,6 +398,14 @@ long Ktw::get_pw_exp(const QString &pass) {
 
   tray->setIcon(pixmap);
   tray->setToolTip(buff);
+  return days;
+}
+
+long Ktw::daysToPwdExpire() {
+  long days = -1;
+  if (pw_exp != 0) {
+    days = ((pw_exp - _context.currentDateTime()) / (60 * 60 * 24));
+  }
   return days;
 }
 
@@ -426,7 +448,7 @@ void Ktw::kinit() {
     int ret = dlg->exec();
     if (ret == QDialog::Rejected) {
       qDebug("rejected");
-      return;
+      throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");
     }
     qDebug("accepted");
 
@@ -440,6 +462,7 @@ void Ktw::kinit() {
       qDebug("Error during parse_name: %s", ex.what());
       ok = true;
       errorTxt = ki18n("Invalid principal name");
+      QMessageBox::critical(this, ki18n("Failure"), errorTxt, QMessageBox::Ok, QMessageBox::Ok);
       continue;
     }
 
@@ -467,15 +490,12 @@ void Ktw::kinit() {
     try {
       credsOpts.setExpireCallback(expire_cb, nullptr);
       v5::Creds creds = _context.initCreds(*_principal, credsOpts, dlg->passwordLineEditText());
+      creds.storeInCacheFor(*_principal);
       tgtEndtime = creds.ticketEndTime();
-      // todo make func
-      if (pw_exp != 0) {
-        long days = ((pw_exp - _context.currentDateTime()) / (60 * 60 * 24));
-        QPixmap pixmap = generateTrayIcon(days);
-        QString ts = v5::TimestampHelper::toString(pw_exp);
-        QString buff = ki18n("Password expires on %1").arg(ts);
-
-        tray->setIcon(pixmap);
+      long days = daysToPwdExpire();
+      if (days != -1) {
+        QString buff = ki18n("Password expires on %1").arg(v5::TimestampHelper::toString(pw_exp));
+        tray->setIcon(generateTrayIcon(days));
         tray->setToolTip(buff);
       }
     } catch (v5::Exception &ex) {
@@ -509,7 +529,7 @@ void Ktw::kinit() {
             errorTxt = ki18n("Unknown realm");
             break;
           default:
-            errorTxt = ex.krb5ErrorMessage(_context);
+            errorTxt = ex.krb5ErrorMessage();
             break;
         }
         if (!errorTxt.isEmpty()) {
@@ -571,7 +591,7 @@ void Ktw::reinitCredential(const QString &password) {
   do {
     if (passwd.isEmpty()) {
       passwd = passwordDialog(errorText);
-      if (passwd.isNull()) throw KRB5EXCEPTION(-1, "Password is null");
+      if (passwd.isNull()) throw KRB5EXCEPTION(-1, _context, "Password is null");
     }
 
     try {
@@ -600,10 +620,10 @@ void Ktw::reinitCredential(const QString &password) {
           break;
         case KRB5_KDC_UNREACH:
           /* kdc unreachable, return */
-          QMessageBox::critical(this, ki18n("Failure"), ex.krb5ErrorMessage(_context), QMessageBox::Ok, QMessageBox::Ok);
+          QMessageBox::critical(this, ki18n("Failure"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
           repeat = false;
         default:
-          errorText = ex.krb5ErrorMessage(_context);
+          errorText = ex.krb5ErrorMessage();
           break;
       }
     }
@@ -612,7 +632,7 @@ void Ktw::reinitCredential(const QString &password) {
   } while (repeat);
 
   try {
-    long days = get_pw_exp(passwd);
+    long days = getPwExp(passwd);
     if (days < 7) {
       tray->showMessage(ki18n("Change the password"), ki18n("Password expires after %1 days").arg(days), QSystemTrayIcon::Warning, 5000);
       changePassword(passwd);
@@ -663,7 +683,7 @@ void Ktw::changePassword(const QString &oldpw) {
     if (oldPasswd.isEmpty() || !errorText.isEmpty()) {
       oldPasswd = passwordDialog(errorText);
 
-      if (oldPasswd.isNull()) throw KRB5EXCEPTION(-1, "old password is null");
+      if (oldPasswd.isNull()) throw KRB5EXCEPTION(-1, _context, "old password is null");
     }
     QString srv = "kadmin/changepw";
     try {
@@ -677,10 +697,10 @@ void Ktw::changePassword(const QString &oldpw) {
           break;
         case KRB5_KDC_UNREACH:
           /* kdc unreachable, return */
-          QMessageBox::critical(this, ki18n("Failure"), ex.krb5ErrorMessage(_context), QMessageBox::Ok, QMessageBox::Ok);
-          throw KRB5EXCEPTION(retval, "Can't reach service for change password");
+          QMessageBox::critical(this, ki18n("Failure"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
+          throw KRB5EXCEPTION(retval, _context, "Can't reach service for change password");
         default:
-          errorText = ex.krb5ErrorMessage(_context);
+          errorText = ex.krb5ErrorMessage();
           break;
       }
     }
@@ -720,8 +740,8 @@ void Ktw::changePassword(const QString &oldpw) {
   } catch (v5::Exception &ex) {
     retval = ex.retval();
     qDebug("changing password failed. %d : %s", retval, ex.what());
-    QMessageBox::critical(this, ki18n("Password change failed"), ex.krb5ErrorMessage(_context), QMessageBox::Ok, QMessageBox::Ok);
-    throw KRB5EXCEPTION(retval, "changing password failed");
+    QMessageBox::critical(this, ki18n("Password change failed"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
+    throw KRB5EXCEPTION(retval, _context, "changing password failed");
   }
 
   reinitCredential(p1);
@@ -831,7 +851,7 @@ void Ktw::buildCcacheInfos() {
     } else {
       errmsg += ki18n("Error while setting cache flags") + " (" + tktTypeName + ")";
     }
-    throw KRB5EXCEPTION(code, errmsg);
+    throw KRB5EXCEPTION(code, _context, errmsg);
   }
   _principal.reset();
   _principal = std::make_unique<v5::Principal>(cCache.getPrincipal());
@@ -1038,7 +1058,7 @@ bool Ktw::eventFilter(QObject *obj, QEvent *event) {
 void Ktw::paintFace(QPainter &painter, const QString &text, int iconSize, const QColor &textColor, const QColor &fillColor) {
   painter.setRenderHint(QPainter::Antialiasing);
   painter.setPen(Qt::NoPen);
-  painter.setBrush(QBrush(Qt::darkGray));
+  painter.setBrush(QBrush(fillColor));
   const int elipseSize = iconSize - 2;
   painter.drawEllipse(QRectF(1, 1, elipseSize, elipseSize));
 
@@ -1050,9 +1070,12 @@ void Ktw::paintFace(QPainter &painter, const QString &text, int iconSize, const 
 QPixmap Ktw::generateTrayIcon(long days) {
   QColor fillColor = Qt::darkGray;
   QColor textColor = Qt::white;
-  if (days < 7) {
+  if (days < 7 && days >= 0) {
     fillColor = Qt::lightGray;
     textColor = Qt::red;
+  } else if (days == -1) {
+    fillColor = Qt::red;
+    textColor = Qt::lightGray;
   }
   int dpr = static_cast<int>(devicePixelRatioF());
   const int iconSize = 24;
@@ -1060,7 +1083,11 @@ QPixmap Ktw::generateTrayIcon(long days) {
   buffer.setDevicePixelRatio(dpr);
   buffer.fill(Qt::transparent);
   QPainter painter(&buffer);
-  paintFace(painter, QString("%1").arg(days), iconSize, textColor, fillColor);
+  QString value = QString("%1").arg(days);
+  if (days == -1) {
+    value = QString("---");
+  }
+  paintFace(painter, value, iconSize, textColor, fillColor);
   painter.drawPixmap(0, 0, buffer);
 
   return buffer;

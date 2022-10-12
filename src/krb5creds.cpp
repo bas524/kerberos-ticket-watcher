@@ -23,7 +23,7 @@ void Creds::retriveCreds(CCache& cCache, Principal& principal, Principal& target
   mcreds.server = targetPrincipal();
   krb5_error_code retval = krb5_cc_retrieve_cred(_context(), cCache(), 0, &mcreds, _creds.get());
   if (retval != 0) {
-    throw KRB5EXCEPTION(retval, "Can't retrive creds from ccache");
+    throw KRB5EXCEPTION(retval, _context, "Can't retrive creds from ccache");
   }
 }
 Creds Creds::FromCCache(Context& context) {
@@ -93,7 +93,7 @@ QString Creds::clientName() const {
   QString result;
   krb5_error_code retval = krb5_unparse_name(_context(), _creds->client, &name);
   if (retval) {
-    throw KRB5EXCEPTION(retval, "Error while unparsing client name");
+    throw KRB5EXCEPTION(retval, _context, "Error while unparsing client name");
   }
   result = name;
   krb5_free_unparsed_name(_context(), name);
@@ -104,7 +104,7 @@ QString Creds::serverName() const {
   QString result;
   krb5_error_code retval = krb5_unparse_name(_context(), _creds->server, &name);
   if (retval) {
-    throw KRB5EXCEPTION(retval, "Error while unparsing server name");
+    throw KRB5EXCEPTION(retval, _context, "Error while unparsing server name");
   }
   result = name;
   krb5_free_unparsed_name(_context(), name);
@@ -167,12 +167,12 @@ void Creds::storeInCacheFor(Principal& principal) {
 
   krb5_error_code retval = krb5_cc_initialize(_context(), cCache(), principal());
   if (retval) {
-    throw KRB5EXCEPTION(retval, "Can't initialize cc");
+    throw KRB5EXCEPTION(retval, _context, "Can't initialize cc");
   }
 
   retval = krb5_cc_store_cred(_context(), cCache(), _creds.get());
   if (retval) {
-    throw KRB5EXCEPTION(retval, "Can't store cc");
+    throw KRB5EXCEPTION(retval, _context, "Can't store cc");
   }
 }
 void Creds::changePassword(const QString& newPassword) {
@@ -186,7 +186,7 @@ void Creds::changePassword(const QString& newPassword) {
                                 QString::fromLocal8Bit(result_string.data, result_string.length));
     krb5_free_data_contents(_context(), &result_code_string);
     krb5_free_data_contents(_context(), &result_string);
-    throw KRB5EXCEPTION(retval, errorStr);
+    throw KRB5EXCEPTION(retval, _context, errorStr);
   }
   krb5_free_data_contents(_context(), &result_code_string);
   krb5_free_data_contents(_context(), &result_string);

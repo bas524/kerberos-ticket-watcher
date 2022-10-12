@@ -13,7 +13,7 @@ namespace v5 {
 v5::Ticket::Ticket(Creds& creds) : _creds(creds), _tkt(nullptr) {
   krb5_error_code retval = krb5_decode_ticket(&_creds._creds->ticket, &_tkt);
   if (retval) {
-    throw KRB5EXCEPTION(retval, "Can't decode ticket");
+    throw KRB5EXCEPTION(retval, _creds._context, "Can't decode ticket");
   }
 }
 v5::Ticket::~Ticket() noexcept { krb5_free_ticket(_creds._context(), _tkt); }

@@ -92,10 +92,11 @@ class Ktw : public QWidget, private Ui::MainWidget {
   QPixmap generateTrayIcon(long days);
   void paintFace(QPainter &painter, const QString &text, int iconSize, const QColor &textColor, const QColor &fillColor);
 
-  /// get_pw_exp
+  /// getPwExp
   /// \param pass
   /// \return count of days
-  long get_pw_exp(const QString &pass);
+  long getPwExp(const QString &pass);
+  long daysToPwdExpire();
 
   static void expire_cb(
       krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req);

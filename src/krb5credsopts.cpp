@@ -19,7 +19,7 @@ krb5_get_init_creds_opt *CredsOpts::operator()() const { return _opt; }
 void CredsOpts::setExpireCallback(krb5_expire_callback_func cb, void *data) {
   krb5_error_code retval = krb5_get_init_creds_opt_set_expire_callback(_context(), _opt, cb, data);
   if (retval != 0) {
-    throw KRB5EXCEPTION(retval, "Can't set expire callback");
+    throw KRB5EXCEPTION(retval, _context, "Can't set expire callback");
   }
 }
 }  // namespace v5

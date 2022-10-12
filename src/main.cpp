@@ -32,6 +32,8 @@
 #include <QMessageBox>
 
 #include "krb5ticketwatcher.h"
+#include "krb5exception.h"
+#include "stacktrace.h"
 
 void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg) {
   switch (type) {
@@ -53,11 +55,6 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
     case QtInfoMsg:
       fprintf(stdout, "Info: %s\n", qPrintable(msg));
       break;
-      /*
-        case QtSystemMsg:
-        fprintf( stderr, "System: %s\n", qPrintable(msg) );
-        break;
-      */
   }
 }
 
@@ -77,7 +74,7 @@ int main(int argc, char **argv) {
       systray_available = QSystemTrayIcon::isSystemTrayAvailable();
     }
     if (!systray_available) {
-      QMessageBox::critical(0,
+      QMessageBox::critical(nullptr,
                             ki18n("Systray"),
                             ki18n("I couldn't detect any system tray "
                                   "on this system."));
@@ -86,7 +83,16 @@ int main(int argc, char **argv) {
   }
   QApplication::setQuitOnLastWindowClosed(false);
 
-  Ktw w(argc, argv);
-  w.initWorkflow(69);
-  return app.exec();
+  try {
+    Ktw w(argc, argv);
+    w.initWorkflow(69);
+    return app.exec();
+  } catch (v5::Exception &ex) {
+    if (ex.retval() != -1) {
+      QMessageBox::critical(nullptr, ki18n("Failure"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
+      myMessageOutput(QtCriticalMsg, {}, QString(ex.what()));
+      print_stacktrace();
+    }
+    return ex.retval();
+  }
 }
