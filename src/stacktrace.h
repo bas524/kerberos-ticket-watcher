@@ -1,0 +1,8 @@
+//
+// Created by Alexander Bychuk on 05.10.2022.
+//
+
+#ifndef KRB5_TICKET_WATCHER_SRC_STACKTRACE_H_
+#define KRB5_TICKET_WATCHER_SRC_STACKTRACE_H_
+
+#endif //KRB5_TICKET_WATCHER_SRC_STACKTRACE_H_
