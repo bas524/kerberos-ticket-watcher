@@ -99,6 +99,7 @@ add_custom_target(backupclean find ${CMAKE_SOURCE_DIR} -name "*~" -print0 | xarg
 target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS})
 target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
+target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
 
 install(TARGETS krb5-ticket-watcher RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
 install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/)

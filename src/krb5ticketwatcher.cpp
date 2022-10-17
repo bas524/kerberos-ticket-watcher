@@ -418,9 +418,11 @@ void Ktw::kinit() {
   v5::CredsOpts credsOpts = _context.credsOpts();
 
   QString defRealm = _context.defaultRealm();
+  std::unique_ptr<KinitDialog> dlg;
 
   do {
-    auto dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
+    ok = false;
+    dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
 
     dlg->errorLabelSetText(errorTxt);
     dlg->userLineEditSetText(getUserName());
@@ -448,7 +450,7 @@ void Ktw::kinit() {
     int ret = dlg->exec();
     if (ret == QDialog::Rejected) {
       qDebug("rejected");
-      throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");
+      throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");  // TODO: May be only continue this flow?
     }
     qDebug("accepted");
 
