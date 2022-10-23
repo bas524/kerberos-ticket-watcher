@@ -1,0 +1,25 @@
+name: build and cpack
+on: [ push, pull_request ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # install dependencies
+    - name: boost
+      run: sudo apt-get update -y && sudo apt-get install -yq gettext kerberos krb5-user krb5-config libkrb5-dev gcc g++ make cmake qt5-default
+    # build project
+    - name: mkdir
+      run: mkdir cmake-build-release
+    - name: cmake cmake-build-release
+      run: cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -Bcmake-build-release -H.
+    - name: cmake make
+      run: cmake --build cmake-build-release/ --target all
+      env:
+        MAKEFLAGS: "-j2"
+    # upload artifact, game binary
+    - name: Upload Example binary
+      uses: actions/upload-artifact@v1
+      with:
+        name: upload binary
+        path: cmake-build-release/krb5-ticket-watcher
