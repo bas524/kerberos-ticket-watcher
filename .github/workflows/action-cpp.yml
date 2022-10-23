@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     # install dependencies
     - name: boost
       run: sudo apt-get update -y && sudo apt-get install -yq gettext kerberos krb5-user krb5-config libkrb5-dev gcc g++ make cmake qt5-default
