@@ -181,9 +181,18 @@ void Creds::changePassword(const QString& newPassword) {
   krb5_error_code retval =
       krb5_change_password(_context(), _creds.get(), newPassword.toUtf8().data(), &result_code, &result_code_string, &result_string);
   if (retval != 0) {
-    QString errorStr = QString("Can't change password, error (%1) : %2")
-                           .arg(QString::fromLocal8Bit(result_code_string.data, result_code_string.length),
-                                QString::fromLocal8Bit(result_string.data, result_string.length));
+    QString hrMessage;
+    char* messageOut = nullptr;
+    retval = krb5_chpw_message(_context(), (const krb5_data*)&result_string, &messageOut);
+    if (retval == 0) {
+      hrMessage = QString::fromLocal8Bit(messageOut);
+    } else {
+      hrMessage = QString::fromLocal8Bit(result_string.data, result_string.length);
+    }
+    krb5_free_string(_context(), messageOut);
+
+    QString errorStr =
+        QString("Can't change password, error (%1) : %2").arg(QString::fromLocal8Bit(result_code_string.data, result_code_string.length), hrMessage);
     krb5_free_data_contents(_context(), &result_code_string);
     krb5_free_data_contents(_context(), &result_string);
     throw KRB5EXCEPTION(retval, _context, errorStr);
