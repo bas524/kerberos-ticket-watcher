@@ -3,11 +3,15 @@ on: [ push, pull_request ]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+        compiler: [ clang, gcc ]
     steps:
     - uses: actions/checkout@v3
     # install dependencies
     - name: devel-pkgs
-      run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev gcc g++ make cmake qt5-default
+      run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
     # build project
     - name: mkdir
       run: mkdir cmake-build-release
@@ -18,8 +22,8 @@ jobs:
       env:
         MAKEFLAGS: "-j2"
     # upload artifact, game binary
-    - name: Upload Example binary
+    - name: Upload krb5-ticket-watcher binary
       uses: actions/upload-artifact@v1
       with:
-        name: upload binary
+        name: ${{ format('krb5-ticket-watcher.{0}.{1}', matrix.os, matrix.compiler) }}
         path: cmake-build-release/krb5-ticket-watcher
