@@ -98,16 +98,19 @@ target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widget
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
 target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
 
-install(TARGETS krb5-ticket-watcher RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/)
-install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps/)
-
 add_subdirectory(po)
+
+install(TARGETS krb5-ticket-watcher RUNTIME DESTINATION bin COMPONENT application)
+install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.desktop DESTINATION share/applications/ COMPONENT application)
+install(FILES ${CMAKE_SOURCE_DIR}/krb5-ticket-watcher.png DESTINATION share/pixmaps/ COMPONENT application)
 
 set(CPACK_SOURCE_IGNORE_FILES
     #svn files
     "\\\\.svn/"
     "\\\\.cvsignore$"
+    #git files
+    "\\\\.git/"
+    "\\\\.github/"
     # temporary files
     "\\\\.swp$"
     # backup files
@@ -133,10 +136,13 @@ set(CPACK_SOURCE_IGNORE_FILES
     "Makefile\\\\.in$"
     )
 
+
 set(CPACK_PACKAGE_NAME "krb5-ticket-watcher")
 set(CPACK_PACKAGE_VERSION "1.0.4")
 set(CPACK_GENERATOR "TBZ2")
 # set(CPACK_SOURCE_GENERATOR "TBZ2")
 # set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
-include(CPack)
 
+include(CPack)
+cpack_add_component(application DISPLAY_NAME "Kerberos Ticket Watcher App" REQUIRED)
+cpack_add_component(localization DISPLAY_NAME "Kerberos Ticket Watcher Localization " REQUIRED)

@@ -52,7 +52,7 @@ macro(gettext_create_translations _potFile _allOption)
             DEPENDS ${_absPotFile} ${_absFile}
     )
 
-    install(FILES ${_gmoFile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME ${_potBasename}.mo)
+    install(FILES ${_gmoFile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME ${_potBasename}.mo COMPONENT localization)
     set(_gmoFiles ${_gmoFiles} ${_gmoFile})
 
   endforeach (_currentPoFile)
