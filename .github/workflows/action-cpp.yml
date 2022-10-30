@@ -27,5 +27,5 @@ jobs:
     - name: Upload krb5-ticket-watcher binary
       uses: actions/upload-artifact@v1
       with:
-        name: ${{ format('krb5-ticket-watcher.{0}.{1}', matrix.os, matrix.compiler) }}
+        name: ${{ format('krb5-ticket-watcher-1.0.4-Linux.{0}.{1}.tar.bz2', matrix.os, matrix.compiler) }}
         path: cmake-build-release/krb5-ticket-watcher-1.0.4-Linux.tar.bz2
