@@ -1,5 +1,11 @@
 krb5-ticket-watcher
 
+2022-10-30
+- version 1.0.4
+- replaced tray icon with circle and digits, which means how many days stay before password will expired
+- refactor code from "c with classes" with simple c++
+- refactor cmake and cpack scripts
+
 2009-07-18:
 - version 1.0.3
 - replace realm list in kinit with default realm only
