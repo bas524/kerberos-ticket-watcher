@@ -21,9 +21,11 @@ jobs:
       run: cmake --build cmake-build-release/ --target all
       env:
         MAKEFLAGS: "-j2"
+    - name: cpack
+      run: cd cmake-build-release && cpack && cd ..
     # upload artifact, game binary
     - name: Upload krb5-ticket-watcher binary
       uses: actions/upload-artifact@v1
       with:
         name: ${{ format('krb5-ticket-watcher.{0}.{1}', matrix.os, matrix.compiler) }}
-        path: cmake-build-release/krb5-ticket-watcher
+        path: cmake-build-release/krb5-ticket-watcher-1.0.4-Linux.tar.bz2
