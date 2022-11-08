@@ -470,12 +470,12 @@ void Ktw::kinit() {
 
     forwardable = dlg->forwardCheckBoxIsChecked();
     proxiable = dlg->proxyCheckBoxIsChecked();
+    lifetime = 0;
+    renewtime = 0;
 
     if (dlg->lifetimeSpinBoxValue() >= 0) {
       lifetime = dlg->lifetimeSpinBoxValue();
       lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
-    } else {
-      lifetime = 0;
     }
 
     if (!dlg->renewCheckBoxIsChecked()) {
@@ -483,8 +483,6 @@ void Ktw::kinit() {
     } else if (dlg->renewtimeSpinBoxValue() >= 0) {
       renewtime = dlg->renewtimeSpinBoxValue();
       renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
-    } else {
-      renewtime = 0;
     }
 
     setOptions(credsOpts);
@@ -612,12 +610,8 @@ void Ktw::reinitCredential(const QString &password) {
           break;
         case KRB5KDC_ERR_KEY_EXP:
           /* password expired */ {
-            try {
-              changePassword(passwd);
-            } catch (std::exception &ex) {
-              qDebug("reinitCredential %s", ex.what());
-              repeat = false;
-            }
+            repeat = false;
+            QMessageBox::warning(this, ki18n("Warning"), ki18n("Your password expired, please change it"), QMessageBox::Ok, QMessageBox::Ok);
           }
           break;
         case KRB5_KDC_UNREACH:
@@ -637,7 +631,6 @@ void Ktw::reinitCredential(const QString &password) {
     long days = getPwExp(passwd);
     if (days < 7) {
       tray->showMessage(ki18n("Change the password"), ki18n("Password expires after %1 days").arg(days), QSystemTrayIcon::Warning, 5000);
-      changePassword(passwd);
     }
   } catch (v5::Exception &ex) {
     tray->showMessage("Password check failed", "Can not check the password lifetime.", QSystemTrayIcon::Warning, 3000);
@@ -741,8 +734,9 @@ void Ktw::changePassword(const QString &oldpw) {
     creds->changePassword(p1);
   } catch (v5::Exception &ex) {
     retval = ex.retval();
+    QString msg = QString("%1 \n %2").arg(QString::fromStdString(ex.simpleWhat()), ex.krb5ErrorMessage());
     qDebug("changing password failed. %d : %s", retval, ex.what());
-    QMessageBox::critical(this, ki18n("Password change failed"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
+    QMessageBox::critical(this, ki18n("Password change failed"), msg, QMessageBox::Ok, QMessageBox::Ok);
     throw KRB5EXCEPTION(retval, _context, "changing password failed");
   }
 
