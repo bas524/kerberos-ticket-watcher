@@ -150,7 +150,7 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "krb5-ticket-watcher is a tray applet for w
 It's very useful in corporate network for linux-workstations which should be in the AD-domain.")
 set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/bas524/kerberos-ticket-watcher")
 set(CPACK_DEBIAN_PACKAGE_LICENSE "GPLv2.0")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "krb5-user, krb5-config")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "krb5-user, krb5-config, libqt5core5a, libqt5gui5, libqt5widgets5, libqt5network5, libicu66")
 
 #set(CPACK_RPM_PACKAGE_LICENSE "GPLv2.0")
 
