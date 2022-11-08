@@ -5,27 +5,27 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-20.04]
+        os: [ ubuntu-22.04, ubuntu-20.04 ]
         compiler: [ clang, gcc ]
     steps:
-    - uses: actions/checkout@v3
-    # install dependencies
-    - name: devel-pkgs
-      run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
-    # build project
-    - name: mkdir
-      run: mkdir cmake-build-release
-    - name: cmake cmake-build-release
-      run: cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -Bcmake-build-release -H.
-    - name: cmake make
-      run: cmake --build cmake-build-release/ --target all
-      env:
-        MAKEFLAGS: "-j2"
-    - name: cpack
-      run: cd cmake-build-release && cpack && cd ..
-    # upload artifact, game binary
-    - name: Upload krb5-ticket-watcher binary
-      uses: actions/upload-artifact@v2
-      with:
-        name: ${{ format('krb5-ticket-watcher-1.0.4-Linux.{0}.{1}.tar.bz2', matrix.os, matrix.compiler) }}
-        path: cmake-build-release/krb5-ticket-watcher-1.0.4-Linux.tar.bz2
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
+        run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G TBZ2 && cpack -G DEB cd ..
+      # upload artifact, game binary
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4-Linux.{0}.{1}.tar.bz2', matrix.os, matrix.compiler) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-Linux.tar.bz2

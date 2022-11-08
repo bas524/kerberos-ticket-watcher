@@ -139,9 +139,19 @@ set(CPACK_SOURCE_IGNORE_FILES
 
 set(CPACK_PACKAGE_NAME "krb5-ticket-watcher")
 set(CPACK_PACKAGE_VERSION "1.0.4")
-set(CPACK_GENERATOR "TBZ2")
-# set(CPACK_SOURCE_GENERATOR "TBZ2")
-# set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+set(CPACK_PACKAGE_VENDOR "community")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${VERLIHUB_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
+
+set(CPACK_DEBIAN_PACKAGE_NAME ${CPACK_PACKAGE_NAME})
+set(CPACK_DEBIAN_PACKAGE_VERSION ${CPACK_PACKAGE_VERSION})
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "bas524")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "krb5-ticket-watcher is a tray applet for watching, renewing, and reinitializing Kerberos tickets.
+It's very useful in corporate network for linux-workstations which should be in the AD-domain.")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/bas524/kerberos-ticket-watcher")
+set(CPACK_DEBIAN_PACKAGE_LICENSE "GPLv2.0")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "krb5-user, krb5-config")
+
+#set(CPACK_RPM_PACKAGE_LICENSE "GPLv2.0")
 
 include(CPack)
 cpack_add_component(application DISPLAY_NAME "Kerberos Ticket Watcher App" REQUIRED)
