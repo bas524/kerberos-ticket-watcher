@@ -140,10 +140,11 @@ set(CPACK_SOURCE_IGNORE_FILES
 set(CPACK_PACKAGE_NAME "krb5-ticket-watcher")
 set(CPACK_PACKAGE_VERSION "1.0.4")
 set(CPACK_PACKAGE_VENDOR "community")
-set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${VERLIHUB_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
 
 set(CPACK_DEBIAN_PACKAGE_NAME ${CPACK_PACKAGE_NAME})
 set(CPACK_DEBIAN_PACKAGE_VERSION ${CPACK_PACKAGE_VERSION})
+set(CPACK_DEBIAN_PACKAGE_SECTION "net")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "bas524")
 set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "krb5-ticket-watcher is a tray applet for watching, renewing, and reinitializing Kerberos tickets.
 It's very useful in corporate network for linux-workstations which should be in the AD-domain.")
