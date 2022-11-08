@@ -26,7 +26,7 @@ jobs:
         run: cd cmake-build-release && cpack -G DEB && cpack -G DEB cd ..
       # upload artifact, game binary
       - name: Upload krb5-ticket-watcher binary
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ format('krb5-ticket-watcher-1.0.4.{0}.{1}.deb', matrix.os, matrix.compiler) }}
           path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.deb
