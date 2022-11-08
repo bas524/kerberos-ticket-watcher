@@ -46,6 +46,7 @@ std::string Exception::krb5ErrorMessage(krb5_error_code retval, Context &context
   return msg;
 }
 QString Exception::krb5ErrorMessage() const { return QString::fromStdString(_krb5ErrMessage); }
+const std::string &Exception::simpleWhat() const { return _what; }
 void Exception::rethrow() const {
   Exception ex(*this);
   std::stringstream ss;

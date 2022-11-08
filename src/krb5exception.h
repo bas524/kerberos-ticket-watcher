@@ -36,6 +36,7 @@ class Exception : public std::exception {
   krb5_error_code retval() const;
   QString krb5ErrorMessage() const;
   static std::string krb5ErrorMessage(krb5_error_code retval, Context &context);
+  const std::string &simpleWhat() const;
   void rethrow() const;
 };
 }  // namespace v5
