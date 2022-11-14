@@ -64,12 +64,19 @@ jobs:
       - name: cpack-deb
         if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
         run: cd cmake-build-release && cpack -G DEB && cd ..
-      #      - name: cpack-rpm
-      #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
-      #        run: cd cmake-build-release && cpack -G RPM && cd ..
-      # upload artifact
+        #      - name: cpack-rpm
+        #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+        #        run: cd cmake-build-release && cpack -G RPM && cd ..
+        # upload artifact
+      - name: container
+        uses: mad9000/actions-find-and-replace-string@2
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
+
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', matrix.container) }}
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
           path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
