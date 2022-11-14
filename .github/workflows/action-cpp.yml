@@ -29,10 +29,10 @@ jobs:
       # install dependencies
       - name: devel-pkgs-ubuntu
         if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
-        run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
-      - name: devel-pkgs-ubuntu
+        run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+      - name: devel-pkgs-centos
         if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
-        run: sudo yum update -y && sudo yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
+        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
