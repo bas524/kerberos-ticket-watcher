@@ -37,7 +37,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
       - name: devel-pkgs-ubuntu-latest
         if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian')
         run: |
@@ -48,7 +48,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
       #      - name: devel-pkgs-centos
       #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
       #        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
