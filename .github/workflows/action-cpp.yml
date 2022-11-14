@@ -17,11 +17,12 @@ jobs:
           - centos:latest
           - fedora:latest
 
-      container:
-        image: ${{ matrix.container }}
-        #      matrix:
-        #        os: [ ubuntu-22.04, ubuntu-20.04 ]
-        #        compiler: [ clang, gcc ]
+    container:
+      image: ${{ matrix.container }}
+
+    #matrix:
+    #  os: [ ubuntu-22.04, ubuntu-20.04 ]
+    #  compiler: [ clang, gcc ]
 
     steps:
       - uses: actions/checkout@v3
