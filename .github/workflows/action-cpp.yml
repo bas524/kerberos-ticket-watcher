@@ -27,9 +27,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # install dependencies
-      - name: devel-pkgs-ubuntu
-        if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
+      - name: devel-pkgs-ubuntu-20.04
+        if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian')
         run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+      - name: devel-pkgs-ubuntu-latest
+        if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian')
+        run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
       #      - name: devel-pkgs-centos
       #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
       #        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
