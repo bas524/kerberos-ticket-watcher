@@ -29,10 +29,24 @@ jobs:
       # install dependencies
       - name: devel-pkgs-ubuntu-20.04
         if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian')
-        run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+        run: |
+          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
       - name: devel-pkgs-ubuntu-latest
         if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian')
-        run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
+        run: |
+          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
       #      - name: devel-pkgs-centos
       #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
       #        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
