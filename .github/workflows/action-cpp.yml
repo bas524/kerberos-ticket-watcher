@@ -30,6 +30,7 @@ jobs:
       - name: devel-pkgs-ubuntu-20.04
         if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian')
         run: |
+          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
           echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
           echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
@@ -40,6 +41,7 @@ jobs:
       - name: devel-pkgs-ubuntu-latest
         if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian')
         run: |
+          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
           echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
           echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
