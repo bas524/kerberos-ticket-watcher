@@ -11,11 +11,11 @@ jobs:
         container:
           - ubuntu:22.04
           - ubuntu:20.04
-          - debian:bullseye
-          - debian:buster
-          - centos:centos8
-          - centos:latest
-          - fedora:latest
+    #          - debian:bullseye
+    #          - debian:buster
+    #          - centos:centos8
+    #          - centos:latest
+    #          - fedora:latest
 
     container:
       image: ${{ matrix.container }}
@@ -30,9 +30,9 @@ jobs:
       - name: devel-pkgs-ubuntu
         if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
         run: apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
-      - name: devel-pkgs-centos
-        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
-        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
+      #      - name: devel-pkgs-centos
+      #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+      #        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -45,9 +45,9 @@ jobs:
       - name: cpack-deb
         if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
         run: cd cmake-build-release && cpack -G DEB && cd ..
-      - name: cpack-rpm
-        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
-        run: cd cmake-build-release && cpack -G RPM && cd ..
+      #      - name: cpack-rpm
+      #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+      #        run: cd cmake-build-release && cpack -G RPM && cd ..
       # upload artifact
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
