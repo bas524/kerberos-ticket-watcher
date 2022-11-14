@@ -4,14 +4,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      #
+      # matrix for containers
+      #
       matrix:
-        os: [ ubuntu-22.04, ubuntu-20.04 ]
-        compiler: [ clang, gcc ]
+        container:
+          - ubuntu:22.04
+          - ubuntu:20.04
+          - debian:bullseye
+          - debian:buster
+          - centos:centos8
+          - centos:latest
+          - fedora:latest
+
+      container:
+        image: ${{ matrix.container }}
+        #      matrix:
+        #        os: [ ubuntu-22.04, ubuntu-20.04 ]
+        #        compiler: [ clang, gcc ]
+
     steps:
       - uses: actions/checkout@v3
       # install dependencies
-      - name: devel-pkgs
+      - name: devel-pkgs-ubuntu
+        if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
         run: sudo apt-get update -y && sudo apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default
+      - name: devel-pkgs-ubuntu
+        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+        run: sudo yum update -y && sudo yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -22,11 +42,14 @@ jobs:
         env:
           MAKEFLAGS: "-j2"
       - name: cpack-deb
-        if: startsWith(matrix.os,'ubuntu')
-        run: cd cmake-build-release && cpack -G DEB && cpack -G DEB cd ..
-      # upload artifact, game binary
+        if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
+        run: cd cmake-build-release && cpack -G DEB && cd ..
+      - name: cpack-rpm
+        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+        run: cd cmake-build-release && cpack -G RPM && cd ..
+      # upload artifact
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}.{1}.deb', matrix.os, matrix.compiler) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.deb
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', matrix.container) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
