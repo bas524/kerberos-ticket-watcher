@@ -68,8 +68,8 @@ jobs:
         #        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
         #        run: cd cmake-build-release && cpack -G RPM && cd ..
         # upload artifact
-      - name: container
-        uses: mad9000/actions-find-and-replace-string@2
+      - uses: mad9000/actions-find-and-replace-string@2
+        id: container
         with:
           source: ${{ matrix.container }}
           find: ':'        # we want to remove : from container name
