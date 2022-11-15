@@ -9,13 +9,13 @@ jobs:
       #
       matrix:
         container:
-          - ubuntu:22.04
-          - ubuntu:20.04
-          - debian:bullseye
-          - debian:buster
+          #          - ubuntu:22.04
+          #          - ubuntu:20.04
+          #          - debian:bullseye
+          #          - debian:buster
           #          - centos:centos8
           - centos:latest
-          - fedora:latest
+    #          - fedora:latest
 
     container:
       image: ${{ matrix.container }}
@@ -27,28 +27,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # install dependencies
-      - name: devel-pkgs-ubuntu-20.04
-        if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian:buster')
-        run: |
-          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
-      - name: devel-pkgs-ubuntu-latest
-        if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian:bullseye')
-        run: |
-          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
+      #      - name: devel-pkgs-ubuntu-20.04
+      #        if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian:buster')
+      #        run: |
+      #          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections &&
+      #          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
+      #      - name: devel-pkgs-ubuntu-latest
+      #        if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian:bullseye')
+      #        run: |
+      #          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections &&
+      #          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections &&
+      #          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
 
       - name: devel-pkgs-centos
         if: startsWith(matrix.container,'centos')
@@ -57,11 +57,10 @@ jobs:
           sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&
           sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* &&
           cd / &&
-          yum update -y && yum -y install epel-release &&
-          yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
-      - name: devel-pkgs-fedora
-        if: startsWith(matrix.container,'fedora')
-        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
+          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build
+      #      - name: devel-pkgs-fedora
+      #        if: startsWith(matrix.container,'fedora')
+      #        run: yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
