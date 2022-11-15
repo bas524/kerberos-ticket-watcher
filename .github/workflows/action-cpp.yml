@@ -13,7 +13,6 @@ jobs:
           - ubuntu:20.04
           - debian:bullseye
           - debian:buster
-          - centos:stream
           - centos:latest
           - fedora:latest
 
