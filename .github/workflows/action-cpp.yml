@@ -13,7 +13,7 @@ jobs:
           - ubuntu:20.04
           - debian:bullseye
           - debian:buster
-          - centos:centos8
+          #          - centos:centos8
           - centos:latest
           - fedora:latest
 
