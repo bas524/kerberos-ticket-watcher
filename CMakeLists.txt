@@ -97,6 +97,7 @@ target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_
 target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
 target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
+add_link_options($<$<CONFIG:RELEASE>:-s>)
 
 add_subdirectory(po)
 
