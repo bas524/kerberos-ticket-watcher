@@ -57,7 +57,7 @@ jobs:
           sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&
           sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* &&
           cd / &&
-          yum update && yum -y install epel-release &&
+          yum update -y && yum -y install epel-release &&
           yum update -y && yum install -yq gettext krb5-devel qt5-devel qt5-qtbase-devel qt5-qttools rpm-build
       - name: devel-pkgs-fedora
         if: startsWith(matrix.container,'fedora')
