@@ -97,6 +97,7 @@ target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_
 target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
 target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
+add_link_options($<$<CONFIG:RELEASE>:-s>)
 
 add_subdirectory(po)
 
@@ -139,9 +140,30 @@ set(CPACK_SOURCE_IGNORE_FILES
 
 set(CPACK_PACKAGE_NAME "krb5-ticket-watcher")
 set(CPACK_PACKAGE_VERSION "1.0.4")
-set(CPACK_GENERATOR "TBZ2")
-# set(CPACK_SOURCE_GENERATOR "TBZ2")
-# set(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}")
+set(CPACK_PACKAGE_VENDOR "community")
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
+set(CMAKE_PROJECT_HOMEPAGE_URL "https://github.com/bas524/kerberos-ticket-watcher")
+set(CPACK_PACKAGE_CONTACT "bas524")
+set(CPACK_PACKAGE_DESCRIPTION "krb5-ticket-watcher is a tray applet for watching, renewing, and reinitializing Kerberos tickets.
+It's very useful in corporate network for linux-workstations which should be in the AD-domain.")
+
+set(CPACK_DEBIAN_PACKAGE_NAME ${CPACK_PACKAGE_NAME})
+set(CPACK_DEBIAN_PACKAGE_VERSION ${CPACK_PACKAGE_VERSION})
+set(CPACK_DEBIAN_PACKAGE_SECTION "net")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER ${CPACK_PACKAGE_MAINTAINER})
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION ${CPACK_PACKAGE_DESCRIPTION})
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE ${CMAKE_PROJECT_HOMEPAGE_URL})
+set(CPACK_DEBIAN_PACKAGE_LICENSE "GPLv2.0")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "krb5-user, krb5-config, libqt5core5a, libqt5gui5, libqt5widgets5, libqt5network5, libicu66")
+
+set(CPACK_RPM_PACKAGE_NAME ${CPACK_PACKAGE_NAME})
+set(CPACK_RPM_PACKAGE_VERSION ${CPACK_PACKAGE_VERSION})
+set(CPACK_RPM_PACKAGE_SECTION "net")
+set(CPACK_RPM_PACKAGE_MAINTAINER ${CPACK_PACKAGE_MAINTAINER})
+set(CPACK_RPM_PACKAGE_DESCRIPTION ${CPACK_PACKAGE_DESCRIPTION})
+set(CPACK_RPM_PACKAGE_URL ${CMAKE_PROJECT_HOMEPAGE_URL})
+set(CPACK_RPM_PACKAGE_LICENSE "GPLv2.0")
+set(CPACK_RPM_PACKAGE_REQUIRES "krb5-config, qt5-qtbase, qt5-qtnetworkauth, libicu")
 
 include(CPack)
 cpack_add_component(application DISPLAY_NAME "Kerberos Ticket Watcher App" REQUIRED)
