@@ -1,7 +1,7 @@
 name: build and cpack
 on: [ push, pull_request ]
 jobs:
-  ubuntu-22.04:
+  ubuntu-22-04:
     runs-on: ubuntu-latest
     strategy:
       #
@@ -51,7 +51,7 @@ jobs:
         with:
           name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
           path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
-  ubuntu-20.04:
+  ubuntu-20-04:
     runs-on: ubuntu-latest
     strategy:
       #
