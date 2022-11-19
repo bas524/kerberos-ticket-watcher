@@ -1,7 +1,7 @@
 name: build and cpack
 on: [ push, pull_request ]
 jobs:
-  build:
+  ubuntu-22.04:
     runs-on: ubuntu-latest
     strategy:
       #
@@ -10,11 +10,6 @@ jobs:
       matrix:
         container:
           - ubuntu:22.04
-          - ubuntu:20.04
-          - debian:bullseye
-          - debian:buster
-          - centos:latest
-          - fedora:latest
 
     container:
       image: ${{ matrix.container }}
@@ -22,19 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # install dependencies
-      - name: devel-pkgs-ubuntu-20.04
-        if: startsWith(matrix.container,'ubuntu:20.04') || startsWith(matrix.container,'debian:buster')
-        run: |
-          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
-          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
-      - name: devel-pkgs-ubuntu-latest
-        if: startsWith(matrix.container,'ubuntu:22.04') || startsWith(matrix.container,'debian:bullseye')
+      - name: devel-pkgs
         run: |
           echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
           echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
@@ -44,17 +27,244 @@ jobs:
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
           apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G DEB && cd ..
+        # upload artifact
+      - uses: mad9000/actions-find-and-replace-string@3
+        id: container
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
 
-      - name: devel-pkgs-centos
-        if: startsWith(matrix.container,'centos')
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+  ubuntu-20.04:
+    runs-on: ubuntu-latest
+    strategy:
+      #
+      # matrix for containers
+      #
+      matrix:
+        container:
+          - ubuntu:20.04
+
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
+        run: |
+          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G DEB && cd ..
+        # upload artifact
+      - uses: mad9000/actions-find-and-replace-string@3
+        id: container
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
+
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+  debian-bullseye:
+    runs-on: ubuntu-latest
+    strategy:
+      #
+      # matrix for containers
+      #
+      matrix:
+        container:
+          - debian:bullseye
+
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
+        run: |
+          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G DEB && cd ..
+        # upload artifact
+      - uses: mad9000/actions-find-and-replace-string@3
+        id: container
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
+
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+  debian-buster:
+    runs-on: ubuntu-latest
+    strategy:
+      #
+      # matrix for containers
+      #
+      matrix:
+        container:
+          - debian:buster
+
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
+        run: |
+          echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/kerberos_servers string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/default_realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "heimdal-kdc heimdal/realm string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
+          echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G DEB && cd ..
+        # upload artifact
+      - uses: mad9000/actions-find-and-replace-string@3
+        id: container
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
+
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+  centos-latest:
+    runs-on: ubuntu-latest
+    strategy:
+      #
+      # matrix for containers
+      #
+      matrix:
+        container:
+          - centos:latest
+
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
         run: |
           cd /etc/yum.repos.d/ &&
           sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&
           sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* &&
           cd / &&
           yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build
-      - name: devel-pkgs-fedora
-        if: startsWith(matrix.container,'fedora')
+      # build project
+      - name: mkdir
+        run: mkdir cmake-build-release
+      - name: cmake cmake-build-release
+        run: cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+      - name: cmake make
+        run: cmake --build cmake-build-release/ --target all
+        env:
+          MAKEFLAGS: "-j2"
+      - name: cpack
+        run: cd cmake-build-release && cpack -G RPM && cd ..
+        # upload artifact
+      - uses: mad9000/actions-find-and-replace-string@3
+        id: container
+        with:
+          source: ${{ matrix.container }}
+          find: ':'        # we want to remove : from container name
+          replace: '-'     # and replace it with -
+
+      - name: Upload krb5-ticket-watcher binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+  fedora-latest:
+    runs-on: ubuntu-latest
+    strategy:
+      #
+      # matrix for containers
+      #
+      matrix:
+        container:
+          - fedora:latest
+
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+      - uses: actions/checkout@v3
+      # install dependencies
+      - name: devel-pkgs
         run: yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build
       # build project
       - name: mkdir
@@ -65,11 +275,7 @@ jobs:
         run: cmake --build cmake-build-release/ --target all
         env:
           MAKEFLAGS: "-j2"
-      - name: cpack-deb
-        if: startsWith(matrix.container,'ubuntu') || startsWith(matrix.container,'debian')
-        run: cd cmake-build-release && cpack -G DEB && cd ..
-      - name: cpack-rpm
-        if: startsWith(matrix.container,'centos') || startsWith(matrix.container,'fedora')
+      - name: cpack
         run: cd cmake-build-release && cpack -G RPM && cd ..
         # upload artifact
       - uses: mad9000/actions-find-and-replace-string@3
