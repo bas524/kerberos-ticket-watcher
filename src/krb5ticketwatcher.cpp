@@ -59,6 +59,7 @@
 #include "krb5ticket.h"
 #include "krb5credsopts.h"
 #include "krb5timestamphelper.h"
+#include "version.h"
 
 static int pw_exp;
 
@@ -240,7 +241,7 @@ void Ktw::createTrayMenu() {
 
   cpwAction = new QAction(ki18n("&Change Kerberos Password"), this);
   cpwAction->setShortcut(ki18n("Ctrl+C"));
-  cpwAction->setStatusTip(ki18n("Change the Kerberos Password"));
+  cpwAction->setStatusTip(ki18n("Change Kerberos Password"));
   connect(cpwAction, SIGNAL(triggered()), this, SLOT(changePassword()));
 
   destroyAction = new QAction(ki18n("&Destroy Ticket"), this);
@@ -255,8 +256,13 @@ void Ktw::createTrayMenu() {
 
   quitAction = new QAction(ki18n("&Quit"), this);
   quitAction->setShortcut(ki18n("Ctrl+Q"));
-  quitAction->setStatusTip(ki18n("Quit krb5TicketWatcher"));
+  quitAction->setStatusTip(ki18n("Quit Kerberos5 Ticket Watcher"));
   connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+  versionAction = new QAction(ki18n("&Version"), this);
+  quitAction->setShortcut(ki18n("Ctrl+I"));
+  versionAction->setStatusTip(ki18n("Kerberos5 Ticket Watcher Version"));
+  connect(versionAction, SIGNAL(triggered()), this, SLOT(version()));
 
   // Popup Menu item
   trayMenu->addAction(kinitAction);
@@ -269,11 +275,9 @@ void Ktw::createTrayMenu() {
 
   trayMenu->addSeparator();
   // Popup Menu item
-  // trayMenu->insertItem(ki18n("Help"),
-  //                     this, SLOT(help()));
-
-  // Popup Menu item
   trayMenu->addAction(restoreAction);
+  // Popup Menu item
+  trayMenu->addAction(versionAction);
   // Popup Menu item
   trayMenu->addAction(quitAction);
 }
@@ -630,7 +634,7 @@ void Ktw::reinitCredential(const QString &password) {
   try {
     long days = getPwExp(passwd);
     if (days < 7) {
-      tray->showMessage(ki18n("Change the password"), ki18n("Password expires after %1 days").arg(days), QSystemTrayIcon::Warning, 5000);
+      tray->showMessage(ki18n("Change Kerberos Password"), ki18n("Password expires after %1 days").arg(days), QSystemTrayIcon::Warning, 5000);
     }
   } catch (v5::Exception &ex) {
     tray->showMessage("Password check failed", "Can not check the password lifetime.", QSystemTrayIcon::Warning, 3000);
@@ -1087,4 +1091,17 @@ QPixmap Ktw::generateTrayIcon(long days) {
   painter.drawPixmap(0, 0, buffer);
 
   return buffer;
+}
+
+void Ktw::version() {
+  QString application = ki18n("Application");
+  QString fullVersion = ki18n("Full Version");
+  QString qtVersion = ki18n("Qt Version");
+  QString buildDate = ki18n("Build Date");
+  QMessageBox::about(this,
+                     "About",
+                     QString("<qt><table><tr><td><b>") + application + ("</b></td><td>") + ki18n("Kerberos5 Ticket Watcher") + QString("</td></tr>") +
+                         QString("<tr><td><b>") + fullVersion + ("</b></td><td>") + PROJECT_VERSION + QString("</td></tr>") + QString("<tr><td><b>") +
+                         qtVersion + ("</b></td><td>") + QT_VERSION_STR + QString("</td></tr>") + QString("<tr><td><b>") + buildDate +
+                         ("</b></td><td>") + COMMITTER_DATE + QString("</td></tr>") + QString("</td></tr></table></qt>"));
 }

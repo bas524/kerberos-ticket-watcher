@@ -61,6 +61,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
   void setTrayToolTip(const QString &text);
   void setTrayIcon(const QString &);
   void reReadCache();
+  void version();
 
  protected:
   bool eventFilter(QObject *obj, QEvent *ev) override;
@@ -110,6 +111,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
   QAction *destroyAction{};
   QAction *restoreAction{};
   QAction *quitAction{};
+  QAction *versionAction{};
 
   QTimer waitTimer;
   QTranslator translator;

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"POT-Creation-Date: 2022-11-24 16:50+0300\n"
 "PO-Revision-Date: 2018-08-29 20:01+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/krb5-ticket-"
@@ -14,458 +14,529 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: ../src/krb5ticketwatcher.cpp:1195
+#: ../src/krb5ticketwatcher.cpp:885
 #, qt-format
 msgid " for client %1"
 msgstr " per al client %1"
 
 # FR
-#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
-#: ../build/ui_pwchangedialog.h:173
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
 msgstr "&Cancel·la"
 
-#: ../src/krb5ticketwatcher.cpp:301
+#: ../src/krb5ticketwatcher.cpp:242
 msgid "&Change Kerberos Password"
 msgstr "&Canvia la contrasenya del Kerberos"
 
-#: ../build/ui_mainwidget.h:140
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
 msgstr "&Tanca"
 
-#: ../src/krb5ticketwatcher.cpp:306
+#: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
 msgstr "&Destrueix el tiquet"
 
-#: ../build/ui_kinitdialog.h:281
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
 msgid "&Details..."
 msgstr "&Detalls..."
 
-#: ../src/krb5ticketwatcher.cpp:291
+#: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
 msgstr "Tiquet &nou"
 
-#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
-#: ../build/ui_pwchangedialog.h:175
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
 msgid "&Ok"
 msgstr "&Bé"
 
-#: ../src/krb5ticketwatcher.cpp:316
+#: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
 msgstr "&Surt"
 
-#: ../build/ui_mainwidget.h:138
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
 msgid "&Refresh"
 msgstr "&Refresca"
 
-#: ../src/krb5ticketwatcher.cpp:296
+#: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
 msgstr "&Renova el tiquet"
 
-#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+#: ../src/krb5ticketwatcher.cpp:262
+msgid "&Version"
+msgstr ""
+
+#: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
+#: ../src/krb5ticketwatcher.cpp:991
 msgid "(none)"
 msgstr "(cap)"
 
-#: ../build/ui_kinitdialog.h:279
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:284
 msgid "@"
 msgstr "@"
 
-#: ../src/krb5ticketwatcher.cpp:1313
+#: ../src/krb5ticketwatcher.cpp:961
 msgid "Addresses"
 msgstr "Adreces"
 
-#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
-#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: ../build/ui_kinitdialog.h:282
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
 msgstr "Alt+D"
 
-#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
-#: ../build/ui_pwchangedialog.h:176
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
 msgstr "Alt+O"
 
-#: ../build/ui_mainwidget.h:139
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
 msgid "Alt+R"
 msgstr "Alt+R"
 
 #. Legend: Explain ticket flag "a"
-#: ../src/krb5ticketwatcher.cpp:258
+#: ../src/krb5ticketwatcher.cpp:206
 msgid "Anonymous"
 msgstr "Anònim"
 
-#: ../src/krb5ticketwatcher.cpp:1335
+#: ../src/krb5ticketwatcher.cpp:1097
+msgid "Application"
+msgstr ""
+
+#: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
+#: ../src/krb5ticketwatcher.cpp:972
 #, qt-format
 msgid "Broken address (type %1 length %2)"
 msgstr "Adreça trencada (tipus %1 llargada %2)"
 
-#: ../build/ui_pwchangedialog.h:172
+#: ../src/krb5ticketwatcher.cpp:1100
+msgid "Build Date"
+msgstr ""
+
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
+#: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
 msgid "Change Kerberos Password"
 msgstr "Canvia la contrasenya del Kerberos"
 
-#: ../src/krb5ticketwatcher.cpp:303
-msgid "Change the Kerberos Password"
-msgstr "Canvia la contrasenya del Kerberos"
-
-#: ../src/krb5ticketwatcher.cpp:860
+#: ../src/krb5ticketwatcher.cpp:715
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr "Canvieu la contrasenya per al principal <b>%1</b>"
 
-#: ../src/krb5ticketwatcher.cpp:293
+#: ../src/krb5ticketwatcher.cpp:234
 msgid "Create a new Ticket"
 msgstr "Crea un tiquet nou"
 
-#: ../src/krb5ticketwatcher.cpp:302
+#: ../src/krb5ticketwatcher.cpp:243
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: ../src/krb5ticketwatcher.cpp:307
+#: ../src/krb5ticketwatcher.cpp:248
 msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
-#: ../src/krb5ticketwatcher.cpp:292
+#: ../src/krb5ticketwatcher.cpp:263
+#, fuzzy
+msgid "Ctrl+I"
+msgstr "Ctrl+I"
+
+#: ../src/krb5ticketwatcher.cpp:233
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: ../src/krb5ticketwatcher.cpp:317
+#: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../src/krb5ticketwatcher.cpp:297
+#: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: ../src/krb5ticketwatcher.cpp:312
+#: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: ../src/krb5ticketwatcher.cpp:1404
+#: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
 msgstr "Dia(es)"
 
-#: ../build/ui_mainwidget.h:130
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
 msgid "Default credential cache"
 msgstr "Cau de credencials per defecte"
 
-#: ../src/krb5ticketwatcher.cpp:1110
+#: ../src/krb5ticketwatcher.cpp:861
 #, qt-format
 msgid "Default principal: %3"
 msgstr "Principal per defecte: %3"
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:356
+#: ../src/krb5ticketwatcher.cpp:295
 msgid "Destroy Kerberos Ticket Cache?"
 msgstr "Destruir la memòria cau de tiquets del Kerberos?"
 
-#: ../src/krb5ticketwatcher.cpp:308
+#: ../src/krb5ticketwatcher.cpp:249
 msgid "Destroy the Ticket"
 msgstr "Destrueix el tiquet"
 
 # power-off message
 #. message text
-#: ../src/krb5ticketwatcher.cpp:358
+#: ../src/krb5ticketwatcher.cpp:297
 msgid "Do you want to destroy the ticket cache?"
 msgstr "Voleu destruir la cau de tiquets?"
 
-#: ../build/ui_pwchangedialog.h:177
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
 msgid "Enter new password:"
 msgstr "Introduïu la contrasenya nova:"
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:366
+#: ../src/krb5ticketwatcher.cpp:304
 msgid "Error !"
 msgstr "Error !"
 
-#: ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:852
 msgid "Error while setting cache flags"
 msgstr "Error mentre s'establien les banderes de cau"
 
-#: ../src/krb5ticketwatcher.cpp:1238
+#: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
 msgstr "Caduca"
 
 #. kdc unreachable, return
-#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+#: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
+#: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
+#: ../src/main.cpp:92
 msgid "Failure"
 msgstr "Error"
 
 #. Legend: Explain ticket flag "F"
-#: ../src/krb5ticketwatcher.cpp:232
+#: ../src/krb5ticketwatcher.cpp:180
 msgid "Forwardable"
 msgstr "Reenviable"
 
 #. Legend: Explain ticket flag "f"
-#: ../src/krb5ticketwatcher.cpp:234
+#: ../src/krb5ticketwatcher.cpp:182
 msgid "Forwarded"
 msgstr "Reenviat"
 
+#: ../src/krb5ticketwatcher.cpp:1098
+msgid "Full Version"
+msgstr ""
+
 #. Legend: Explain ticket flag "H"
-#: ../src/krb5ticketwatcher.cpp:250
+#: ../src/krb5ticketwatcher.cpp:198
 msgid "HW Auth"
 msgstr "Auth HW"
 
-#: ../src/main.cpp:70
+#: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
 msgstr "No he pogut trobar cap safata de sistema en aquest sistema."
 
 #. Legend: Explain ticket flag "I"
-#: ../src/krb5ticketwatcher.cpp:248
+#: ../src/krb5ticketwatcher.cpp:196
 msgid "Initial"
 msgstr "Inicial"
 
 #. Legend: Explain ticket flag "i"
-#: ../src/krb5ticketwatcher.cpp:244
+#: ../src/krb5ticketwatcher.cpp:192
 msgid "Invalid"
 msgstr "Invàlid"
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:571
+#: ../src/krb5ticketwatcher.cpp:514
 msgid "Invalid Password"
 msgstr "La contrasenya no és vàlida"
 
-#: ../src/krb5ticketwatcher.cpp:525
+#: ../src/krb5ticketwatcher.cpp:470
 msgid "Invalid principal name"
 msgstr "Nom principal no vàlid"
 
-#: ../build/ui_pwdialog.h:154
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
 msgstr "Diàleg de la contrasenya del Kerberos"
 
-#: ../build/ui_mainwidget.h:129
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:128
 msgid "Kerberos Ticket List"
 msgstr "Llista de tiquets de Kerberos"
 
-#: ../src/krb5ticketwatcher.cpp:1286
+#: ../src/krb5ticketwatcher.cpp:1103
+#, fuzzy
+msgid "Kerberos5 Ticket Watcher"
+msgstr "Llista de tiquets de Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:264
+#, fuzzy
+msgid "Kerberos5 Ticket Watcher Version"
+msgstr "Llista de tiquets de Kerberos"
+
+#: ../src/krb5ticketwatcher.cpp:949
 msgid "Key Encryption Type"
 msgstr "Tipus de clau d'encriptació"
 
-#: ../build/ui_kinitdialog.h:287
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
 msgstr "Temps de vida:"
 
 #. Legend: Explain ticket flag "D"
-#: ../src/krb5ticketwatcher.cpp:240
+#: ../src/krb5ticketwatcher.cpp:188
 msgid "May Postdate"
 msgstr "Pot postdatar-se"
 
-#: ../build/ui_kinitdialog.h:276
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:281
 msgid "New Ticket"
 msgstr "Tiquet nou"
 
-#: ../src/krb5ticketwatcher.cpp:1421
+#: ../src/krb5ticketwatcher.cpp:1040
 msgid "No Credential Cache found"
 msgstr "No s'ha trobat la cau de credencials"
 
-#: ../src/krb5ticketwatcher.cpp:1079
+#: ../src/krb5ticketwatcher.cpp:850
 msgid "No credentials cache found"
 msgstr "No s'ha trobat la cau de credencials"
 
 #. Legend: Explain ticket flag "O"
-#: ../src/krb5ticketwatcher.cpp:256
+#: ../src/krb5ticketwatcher.cpp:204
 msgid "Ok as Delegate"
 msgstr "D'acord com a delegat"
 
-#: ../src/krb5ticketwatcher.cpp:901
+#: ../src/krb5ticketwatcher.cpp:743
 msgid "Password change failed"
 msgstr "Ha fallat el canvi de contrasenya."
 
-#: ../build/ui_kinitdialog.h:280
+#: ../src/krb5ticketwatcher.cpp:637
+#, qt-format
+msgid "Password expires after %1 days"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
+#, fuzzy, qt-format
+msgid "Password expires on %1"
+msgstr "El tiquet caduca d'aquí a %1"
+
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: ../src/krb5ticketwatcher.cpp:751
+#: ../src/krb5ticketwatcher.cpp:648
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr "Si us plau, introduïu la contrasenya del Kerberos per a <b>%1</b>"
 
 #. Legend: Explain ticket flag "d"
-#: ../src/krb5ticketwatcher.cpp:242
+#: ../src/krb5ticketwatcher.cpp:190
 msgid "Postdated"
 msgstr "Postdatat"
 
 #. Legend: Explain ticket flag "A"
-#: ../src/krb5ticketwatcher.cpp:252
+#: ../src/krb5ticketwatcher.cpp:200
 msgid "Pre Auth"
 msgstr "Pre Auth"
 
-#: ../build/ui_kinitdialog.h:278
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:283
 msgid "Principal:"
 msgstr "Principal:"
 
-#: ../build/ui_mainwidget.h:135
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
 msgid "Property"
 msgstr "Propietat"
 
 #. Legend: Explain ticket flag "p"
-#: ../src/krb5ticketwatcher.cpp:236
+#: ../src/krb5ticketwatcher.cpp:184
 msgid "Proxiable"
 msgstr "Proxiable"
 
 #. Legend: Explain ticket flag "P"
-#: ../src/krb5ticketwatcher.cpp:238
+#: ../src/krb5ticketwatcher.cpp:186
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/krb5ticketwatcher.cpp:318
-msgid "Quit krb5TicketWatcher"
+#: ../src/krb5ticketwatcher.cpp:1099
+msgid "Qt Version"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:259
+#, fuzzy
+msgid "Quit Kerberos5 Ticket Watcher"
 msgstr "Sortir de krb5TicketWatcher"
 
-#: ../src/krb5ticketwatcher.cpp:311
+#: ../src/krb5ticketwatcher.cpp:252
 msgid "Re&store"
 msgstr "&Restaura"
 
-#: ../build/ui_pwchangedialog.h:178
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
 msgid "Reenter password:"
 msgstr "Torneu a escriure la contrasenya:"
 
-#: ../src/krb5ticketwatcher.cpp:298
+#: ../src/krb5ticketwatcher.cpp:239
 msgid "Renew the Ticket"
 msgstr "Renova el tiquet"
 
-#: ../src/krb5ticketwatcher.cpp:1244
+#: ../src/krb5ticketwatcher.cpp:922
 msgid "Renew until"
 msgstr "Renova fins a"
 
 #. Legend: Explain ticket flag "R"
-#: ../src/krb5ticketwatcher.cpp:246
+#: ../src/krb5ticketwatcher.cpp:194
 msgid "Renewable"
 msgstr "Renovable"
 
-#: ../build/ui_kinitdialog.h:296
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
 msgstr "Renovable durant:"
 
-#: ../src/krb5ticketwatcher.cpp:313
+#: ../src/krb5ticketwatcher.cpp:254
 msgid "Restore the Window"
 msgstr "Restaura la finestra"
 
-#: ../src/krb5ticketwatcher.cpp:1218
+#: ../src/krb5ticketwatcher.cpp:897
 msgid "Service principal"
 msgstr "Servei principal"
 
-#: ../src/main.cpp:69
+#: ../src/main.cpp:78
 msgid "Systray"
 msgstr "Safata de sistema"
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+#: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
 msgid "The password you entered is invalid"
 msgstr "La contrasenya introduïda no és vàlida"
 
-#: ../src/krb5ticketwatcher.cpp:864
+#: ../src/krb5ticketwatcher.cpp:718
 msgid "The passwords are not equal"
 msgstr "Les contrasenyes no coincideixen"
 
-#: ../src/krb5ticketwatcher.cpp:1289
+#: ../src/krb5ticketwatcher.cpp:952
 msgid "Ticket Encryption Type"
 msgstr "Tipus d'encriptació del tiquet"
 
-#: ../build/ui_kinitdialog.h:284
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
 msgstr "Banderes del tiquet"
 
-#: ../build/ui_mainwidget.h:136
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
 msgstr "Llegenda de les banderes del tiquet"
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:368
+#: ../src/krb5ticketwatcher.cpp:306
 msgid "Ticket cache cannot be destroyed."
 msgstr "No es pot destruir la memòria cau de tiquets."
 
-#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
-#: ../src/krb5ticketwatcher.cpp:1106
+#: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
 msgid "Ticket cache: %1:%2"
 msgstr "Cau del tiquet: %1:%2"
 
-#: ../src/krb5ticketwatcher.cpp:1436
+#: ../src/krb5ticketwatcher.cpp:1046
 #, qt-format
 msgid "Ticket expires in %1"
 msgstr "El tiquet caduca d'aquí a %1"
 
-#: ../src/krb5ticketwatcher.cpp:1279
+#: ../src/krb5ticketwatcher.cpp:943
 msgid "Ticket flags"
 msgstr "Banderes de tiquets"
 
-#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+#: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket renewed"
 msgstr "Tiquet renovat"
 
-#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+#: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket successfully renewed."
 msgstr "Tiquet renovat amb èxit."
 
-#: ../build/ui_mainwidget.h:133
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:132
 msgid "Time Remaining"
 msgstr "Temps restant"
 
 #. Legend: Explain ticket flag "T"
-#: ../src/krb5ticketwatcher.cpp:254
+#: ../src/krb5ticketwatcher.cpp:202
 msgid "Transit Policy Checked"
 msgstr "Política de trànsit comprovada"
 
-#: ../src/krb5ticketwatcher.cpp:1354
+#: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
 #, qt-format
 msgid "Unknown address type %1"
 msgstr "Tipus d'adreça desconeguda: %1"
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:583
+#: ../src/krb5ticketwatcher.cpp:530
 msgid "Unknown principal"
 msgstr "Principal desconegut"
 
-#: ../src/krb5ticketwatcher.cpp:586
+#: ../src/krb5ticketwatcher.cpp:533
 msgid "Unknown realm"
 msgstr "'Realm' desconegut"
 
-#: ../src/krb5ticketwatcher.cpp:1234
+#: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
 msgstr "Inici vàlid"
 
-#: ../build/ui_mainwidget.h:134
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
 msgstr "Valor"
 
-#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
-#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
-#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
-#: ../build/ui_kinitdialog.h:300
+#: ../src/krb5ticketwatcher.cpp:618
+msgid "Warning"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:618
+msgid "Your password expired, please change it"
+msgstr ""
+
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:296
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:303
+#: ../src/krb5ticketwatcher.cpp:127 ../src/krb5ticketwatcher.cpp:759
+#: ../src/krb5ticketwatcher.cpp:777 ../src/krb5ticketwatcher.cpp:806
+#: ../src/krb5ticketwatcher.cpp:818
 msgid "days"
 msgstr "dies"
 
-#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
 msgid "default"
 msgstr "per defecte"
 
-#: ../build/ui_kinitdialog.h:285
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
 msgstr "reenviable"
 
 #. init with translations
-#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
-#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
-#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
-#: ../build/ui_kinitdialog.h:301
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:297
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:304
+#: ../src/krb5ticketwatcher.cpp:126 ../src/krb5ticketwatcher.cpp:762
+#: ../src/krb5ticketwatcher.cpp:780 ../src/krb5ticketwatcher.cpp:805
+#: ../src/krb5ticketwatcher.cpp:817
 msgid "hours"
 msgstr "hores"
 
-#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
-#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:298
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
+#: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
+#: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
 msgid "minutes"
 msgstr "minuts"
 
-#: ../build/ui_kinitdialog.h:286
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:293
 msgid "proxiable"
 msgstr "proxiable"
 
-#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
-#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:299
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:306
+#: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
+#: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
 msgstr "segons"
+
+#~ msgid "Change the Kerberos Password"
+#~ msgstr "Canvia la contrasenya del Kerberos"
+
+#, fuzzy
+#~ msgid "Change the password"
+#~ msgstr "Canvia la contrasenya del Kerberos"

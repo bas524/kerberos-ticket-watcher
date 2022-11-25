@@ -1,0 +1,6 @@
+#cmakedefine MAJOR "@MAJOR@"
+#cmakedefine MINOR "@MINOR@"
+#cmakedefine PATCH "@PATCH@"
+#cmakedefine COMMITTER_FULLSHA "@COMMITTER_FULLSHA@"
+#cmakedefine COMMITTER_SHORTSHA "@COMMITTER_SHORTSHA@"
+#cmakedefine COMMITTER_DATE "@COMMITTER_DATE@"
