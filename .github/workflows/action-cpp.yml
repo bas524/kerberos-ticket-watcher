@@ -30,7 +30,7 @@ jobs:
           git config --global --add safe.directory $(realpath .)
       # build project
       - name: mkdir
-        run: mkdir cmake-build-release
+        run: ls -l && mkdir cmake-build-release
       - name: cmake cmake-build-release
         run: export GIT_DISCOVERY_ACROSS_FILESYSTEM=1 && cmake -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
       - name: cmake make
