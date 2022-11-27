@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+        run: echo "name=date::$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_OUTPUT
       - name: Get commit sha
         id: git_sha
         run: echo "::set-output name=git_sha::$(echo $GITHUB_SHA)"
