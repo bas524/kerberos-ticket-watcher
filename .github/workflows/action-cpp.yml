@@ -27,7 +27,8 @@ jobs:
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
           apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++ git &&
-          git config --global --add safe.directory $(realpath .)
+          git config --global --add safe.directory $(realpath .) &&
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -78,7 +79,8 @@ jobs:
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
           apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++ git &&
-          git config --global --add safe.directory $(realpath .)
+          git config --global --add safe.directory $(realpath .) &&
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -129,7 +131,8 @@ jobs:
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
           apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++ git &&
-          git config --global --add safe.directory $(realpath .)
+          git config --global --add safe.directory $(realpath .) &&
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -180,7 +183,8 @@ jobs:
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
           apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++ git &&
-          git config --global --add safe.directory $(realpath .)
+          git config --global --add safe.directory $(realpath .) &&
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -228,7 +232,8 @@ jobs:
           sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* &&
           cd / &&
           yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build git &&
-          git config --global --add safe.directory $(realpath .)
+          git config --global --add safe.directory $(realpath .) &&
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -270,7 +275,10 @@ jobs:
       - uses: actions/checkout@v3
       # install dependencies
       - name: devel-pkgs
-        run: yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build git && git config --global --add safe.directory $(realpath .)
+        run: |
+          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build git && 
+          git config --global --add safe.directory $(realpath .) && 
+          export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
