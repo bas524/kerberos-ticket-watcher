@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-26 14:36+0200\n"
+"POT-Creation-Date: 2022-11-24 16:50+0300\n"
 "PO-Revision-Date: 2011-10-14 11:03+0700\n"
 "Last-Translator: \n"
 "Language-Team: Khmer <en@li.org>\n"
@@ -16,456 +16,565 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: ../src/krb5ticketwatcher.cpp:1195
+#: ../src/krb5ticketwatcher.cpp:885
 #, qt-format
 msgid " for client %1"
-msgstr " សម្រាប់​ម៉ាស៊ីន​ភ្ញៀវ %1"
+msgstr ""
 
-#: ../build/ui_pwdialog.h:157 ../build/ui_kinitdialog.h:305
-#: ../build/ui_pwchangedialog.h:173
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "បោះបង់"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:301
+# password dialog title
+#: ../src/krb5ticketwatcher.cpp:242
+#, fuzzy
 msgid "&Change Kerberos Password"
-msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:140
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "បិទ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:306
+#: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
-msgstr "បំផ្លាញ​សំបុត្រ"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:281
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
+#, fuzzy
 msgid "&Details..."
-msgstr "សេចក្ដី​លម្អិត..."
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:291
+#: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
-msgstr "សំបុត្រ​ថ្មី"
+msgstr ""
 
-#: ../build/ui_pwdialog.h:155 ../build/ui_kinitdialog.h:307
-#: ../build/ui_pwchangedialog.h:175
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
+#, fuzzy
 msgid "&Ok"
-msgstr "យល់ព្រម"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:316
+#: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "ចេញ"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:138
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
+#, fuzzy
 msgid "&Refresh"
-msgstr "ធ្វើ​ឲ្យ​ស្រស់"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:296
+#: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
-msgstr "បន្ត​សំបុត្រ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1298 ../src/krb5ticketwatcher.cpp:1358
+#: ../src/krb5ticketwatcher.cpp:262
+msgid "&Version"
+msgstr ""
+
+#: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
+#: ../src/krb5ticketwatcher.cpp:991
 msgid "(none)"
-msgstr "(គ្មាន)"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:279
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:284
 msgid "@"
-msgstr "@"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1313
+#: ../src/krb5ticketwatcher.cpp:961
+#, fuzzy
 msgid "Addresses"
-msgstr "អាសយដ្ឋាន​"
+msgstr ""
 
-#: ../build/ui_pwdialog.h:158 ../build/ui_mainwidget.h:141
-#: ../build/ui_kinitdialog.h:306 ../build/ui_pwchangedialog.h:174
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "ជំនួស(Alt)+C"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:282
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "ជំនួស(Alt)+D"
+msgstr ""
 
-#: ../build/ui_pwdialog.h:156 ../build/ui_kinitdialog.h:308
-#: ../build/ui_pwchangedialog.h:176
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "ជំនួស(Alt)+O"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:139
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
+#, fuzzy
 msgid "Alt+R"
-msgstr "ជំនួស(Alt)+R"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
-#: ../src/krb5ticketwatcher.cpp:258
+#: ../src/krb5ticketwatcher.cpp:206
 msgid "Anonymous"
-msgstr "អនាមិក"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1335
+#: ../src/krb5ticketwatcher.cpp:1097
+msgid "Application"
+msgstr ""
+
+#: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
+#: ../src/krb5ticketwatcher.cpp:972
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "អាសយដ្ឋាន​មិន​ត្រឹមត្រូវ (ប្រភេទ %1 ប្រវែង %2)"
+msgstr ""
 
-#: ../build/ui_pwchangedialog.h:172
+#: ../src/krb5ticketwatcher.cpp:1100
+msgid "Build Date"
+msgstr ""
+
+# password dialog title
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
+#: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
+#, fuzzy
 msgid "Change Kerberos Password"
-msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:303
-msgid "Change the Kerberos Password"
-msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
-
-#: ../src/krb5ticketwatcher.cpp:860
-#, qt-format
+#: ../src/krb5ticketwatcher.cpp:715
+#, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​សម្រាប់​គោលការណ៍ <b>%1</b>"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:293
+#: ../src/krb5ticketwatcher.cpp:234
+#, fuzzy
 msgid "Create a new Ticket"
-msgstr "បង្កើត​សំបុត្រ​ថ្មី"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:302
+#: ../src/krb5ticketwatcher.cpp:243
+#, fuzzy
 msgid "Ctrl+C"
-msgstr "បញ្ជា(Ctrl)+C"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:307
+#: ../src/krb5ticketwatcher.cpp:248
+#, fuzzy
 msgid "Ctrl+D"
-msgstr "បញ្ជា(Ctrl)+D"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:292
+#: ../src/krb5ticketwatcher.cpp:263
+#, fuzzy
+msgid "Ctrl+I"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:233
+#, fuzzy
 msgid "Ctrl+N"
-msgstr "បញ្ជា(Ctrl)+N"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:317
+#: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "បញ្ជា(Ctrl)+Q"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:297
+#: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
-msgstr "បញ្ជា(Ctrl)+R"
+msgstr "Ctrl+R"
 
-#: ../src/krb5ticketwatcher.cpp:312
+#: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "បញ្ជា(Ctrl)+S"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1404
+#: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
-msgstr "ថ្ងៃ"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:130
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
 msgid "Default credential cache"
-msgstr "ឃ្លាំង​សម្ងាត់​លំនាំដើម"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1110
+#: ../src/krb5ticketwatcher.cpp:861
 #, qt-format
 msgid "Default principal: %3"
-msgstr "គោលការណ៍​លំនាំដើម ៖ %3"
+msgstr ""
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:356
+#: ../src/krb5ticketwatcher.cpp:295
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "បំផ្លាញ​ឃ្លាំង​សម្ងាត់​សំបុត្រ​របស់ Kerberos ?"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:308
+#: ../src/krb5ticketwatcher.cpp:249
 msgid "Destroy the Ticket"
-msgstr "បំផ្លាញ​សំបុត្រ"
+msgstr ""
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:358
+#: ../src/krb5ticketwatcher.cpp:297
+#, fuzzy
 msgid "Do you want to destroy the ticket cache?"
-msgstr "តើ​អ្នក​ចង់​បំផ្លាញ​ឃ្លាំង​សម្ងាត់​សំបុត្រ​ឬ ?"
+msgstr ""
 
-#: ../build/ui_pwchangedialog.h:177
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
+#, fuzzy
 msgid "Enter new password:"
-msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​ថ្មី ៖"
+msgstr ""
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:366
+#: ../src/krb5ticketwatcher.cpp:304
+#, fuzzy
 msgid "Error !"
-msgstr "កំហុស !"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1085
+#: ../src/krb5ticketwatcher.cpp:852
+#, fuzzy
 msgid "Error while setting cache flags"
-msgstr "កំហុស​ខណៈពេល​កំណត់​ទង់​ជាតិ​ឃ្លាំង​សម្ងាត់"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1238
+#: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
-msgstr "ផុត​កំណត់"
+msgstr ""
 
 #. kdc unreachable, return
-#: ../src/krb5ticketwatcher.cpp:716 ../src/krb5ticketwatcher.cpp:828
+#: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
+#: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
+#: ../src/main.cpp:92
 msgid "Failure"
-msgstr "​បរាជ័យ"
+msgstr ""
 
 #. Legend: Explain ticket flag "F"
-#: ../src/krb5ticketwatcher.cpp:232
+#: ../src/krb5ticketwatcher.cpp:180
 msgid "Forwardable"
-msgstr "អាច​បញ្ជូន​បន្ត​បាន"
+msgstr ""
 
 #. Legend: Explain ticket flag "f"
-#: ../src/krb5ticketwatcher.cpp:234
+#: ../src/krb5ticketwatcher.cpp:182
 msgid "Forwarded"
-msgstr "បានបញ្ជូនបន្ត"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:1098
+msgid "Full Version"
+msgstr ""
 
 #. Legend: Explain ticket flag "H"
-#: ../src/krb5ticketwatcher.cpp:250
+#: ../src/krb5ticketwatcher.cpp:198
 msgid "HW Auth"
-msgstr "អ្នក​និពន្ធ HW"
+msgstr ""
 
-#: ../src/main.cpp:70
+#: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
-msgstr "ខ្ញុំ​មិន​អាច​រកឃើញ​ថាស​ប្រព័ន្ធ​ណាមួយ​​នៅ​ក្នុង​ប្រព័ន្ធ​នេះ​ទេ ។"
+msgstr ""
 
 #. Legend: Explain ticket flag "I"
-#: ../src/krb5ticketwatcher.cpp:248
+#: ../src/krb5ticketwatcher.cpp:196
+#, fuzzy
 msgid "Initial"
-msgstr "ចាប់ផ្ដើម"
+msgstr ""
 
 #. Legend: Explain ticket flag "i"
-#: ../src/krb5ticketwatcher.cpp:244
+#: ../src/krb5ticketwatcher.cpp:192
+#, fuzzy
 msgid "Invalid"
-msgstr "មិន​​ត្រឹមត្រូវ"
+msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:571
+#: ../src/krb5ticketwatcher.cpp:514
+#, fuzzy
 msgid "Invalid Password"
-msgstr "ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:525
+#: ../src/krb5ticketwatcher.cpp:470
+#, fuzzy
 msgid "Invalid principal name"
-msgstr "ឈ្មោះ​គោល​ការណ៍​មិន​ត្រឹមត្រូវ"
+msgstr ""
 
-#: ../build/ui_pwdialog.h:154
+#: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
-msgstr "ប្រអប់​ពាក្យ​សម្ងាត់​របស់ Kerberos"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:129
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:128
 msgid "Kerberos Ticket List"
-msgstr "បញ្ជី​សំបុត្រ​របស់ Kerberos"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1286
+#: ../src/krb5ticketwatcher.cpp:1103
+msgid "Kerberos5 Ticket Watcher"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:264
+msgid "Kerberos5 Ticket Watcher Version"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:949
+#, fuzzy
 msgid "Key Encryption Type"
-msgstr "ប្រភេទ​អ៊ិនគ្រីប​សោ"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:287
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
-msgstr "រយៈ​ពេល ៖"
+msgstr ""
 
 #. Legend: Explain ticket flag "D"
-#: ../src/krb5ticketwatcher.cpp:240
+#: ../src/krb5ticketwatcher.cpp:188
 msgid "May Postdate"
-msgstr "អាច​ចុះ​ក្រោយ​កាលបរិច្ឆេទ"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:276
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:281
 msgid "New Ticket"
-msgstr "សំបុត្រ​ថ្មី"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1421
+#: ../src/krb5ticketwatcher.cpp:1040
+#, fuzzy
 msgid "No Credential Cache found"
-msgstr "រក​មិន​ឃើញ​ឃ្លាំង​សម្ងាត់"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1079
+#: ../src/krb5ticketwatcher.cpp:850
+#, fuzzy
 msgid "No credentials cache found"
-msgstr "រក​មិន​ឃើញ​ឃ្លាំង​សម្ងាត់​"
+msgstr ""
 
 #. Legend: Explain ticket flag "O"
-#: ../src/krb5ticketwatcher.cpp:256
+#: ../src/krb5ticketwatcher.cpp:204
+#, fuzzy
 msgid "Ok as Delegate"
-msgstr "យល់​ព្រម​ជា​អ្នក​ទទួល​សិទ្ធិ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:901
+#: ../src/krb5ticketwatcher.cpp:743
+#, fuzzy
 msgid "Password change failed"
-msgstr "បាន​បរាជ័យ​ក្នុង​កា​រ​ផ្លាស់​ប្ដូរ​ពាក្យ​សម្ងាត់"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:280
-msgid "Password:"
-msgstr "ពាក្យ​សម្ងាត់ ៖"
-
-#: ../src/krb5ticketwatcher.cpp:751
+#: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
+msgid "Password expires after %1 days"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
+#, qt-format
+msgid "Password expires on %1"
+msgstr ""
+
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
+msgid "Password:"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:648
+#, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "សូម​បញ្ចូល​ពាក្យ​សម្ងាត់​ Kerberos សម្រាប់ <b>%1</b>"
+msgstr ""
 
 #. Legend: Explain ticket flag "d"
-#: ../src/krb5ticketwatcher.cpp:242
+#: ../src/krb5ticketwatcher.cpp:190
 msgid "Postdated"
-msgstr "ចុះ​ក្រោយ​កាល​បរិច្ឆេទ​"
+msgstr ""
 
 #. Legend: Explain ticket flag "A"
-#: ../src/krb5ticketwatcher.cpp:252
+#: ../src/krb5ticketwatcher.cpp:200
 msgid "Pre Auth"
-msgstr "អ្នក​និពន្ធ​មុន"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:278
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:283
 msgid "Principal:"
-msgstr "គោលការណ៍ ៖"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:135
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
+#, fuzzy
 msgid "Property"
-msgstr "លក្ខណសម្បត្តិ"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
-#: ../src/krb5ticketwatcher.cpp:236
+#: ../src/krb5ticketwatcher.cpp:184
 msgid "Proxiable"
-msgstr "អាច​ដាក់​ប្រូកស៊ី​បាន"
+msgstr ""
 
 #. Legend: Explain ticket flag "P"
-#: ../src/krb5ticketwatcher.cpp:238
+#: ../src/krb5ticketwatcher.cpp:186
+#, fuzzy
 msgid "Proxy"
-msgstr "ប្រូកស៊ី"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:318
-msgid "Quit krb5TicketWatcher"
-msgstr "បោះបង់​​ krb5TicketWatcher"
+#: ../src/krb5ticketwatcher.cpp:1099
+msgid "Qt Version"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:311
+#: ../src/krb5ticketwatcher.cpp:259
+msgid "Quit Kerberos5 Ticket Watcher"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:252
 msgid "Re&store"
-msgstr "ស្ដារ​ឡើង​វិញ"
+msgstr ""
 
-#: ../build/ui_pwchangedialog.h:178
+#: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
+#, fuzzy
 msgid "Reenter password:"
-msgstr "បញ្ចូល​ពាក្យ​សម្ងាត់​ម្ដង​ទៀត ៖"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:298
+#: ../src/krb5ticketwatcher.cpp:239
+#, fuzzy
 msgid "Renew the Ticket"
-msgstr "បន្ត​សំបុត្រ​"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1244
+#: ../src/krb5ticketwatcher.cpp:922
 msgid "Renew until"
-msgstr "បន្ត​រហូត​ដល់"
+msgstr ""
 
 #. Legend: Explain ticket flag "R"
-#: ../src/krb5ticketwatcher.cpp:246
+#: ../src/krb5ticketwatcher.cpp:194
+#, fuzzy
 msgid "Renewable"
-msgstr "អាច​បន្ត"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:296
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
-msgstr "អាច​បន្ត​សម្រាប់ ៖"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:313
+#: ../src/krb5ticketwatcher.cpp:254
+#, fuzzy
 msgid "Restore the Window"
-msgstr "ស្ដារ​បង្អួច"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1218
+#: ../src/krb5ticketwatcher.cpp:897
+#, fuzzy
 msgid "Service principal"
-msgstr "គោលការណ៍​សេវា"
+msgstr ""
 
-#: ../src/main.cpp:69
+#: ../src/main.cpp:78
+#, fuzzy
 msgid "Systray"
-msgstr "ថាស​ប្រព័ន្ធ"
+msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:705 ../src/krb5ticketwatcher.cpp:823
+#: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
+#, fuzzy
 msgid "The password you entered is invalid"
-msgstr "ពាក្យ​សម្ងាត់​ដែល​អ្នក​បាន​បញ្ចូល​មិន​ត្រឹមត្រូវ​ទេ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:864
+#: ../src/krb5ticketwatcher.cpp:718
+#, fuzzy
 msgid "The passwords are not equal"
-msgstr "ពាក្យ​សម្ងាត់​មិន​ស្មើ​គ្នា"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1289
+#: ../src/krb5ticketwatcher.cpp:952
+#, fuzzy
 msgid "Ticket Encryption Type"
-msgstr "ប្រភេទ​អ៊ិនគ្រីប​សំបុត្រ"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:284
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
-msgstr "ទង់​ជាតិ​សំបុត្រ"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:136
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "តាង​ទង់​​ជាតិ​សំបុត្រ"
+msgstr ""
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:368
+#: ../src/krb5ticketwatcher.cpp:306
 msgid "Ticket cache cannot be destroyed."
-msgstr "ឃ្លាំង​សម្ងាត់​សំបុត្រ​មិន​អាច​ត្រូវ​បានបំផ្លាញ ។"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1079 ../src/krb5ticketwatcher.cpp:1085
-#: ../src/krb5ticketwatcher.cpp:1106
+#: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "ឃ្លាំង​សម្ងាត់​សំបុត្រ ៖ %1:%2"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1436
+#: ../src/krb5ticketwatcher.cpp:1046
 #, qt-format
 msgid "Ticket expires in %1"
-msgstr "សំបុត្រ​ផុត​កំណត់​ក្នុង​រយៈពេល %1"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1279
+#: ../src/krb5ticketwatcher.cpp:943
 msgid "Ticket flags"
-msgstr "ទង់​ជាតិ​​សំបុត្រ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:397 ../src/krb5ticketwatcher.cpp:425
+#: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket renewed"
-msgstr "បាន​បន្ត​សំបុត្រ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:398 ../src/krb5ticketwatcher.cpp:426
+#: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket successfully renewed."
-msgstr "បាន​បន្ត​សំបុត្រ​ដោយ​ជោគជ័យ ។"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:133
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:132
 msgid "Time Remaining"
-msgstr "ពេលវេលា​នៅ​សល់"
+msgstr ""
 
 #. Legend: Explain ticket flag "T"
-#: ../src/krb5ticketwatcher.cpp:254
+#: ../src/krb5ticketwatcher.cpp:202
 msgid "Transit Policy Checked"
-msgstr "បាន​ពិនិត្យមើល​គោលនយោបាយ​ប្ដូរ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1354
-#, qt-format
+#: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
+#, fuzzy, qt-format
 msgid "Unknown address type %1"
-msgstr "មិន​ស្គាល់​ប្រភេទ​អាសយដ្ឋាន %1"
+msgstr ""
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:583
+#: ../src/krb5ticketwatcher.cpp:530
+#, fuzzy
 msgid "Unknown principal"
-msgstr "មិន​ស្គាល់​គោលការណ៍"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:586
+#: ../src/krb5ticketwatcher.cpp:533
+#, fuzzy
 msgid "Unknown realm"
-msgstr "មិន​ស្គាល់ realm"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1234
+#: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
-msgstr "ការ​ចាប់ផ្ដើម​ត្រឹមត្រូវ"
+msgstr ""
 
-#: ../build/ui_mainwidget.h:134
+#: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "តម្លៃ"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:158 ../src/krb5ticketwatcher.cpp:941
-#: ../src/krb5ticketwatcher.cpp:967 ../src/krb5ticketwatcher.cpp:1006
-#: ../src/krb5ticketwatcher.cpp:1021 ../build/ui_kinitdialog.h:291
-#: ../build/ui_kinitdialog.h:300
+#: ../src/krb5ticketwatcher.cpp:618
+msgid "Warning"
+msgstr ""
+
+#: ../src/krb5ticketwatcher.cpp:618
+msgid "Your password expired, please change it"
+msgstr ""
+
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:296
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:303
+#: ../src/krb5ticketwatcher.cpp:127 ../src/krb5ticketwatcher.cpp:759
+#: ../src/krb5ticketwatcher.cpp:777 ../src/krb5ticketwatcher.cpp:806
+#: ../src/krb5ticketwatcher.cpp:818
 msgid "days"
-msgstr "ថ្ងៃ"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:288 ../build/ui_kinitdialog.h:297
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
+#, fuzzy
 msgid "default"
-msgstr "លំនាំដើម"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:285
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
-msgstr "អាច​បញ្ជូន​បន្ត​បាន"
+msgstr ""
 
 #. init with translations
-#: ../src/krb5ticketwatcher.cpp:157 ../src/krb5ticketwatcher.cpp:945
-#: ../src/krb5ticketwatcher.cpp:971 ../src/krb5ticketwatcher.cpp:1005
-#: ../src/krb5ticketwatcher.cpp:1020 ../build/ui_kinitdialog.h:292
-#: ../build/ui_kinitdialog.h:301
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:297
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:304
+#: ../src/krb5ticketwatcher.cpp:126 ../src/krb5ticketwatcher.cpp:762
+#: ../src/krb5ticketwatcher.cpp:780 ../src/krb5ticketwatcher.cpp:805
+#: ../src/krb5ticketwatcher.cpp:817
 msgid "hours"
-msgstr "ម៉ោង"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:949 ../src/krb5ticketwatcher.cpp:975
-#: ../src/krb5ticketwatcher.cpp:1004 ../src/krb5ticketwatcher.cpp:1019
-#: ../build/ui_kinitdialog.h:293 ../build/ui_kinitdialog.h:302
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:298
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
+#: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
+#: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
+#, fuzzy
 msgid "minutes"
-msgstr "នាទី"
+msgstr ""
 
-#: ../build/ui_kinitdialog.h:286
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:293
 msgid "proxiable"
-msgstr "អាច​ដាក់​ប្រូកស៊ី​បាន"
+msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:954 ../src/krb5ticketwatcher.cpp:980
-#: ../src/krb5ticketwatcher.cpp:1003 ../src/krb5ticketwatcher.cpp:1018
-#: ../build/ui_kinitdialog.h:294 ../build/ui_kinitdialog.h:303
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:299
+#: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:306
+#: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
+#: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr "វិនាទី"
+msgstr ""
+
+#~ msgid "Change the Kerberos Password"
+#~ msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
+
+#, fuzzy
+#~ msgid "Change the password"
+#~ msgstr "ផ្លាស់ប្ដូរ​ពាក្យ​សម្ងាត់​របស់ Kerberos"
