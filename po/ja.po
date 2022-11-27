@@ -66,7 +66,7 @@ msgstr "チケットの更新 (&R)"
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
-msgstr ""
+msgstr "バージョン (&V)"
 
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
@@ -109,7 +109,7 @@ msgstr "匿名"
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
-msgstr ""
+msgstr "アプリケーション"
 
 #: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
 #: ../src/krb5ticketwatcher.cpp:972
@@ -119,7 +119,7 @@ msgstr "誤ったアドレス (種類 %1 長さ %2)"
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
-msgstr ""
+msgstr "ビルド日"
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
@@ -227,7 +227,7 @@ msgstr "転送済み"
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
-msgstr ""
+msgstr "フルバージョン"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:198
@@ -312,7 +312,7 @@ msgstr "パスワードの変更に失敗しました"
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
 msgid "Password expires after %1 days"
-msgstr ""
+msgstr "パスワードは%1日後に期限切れになります"
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
 #, fuzzy, qt-format
@@ -358,7 +358,7 @@ msgstr "代理"
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
-msgstr ""
+msgstr "Qtバージョン"
 
 #: ../src/krb5ticketwatcher.cpp:259
 #, fuzzy
@@ -483,11 +483,11 @@ msgstr "値"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
-msgstr ""
+msgstr "警告"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Your password expired, please change it"
-msgstr ""
+msgstr "パスワードの有効期限が切れた場合は、変更してくださ"
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:296
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:303

@@ -70,7 +70,7 @@ msgstr "Odnó&w bilet"
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
-msgstr ""
+msgstr "&Wersja"
 
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
@@ -113,7 +113,7 @@ msgstr "Anonimowy"
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
-msgstr ""
+msgstr "Zastosowanie"
 
 #: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
 #: ../src/krb5ticketwatcher.cpp:972
@@ -123,7 +123,7 @@ msgstr "Błędny adres (typ %1 długość %2)"
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
-msgstr ""
+msgstr "Data Budowy"
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
@@ -231,7 +231,7 @@ msgstr "Przekazane"
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
-msgstr ""
+msgstr "Pełna Wersja"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:198
@@ -316,7 +316,7 @@ msgstr "Zmiana hasła zakończona niepowodzeniem"
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
 msgid "Password expires after %1 days"
-msgstr ""
+msgstr "Hasło wygasa po %1 dniach"
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
 #, fuzzy, qt-format
@@ -362,7 +362,7 @@ msgstr "Pełnomocnik"
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
-msgstr ""
+msgstr "Wersja Qt"
 
 #: ../src/krb5ticketwatcher.cpp:259
 #, fuzzy
@@ -487,11 +487,11 @@ msgstr "Wartość"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
-msgstr ""
+msgstr "Ostrzeżenie"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Your password expired, please change it"
-msgstr ""
+msgstr "Twoje hasło wygasło, zmień je"
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:296
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:303

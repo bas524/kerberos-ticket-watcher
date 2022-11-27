@@ -72,7 +72,7 @@ msgstr "Ve&rnieuw ticket"
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
-msgstr ""
+msgstr "&Versie"
 
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
@@ -115,7 +115,7 @@ msgstr "Anoniem"
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
-msgstr ""
+msgstr "Toepassing"
 
 #: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
 #: ../src/krb5ticketwatcher.cpp:972
@@ -125,7 +125,7 @@ msgstr "Gebroken adres (type %1 lengte %2)"
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
-msgstr ""
+msgstr "Bouwdatum"
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
@@ -233,7 +233,7 @@ msgstr "Doorgestuurd"
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
-msgstr ""
+msgstr "Volledige Versie"
 
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:198
@@ -318,7 +318,7 @@ msgstr "Wijzigen van wachtwoord is mislukt"
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
 msgid "Password expires after %1 days"
-msgstr ""
+msgstr "Wachtwoord verloopt na % 1 dagen"
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
 #, fuzzy, qt-format
@@ -364,7 +364,7 @@ msgstr "Proxy"
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
-msgstr ""
+msgstr "Qt-Versie"
 
 #: ../src/krb5ticketwatcher.cpp:259
 #, fuzzy
@@ -489,11 +489,11 @@ msgstr "Waarde"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
-msgstr ""
+msgstr "Waarschuwing"
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Your password expired, please change it"
-msgstr ""
+msgstr "Uw wachtwoord is verlopen, Wijzig het alstublieft"
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:296
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:303

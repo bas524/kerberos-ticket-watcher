@@ -24,51 +24,56 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:885
 #, qt-format
 msgid " for client %1"
-msgstr " klientui %1"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "&Atšaukti"
+msgstr ""
 
+# password dialog title
 #: ../src/krb5ticketwatcher.cpp:242
+#, fuzzy
 msgid "&Change Kerberos Password"
-msgstr "Pa&keisti Kerberos slaptažodį"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "&Užverti"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
-msgstr "&Sunaikinti bilietą"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
+#, fuzzy
 msgid "&Details..."
-msgstr "&Išsamiau..."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
-msgstr "&Naujas bilietas"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
+#, fuzzy
 msgid "&Ok"
-msgstr "&Gerai"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "&Išeiti"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
+#, fuzzy
 msgid "&Refresh"
-msgstr "Atna&ujinti"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
-msgstr "&Atnaujinti bilietą"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
@@ -77,41 +82,43 @@ msgstr ""
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
 msgid "(none)"
-msgstr "(nieko)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:284
 msgid "@"
-msgstr "@"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:961
+#, fuzzy
 msgid "Addresses"
-msgstr "Adresai"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
+#, fuzzy
 msgid "Alt+R"
-msgstr "Alt+R"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:206
 msgid "Anonymous"
-msgstr "Anonimas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
@@ -121,58 +128,64 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:972
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "Blogas adresas (tipas: %1, ilgis:, %2)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
 msgstr ""
 
+# password dialog title
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
+#, fuzzy
 msgid "Change Kerberos Password"
-msgstr "Pakeisti Kerberos slaptažodį"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
-#, qt-format
+#, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
+#, fuzzy
 msgid "Create a new Ticket"
-msgstr "Sukurti naują bilietą"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
+#, fuzzy
 msgid "Ctrl+C"
-msgstr "Vald(Ctrl)+P"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
+#, fuzzy
 msgid "Ctrl+D"
-msgstr "Vald(Ctrl)+D"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
 #, fuzzy
 msgid "Ctrl+I"
-msgstr "Vald(Ctrl)+I"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
+#, fuzzy
 msgid "Ctrl+N"
-msgstr "Vald(Ctrl)+N"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "Vald(Ctrl)+Q"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
-msgstr "Vald(Ctrl)+R"
+msgstr "Ctrl+R"
 
 #: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "Vald(Ctrl)+S"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
-msgstr "Diena(-os)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
 msgid "Default credential cache"
@@ -186,40 +199,44 @@ msgstr ""
 #. title
 #: ../src/krb5ticketwatcher.cpp:295
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "Sunaikinti Kerberos bilieto podėlį?"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:249
 msgid "Destroy the Ticket"
-msgstr "Sunaikinti bilietą"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:297
+#, fuzzy
 msgid "Do you want to destroy the ticket cache?"
-msgstr "Sunaikinti bilieto podėlį?"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
+#, fuzzy
 msgid "Enter new password:"
-msgstr "Įveskite naują slaptažodį:"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
+#, fuzzy
 msgid "Error !"
-msgstr "Klaida!"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
+#, fuzzy
 msgid "Error while setting cache flags"
-msgstr "Nustatant podėlio vėliavėles įvyko klaida"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
-msgstr "Nustoja galioti"
+msgstr ""
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
 #: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
 #: ../src/main.cpp:92
 msgid "Failure"
-msgstr "Nesėkmė"
+msgstr ""
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:180
@@ -229,7 +246,7 @@ msgstr ""
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:182
 msgid "Forwarded"
-msgstr "Persiųstas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
@@ -242,52 +259,55 @@ msgstr ""
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
-msgstr "Šioje sistemoje nepavyksta aptikti sistemos dėklo."
+msgstr ""
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:196
+#, fuzzy
 msgid "Initial"
 msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
+#, fuzzy
 msgid "Invalid"
-msgstr "Netinkamas"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
+#, fuzzy
 msgid "Invalid Password"
-msgstr "Netinkamas slaptažodis"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
+#, fuzzy
 msgid "Invalid principal name"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
-msgstr "Kerberos slaptažodžio langas"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:128
 msgid "Kerberos Ticket List"
-msgstr "Kerberos bilietų sąrašas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1103
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
-msgstr "Kerberos bilietų sąrašas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:264
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos bilietų sąrašas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:949
+#, fuzzy
 msgid "Key Encryption Type"
-msgstr "Rakto šifravimo tipas"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
-msgstr "Gyvavimo laikotarpis:"
+msgstr ""
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:188
@@ -296,24 +316,28 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:281
 msgid "New Ticket"
-msgstr "Naujas bilietas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1040
+#, fuzzy
 msgid "No Credential Cache found"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:850
+#, fuzzy
 msgid "No credentials cache found"
 msgstr ""
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:204
+#, fuzzy
 msgid "Ok as Delegate"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
+#, fuzzy
 msgid "Password change failed"
-msgstr "Slaptažodžio nepavyko pakeisti"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
@@ -325,15 +349,14 @@ msgstr ""
 msgid "Password expires on %1"
 msgstr ""
 
-# password dialog title
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
-msgstr "Slaptažodis:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
-#, qt-format
+#, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "Įveskite Kerberos slaptažodį, skirtą <b>%1</b>"
+msgstr ""
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:190
@@ -350,8 +373,9 @@ msgid "Principal:"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
+#, fuzzy
 msgid "Property"
-msgstr "Savybė"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:184
@@ -360,29 +384,31 @@ msgstr ""
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:186
+#, fuzzy
 msgid "Proxy"
-msgstr "Įgaliotasis serveris"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:259
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Baigti krb5TicketWatcher"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:252
 msgid "Re&store"
-msgstr "&Atstatyti"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
+#, fuzzy
 msgid "Reenter password:"
-msgstr "Pakartotinai įveskite slaptažodį:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:239
+#, fuzzy
 msgid "Renew the Ticket"
-msgstr "Atnaujinti bilietą"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Renew until"
@@ -390,6 +416,7 @@ msgstr ""
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:194
+#, fuzzy
 msgid "Renewable"
 msgstr ""
 
@@ -398,47 +425,53 @@ msgid "Renewable for:"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:254
+#, fuzzy
 msgid "Restore the Window"
-msgstr "Atstatyti langą"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:897
+#, fuzzy
 msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
+#, fuzzy
 msgid "Systray"
-msgstr "Sistemos dėklas"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
+#, fuzzy
 msgid "The password you entered is invalid"
-msgstr "Įvestas netinkamas slaptažodis"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
+#, fuzzy
 msgid "The passwords are not equal"
-msgstr "Slaptažodžiai nesutampa"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
+#, fuzzy
 msgid "Ticket Encryption Type"
-msgstr "Bilieto šifravimo tipas"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
-msgstr "Bilieto vėliavėlės"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "Bilieto vėliavėlių legenda"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:306
 msgid "Ticket cache cannot be destroyed."
-msgstr "Nepavyksta sunaikinti bilieto podėlio."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "Bilieto podėlis: %1:%2"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1046
 #, qt-format
@@ -447,19 +480,19 @@ msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:943
 msgid "Ticket flags"
-msgstr "Bilieto vėliavėlės"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket renewed"
-msgstr "Bilietas atnaujintas"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket successfully renewed."
-msgstr "Bilietas sėkmingai atnaujintas."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:132
 msgid "Time Remaining"
-msgstr "Liko laiko"
+msgstr ""
 
 #. Legend: Explain ticket flag "T"
 #: ../src/krb5ticketwatcher.cpp:202
@@ -467,16 +500,18 @@ msgid "Transit Policy Checked"
 msgstr ""
 
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
-#, qt-format
+#, fuzzy, qt-format
 msgid "Unknown address type %1"
-msgstr "Nežinomas adreso tipas %1"
+msgstr ""
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
+#, fuzzy
 msgid "Unknown principal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
+#, fuzzy
 msgid "Unknown realm"
 msgstr ""
 
@@ -486,7 +521,7 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "Reikšmė"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -502,12 +537,13 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:777 ../src/krb5ticketwatcher.cpp:806
 #: ../src/krb5ticketwatcher.cpp:818
 msgid "days"
-msgstr "d."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
+#, fuzzy
 msgid "default"
-msgstr "numatyta"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
@@ -520,14 +556,15 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:780 ../src/krb5ticketwatcher.cpp:805
 #: ../src/krb5ticketwatcher.cpp:817
 msgid "hours"
-msgstr "valandos"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:298
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
 #: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
 #: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
+#, fuzzy
 msgid "minutes"
-msgstr "minutės"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:293
 msgid "proxiable"
@@ -538,7 +575,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
 #: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr "sekundės"
+msgstr ""
 
 #~ msgid "Change the Kerberos Password"
 #~ msgstr "Pakeisti Kerberos slaptažodį"

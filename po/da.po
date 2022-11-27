@@ -20,51 +20,51 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:885
 #, qt-format
 msgid " for client %1"
-msgstr " til klienten %1"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "&Annuller"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:242
 msgid "&Change Kerberos Password"
-msgstr "Æ&ndr Kerberos-adgangskode"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "&Luk"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
-msgstr "&Destruér billet"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
 msgid "&Details..."
-msgstr "&Detaljer..."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
-msgstr "&Ny billet"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
 msgid "&Ok"
-msgstr "&OK"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "&Afslut"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
 msgid "&Refresh"
-msgstr "&Genopfrisk"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
-msgstr "Fo&rny billet"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
@@ -73,41 +73,41 @@ msgstr ""
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
 msgid "(none)"
-msgstr "(ingen)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:284
 msgid "@"
-msgstr "@"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:961
 msgid "Addresses"
-msgstr "Adresser"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
 msgid "Alt+R"
-msgstr "Alt+R"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:206
 msgid "Anonymous"
-msgstr "Anonym"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
@@ -117,7 +117,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:972
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "Defekt adresse (type %1 længde %2)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
@@ -126,106 +126,106 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
 msgid "Change Kerberos Password"
-msgstr "Ændr Kerberos-adgangskode"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "Ændr adgangskoden for principalen <b>%1</b>"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
 msgid "Create a new Ticket"
-msgstr "Opret en ny billet"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
 msgid "Ctrl+C"
-msgstr "Ctrl+C"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
 msgid "Ctrl+D"
-msgstr "Ctrl+D"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
 #, fuzzy
 msgid "Ctrl+I"
-msgstr "Ctrl+I"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
 msgid "Ctrl+N"
-msgstr "Ctrl+N"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
-msgstr "Ctrl+R"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "Ctrl+S"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
-msgstr "Dag(e)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
 msgid "Default credential cache"
-msgstr "Standard akkreditiv-cache"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:861
 #, qt-format
 msgid "Default principal: %3"
-msgstr "Standard principal: %3"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:295
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "Destruér Kerberos billet-cache?"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:249
 msgid "Destroy the Ticket"
-msgstr "Destruér billetten"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:297
 msgid "Do you want to destroy the ticket cache?"
-msgstr "Vil du destruere billet-cachen?"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
 msgid "Enter new password:"
-msgstr "Angiv ny adgangskode:"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
 msgid "Error !"
-msgstr "Fejl !"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
 msgid "Error while setting cache flags"
-msgstr "Fejl under sætning af cache-flag"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
-msgstr "Udløber"
+msgstr ""
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
 #: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
 #: ../src/main.cpp:92
 msgid "Failure"
-msgstr "Fejl"
+msgstr ""
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:180
 msgid "Forwardable"
-msgstr "Kan videresendes"
+msgstr ""
 
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:182
 msgid "Forwarded"
-msgstr "Videresendt"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
@@ -234,83 +234,83 @@ msgstr ""
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:198
 msgid "HW Auth"
-msgstr "HW-godk."
+msgstr ""
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
-msgstr "Jeg kunne ikke finde noget statusområde på dette system."
+msgstr ""
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:196
 msgid "Initial"
-msgstr "Initial"
+msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
 msgid "Invalid"
-msgstr "Ugyldig"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
 msgid "Invalid Password"
-msgstr "Ugyldig adgangskode"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
 msgid "Invalid principal name"
-msgstr "Ugyldigt principal-navn"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
-msgstr "Kerberos adgangskodedialog"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:128
 msgid "Kerberos Ticket List"
-msgstr "Kerberos billetliste"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1103
 #, fuzzy
 msgid "Kerberos5 Ticket Watcher"
-msgstr "Kerberos billetliste"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:264
 #, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos billetliste"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:949
 msgid "Key Encryption Type"
-msgstr "Type af nøglekryptering"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
-msgstr "Levetid:"
+msgstr ""
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:188
 msgid "May Postdate"
-msgstr "Må fremdatere"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:281
 msgid "New Ticket"
-msgstr "Ny billet"
+msgstr ""
 
 #
 #: ../src/krb5ticketwatcher.cpp:1040
 msgid "No Credential Cache found"
-msgstr "Ingen akkreditiv-cache fundet"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:850
 msgid "No credentials cache found"
-msgstr "Ingen akkreditiv-cache fundet"
+msgstr ""
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:204
 msgid "Ok as Delegate"
-msgstr "OK som delegeret"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
 msgid "Password change failed"
-msgstr "Ændring af adgangskode mislykkedes"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
@@ -320,44 +320,44 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
 #, fuzzy, qt-format
 msgid "Password expires on %1"
-msgstr "Billetten udløber om %1"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
-msgstr "Adgangskode:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "Angiv Kerberos-adgangskoden for <b>%1</b>"
+msgstr ""
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:190
 msgid "Postdated"
-msgstr "Fremdateret"
+msgstr ""
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:200
 msgid "Pre Auth"
-msgstr "Forgodk."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:283
 msgid "Principal:"
-msgstr "Principal:"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
 msgid "Property"
-msgstr "Egenskab"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:184
 msgid "Proxiable"
-msgstr "Fuldmægtig"
+msgstr ""
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:186
 msgid "Proxy"
-msgstr "Proxy"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
@@ -366,123 +366,123 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:259
 #, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Afslut krb5TicketWatcher"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:252
 msgid "Re&store"
-msgstr "Gen&opret"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
 msgid "Reenter password:"
-msgstr "Gentag adgangskode:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:239
 msgid "Renew the Ticket"
-msgstr "Forny billetten"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Renew until"
-msgstr "Forny indtil"
+msgstr ""
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:194
 msgid "Renewable"
-msgstr "Kan fornyes"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
-msgstr "Kan fornyes til:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:254
 msgid "Restore the Window"
-msgstr "Genopret vinduet"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:897
 msgid "Service principal"
-msgstr "Tjeneste-principal"
+msgstr ""
 
 #: ../src/main.cpp:78
 msgid "Systray"
-msgstr "Statusområde"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
 msgid "The password you entered is invalid"
-msgstr "Adgangskoden, du angav, er ugyldig"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
 msgid "The passwords are not equal"
-msgstr "Adgangskoderne er ikke ens"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
 msgid "Ticket Encryption Type"
-msgstr "Type af billetkryptering"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
-msgstr "Billetflag"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "Billetflag - forklaring"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:306
 msgid "Ticket cache cannot be destroyed."
-msgstr "Billet-cache kan ikke destrueres."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "Billet-cache: %1:%2"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1046
 #, qt-format
 msgid "Ticket expires in %1"
-msgstr "Billetten udløber om %1"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:943
 msgid "Ticket flags"
-msgstr "Billetflag"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket renewed"
-msgstr "Billet fornyet"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket successfully renewed."
-msgstr "Billet blev fornyet."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:132
 msgid "Time Remaining"
-msgstr "Tid tilbage"
+msgstr ""
 
 #. Legend: Explain ticket flag "T"
 #: ../src/krb5ticketwatcher.cpp:202
 msgid "Transit Policy Checked"
-msgstr "Overgangspolitik tjekket"
+msgstr ""
 
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
 #, qt-format
 msgid "Unknown address type %1"
-msgstr "Ukendt adressetype %1"
+msgstr ""
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
 msgid "Unknown principal"
-msgstr "Ukendt principal"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
 msgid "Unknown realm"
-msgstr "Ukendt område"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
-msgstr "Gyldig fra"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "Værdi"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -498,16 +498,16 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:777 ../src/krb5ticketwatcher.cpp:806
 #: ../src/krb5ticketwatcher.cpp:818
 msgid "days"
-msgstr "dage"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
 msgid "default"
-msgstr "standard"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
-msgstr "kan videresendes"
+msgstr ""
 
 #. init with translations
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:297
@@ -516,25 +516,25 @@ msgstr "kan videresendes"
 #: ../src/krb5ticketwatcher.cpp:780 ../src/krb5ticketwatcher.cpp:805
 #: ../src/krb5ticketwatcher.cpp:817
 msgid "hours"
-msgstr "timer"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:298
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
 #: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
 #: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
 msgid "minutes"
-msgstr "minutter"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:293
 msgid "proxiable"
-msgstr "fuldmægtig"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:299
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:306
 #: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
 #: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr "sekunder"
+msgstr ""
 
 #~ msgid "Change the Kerberos Password"
 #~ msgstr "Ændr Kerberos-adgangskoden"

@@ -17,53 +17,59 @@ msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:885
 #, qt-format
+#: ../src/krb5ticketwatcher.cpp:885
+#, qt-format
 msgid " for client %1"
-msgstr "클라이언트 %1"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "취소(&C)"
+msgstr ""
 
+# password dialog title
 #: ../src/krb5ticketwatcher.cpp:242
+#, fuzzy
 msgid "&Change Kerberos Password"
-msgstr "Kerberos 열쇠글 변경(&C)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "닫기(&C)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
-msgstr "티켓의 폐기(&D)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
+#, fuzzy
 msgid "&Details..."
-msgstr "자세히(&D)..."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
-msgstr "새 티켓(&N)"
+msgstr ""
 
-#  button for message box with help text
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
+#, fuzzy
 msgid "&Ok"
-msgstr "확인(&O)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "종료(&Q)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
+#, fuzzy
 msgid "&Refresh"
-msgstr "새로 고침(&R)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
-msgstr "티켓 갱신(&R)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:262
 msgid "&Version"
@@ -72,41 +78,43 @@ msgstr ""
 #: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:957
 #: ../src/krb5ticketwatcher.cpp:991
 msgid "(none)"
-msgstr "(없음)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:284
 msgid "@"
-msgstr "@"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:961
+#, fuzzy
 msgid "Addresses"
-msgstr "주소"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
+#, fuzzy
 msgid "Alt+R"
-msgstr "Alt+R"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:206
 msgid "Anonymous"
-msgstr "익명"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1097
 msgid "Application"
@@ -116,46 +124,52 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:972
 #, qt-format
 msgid "Broken address (type %1 length %2)"
-msgstr "깨진 주소 (형식 %1 길이 %2)"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1100
 msgid "Build Date"
 msgstr ""
 
+# password dialog title
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
+#, fuzzy
 msgid "Change Kerberos Password"
-msgstr "Kerberos 열쇠글 변경"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
-#, qt-format
+#, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "주요 <b>%1</b> 열쇠글 변경"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
+#, fuzzy
 msgid "Create a new Ticket"
-msgstr "새 티켓 생성"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
+#, fuzzy
 msgid "Ctrl+C"
-msgstr "Ctrl+C"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
+#, fuzzy
 msgid "Ctrl+D"
-msgstr "Ctrl+D"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
 #, fuzzy
 msgid "Ctrl+I"
-msgstr "Ctrl+I"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
+#, fuzzy
 msgid "Ctrl+N"
-msgstr "Ctrl+N"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
@@ -163,68 +177,72 @@ msgstr "Ctrl+R"
 
 #: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "Ctrl+S"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
-msgstr "일"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
 msgid "Default credential cache"
-msgstr "기본 증명 캐시"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:861
 #, qt-format
 msgid "Default principal: %3"
-msgstr "기본 주요: %3"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:295
 msgid "Destroy Kerberos Ticket Cache?"
-msgstr "Kerberos 티켓 캐시를 폐기하시겠습니까?"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:249
 msgid "Destroy the Ticket"
-msgstr "티켓 폐기"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:297
+#, fuzzy
 msgid "Do you want to destroy the ticket cache?"
-msgstr "티켓 캐시를 폐기하시겠습니까?"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
+#, fuzzy
 msgid "Enter new password:"
-msgstr "새 열쇠글 입력:"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
+#, fuzzy
 msgid "Error !"
-msgstr "오류 !"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
+#, fuzzy
 msgid "Error while setting cache flags"
-msgstr "캐시 플래그를 설정할 때 오류"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
-msgstr "기한"
+msgstr ""
 
 #. kdc unreachable, return
 #: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
 #: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
 #: ../src/main.cpp:92
 msgid "Failure"
-msgstr "실패"
+msgstr ""
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:180
 msgid "Forwardable"
-msgstr "전달 가능"
+msgstr ""
 
 #. Legend: Explain ticket flag "f"
 #: ../src/krb5ticketwatcher.cpp:182
 msgid "Forwarded"
-msgstr "전달 끝남"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1098
 msgid "Full Version"
@@ -233,84 +251,89 @@ msgstr ""
 #. Legend: Explain ticket flag "H"
 #: ../src/krb5ticketwatcher.cpp:198
 msgid "HW Auth"
-msgstr "하드웨어 인증"
+msgstr ""
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
-msgstr "이 시스템에 시스템 트레이를 감지할 수 없습니다."
+msgstr ""
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:196
+#, fuzzy
 msgid "Initial"
-msgstr "초기"
+msgstr ""
 
-# password dialog title
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
+#, fuzzy
 msgid "Invalid"
-msgstr "잘못됨"
+msgstr ""
 
-# password dialog title
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
+#, fuzzy
 msgid "Invalid Password"
-msgstr "잘못된 열쇠글"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
+#, fuzzy
 msgid "Invalid principal name"
-msgstr "잘못된 주요 이름"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
-msgstr "Kerberos 열쇠글 대화상자"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:128
 msgid "Kerberos Ticket List"
-msgstr "Kerberos 티켓 목록"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1103
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
-msgstr "Kerberos 티켓 목록"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:264
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos 티켓 목록"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:949
+#, fuzzy
 msgid "Key Encryption Type"
-msgstr "키 암호화 형식"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
-msgstr "유지시간:"
+msgstr ""
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:188
 msgid "May Postdate"
-msgstr "사후에 허가"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:281
 msgid "New Ticket"
-msgstr "새 티켓"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1040
+#, fuzzy
 msgid "No Credential Cache found"
-msgstr "별견된 증명서 캐시 없음"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:850
+#, fuzzy
 msgid "No credentials cache found"
-msgstr "발견된 증명서 캐시 없음"
+msgstr ""
 
 #. Legend: Explain ticket flag "O"
 #: ../src/krb5ticketwatcher.cpp:204
+#, fuzzy
 msgid "Ok as Delegate"
-msgstr "대리로 확인"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
+#, fuzzy
 msgid "Password change failed"
-msgstr "열쇠글 변경에 실패"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
@@ -318,171 +341,183 @@ msgid "Password expires after %1 days"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
-msgstr "%1 안에 티켓이 만료됨"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
-msgstr "열쇠글:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
-#, qt-format
+#, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "<b>%1</b> 용 Kerberos 열쇠글을 입력하세요"
+msgstr ""
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:190
 msgid "Postdated"
-msgstr "사후에"
+msgstr ""
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:200
 msgid "Pre Auth"
-msgstr "사전 인증"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:283
 msgid "Principal:"
-msgstr "법칙:"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
+#, fuzzy
 msgid "Property"
-msgstr "속성"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:184
 msgid "Proxiable"
-msgstr "대리 가능"
+msgstr ""
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:186
+#, fuzzy
 msgid "Proxy"
-msgstr "프록시"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:259
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "krb5TicketWatcher 종료"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:252
 msgid "Re&store"
-msgstr "복원(&S)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
+#, fuzzy
 msgid "Reenter password:"
-msgstr "열쇠글 다시입력:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:239
+#, fuzzy
 msgid "Renew the Ticket"
-msgstr "티켓 갱신"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Renew until"
-msgstr "아래까지 갱신"
+msgstr ""
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:194
+#, fuzzy
 msgid "Renewable"
-msgstr "갱신 가능"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
-msgstr "다음을 갱신가능:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:254
+#, fuzzy
 msgid "Restore the Window"
-msgstr "윈도우 복원"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:897
+#, fuzzy
 msgid "Service principal"
-msgstr "서비스 법칙"
+msgstr ""
 
 #: ../src/main.cpp:78
+#, fuzzy
 msgid "Systray"
-msgstr "시스템 트레이"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
+#, fuzzy
 msgid "The password you entered is invalid"
-msgstr "입력한 열쇠글이 잘못되었음"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
+#, fuzzy
 msgid "The passwords are not equal"
-msgstr "열쇠글이 일치하지 않음"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
+#, fuzzy
 msgid "Ticket Encryption Type"
-msgstr "티켓 암호화 형식"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
-msgstr "티켓 플래그"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:135
 msgid "Ticket Flags Legend"
-msgstr "티켓 플래그 설명"
+msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:306
 msgid "Ticket cache cannot be destroyed."
-msgstr "티켓 캐시를 폐기할 수 없습니다."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
 msgid "Ticket cache: %1:%2"
-msgstr "티켓 캐시: %1:%2"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1046
 #, qt-format
 msgid "Ticket expires in %1"
-msgstr "%1 안에 티켓이 만료됨"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:943
 msgid "Ticket flags"
-msgstr "티켓 플래그"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket renewed"
-msgstr "티켓 갱신됨"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:367
 msgid "Ticket successfully renewed."
-msgstr "티켓이 성공적으로 갱신됨"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:132
 msgid "Time Remaining"
-msgstr "남은 시간"
+msgstr ""
 
 #. Legend: Explain ticket flag "T"
 #: ../src/krb5ticketwatcher.cpp:202
 msgid "Transit Policy Checked"
-msgstr "통과 정책 확인"
+msgstr ""
 
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
-#, qt-format
+#, fuzzy, qt-format
 msgid "Unknown address type %1"
-msgstr "알 수 없는 주소 형식 %1"
+msgstr ""
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
+#, fuzzy
 msgid "Unknown principal"
-msgstr "알 수 없는 법칙"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
+#, fuzzy
 msgid "Unknown realm"
-msgstr "알 수 없는 영역"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
-msgstr "유효기간 시작"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "값"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -498,16 +533,17 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:777 ../src/krb5ticketwatcher.cpp:806
 #: ../src/krb5ticketwatcher.cpp:818
 msgid "days"
-msgstr "일"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
+#, fuzzy
 msgid "default"
-msgstr "기본"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
-msgstr "전달 가능"
+msgstr ""
 
 #. init with translations
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:297
@@ -516,25 +552,26 @@ msgstr "전달 가능"
 #: ../src/krb5ticketwatcher.cpp:780 ../src/krb5ticketwatcher.cpp:805
 #: ../src/krb5ticketwatcher.cpp:817
 msgid "hours"
-msgstr "시간"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:298
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
 #: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
 #: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
+#, fuzzy
 msgid "minutes"
-msgstr "분"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:293
 msgid "proxiable"
-msgstr "대리 가능"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:299
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:306
 #: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
 #: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr "초"
+msgstr ""
 
 #~ msgid "Change the Kerberos Password"
 #~ msgstr "Kerberos 열쇠글 변경"

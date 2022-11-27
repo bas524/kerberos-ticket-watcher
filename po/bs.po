@@ -23,7 +23,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 #, fuzzy
 msgid "&Cancel"
-msgstr "Francuska"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:242
 msgid "&Change Kerberos Password"
@@ -50,7 +50,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
 #, fuzzy
 msgid "&Ok"
-msgstr "U redu"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
@@ -198,7 +198,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:304
 #, fuzzy
 msgid "Error !"
-msgstr "Greška"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
 msgid "Error while setting cache flags"
@@ -302,7 +302,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:204
 #, fuzzy
 msgid "Ok as Delegate"
-msgstr "Izbrii"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
 msgid "Password change failed"
@@ -399,7 +399,7 @@ msgstr ""
 #: ../src/main.cpp:78
 #, fuzzy
 msgid "Systray"
-msgstr "Sistem"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
@@ -471,7 +471,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:533
 #, fuzzy
 msgid "Unknown realm"
-msgstr "Nepoznato"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
@@ -479,7 +479,7 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "Vrijednost"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -531,4 +531,4 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
 #: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr "sekundi"
+msgstr ""

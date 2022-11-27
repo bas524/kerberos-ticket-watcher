@@ -34,7 +34,7 @@ msgstr "&Отмена"
 
 #: ../src/krb5ticketwatcher.cpp:242
 msgid "&Change Kerberos Password"
-msgstr "&Изменить пароль Kerberos"
+msgstr "&Изменить доменный пароль"
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
@@ -181,7 +181,7 @@ msgstr "Кэш реквизитов доступа по умолчанию"
 #: ../src/krb5ticketwatcher.cpp:861
 #, qt-format
 msgid "Default principal: %3"
-msgstr "Роль по умолчанию: %3"
+msgstr "Логин по умолчанию: %3"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:295
@@ -346,7 +346,7 @@ msgstr "Предварительная аутентификация"
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:283
 msgid "Principal:"
-msgstr "Роль:"
+msgstr "Логин:"
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
 msgid "Property"
@@ -402,7 +402,7 @@ msgstr "Восстановить окно"
 
 #: ../src/krb5ticketwatcher.cpp:897
 msgid "Service principal"
-msgstr "Роль службы"
+msgstr "Служебная учётная запись"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -473,7 +473,7 @@ msgstr "Неизвестный тип адреса %1"
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
 msgid "Unknown principal"
-msgstr "Неизвестная роль"
+msgstr "Неизвестный пользователь"
 
 #: ../src/krb5ticketwatcher.cpp:533
 msgid "Unknown realm"

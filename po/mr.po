@@ -25,16 +25,17 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "&रद्द करा"
+msgstr ""
 
+# password dialog title
 #: ../src/krb5ticketwatcher.cpp:242
 #, fuzzy
 msgid "&Change Kerberos Password"
-msgstr " पासवर्ड बदला"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "आणि बंद करा"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
@@ -43,7 +44,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
 #, fuzzy
 msgid "&Details..."
-msgstr "&तपशील"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
@@ -54,16 +55,16 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
 #, fuzzy
 msgid "&Ok"
-msgstr "ठिक"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "&सोडा"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
 #, fuzzy
 msgid "&Refresh"
-msgstr "रिफ्रेश"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
@@ -85,29 +86,29 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:961
 #, fuzzy
 msgid "Addresses"
-msgstr "स्वतःचा पत्ता"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "Alt+C"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "Alt+O"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
 #, fuzzy
 msgid "Alt+R"
-msgstr "Alt+Y"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:206
@@ -128,45 +129,46 @@ msgstr ""
 msgid "Build Date"
 msgstr ""
 
+# password dialog title
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
 #, fuzzy
 msgid "Change Kerberos Password"
-msgstr " पासवर्ड बदला"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
 #, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "`%१'सेवादात्यासाठीचा पासवर्ड कराः"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
 #, fuzzy
 msgid "Create a new Ticket"
-msgstr "एक नवीन प्रोफाईल निर्माण करा"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
 #, fuzzy
 msgid "Ctrl+C"
-msgstr "Ctrl+P"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
 #, fuzzy
 msgid "Ctrl+D"
-msgstr "Ctrl+P"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
 #, fuzzy
 msgid "Ctrl+I"
-msgstr "Ctrl+I"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
 #, fuzzy
 msgid "Ctrl+N"
-msgstr "Ctrl+P"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
@@ -174,7 +176,7 @@ msgstr "Ctrl+R"
 
 #: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "Ctrl+S"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
@@ -202,23 +204,23 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:297
 #, fuzzy
 msgid "Do you want to destroy the ticket cache?"
-msgstr "आता आपणास प्रणाली थांबवायची आहे?"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
 #, fuzzy
 msgid "Enter new password:"
-msgstr "<नवीन पासवर्ड प्रविष्ट करा>"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
 #, fuzzy
 msgid "Error !"
-msgstr "चूक!"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
 #, fuzzy
 msgid "Error while setting cache flags"
-msgstr "विनंतीचा संबंध सांगतांना चूक"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:917
 msgid "Expires"
@@ -228,9 +230,8 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
 #: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
 #: ../src/main.cpp:92
-#, fuzzy
 msgid "Failure"
-msgstr " अयशस्वी"
+msgstr ""
 
 #. Legend: Explain ticket flag "F"
 #: ../src/krb5ticketwatcher.cpp:180
@@ -259,24 +260,24 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:196
 #, fuzzy
 msgid "Initial"
-msgstr "प्रारंभिकीकरण करत आहे"
+msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
 #, fuzzy
 msgid "Invalid"
-msgstr "अवैध KeyID."
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
 #, fuzzy
 msgid "Invalid Password"
-msgstr "अवैध CA पासवर्ड"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
 #, fuzzy
 msgid "Invalid principal name"
-msgstr "डिव्हाईसचे अवैध नांव."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
@@ -297,7 +298,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:949
 #, fuzzy
 msgid "Key Encryption Type"
-msgstr "एन्क्रिप्शन"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
@@ -313,10 +314,12 @@ msgid "New Ticket"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1040
+#, fuzzy
 msgid "No Credential Cache found"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:850
+#, fuzzy
 msgid "No credentials cache found"
 msgstr ""
 
@@ -324,12 +327,12 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:204
 #, fuzzy
 msgid "Ok as Delegate"
-msgstr "पुसून टाका"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
 #, fuzzy
 msgid "Password change failed"
-msgstr "पासवर्ड बदलणे सोडून दिले"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:637
 #, qt-format
@@ -343,18 +346,17 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
-msgstr "पासवर्डः"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
 #, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
-msgstr "चालू ठेवण्यासाठी कृपया \"%\"साठी पासवर्ड एंटर करा."
+msgstr ""
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:190
-#, fuzzy
 msgid "Postdated"
-msgstr " फिरवले नाही."
+msgstr ""
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:200
@@ -368,7 +370,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
 #, fuzzy
 msgid "Property"
-msgstr "प्रॉपर्टीज"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:184
@@ -379,7 +381,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:186
 #, fuzzy
 msgid "Proxy"
-msgstr "प्रॉपर्टीज"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
@@ -396,9 +398,10 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
 #, fuzzy
 msgid "Reenter password:"
-msgstr "नवीन पासवर्ड पुन्हा प्रविष्ट करा:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:239
+#, fuzzy
 msgid "Renew the Ticket"
 msgstr ""
 
@@ -410,39 +413,42 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:194
 #, fuzzy
 msgid "Renewable"
-msgstr "एनॅबल केले"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:254
+#, fuzzy
 msgid "Restore the Window"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:897
+#, fuzzy
 msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
 #, fuzzy
 msgid "Systray"
-msgstr "प्रणाली"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
+#, fuzzy
 msgid "The password you entered is invalid"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
 #, fuzzy
 msgid "The passwords are not equal"
-msgstr " पासवर्ड जुळत नाहीत"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
 #, fuzzy
 msgid "Ticket Encryption Type"
-msgstr "एन्क्रिप्शन"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
@@ -454,9 +460,8 @@ msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:306
-#, fuzzy
 msgid "Ticket cache cannot be destroyed."
-msgstr "सक्रिय प्रोफाईल काढून टाकू शकत नाही"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:848 ../src/krb5ticketwatcher.cpp:860
 #, qt-format
@@ -492,18 +497,18 @@ msgstr ""
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
 #, fuzzy, qt-format
 msgid "Unknown address type %1"
-msgstr "अज्ञात रिसोर्स प्रकार VAR1"
+msgstr ""
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
 #, fuzzy
 msgid "Unknown principal"
-msgstr "अनोळखी पर्याय"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
 #, fuzzy
 msgid "Unknown realm"
-msgstr "अज्ञात"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
@@ -511,7 +516,7 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "व्हॅल्यू"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -533,7 +538,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
 #, fuzzy
 msgid "default"
-msgstr "डीफॉल्ट हॅट"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
@@ -552,6 +557,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
 #: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
 #: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
+#, fuzzy
 msgid "minutes"
 msgstr ""
 
@@ -564,7 +570,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:768 ../src/krb5ticketwatcher.cpp:786
 #: ../src/krb5ticketwatcher.cpp:803 ../src/krb5ticketwatcher.cpp:815
 msgid "seconds"
-msgstr " सेकंद"
+msgstr ""
 
 #, fuzzy
 #~ msgid "Change the Kerberos Password"

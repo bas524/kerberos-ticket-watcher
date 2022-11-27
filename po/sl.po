@@ -29,16 +29,17 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
 msgid "&Cancel"
-msgstr "&Prekini"
+msgstr ""
 
+# password dialog title
 #: ../src/krb5ticketwatcher.cpp:242
 #, fuzzy
 msgid "&Change Kerberos Password"
-msgstr "<Spremenite geslo>"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:141
 msgid "&Close"
-msgstr "&Zapri"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:247
 msgid "&Destroy Ticket"
@@ -47,7 +48,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
 #, fuzzy
 msgid "&Details..."
-msgstr "Po&drobnosti"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:232
 msgid "&New Ticket"
@@ -58,16 +59,16 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
 #, fuzzy
 msgid "&Ok"
-msgstr "V redu"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:257
 msgid "&Quit"
-msgstr "&Izhod"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
 #, fuzzy
 msgid "&Refresh"
-msgstr "Osvežitev"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:237
 msgid "&Renew Ticket"
@@ -89,29 +90,29 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:961
 #, fuzzy
 msgid "Addresses"
-msgstr "Lasten naslov"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:310
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:143
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:174
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:160
 msgid "Alt+C"
-msgstr "Alt+P"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:288
 msgid "Alt+D"
-msgstr "Alt+D"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:314
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:178
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:156
 msgid "Alt+O"
-msgstr "Alt+R"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
 #, fuzzy
 msgid "Alt+R"
-msgstr "Alt+S"
+msgstr ""
 
 #. Legend: Explain ticket flag "a"
 #: ../src/krb5ticketwatcher.cpp:206
@@ -132,45 +133,46 @@ msgstr ""
 msgid "Build Date"
 msgstr ""
 
+# password dialog title
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
 #, fuzzy
 msgid "Change Kerberos Password"
-msgstr "<Spremenite geslo>"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
 #, fuzzy, qt-format
 msgid "Change the password for principal <b>%1</b>"
-msgstr "Vnesite geslo za ponudnika dostopa do interneta `%1':"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
 #, fuzzy
 msgid "Create a new Ticket"
-msgstr "Ustvari nov profil"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
 #, fuzzy
 msgid "Ctrl+C"
-msgstr "Ctrl+C"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
 #, fuzzy
 msgid "Ctrl+D"
-msgstr "Ctrl+D"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
 #, fuzzy
 msgid "Ctrl+I"
-msgstr "Ctrl+I"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
 #, fuzzy
 msgid "Ctrl+N"
-msgstr "Ctrl+N"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:258
 msgid "Ctrl+Q"
-msgstr "Ctrl+Q"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:238
 msgid "Ctrl+R"
@@ -178,7 +180,7 @@ msgstr "Ctrl+R"
 
 #: ../src/krb5ticketwatcher.cpp:253
 msgid "Ctrl+S"
-msgstr "Ctrl+E"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1027
 msgid "Day(s)"
@@ -206,20 +208,21 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:297
 #, fuzzy
 msgid "Do you want to destroy the ticket cache?"
-msgstr "Želite zaustaviti sistem?"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
 #, fuzzy
 msgid "Enter new password:"
-msgstr "<Vpišite novo geslo>"
+msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
 #, fuzzy
 msgid "Error !"
-msgstr "Napaka"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
+#, fuzzy
 msgid "Error while setting cache flags"
 msgstr ""
 
@@ -261,25 +264,24 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:196
 #, fuzzy
 msgid "Initial"
-msgstr "Prva priprava"
+msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
 #, fuzzy
 msgid "Invalid"
-msgstr "Napačen vnos."
+msgstr ""
 
-# password dialog title
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
 #, fuzzy
 msgid "Invalid Password"
-msgstr "Geslo"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
 #, fuzzy
 msgid "Invalid principal name"
-msgstr "Nepravilno ime naprave."
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:153
 msgid "Kerberos Password Dialog"
@@ -300,7 +302,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:949
 #, fuzzy
 msgid "Key Encryption Type"
-msgstr "Šifriranje"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:294
 msgid "Lifetime:"
@@ -316,10 +318,12 @@ msgid "New Ticket"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1040
+#, fuzzy
 msgid "No Credential Cache found"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:850
+#, fuzzy
 msgid "No credentials cache found"
 msgstr ""
 
@@ -327,9 +331,10 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:204
 #, fuzzy
 msgid "Ok as Delegate"
-msgstr "Zbriši"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:743
+#, fuzzy
 msgid "Password change failed"
 msgstr ""
 
@@ -345,18 +350,17 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:285
 msgid "Password:"
-msgstr "Geslo:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
-#, qt-format
+#, fuzzy, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr ""
 
 #. Legend: Explain ticket flag "d"
 #: ../src/krb5ticketwatcher.cpp:190
-#, fuzzy
 msgid "Postdated"
-msgstr "Po zagonu"
+msgstr ""
 
 #. Legend: Explain ticket flag "A"
 #: ../src/krb5ticketwatcher.cpp:200
@@ -370,7 +374,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:134
 #, fuzzy
 msgid "Property"
-msgstr "Lastnosti"
+msgstr ""
 
 #. Legend: Explain ticket flag "p"
 #: ../src/krb5ticketwatcher.cpp:184
@@ -381,7 +385,7 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:186
 #, fuzzy
 msgid "Proxy"
-msgstr "Lastnosti"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1099
 msgid "Qt Version"
@@ -398,9 +402,10 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
 #, fuzzy
 msgid "Reenter password:"
-msgstr "<Vpišite novo geslo>"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:239
+#, fuzzy
 msgid "Renew the Ticket"
 msgstr ""
 
@@ -412,38 +417,42 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:194
 #, fuzzy
 msgid "Renewable"
-msgstr "Omogoči"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:301
 msgid "Renewable for:"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:254
+#, fuzzy
 msgid "Restore the Window"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:897
+#, fuzzy
 msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
 #, fuzzy
 msgid "Systray"
-msgstr "Sistem"
+msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:613 ../src/krb5ticketwatcher.cpp:695
+#, fuzzy
 msgid "The password you entered is invalid"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
+#, fuzzy
 msgid "The passwords are not equal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
 #, fuzzy
 msgid "Ticket Encryption Type"
-msgstr "Šifriranje"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:291
 msgid "Ticket Flags"
@@ -490,7 +499,7 @@ msgid "Transit Policy Checked"
 msgstr ""
 
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
-#, qt-format
+#, fuzzy, qt-format
 msgid "Unknown address type %1"
 msgstr ""
 
@@ -498,12 +507,12 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:530
 #, fuzzy
 msgid "Unknown principal"
-msgstr "Neznan monitor:"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
 #, fuzzy
 msgid "Unknown realm"
-msgstr "Neznano"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:913
 msgid "Valid starting"
@@ -511,7 +520,7 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:133
 msgid "Value"
-msgstr "Vrednost"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:618
 msgid "Warning"
@@ -533,7 +542,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
 #, fuzzy
 msgid "default"
-msgstr "Privzeta pot (default route)"
+msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:292
 msgid "forwardable"
@@ -552,6 +561,7 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:305
 #: ../src/krb5ticketwatcher.cpp:765 ../src/krb5ticketwatcher.cpp:783
 #: ../src/krb5ticketwatcher.cpp:804 ../src/krb5ticketwatcher.cpp:816
+#, fuzzy
 msgid "minutes"
 msgstr ""
 
