@@ -18,6 +18,9 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d %H:%M:%S')"
+      - name: Get commit sha
+        id: git_sha
+        run: echo "::set-output name=git_sha::$(echo $GITHUB_SHA)"
       - uses: actions/checkout@v3
       # install dependencies
       - name: devel-pkgs
@@ -35,7 +38,7 @@ jobs:
       - name: mkdir
         run: ls -l && mkdir cmake-build-release
       - name: cmake cmake-build-release
-        run: export GIT_DISCOVERY_ACROSS_FILESYSTEM=1 && cmake -DCOMMITTER_DATE="${{ steps.date.outputs.date }}" -DCOMMITTER_FULLSHA=$GITHUB_SHA -DCOMMITTER_SHORTSHA=$(echo $GITHUB_SHA | cut -c1-7) -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
+        run: export GIT_DISCOVERY_ACROSS_FILESYSTEM=1 && cmake -DCOMMITTER_DATE="${{ steps.date.outputs.date }}" -DCOMMITTER_FULLSHA="${{ steps.git_sha.outputs.git_sha }}" -DCOMMITTER_SHORTSHA="$(echo ${{ steps.git_sha.outputs.git_sha }} | cut -c1-7)" -DCMAKE_BUILD_TYPE=Release -Bcmake-build-release -H.
       - name: cmake make
         run: cmake --build cmake-build-release/ --target all
         env:
