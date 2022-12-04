@@ -32,7 +32,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qt5keychain-dev gcc g++
       # build project
       - name: mkdir
         run: ls -l && mkdir cmake-build-release
@@ -88,7 +88,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default qt5keychain-dev gcc g++
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -144,7 +144,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools gcc g++
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools qt5keychain-dev gcc g++
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -200,7 +200,7 @@ jobs:
           echo -e "krb5-config krb5-config/admin_server string TEST.HOME" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/dns_for_default boolean true" | debconf-set-selections && 
           echo -e "krb5-config krb5-config/add_servers boolean true" | debconf-set-selections && 
-          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default gcc g++
+          apt-get update -y && apt-get install -yq gettext krb5-user krb5-config libkrb5-dev make cmake qt5-default qt5keychain-dev gcc g++
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -253,7 +253,7 @@ jobs:
           sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* &&
           sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* &&
           cd / &&
-          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build
+          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools qtkeychain-qt5-devel rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
@@ -302,7 +302,7 @@ jobs:
       # install dependencies
       - name: devel-pkgs
         run: |
-          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools rpm-build git
+          yum update -y && yum install -yq gettext krb5-devel qt5-qtbase-devel qt5-qttools qtkeychain-qt5-devel rpm-build
       # build project
       - name: mkdir
         run: mkdir cmake-build-release
