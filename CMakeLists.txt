@@ -1,25 +1,25 @@
-# set project's name
-project(krb5-ticket-watcher)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 cmake_minimum_required(VERSION 3.0)
 cmake_policy(SET CMP0075 NEW)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 set(MAJOR "1")
 set(MINOR "0")
 set(PATCH "4")
+cmake_policy(SET CMP0048 NEW)
+project(krb5-ticket-watcher VERSION ${MAJOR}.${MINOR}.${PATCH})
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(VersionHeader)
+set(PROJECT_VERSION "${MAJOR}.${MINOR}.${PATCH}.${COMMITTER_SHORTSHA}")
 
 message(STATUS "COMMITTER_FULLSHA ${COMMITTER_FULLSHA}")
 message(STATUS "COMMITTER_SHORTSHA ${COMMITTER_SHORTSHA}")
 message(STATUS "COMMITTER_DATE ${COMMITTER_DATE}")
-message(STATUS "PROJECT_VERSION ${MAJOR}.${MINOR}.${PATCH}.${COMMITTER_SHORTSHA}")
+message(STATUS "PROJECT_VERSION ${PROJECT_VERSION}")
 
-set(PROJECT_VERSION ${MAJOR}.${MINOR}.${PATCH}.${COMMITTER_SHORTSHA})
-add_definitions(-DPROJECT_VERSION="${PROJECT_VERSION}")
+add_definitions(-DPROJECT_VERSION= "${PROJECT_VERSION}")
 
 include_directories(src)
 
@@ -51,6 +51,7 @@ set(KTW_SRCS
     src/krb5timestamphelper.cpp
     src/krb5timestamphelper.h
     src/stacktrace.h
+    src/keychainclass.cpp
     )
 
 # another list, this time it includes all header files that should be treated with moc
@@ -59,6 +60,7 @@ set(KTW_MOC_HDRS
     src/kinitdialog.h
     src/pwdialog.h
     src/pwchangedialog.h
+    src/keychainclass.h
     )
 
 # some .ui files
@@ -73,7 +75,7 @@ set(KTW_UIS
 # enable warnings
 add_definitions(-Wall -DTEXTDOMAIN=krb5-ticket-watcher)
 
-find_package(Qt5 COMPONENTS Core Widgets Gui Network REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets Gui Network Keychain REQUIRED)
 
 find_package(Gettext REQUIRED)
 if (GETTEXT_FOUND)
@@ -95,6 +97,7 @@ include_directories(${CMAKE_BINARY_DIR})
 
 find_package(KRB5 REQUIRED krb5)
 target_include_directories(krb5-ticket-watcher PRIVATE ${KRB5_INCLUDE_DIRS})
+target_include_directories(krb5-ticket-watcher PRIVATE ${QTKEYCHAIN_INCLUDE_DIRS})
 
 
 find_program(CREATEPOT createPot ${CMAKE_SOURCE_DIR}/po)
@@ -102,14 +105,15 @@ if (NOT CREATEPOT)
   message(FATAL_ERROR "createPot not found")
 endif (NOT CREATEPOT)
 
-add_custom_target(pot ${CREATEPOT} ${CMAKE_SOURCE_DIR}/po
-                  DEPENDS krb5-ticket-watcher)
+add_custom_target(pot ${CREATEPOT} ${CMAKE_SOURCE_DIR}/po DEPENDS krb5-ticket-watcher)
 add_custom_target(backupclean find ${CMAKE_SOURCE_DIR} -name "*~" -print0 | xargs -0 rm -f)
 
 # here we instruct CMake to build "krb5-ticket-watcher" executable from all of the source files
 target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS})
 target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
+target_link_libraries(krb5-ticket-watcher PRIVATE ${QTKEYCHAIN_LIBRARIES})
+message(STATUS "QTKEYCHAIN_LIBRARIES ${QTKEYCHAIN_LIBRARIES}")
 target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
 add_link_options($<$<CONFIG:RELEASE>:-s>)
 

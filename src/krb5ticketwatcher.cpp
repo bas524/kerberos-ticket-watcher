@@ -51,7 +51,6 @@
 #include "kinitdialog.h"
 #include "pwchangedialog.h"
 #include "pwdialog.h"
-// #include "v5.h"
 #include "krb5creds.h"
 #include "krb5ccache.h"
 #include "krb5exception.h"
@@ -336,7 +335,13 @@ void Ktw::initWorkflow(int type) {
 
     waitTimer.stop();
     try {
-      reinitCredential();
+      QString result = keyChainClass.readKey(getUserName());
+      QString pwd;
+      if (!result.isEmpty()) {
+        QStringList lp = result.split(":");
+        pwd = lp.at(1);
+      }
+      reinitCredential(pwd);
     } catch (v5::Exception &ex) {
       retval = ex.retval();
       if (ex.retval() == KRB5_KDC_UNREACH) {
@@ -353,6 +358,13 @@ void Ktw::initWorkflow(int type) {
       if (_principal != nullptr) {
         auto newCreds = cCache.renewCredentials(*_principal);
         tgtEndtime = newCreds.ticketEndTime();
+        pw_exp = _context.getPasswordExpiredTimestamp(*_principal);
+        long days = daysToPwdExpire();
+        if (days != -1) {
+          QString buff = ki18n("Password expires on %1").arg(v5::TimestampHelper::toString(pw_exp));
+          tray->setIcon(generateTrayIcon(days));
+          tray->setToolTip(buff);
+        }
         retval = 0;
       } else {
         retval = KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN;
@@ -423,44 +435,59 @@ void Ktw::kinit() {
 
   QString defRealm = _context.defaultRealm();
   std::unique_ptr<KinitDialog> dlg;
-
+  bool withUI = false;
   do {
     ok = false;
-    dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
-
-    dlg->errorLabelSetText(errorTxt);
-    dlg->userLineEditSetText(getUserName());
-    dlg->realmLineEditSetText(defRealm);
-    dlg->passwordLineEditSetFocus();
-
-    dlg->forwardCheckBoxSetChecked(forwardable);
-    dlg->proxyCheckBoxSetChecked(proxiable);
-
-    if (lifetime >= 0) {
-      dlg->lifetimeSpinBoxSetValue(lifetime);
-      dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
+    QString principal;
+    QString pwd;
+    QString result;
+    if (!withUI) {
+      result = keyChainClass.readKey(getUserName());
+    }
+    if (!result.isEmpty()) {
+      QStringList lp = result.split(":");
+      principal = lp.at(0);
+      pwd = lp.at(1);
+      withUI = false;
     } else {
-      dlg->lifetimeSpinBoxSetValue(0);
+      withUI = true;
+      dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
+
+      dlg->errorLabelSetText(errorTxt);
+      dlg->userLineEditSetText(getUserName());
+      dlg->realmLineEditSetText(defRealm);
+      dlg->passwordLineEditSetFocus();
+
+      dlg->forwardCheckBoxSetChecked(forwardable);
+      dlg->proxyCheckBoxSetChecked(proxiable);
+
+      if (lifetime >= 0) {
+        dlg->lifetimeSpinBoxSetValue(lifetime);
+        dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
+      } else {
+        dlg->lifetimeSpinBoxSetValue(0);
+      }
+
+      if (renewtime >= 0) {
+        dlg->renewtimeSpinBoxSetValue(renewtime);
+        dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
+        dlg->renewCheckBoxSetChecked(true);
+      } else {
+        dlg->renewCheckBoxSetChecked(false);
+      }
+
+      int ret = dlg->exec();
+      if (ret == QDialog::Rejected) {
+        qDebug("rejected");
+        throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");  // TODO: May be only continue this flow?
+      }
+      qDebug("accepted");
+
+      errorTxt = "";
+
+      principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
+      pwd = dlg->passwordLineEditText();
     }
-
-    if (renewtime >= 0) {
-      dlg->renewtimeSpinBoxSetValue(renewtime);
-      dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
-      dlg->renewCheckBoxSetChecked(true);
-    } else {
-      dlg->renewCheckBoxSetChecked(false);
-    }
-
-    int ret = dlg->exec();
-    if (ret == QDialog::Rejected) {
-      qDebug("rejected");
-      throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");  // TODO: May be only continue this flow?
-    }
-    qDebug("accepted");
-
-    errorTxt = "";
-
-    QString principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
 
     try {
       _principal = std::make_unique<v5::Principal>(_context.principal(principal));
@@ -472,28 +499,30 @@ void Ktw::kinit() {
       continue;
     }
 
-    forwardable = dlg->forwardCheckBoxIsChecked();
-    proxiable = dlg->proxyCheckBoxIsChecked();
-    lifetime = 0;
-    renewtime = 0;
+    if (withUI) {
+      forwardable = dlg->forwardCheckBoxIsChecked();
+      proxiable = dlg->proxyCheckBoxIsChecked();
+      lifetime = 0;
+      renewtime = 0;
 
-    if (dlg->lifetimeSpinBoxValue() >= 0) {
-      lifetime = dlg->lifetimeSpinBoxValue();
-      lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
-    }
+      if (dlg->lifetimeSpinBoxValue() >= 0) {
+        lifetime = dlg->lifetimeSpinBoxValue();
+        lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
+      }
 
-    if (!dlg->renewCheckBoxIsChecked()) {
-      renewtime = -1;
-    } else if (dlg->renewtimeSpinBoxValue() >= 0) {
-      renewtime = dlg->renewtimeSpinBoxValue();
-      renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
+      if (!dlg->renewCheckBoxIsChecked()) {
+        renewtime = -1;
+      } else if (dlg->renewtimeSpinBoxValue() >= 0) {
+        renewtime = dlg->renewtimeSpinBoxValue();
+        renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
+      }
     }
 
     setOptions(credsOpts);
 
     try {
       credsOpts.setExpireCallback(expire_cb, nullptr);
-      v5::Creds creds = _context.initCreds(*_principal, credsOpts, dlg->passwordLineEditText());
+      v5::Creds creds = _context.initCreds(*_principal, credsOpts, pwd);
       creds.storeInCacheFor(*_principal);
       tgtEndtime = creds.ticketEndTime();
       long days = daysToPwdExpire();
@@ -501,6 +530,10 @@ void Ktw::kinit() {
         QString buff = ki18n("Password expires on %1").arg(v5::TimestampHelper::toString(pw_exp));
         tray->setIcon(generateTrayIcon(days));
         tray->setToolTip(buff);
+      }
+      if (withUI) {
+        QString value = principal + ":" + dlg->passwordLineEditText();
+        keyChainClass.writeKey(getUserName(), value);
       }
     } catch (v5::Exception &ex) {
       if (ex.retval()) {
@@ -517,7 +550,7 @@ void Ktw::kinit() {
             /* password expired */
             {
               try {
-                changePassword(dlg->passwordLineEditText());
+                changePassword(pwd);
               } catch (std::exception &ex) {
                 qDebug("kinit change password error %s", ex.what());
                 ok = false;

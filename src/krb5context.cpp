@@ -71,4 +71,24 @@ Creds Context::initCreds(Principal &principal, CredsOpts &opts, const QString &p
   }
   return Creds(*this, std::move(creds));
 }
+krb5_timestamp Context::getPasswordExpiredTimestamp(Principal &principal) {
+  krb5_timestamp pwd_exp = 0;
+  auto expire_cb =
+      [](krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req) -> void {
+    if (password_expiration != 0 && data != nullptr) {
+      *(krb5_timestamp *)data = password_expiration;
+    }
+  };
+
+  krb5_error_code retval = krb5_get_init_creds_opt_set_expire_callback(kcontext, nullptr, expire_cb, &pwd_exp);
+  if (retval != 0) {
+    throw KRB5EXCEPTION(retval, *this, "Can't set expire callback");
+  }
+  auto creds = std::make_unique<krb5_creds>();
+  retval = krb5_get_init_creds_password(kcontext, creds.get(), principal(), nullptr, nullptr, nullptr, 0, nullptr, nullptr);
+  if (retval) {
+    throw KRB5EXCEPTION(retval, *this, "Can't init creds without password");
+  }
+  return pwd_exp;
+}
 }  // namespace v5

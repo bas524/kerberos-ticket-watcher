@@ -25,8 +25,10 @@
 #include <QTimer>
 #include <QTranslator>
 #include <QSystemTrayIcon>
+#include "keychainclass.h"
 
 #define KRB5_PRIVATE 1
+
 #include <krb5.h>
 
 #include "krb5_tw_gettext.h"
@@ -38,8 +40,11 @@
 #include "ui_mainwidget.h"
 
 class QAction;
+
 class QSystemTrayIcon;
+
 class QMenu;
+
 class QEvent;
 
 class Ktw : public QWidget, private Ui::MainWidget {
@@ -47,37 +52,55 @@ class Ktw : public QWidget, private Ui::MainWidget {
 
  public:
   Ktw(int &argc, char **argv, QWidget *parent = nullptr, Qt::WindowFlags fl = Qt::WindowType::Widget);
+
   ~Ktw() override;
 
   enum reqAction { none, renew, reinit };
 
  public slots:
+
   void forceRenewCredential();
+
   void destroyCredential();
+
   void initWorkflow(int type = 0);
+
   void trayClicked(QSystemTrayIcon::ActivationReason reason);
+
   void restore();
+
   void kinit();
+
   void setTrayToolTip(const QString &text);
+
   void setTrayIcon(const QString &);
+
   void reReadCache();
+
   void version();
 
  protected:
   bool eventFilter(QObject *obj, QEvent *ev) override;
 
  private slots:
+
   void changePassword(const QString &oldpw = QString());
 
  private:
   void createTrayMenu();
+
   void initMainWindow();
+
   void initTray();
+
   void buildCcacheInfos();
+
   void showCredential(v5::Creds &cred, const QString &defname);
 
   QString printtime(time_t tv);
+
   QString oneAddr(krb5_address *a);
+
   QString printInterval(krb5_timestamp time);
 
   QString passwordDialog(const QString &errorText = QString()) const;
@@ -91,12 +114,14 @@ class Ktw : public QWidget, private Ui::MainWidget {
   void setOptions(v5::CredsOpts &opts);
 
   QPixmap generateTrayIcon(long days);
+
   void paintFace(QPainter &painter, const QString &text, int iconSize, const QColor &textColor, const QColor &fillColor);
 
   /// getPwExp
   /// \param pass
   /// \return count of days
   long getPwExp(const QString &pass);
+
   long daysToPwdExpire();
 
   static void expire_cb(
@@ -131,6 +156,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
   QString renewtimeUnit;
 
   int promptInterval;
+  KeyChainClass keyChainClass;
 };
 
 #endif  // KRB5_TICKET_WATCHER_H
