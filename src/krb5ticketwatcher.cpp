@@ -259,7 +259,7 @@ void Ktw::createTrayMenu() {
   connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
   versionAction = new QAction(ki18n("&Version"), this);
-  quitAction->setShortcut(ki18n("Ctrl+I"));
+  versionAction->setShortcut(ki18n("Ctrl+I"));
   versionAction->setStatusTip(ki18n("Kerberos5 Ticket Watcher Version"));
   connect(versionAction, SIGNAL(triggered()), this, SLOT(version()));
 
@@ -335,18 +335,14 @@ void Ktw::initWorkflow(int type) {
 
     waitTimer.stop();
     try {
-      QString result = keyChainClass.readKey(getUserName());
-      QString pwd;
-      if (!result.isEmpty()) {
-        QStringList lp = result.split(":");
-        pwd = lp.at(1);
-      }
+      const QString user = getUserName();
+      QString pwdKey = QString("%1_pwd").arg(user);
+      QString pwd = keyChainClass.readKey(pwdKey);
       reinitCredential(pwd);
     } catch (v5::Exception &ex) {
       retval = ex.retval();
-      if (ex.retval() == KRB5_KDC_UNREACH) {
+      if (retval == KRB5_KDC_UNREACH) {
         qWarning("cannot reach the KDC. Sleeping ...");
-        retval = 0;
       } else {
         ex.rethrow();
       }
@@ -358,13 +354,6 @@ void Ktw::initWorkflow(int type) {
       if (_principal != nullptr) {
         auto newCreds = cCache.renewCredentials(*_principal);
         tgtEndtime = newCreds.ticketEndTime();
-        pw_exp = _context.getPasswordExpiredTimestamp(*_principal);
-        long days = daysToPwdExpire();
-        if (days != -1) {
-          QString buff = ki18n("Password expires on %1").arg(v5::TimestampHelper::toString(pw_exp));
-          tray->setIcon(generateTrayIcon(days));
-          tray->setToolTip(buff);
-        }
         retval = 0;
       } else {
         retval = KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN;
@@ -391,6 +380,10 @@ void Ktw::setTrayIcon(const QString &path) { tray->setIcon(QIcon(path)); }
 
 void Ktw::expire_cb(
     krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req) {
+  Q_UNUSED(context);
+  Q_UNUSED(data);
+  Q_UNUSED(account_expiration);
+  Q_UNUSED(is_last_req);
   if (password_expiration != 0) {
     pw_exp = password_expiration;
   }
@@ -436,18 +429,18 @@ void Ktw::kinit() {
   QString defRealm = _context.defaultRealm();
   std::unique_ptr<KinitDialog> dlg;
   bool withUI = false;
+  const QString user = getUserName();
+  QString principalKey = QString("%1_principal").arg(user);
+  QString pwdKey = QString("%1_pwd").arg(user);
   do {
     ok = false;
     QString principal;
     QString pwd;
-    QString result;
     if (!withUI) {
-      result = keyChainClass.readKey(getUserName());
+      principal = keyChainClass.readKey(principalKey);
+      pwd = keyChainClass.readKey(pwdKey);
     }
-    if (!result.isEmpty()) {
-      QStringList lp = result.split(":");
-      principal = lp.at(0);
-      pwd = lp.at(1);
+    if (!principal.isEmpty() && !pwd.isEmpty()) {
       withUI = false;
     } else {
       withUI = true;
@@ -532,8 +525,8 @@ void Ktw::kinit() {
         tray->setToolTip(buff);
       }
       if (withUI) {
-        QString value = principal + ":" + dlg->passwordLineEditText();
-        keyChainClass.writeKey(getUserName(), value);
+        keyChainClass.writeKey(principalKey, principal);
+        keyChainClass.writeKey(pwdKey, pwd);
       }
     } catch (v5::Exception &ex) {
       if (ex.retval()) {
@@ -1004,10 +997,11 @@ QString Ktw::oneAddr(krb5_address *a) {
       broken:
         return ki18n("Broken address (type %1 length %2)").arg(a->addrtype).arg(a->length);
       }
-      quint32 ad;
-      memcpy(&ad, a->contents, 4);
-      addr = QHostAddress(ad);
-
+      {
+        quint32 ad;
+        memcpy(&ad, a->contents, 4);
+        addr = QHostAddress(ad);
+      }
       break;
     case ADDRTYPE_INET6:
       if (a->length != 16) goto broken;

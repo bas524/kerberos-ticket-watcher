@@ -24,7 +24,8 @@ Cursor::~Cursor() noexcept {
     std::cerr << "Error while finishing ticket retrieval" << std::endl;
   } else {
     krb5_flags flags = KRB5_TC_OPENCLOSE; /* turns on OPENCLOSE mode */
-    if ((code = krb5_cc_set_flags(_cCache.context()(), _cCache(), flags))) {
+    code = krb5_cc_set_flags(_cCache.context()(), _cCache(), flags);
+    if (code) {
       std::cerr << "Error while closing ccache" << std::endl;
     }
   }

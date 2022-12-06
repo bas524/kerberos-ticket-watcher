@@ -18,7 +18,7 @@ namespace v5 {
 Context::Context() {
   krb5_error_code err = krb5_init_context(&kcontext);
   if (err) {
-    throw v5::Exception(err, "Error at krb5_init_context", __LINE__, __FILE__);
+    throw v5::Exception(err, "Error at krb5_init_context", __LINE__, __FILE__, __PRETTY_FUNCTION__);
   }
 }
 Context::~Context() {
@@ -38,7 +38,7 @@ krb5_timestamp Context::currentDateTime() const {
   krb5_timestamp now;
   krb5_error_code e = krb5_timeofday(kcontext, &now);
   if (e != 0) {
-    throw v5::Exception(e, QString("Cannot get current time: %1").arg(strerror(e)).toStdString(), __LINE__, __FILE__);
+    throw v5::Exception(e, QString("Cannot get current time: %1").arg(strerror(e)).toStdString(), __LINE__, __FILE__, __PRETTY_FUNCTION__);
   }
   return now;
 }

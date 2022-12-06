@@ -14,7 +14,7 @@ QString TimestampHelper::toString(krb5_timestamp timestamp) {
   char buffer[buflen] = {0};
   krb5_error_code retval = krb5_timestamp_to_string(timestamp, &buffer[0], buflen);
   if (retval != 0) {
-    throw v5::Exception(retval, "Can't convert timestamp to string", __LINE__, __FILE__);
+    throw v5::Exception(retval, "Can't convert timestamp to string", __LINE__, __FILE__, __PRETTY_FUNCTION__);
   }
   return QString::fromLocal8Bit(buffer);
 }

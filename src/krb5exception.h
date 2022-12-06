@@ -18,6 +18,7 @@ class Exception : public std::exception {
   std::string _what;
   int _line;
   std::string _file;
+  std::string _function;
   std::string _message;
   std::string _krb5ErrMessage;
   std::list<std::string> _stackTraces;
@@ -25,10 +26,10 @@ class Exception : public std::exception {
   void makeErrorMessage(Context &context);
 
  public:
-  Exception(krb5_error_code retval, std::string what, int line, const char *file);
-  Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file);
-  Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file);
-  Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file);
+  Exception(krb5_error_code retval, std::string what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file, const char *function);
   Exception(const Exception &) = default;
   Exception(Exception &&) = default;
   ~Exception() override = default;
@@ -38,9 +39,12 @@ class Exception : public std::exception {
   static std::string krb5ErrorMessage(krb5_error_code retval, Context &context);
   const std::string &simpleWhat() const;
   void rethrow() const;
+  const std::string &file() const;
+  int line() const;
+  const std::string &function() const;
 };
 }  // namespace v5
 
-#define KRB5EXCEPTION(code, context, w) v5::Exception(code, context, w, __LINE__, __FILE__)
+#define KRB5EXCEPTION(code, context, w) v5::Exception(code, context, w, __LINE__, __FILE__, __PRETTY_FUNCTION__)
 
 #endif  // KRB5_TICKET_WATCHER_SRC_KRB5EXCEPTION_H_
