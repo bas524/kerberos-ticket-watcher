@@ -28,6 +28,7 @@ class Context {
   Principal principal(const QString &name);
   CredsOpts credsOpts();
   Creds initCreds(Principal &principal, CredsOpts &opts, const QString &password, const QString &initService = QString{});
+  krb5_timestamp getPasswordExpiredTimestamp(Principal &principal);
 };
 
 }  // namespace v5

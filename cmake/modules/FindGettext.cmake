@@ -6,10 +6,10 @@
 #  GETTEXT_FOUND: True if gettext has been found.
 #
 # Additionally it provides the following macros:
-# GETTEXT_CREATE_TRANSLATIONS ( outputFile [ALL] file1 ... fileN )
-#    This will create a target "translations" which will convert the 
+# GETTEXT_CREATE_krb5tw_translations ( outputFile [ALL] file1 ... fileN )
+#    This will create a target "krb5tw_translations" which will convert the 
 #    given input po files into the binary output mo file. If the 
-#    ALL option is used, the translations will also be created when
+#    ALL option is used, the krb5tw_translations will also be created when
 #    building the default target.
 
 
@@ -17,8 +17,7 @@ find_program(GETTEXT_MSGMERGE_EXECUTABLE msgmerge)
 
 find_program(GETTEXT_MSGFMT_EXECUTABLE msgfmt)
 
-macro(gettext_create_translations _potFile _allOption)
-
+macro(gettext_create_krb5tw_translations _potFile _allOption)
   set(_gmoFiles)
   get_filename_component(_potBasename ${_potFile} NAME_WE)
   get_filename_component(_absPotFile ${_potFile} ABSOLUTE)
@@ -46,10 +45,10 @@ macro(gettext_create_translations _potFile _allOption)
     #MESSAGE( STATUS "GMO: ${_gmoFile}" )
 
     add_custom_command(
-            OUTPUT ${_gmoFile}
-            COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${_absFile} ${_absPotFile}
-            COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${_gmoFile} ${_absFile}
-            DEPENDS ${_absPotFile} ${_absFile}
+        OUTPUT ${_gmoFile}
+        COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${_absFile} ${_absPotFile}
+        COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${_gmoFile} ${_absFile}
+        DEPENDS ${_absPotFile} ${_absFile}
     )
 
     install(FILES ${_gmoFile} DESTINATION share/locale/${_lang}/LC_MESSAGES RENAME ${_potBasename}.mo COMPONENT localization)
@@ -57,9 +56,9 @@ macro(gettext_create_translations _potFile _allOption)
 
   endforeach (_currentPoFile)
 
-  add_custom_target(translations ${_addToAll} DEPENDS ${_gmoFiles})
+  add_custom_target(krb5tw_translations ${_addToAll} DEPENDS ${_gmoFiles})
 
-endmacro(gettext_create_translations)
+endmacro(gettext_create_krb5tw_translations)
 
 if (GETTEXT_MSGMERGE_EXECUTABLE AND GETTEXT_MSGFMT_EXECUTABLE)
   set(GETTEXT_FOUND TRUE)

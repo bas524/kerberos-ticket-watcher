@@ -51,7 +51,6 @@
 #include "kinitdialog.h"
 #include "pwchangedialog.h"
 #include "pwdialog.h"
-// #include "v5.h"
 #include "krb5creds.h"
 #include "krb5ccache.h"
 #include "krb5exception.h"
@@ -260,7 +259,7 @@ void Ktw::createTrayMenu() {
   connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
 
   versionAction = new QAction(ki18n("&Version"), this);
-  quitAction->setShortcut(ki18n("Ctrl+I"));
+  versionAction->setShortcut(ki18n("Ctrl+I"));
   versionAction->setStatusTip(ki18n("Kerberos5 Ticket Watcher Version"));
   connect(versionAction, SIGNAL(triggered()), this, SLOT(version()));
 
@@ -336,12 +335,14 @@ void Ktw::initWorkflow(int type) {
 
     waitTimer.stop();
     try {
-      reinitCredential();
+      const QString user = getUserName();
+      QString pwdKey = QString("%1_pwd").arg(user);
+      QString pwd = keyChainClass.readKey(pwdKey);
+      reinitCredential(pwd);
     } catch (v5::Exception &ex) {
       retval = ex.retval();
-      if (ex.retval() == KRB5_KDC_UNREACH) {
+      if (retval == KRB5_KDC_UNREACH) {
         qWarning("cannot reach the KDC. Sleeping ...");
-        retval = 0;
       } else {
         ex.rethrow();
       }
@@ -379,6 +380,10 @@ void Ktw::setTrayIcon(const QString &path) { tray->setIcon(QIcon(path)); }
 
 void Ktw::expire_cb(
     krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req) {
+  Q_UNUSED(context);
+  Q_UNUSED(data);
+  Q_UNUSED(account_expiration);
+  Q_UNUSED(is_last_req);
   if (password_expiration != 0) {
     pw_exp = password_expiration;
   }
@@ -423,44 +428,59 @@ void Ktw::kinit() {
 
   QString defRealm = _context.defaultRealm();
   std::unique_ptr<KinitDialog> dlg;
-
+  bool withUI = false;
+  const QString user = getUserName();
+  QString principalKey = QString("%1_principal").arg(user);
+  QString pwdKey = QString("%1_pwd").arg(user);
   do {
     ok = false;
-    dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
-
-    dlg->errorLabelSetText(errorTxt);
-    dlg->userLineEditSetText(getUserName());
-    dlg->realmLineEditSetText(defRealm);
-    dlg->passwordLineEditSetFocus();
-
-    dlg->forwardCheckBoxSetChecked(forwardable);
-    dlg->proxyCheckBoxSetChecked(proxiable);
-
-    if (lifetime >= 0) {
-      dlg->lifetimeSpinBoxSetValue(lifetime);
-      dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
+    QString principal;
+    QString pwd;
+    if (!withUI) {
+      principal = keyChainClass.readKey(principalKey);
+      pwd = keyChainClass.readKey(pwdKey);
+    }
+    if (!principal.isEmpty() && !pwd.isEmpty()) {
+      withUI = false;
     } else {
-      dlg->lifetimeSpinBoxSetValue(0);
+      withUI = true;
+      dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
+
+      dlg->errorLabelSetText(errorTxt);
+      dlg->userLineEditSetText(getUserName());
+      dlg->realmLineEditSetText(defRealm);
+      dlg->passwordLineEditSetFocus();
+
+      dlg->forwardCheckBoxSetChecked(forwardable);
+      dlg->proxyCheckBoxSetChecked(proxiable);
+
+      if (lifetime >= 0) {
+        dlg->lifetimeSpinBoxSetValue(lifetime);
+        dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
+      } else {
+        dlg->lifetimeSpinBoxSetValue(0);
+      }
+
+      if (renewtime >= 0) {
+        dlg->renewtimeSpinBoxSetValue(renewtime);
+        dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
+        dlg->renewCheckBoxSetChecked(true);
+      } else {
+        dlg->renewCheckBoxSetChecked(false);
+      }
+
+      int ret = dlg->exec();
+      if (ret == QDialog::Rejected) {
+        qDebug("rejected");
+        throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");  // TODO: May be only continue this flow?
+      }
+      qDebug("accepted");
+
+      errorTxt = "";
+
+      principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
+      pwd = dlg->passwordLineEditText();
     }
-
-    if (renewtime >= 0) {
-      dlg->renewtimeSpinBoxSetValue(renewtime);
-      dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
-      dlg->renewCheckBoxSetChecked(true);
-    } else {
-      dlg->renewCheckBoxSetChecked(false);
-    }
-
-    int ret = dlg->exec();
-    if (ret == QDialog::Rejected) {
-      qDebug("rejected");
-      throw KRB5EXCEPTION(-1, _context, "rejected pwd flow");  // TODO: May be only continue this flow?
-    }
-    qDebug("accepted");
-
-    errorTxt = "";
-
-    QString principal = dlg->userLineEditText() + "@" + dlg->realmLineEditText();
 
     try {
       _principal = std::make_unique<v5::Principal>(_context.principal(principal));
@@ -472,28 +492,30 @@ void Ktw::kinit() {
       continue;
     }
 
-    forwardable = dlg->forwardCheckBoxIsChecked();
-    proxiable = dlg->proxyCheckBoxIsChecked();
-    lifetime = 0;
-    renewtime = 0;
+    if (withUI) {
+      forwardable = dlg->forwardCheckBoxIsChecked();
+      proxiable = dlg->proxyCheckBoxIsChecked();
+      lifetime = 0;
+      renewtime = 0;
 
-    if (dlg->lifetimeSpinBoxValue() >= 0) {
-      lifetime = dlg->lifetimeSpinBoxValue();
-      lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
-    }
+      if (dlg->lifetimeSpinBoxValue() >= 0) {
+        lifetime = dlg->lifetimeSpinBoxValue();
+        lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
+      }
 
-    if (!dlg->renewCheckBoxIsChecked()) {
-      renewtime = -1;
-    } else if (dlg->renewtimeSpinBoxValue() >= 0) {
-      renewtime = dlg->renewtimeSpinBoxValue();
-      renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
+      if (!dlg->renewCheckBoxIsChecked()) {
+        renewtime = -1;
+      } else if (dlg->renewtimeSpinBoxValue() >= 0) {
+        renewtime = dlg->renewtimeSpinBoxValue();
+        renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
+      }
     }
 
     setOptions(credsOpts);
 
     try {
       credsOpts.setExpireCallback(expire_cb, nullptr);
-      v5::Creds creds = _context.initCreds(*_principal, credsOpts, dlg->passwordLineEditText());
+      v5::Creds creds = _context.initCreds(*_principal, credsOpts, pwd);
       creds.storeInCacheFor(*_principal);
       tgtEndtime = creds.ticketEndTime();
       long days = daysToPwdExpire();
@@ -501,6 +523,10 @@ void Ktw::kinit() {
         QString buff = ki18n("Password expires on %1").arg(v5::TimestampHelper::toString(pw_exp));
         tray->setIcon(generateTrayIcon(days));
         tray->setToolTip(buff);
+      }
+      if (withUI) {
+        keyChainClass.writeKey(principalKey, principal);
+        keyChainClass.writeKey(pwdKey, pwd);
       }
     } catch (v5::Exception &ex) {
       if (ex.retval()) {
@@ -517,7 +543,7 @@ void Ktw::kinit() {
             /* password expired */
             {
               try {
-                changePassword(dlg->passwordLineEditText());
+                changePassword(pwd);
               } catch (std::exception &ex) {
                 qDebug("kinit change password error %s", ex.what());
                 ok = false;
@@ -971,10 +997,11 @@ QString Ktw::oneAddr(krb5_address *a) {
       broken:
         return ki18n("Broken address (type %1 length %2)").arg(a->addrtype).arg(a->length);
       }
-      quint32 ad;
-      memcpy(&ad, a->contents, 4);
-      addr = QHostAddress(ad);
-
+      {
+        quint32 ad;
+        memcpy(&ad, a->contents, 4);
+        addr = QHostAddress(ad);
+      }
       break;
     case ADDRTYPE_INET6:
       if (a->length != 16) goto broken;

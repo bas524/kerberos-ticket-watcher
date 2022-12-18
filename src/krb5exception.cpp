@@ -11,23 +11,23 @@
 #include <sstream>
 
 namespace v5 {
-Exception::Exception(krb5_error_code retval, std::string what, int line, const char *file)
-    : _retval(retval), _what(std::move(what)), _line(line), _file(file) {
+Exception::Exception(krb5_error_code retval, std::string what, int line, const char *file, const char *function)
+    : _retval(retval), _what(std::move(what)), _line(line), _file(file), _function(function) {
   _message = std::string(_file).append(":").append(std::to_string(_line)).append(" ").append(_what).append(" krb5:").append(std::to_string(retval));
   std::stringstream ss;
   print_stacktrace(ss);
   _stackTraces.push_back(ss.str());
 }
-Exception::Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file)
-    : _retval(retval), _what(std::move(what)), _line(line), _file(file) {
+Exception::Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file, const char *function)
+    : _retval(retval), _what(std::move(what)), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
-Exception::Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file)
-    : _retval(retval), _what(what.toStdString()), _line(line), _file(file) {
+Exception::Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file, const char *function)
+    : _retval(retval), _what(what.toStdString()), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
-Exception::Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file)
-    : _retval(retval), _what(what), _line(line), _file(file) {
+Exception::Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file, const char *function)
+    : _retval(retval), _what(what), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
 void Exception::makeErrorMessage(Context &context) {
@@ -54,4 +54,7 @@ void Exception::rethrow() const {
   ex._stackTraces.push_back(ss.str());
   throw ex;
 }
+const std::string &Exception::file() const { return _file; }
+int Exception::line() const { return _line; }
+const std::string &Exception::function() const { return _function; }
 }  // namespace v5

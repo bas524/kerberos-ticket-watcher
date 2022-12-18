@@ -90,7 +90,8 @@ int main(int argc, char **argv) {
   } catch (v5::Exception &ex) {
     if (ex.retval() != -1) {
       QMessageBox::critical(nullptr, ki18n("Failure"), ex.krb5ErrorMessage(), QMessageBox::Ok, QMessageBox::Ok);
-      myMessageOutput(QtCriticalMsg, {}, QString(ex.what()));
+      QMessageLogContext context(ex.file().c_str(), ex.line(), ex.function().c_str(), "critical");
+      myMessageOutput(QtCriticalMsg, context, QString(ex.what()));
       print_stacktrace();
     }
     return ex.retval();
