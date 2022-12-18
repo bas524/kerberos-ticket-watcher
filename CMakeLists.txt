@@ -52,6 +52,8 @@ set(KTW_SRCS
     src/krb5timestamphelper.h
     src/stacktrace.h
     src/keychainclass.cpp
+    src/KtwOptions.cpp
+    src/KtwOptions.h
     )
 
 # another list, this time it includes all header files that should be treated with moc

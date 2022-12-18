@@ -26,6 +26,7 @@
 #include <QTranslator>
 #include <QSystemTrayIcon>
 #include "keychainclass.h"
+#include "KtwOptions.h"
 
 #define KRB5_PRIVATE 1
 
@@ -141,22 +142,16 @@ class Ktw : public QWidget, private Ui::MainWidget {
   QTimer waitTimer;
   QTranslator translator;
 
-  //  krb5_context kcontext;
   v5::Context _context;
   std::unique_ptr<v5::Principal> _principal;
-  //  krb5_principal kprincipal;
+
   krb5_timestamp tgtEndtime;
 
-  bool forwardable;
-  bool proxiable;
+  ktw::Options _options;
 
-  krb5_deltat lifetime;  // 0 default
-  QString lifetimeUnit;
-  krb5_deltat renewtime;  // 0 default, -1 no renewtime
-  QString renewtimeUnit;
-
-  int promptInterval;
   KeyChainClass keyChainClass;
+
+  void saveOptions();
 };
 
 #endif  // KRB5_TICKET_WATCHER_H

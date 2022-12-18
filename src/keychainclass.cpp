@@ -23,7 +23,7 @@ QString KeyChainClass::readKey(const QString &key) {
   loop.exec();
 
   if (m_readCredentialJob.error()) {
-    qDebug() << (tr("Read key failed: %1").arg(m_readCredentialJob.errorString()));
+    qWarning() << (tr("Read key failed: %1").arg(m_readCredentialJob.errorString()));
   } else {
     result = m_readCredentialJob.textData();
   }
@@ -40,7 +40,7 @@ void KeyChainClass::writeKey(const QString &key, const QString &value) {
   loop.exec();
 
   if (m_writeCredentialJob.error()) {
-    qDebug() << (tr("Write key failed: %1").arg(qPrintable(m_writeCredentialJob.errorString())));
+    qWarning() << (tr("Write key failed: %1").arg(qPrintable(m_writeCredentialJob.errorString())));
   }
 }
 
@@ -53,6 +53,6 @@ void KeyChainClass::deleteKey(const QString &key) {
   loop.exec();
 
   if (m_deleteCredentialJob.error()) {
-    qDebug() << (tr("Delete key failed: %1").arg(qPrintable(m_deleteCredentialJob.errorString())));
+    qWarning() << (tr("Delete key failed: %1").arg(qPrintable(m_deleteCredentialJob.errorString())));
   }
 }

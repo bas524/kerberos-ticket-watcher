@@ -9,6 +9,7 @@
 #include "krb5ticket.h"
 #include <memory>
 #include <QStringList>
+#include "tmunit.h"
 
 namespace v5 {
 class Context;
@@ -26,7 +27,7 @@ class Creds {
   friend class CCache;
 
  public:
-  enum class LifeTimeDuration { DAYS, HOURS, MINUTES, SECONDS };
+  using LifeTimeDuration = ktw::TmUnit;
   Creds(Creds &&) = default;
   static Creds FromCCache(Context &context);
   ~Creds();

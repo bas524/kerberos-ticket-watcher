@@ -47,6 +47,9 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QtDebug>
+#include <QStandardPaths>
+#include <QSettings>
+#include <QDir>
 
 #include "kinitdialog.h"
 #include "pwchangedialog.h"
@@ -105,44 +108,26 @@ static const unsigned char trayimage[] = {
     0xce, 0xf1, 0x17, 0xbf, 0xc6, 0xb2, 0xcf, 0x76, 0x78, 0xf7, 0xa6, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82};
 
 Ktw::Ktw(int &argc, char **argv, QWidget *parent, Qt::WindowFlags fl)
-    : QWidget(parent, fl),
-      tray(nullptr),
-      trayMenu(nullptr),
-      waitTimer(),
-      translator(),
-      _context(),
-      _principal(nullptr),
-      tgtEndtime(0),
-      forwardable(true),
-      proxiable(false),
-      lifetime(0),  // 0 default
-      lifetimeUnit("hours"),
-      renewtime(0),  // 0 default, -1 no renewtime
-      renewtimeUnit("days"),
-      promptInterval(31)  // default 31 minutes
-{
-  /* init with translations */
-  lifetimeUnit = ki18n("hours");
-  renewtimeUnit = ki18n("days");
-
+    : QWidget(parent, fl), tray(nullptr), trayMenu(nullptr), waitTimer(), translator(), _context(), _principal(nullptr), tgtEndtime(0) {
   if (argc >= 3) {
     if (QString(argv[1]) == "-i" || QString(argv[1]) == "--interval") {
       bool ok = false;
-      promptInterval = QString(argv[2]).toInt(&ok);
+      int promptInterval = QString(argv[2]).toInt(&ok);
 
       if (!ok) {
         qWarning("invalid value for prompt interval. Setting default.");
         promptInterval = 31;
       }
+      _options.promptInterval.setTime(promptInterval);
     }
   }
 
-  qDebug("PromptInterval is %d min.", promptInterval);
+  qDebug("PromptInterval is %d min.", _options.promptInterval.time());
 
   try {
     setDefaultOptionsUsingCreds();
   } catch (v5::Exception &ex) {
-    qDebug() << "setDefaultOptionsUsingCreds error : " << ex.what();
+    qWarning() << "setDefaultOptionsUsingCreds error : " << ex.what();
   }
   initMainWindow();
   createTrayMenu();
@@ -152,7 +137,7 @@ Ktw::Ktw(int &argc, char **argv, QWidget *parent, Qt::WindowFlags fl)
   connect(&waitTimer, SIGNAL(timeout()), this, SLOT(initWorkflow()));
 
   qDebug("start the timer");
-  waitTimer.start(promptInterval * 60 * 1000);  // retryTime is in minutes
+  waitTimer.start(_options.promptInterval.as(ktw::TmUnit::MICROSECONDS));
 }
 
 Ktw::~Ktw() { _principal.reset(); }
@@ -213,7 +198,7 @@ void Ktw::reReadCache() {
   try {
     buildCcacheInfos();
   } catch (std::exception &ex) {
-    qDebug() << "Error: " << ex.what();
+    qWarning() << "Error: " << ex.what();
     commonLabel->setText("<qt><b>" + QString(ex.what()) + "</b></qt>");
   }
 }
@@ -322,7 +307,7 @@ void Ktw::initWorkflow(int type) {
   try {
     v5::Creds creds = v5::Creds::FromCCache(_context);
     isTicketExpired = ((creds.ticketEndTime() - _context.currentDateTime()) < 0);
-    isPromptIntervalMoreThanTicketLifeTime = promptInterval * 60 >= (creds.ticketEndTime() - _context.currentDateTime());
+    isPromptIntervalMoreThanTicketLifeTime = _options.promptInterval.as(ktw::TmUnit::SECONDS) >= (creds.ticketEndTime() - _context.currentDateTime());
     reReadCache();
   } catch (v5::Exception &ex) {
     qWarning() << ex.what();
@@ -347,7 +332,7 @@ void Ktw::initWorkflow(int type) {
         ex.rethrow();
       }
     }
-    waitTimer.start(promptInterval * 60 * 1000);
+    waitTimer.start(_options.promptInterval.as(ktw::TmUnit::MICROSECONDS));
   } else {
     if (type != 69) {
       auto cCache = _context.ccache();
@@ -363,7 +348,7 @@ void Ktw::initWorkflow(int type) {
     try {
       getPwExp(QString{});
     } catch (std::exception &ex) {
-      qDebug() << ex.what();
+      qWarning() << "getPwExp Error : " << ex.what();
     }
     if (!retval) tray->showMessage(ki18n("Ticket renewed"), ki18n("Ticket successfully renewed."), QSystemTrayIcon::Information, 5000);
   }
@@ -451,19 +436,19 @@ void Ktw::kinit() {
       dlg->realmLineEditSetText(defRealm);
       dlg->passwordLineEditSetFocus();
 
-      dlg->forwardCheckBoxSetChecked(forwardable);
-      dlg->proxyCheckBoxSetChecked(proxiable);
+      dlg->forwardCheckBoxSetChecked(_options.forwardable);
+      dlg->proxyCheckBoxSetChecked(_options.proxiable);
 
-      if (lifetime >= 0) {
-        dlg->lifetimeSpinBoxSetValue(lifetime);
-        dlg->lifetimeUnitComboBoxSetCurrentText(lifetimeUnit);
+      if (_options.lifetime.time() >= 0) {
+        dlg->lifetimeSpinBoxSetValue(_options.lifetime.time());
+        dlg->lifetimeUnitComboBoxSetCurrentText(_options.lifetime.unitName());
       } else {
         dlg->lifetimeSpinBoxSetValue(0);
       }
 
-      if (renewtime >= 0) {
-        dlg->renewtimeSpinBoxSetValue(renewtime);
-        dlg->renewUnitComboBoxSetCurrentText(renewtimeUnit);
+      if (_options.renewtime.time() >= 0) {
+        dlg->renewtimeSpinBoxSetValue(_options.renewtime.time());
+        dlg->renewUnitComboBoxSetCurrentText(_options.renewtime.unitName());
         dlg->renewCheckBoxSetChecked(true);
       } else {
         dlg->renewCheckBoxSetChecked(false);
@@ -485,7 +470,7 @@ void Ktw::kinit() {
     try {
       _principal = std::make_unique<v5::Principal>(_context.principal(principal));
     } catch (std::exception &ex) {
-      qDebug("Error during parse_name: %s", ex.what());
+      qWarning("Error during parse_name: %s", ex.what());
       ok = true;
       errorTxt = ki18n("Invalid principal name");
       QMessageBox::critical(this, ki18n("Failure"), errorTxt, QMessageBox::Ok, QMessageBox::Ok);
@@ -493,21 +478,19 @@ void Ktw::kinit() {
     }
 
     if (withUI) {
-      forwardable = dlg->forwardCheckBoxIsChecked();
-      proxiable = dlg->proxyCheckBoxIsChecked();
-      lifetime = 0;
-      renewtime = 0;
+      _options.forwardable = dlg->forwardCheckBoxIsChecked();
+      _options.proxiable = dlg->proxyCheckBoxIsChecked();
 
       if (dlg->lifetimeSpinBoxValue() >= 0) {
-        lifetime = dlg->lifetimeSpinBoxValue();
-        lifetimeUnit = dlg->lifetimeUnitComboBoxCurrentText();
+        _options.lifetime.setTime(dlg->lifetimeSpinBoxValue());
+        _options.lifetime.setUnit(ktw::TimeUnit::tmUnitFromText(dlg->lifetimeUnitComboBoxCurrentText()));
       }
 
       if (!dlg->renewCheckBoxIsChecked()) {
-        renewtime = -1;
+        _options.renewtime.setUnit(ktw::TmUnit::UNDEFINED);
       } else if (dlg->renewtimeSpinBoxValue() >= 0) {
-        renewtime = dlg->renewtimeSpinBoxValue();
-        renewtimeUnit = dlg->renewUnitComboBoxCurrentText();
+        _options.renewtime.setTime(dlg->renewtimeSpinBoxValue());
+        _options.renewtime.setUnit(ktw::TimeUnit::tmUnitFromText(dlg->renewUnitComboBoxCurrentText()));
       }
     }
 
@@ -527,10 +510,11 @@ void Ktw::kinit() {
       if (withUI) {
         keyChainClass.writeKey(principalKey, principal);
         keyChainClass.writeKey(pwdKey, pwd);
+        saveOptions();
       }
     } catch (v5::Exception &ex) {
       if (ex.retval()) {
-        qDebug("Error during initCredential(): %d", ex.retval());
+        qWarning("Error during initCredential(): %d", ex.retval());
         ok = true;
 
         switch (ex.retval()) {
@@ -545,7 +529,7 @@ void Ktw::kinit() {
               try {
                 changePassword(pwd);
               } catch (std::exception &ex) {
-                qDebug("kinit change password error %s", ex.what());
+                qWarning("kinit change password error %s", ex.what());
                 ok = false;
               }
             }
@@ -630,7 +614,7 @@ void Ktw::reinitCredential(const QString &password) {
       tgtEndtime = creds.ticketEndTime();
       repeat = false;
     } catch (v5::Exception &ex) {
-      qDebug("Error during initCredential(): %d", ex.retval());
+      qWarning("Error during initCredential(): %d", ex.retval());
 
       switch (ex.retval()) {
         case KRB5KDC_ERR_PREAUTH_FAILED:
@@ -765,7 +749,7 @@ void Ktw::changePassword(const QString &oldpw) {
   } catch (v5::Exception &ex) {
     retval = ex.retval();
     QString msg = QString("%1 \n %2").arg(QString::fromStdString(ex.simpleWhat()), ex.krb5ErrorMessage());
-    qDebug("changing password failed. %d : %s", retval, ex.what());
+    qWarning("changing password failed. %d : %s", retval, ex.what());
     QMessageBox::critical(this, ki18n("Password change failed"), msg, QMessageBox::Ok, QMessageBox::Ok);
     throw KRB5EXCEPTION(retval, _context, "changing password failed");
   }
@@ -775,79 +759,38 @@ void Ktw::changePassword(const QString &oldpw) {
 
 void Ktw::setDefaultOptionsUsingCreds() {
   v5::Creds creds = v5::Creds::FromCCache(_context);
-  forwardable = creds.isForwardable();
-  proxiable = creds.isProxyable();
+  _options.forwardable = creds.isForwardable();
+  _options.proxiable = creds.isProxyable();
 
   auto lifeTimeDuration = creds.lifeTimeDuration();
-  lifetime = lifeTimeDuration.first;
-  switch (lifeTimeDuration.second) {
-    case v5::Creds::LifeTimeDuration::DAYS:
-      lifetimeUnit = ki18n("days");
-      break;
-    case v5::Creds::LifeTimeDuration::HOURS:
-      lifetimeUnit = ki18n("hours");
-      break;
-    case v5::Creds::LifeTimeDuration::MINUTES:
-      lifetimeUnit = ki18n("minutes");
-      break;
-    case v5::Creds::LifeTimeDuration::SECONDS:
-      lifetimeUnit = ki18n("seconds");
-      break;
-  }
+  _options.lifetime = ktw::TimeUnit(lifeTimeDuration.first, lifeTimeDuration.second);
 
   auto renewTimeDuration = creds.renewTimeDuration();
-  if (renewTimeDuration.first != -1) {
-    renewtime = renewTimeDuration.first;
-    switch (renewTimeDuration.second) {
-      case v5::Creds::LifeTimeDuration::DAYS:
-        renewtimeUnit = ki18n("days");
-        break;
-      case v5::Creds::LifeTimeDuration::HOURS:
-        renewtimeUnit = ki18n("hours");
-        break;
-      case v5::Creds::LifeTimeDuration::MINUTES:
-        renewtimeUnit = ki18n("minutes");
-        break;
-      case v5::Creds::LifeTimeDuration::SECONDS:
-        renewtimeUnit = ki18n("seconds");
-        break;
-    }
-  }
+  _options.renewtime = ktw::TimeUnit(renewTimeDuration.first, renewTimeDuration.second);
 }
 
 void Ktw::setOptions(v5::CredsOpts &opts) {
   qDebug("================= Options =================");
-  qDebug("Forwardable %s", (forwardable) ? "true" : "false");
-  qDebug("Proxiable %s", (proxiable) ? "true" : "false");
+  qDebug("Forwardable %s", (_options.forwardable) ? "true" : "false");
+  qDebug("Proxiable %s", (_options.proxiable) ? "true" : "false");
 
-  opts.setForwardable(forwardable);
-  opts.setProxiable(proxiable);
+  opts.setForwardable(_options.forwardable);
+  opts.setProxiable(_options.proxiable);
 
-  if (lifetime > 0) {
-    krb5_deltat tkt_lifetime = 0;
-
-    if (lifetimeUnit == ki18n("seconds")) tkt_lifetime = lifetime;
-    if (lifetimeUnit == ki18n("minutes")) tkt_lifetime = lifetime * 60;
-    if (lifetimeUnit == ki18n("hours")) tkt_lifetime = lifetime * 60 * 60;
-    if (lifetimeUnit == ki18n("days")) tkt_lifetime = lifetime * 60 * 60 * 24;
-
+  if (_options.lifetime.time() > 0) {
+    krb5_deltat tkt_lifetime = _options.lifetime.ticketTime();
     qDebug("Set lifetime to: %d", tkt_lifetime);
     opts.setTicketLifeTime(tkt_lifetime);
   }
 
-  if (renewtime > 0) {
-    krb5_deltat tkt_renewtime = 0;
-
-    if (renewtimeUnit == ki18n("seconds")) tkt_renewtime = renewtime;
-    if (renewtimeUnit == ki18n("minutes")) tkt_renewtime = renewtime * 60;
-    if (renewtimeUnit == ki18n("hours")) tkt_renewtime = renewtime * 60 * 60;
-    if (renewtimeUnit == ki18n("days")) tkt_renewtime = renewtime * 60 * 60 * 24;
-
+  if (_options.renewtime.time() > 0) {
+    krb5_deltat tkt_renewtime = _options.renewtime.ticketTime();
     qDebug("Set renewtime to: %d", tkt_renewtime);
     opts.setRenewLife(tkt_renewtime);
-  } else if (renewtime < 0) {
+  } else if (_options.renewtime.unit() == ktw::TmUnit::UNDEFINED) {
     qDebug("Set renewtime to: %d", 0);
     opts.setRenewLife(0);
+    _options.renewtime = ktw::TimeUnit(0, ktw::TmUnit::DAYS);
   } else {
     qDebug("Use default renewtime");
   }
@@ -1131,4 +1074,18 @@ void Ktw::version() {
                          QString("<tr><td><b>") + fullVersion + ("</b></td><td>") + PROJECT_VERSION + QString("</td></tr>") + QString("<tr><td><b>") +
                          qtVersion + ("</b></td><td>") + QT_VERSION_STR + QString("</td></tr>") + QString("<tr><td><b>") + buildDate +
                          ("</b></td><td>") + COMMITTER_DATE + QString("</td></tr>") + QString("</td></tr></table></qt>"));
+}
+
+void Ktw::saveOptions() {
+  QString homeDir = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).first();
+  QString cfgdir = homeDir + "/.config/krb5tw/";
+  QDir().mkpath(cfgdir);
+  QString cfg = cfgdir + "options.cfg";
+  QSettings settings(cfg, QSettings::IniFormat);
+  auto kvProps = _options.toKeyValueProps();
+  QMapIterator<QString, QVariant> i(kvProps);
+  while (i.hasNext()) {
+    settings.setValue(i.key(), i.value());
+  }
+  settings.sync();
 }
