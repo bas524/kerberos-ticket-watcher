@@ -143,7 +143,6 @@ msgid "Ctrl+D"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
-#, fuzzy
 msgid "Ctrl+I"
 msgstr ""
 
@@ -168,7 +167,6 @@ msgid "Day(s)"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:129
-#, fuzzy
 msgid "Default credential cache"
 msgstr ""
 
@@ -236,7 +234,6 @@ msgid "HW Auth"
 msgstr ""
 
 #: ../src/main.cpp:79
-#, fuzzy
 msgid "I couldn't detect any system tray on this system."
 msgstr ""
 
@@ -268,12 +265,10 @@ msgid "Kerberos Ticket List"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1103
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:264
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
 msgstr ""
 
@@ -287,7 +282,6 @@ msgstr ""
 
 #. Legend: Explain ticket flag "D"
 #: ../src/krb5ticketwatcher.cpp:188
-#, fuzzy
 msgid "May Postdate"
 msgstr ""
 
@@ -318,7 +312,7 @@ msgid "Password expires after %1 days"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr ""
 
@@ -364,7 +358,6 @@ msgid "Qt Version"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:259
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
 msgstr ""
 
@@ -402,7 +395,6 @@ msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
-#, fuzzy
 msgid "Systray"
 msgstr ""
 

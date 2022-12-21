@@ -100,11 +100,11 @@ QMap<QString, QVariant> Options::toKeyValueProps() const {
   result.insert("forwardable", forwardable);
   result.insert("proxiable", proxiable);
   result.insert("lifetime.time", lifetime.time());
-  result.insert("lifetime.unit", static_cast<int>(lifetime.unit()));
+  result.insert("lifetime.unit", TimeUnit::tmUnitTostring(lifetime.unit()));
   result.insert("renewtime.time", renewtime.time());
-  result.insert("renewtime.unit", static_cast<int>(renewtime.unit()));
+  result.insert("renewtime.unit", TimeUnit::tmUnitTostring(renewtime.unit()));
   result.insert("promptInterval.time", promptInterval.time());
-  result.insert("promptInterval.unit", static_cast<int>(promptInterval.unit()));
+  result.insert("promptInterval.unit", TimeUnit::tmUnitTostring(promptInterval.unit()));
   return result;
 }
 }  // namespace ktw

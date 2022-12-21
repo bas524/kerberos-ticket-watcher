@@ -41,7 +41,7 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QSystemTrayIcon>
-#include <QTextCodec>
+// #include <QTextCodec>
 #include <QTime>
 #include <QToolTip>
 #include <QTreeWidget>
@@ -1082,10 +1082,11 @@ void Ktw::saveOptions() {
   QDir().mkpath(cfgdir);
   QString cfg = cfgdir + "options.cfg";
   QSettings settings(cfg, QSettings::IniFormat);
-  auto kvProps = _options.toKeyValueProps();
-  QMapIterator<QString, QVariant> i(kvProps);
-  while (i.hasNext()) {
-    settings.setValue(i.key(), i.value());
+  auto kvProps = _options.toKeyValueProps().toStdMap();
+  for (const auto &item : kvProps) {
+    qDebug() << "option.key : " << item.first;
+    qDebug() << "option.value : " << item.second;
+    settings.setValue(item.first, item.second);
   }
   settings.sync();
 }

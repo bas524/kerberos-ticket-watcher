@@ -465,7 +465,6 @@ msgid "Unknown principal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
-#, fuzzy
 msgid "Unknown realm"
 msgstr ""
 

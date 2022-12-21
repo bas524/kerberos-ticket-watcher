@@ -145,7 +145,6 @@ msgid "Ctrl+D"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
-#, fuzzy
 msgid "Ctrl+I"
 msgstr ""
 
@@ -268,12 +267,10 @@ msgid "Kerberos Ticket List"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:1103
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:264
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
 msgstr ""
 
@@ -317,7 +314,7 @@ msgid "Password expires after %1 days"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:399 ../src/krb5ticketwatcher.cpp:501
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr ""
 
@@ -363,7 +360,6 @@ msgid "Qt Version"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:259
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
 msgstr ""
 

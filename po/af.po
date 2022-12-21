@@ -27,7 +27,6 @@ msgid "&Cancel"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:242
-#, fuzzy
 msgid "&Change Kerberos Password"
 msgstr ""
 
@@ -40,7 +39,6 @@ msgid "&Destroy Ticket"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
-#, fuzzy
 msgid "&Details..."
 msgstr ""
 
@@ -51,7 +49,6 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
-#, fuzzy
 msgid "&Ok"
 msgstr ""
 
@@ -60,7 +57,6 @@ msgid "&Quit"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:137
-#, fuzzy
 msgid "&Refresh"
 msgstr ""
 
@@ -82,7 +78,6 @@ msgid "@"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:961
-#, fuzzy
 msgid "Addresses"
 msgstr ""
 
@@ -104,7 +99,6 @@ msgid "Alt+O"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_mainwidget.h:139
-#, fuzzy
 msgid "Alt+R"
 msgstr ""
 
@@ -129,37 +123,31 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:171
 #: ../src/krb5ticketwatcher.cpp:244 ../src/krb5ticketwatcher.cpp:637
-#, fuzzy
 msgid "Change Kerberos Password"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:715
-#, fuzzy, qt-format
+#, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:234
-#, fuzzy
 msgid "Create a new Ticket"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Ctrl+C"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Ctrl+D"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:263
-#, fuzzy
 msgid "Ctrl+I"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:233
-#, fuzzy
 msgid "Ctrl+N"
 msgstr ""
 
@@ -200,23 +188,19 @@ msgstr ""
 # power-off message
 #. message text
 #: ../src/krb5ticketwatcher.cpp:297
-#, fuzzy
 msgid "Do you want to destroy the ticket cache?"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:180
-#, fuzzy
 msgid "Enter new password:"
 msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
-#, fuzzy
 msgid "Error !"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:852
-#, fuzzy
 msgid "Error while setting cache flags"
 msgstr ""
 
@@ -228,7 +212,6 @@ msgstr ""
 #: ../src/krb5ticketwatcher.cpp:471 ../src/krb5ticketwatcher.cpp:540
 #: ../src/krb5ticketwatcher.cpp:623 ../src/krb5ticketwatcher.cpp:699
 #: ../src/main.cpp:92
-#, fuzzy
 msgid "Failure"
 msgstr ""
 
@@ -257,24 +240,20 @@ msgstr ""
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:196
-#, fuzzy
 msgid "Initial"
 msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:192
-#, fuzzy
 msgid "Invalid"
 msgstr ""
 
 #. Invalid password, try again.
 #: ../src/krb5ticketwatcher.cpp:514
-#, fuzzy
 msgid "Invalid Password"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:470
-#, fuzzy
 msgid "Invalid principal name"
 msgstr ""
 
@@ -295,7 +274,6 @@ msgid "Kerberos5 Ticket Watcher Version"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:949
-#, fuzzy
 msgid "Key Encryption Type"
 msgstr ""
 
@@ -346,7 +324,7 @@ msgid "Password:"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:648
-#, fuzzy, qt-format
+#, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr ""
 
@@ -376,7 +354,6 @@ msgstr ""
 
 #. Legend: Explain ticket flag "P"
 #: ../src/krb5ticketwatcher.cpp:186
-#, fuzzy
 msgid "Proxy"
 msgstr ""
 
@@ -393,7 +370,6 @@ msgid "Re&store"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:181
-#, fuzzy
 msgid "Reenter password:"
 msgstr ""
 
@@ -407,7 +383,6 @@ msgstr ""
 
 #. Legend: Explain ticket flag "R"
 #: ../src/krb5ticketwatcher.cpp:194
-#, fuzzy
 msgid "Renewable"
 msgstr ""
 
@@ -424,7 +399,6 @@ msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
-#, fuzzy
 msgid "Systray"
 msgstr ""
 
@@ -434,12 +408,10 @@ msgid "The password you entered is invalid"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:718
-#, fuzzy
 msgid "The passwords are not equal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:952
-#, fuzzy
 msgid "Ticket Encryption Type"
 msgstr ""
 
@@ -453,7 +425,6 @@ msgstr ""
 
 #. message text
 #: ../src/krb5ticketwatcher.cpp:306
-#, fuzzy
 msgid "Ticket cache cannot be destroyed."
 msgstr ""
 
@@ -489,18 +460,16 @@ msgid "Transit Policy Checked"
 msgstr ""
 
 #: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:988
-#, fuzzy, qt-format
+#, qt-format
 msgid "Unknown address type %1"
 msgstr ""
 
 #. principal unknown
 #: ../src/krb5ticketwatcher.cpp:530
-#, fuzzy
 msgid "Unknown principal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
-#, fuzzy
 msgid "Unknown realm"
 msgstr ""
 
@@ -530,7 +499,6 @@ msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:295
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:302
-#, fuzzy
 msgid "default"
 msgstr ""
 

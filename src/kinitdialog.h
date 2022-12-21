@@ -64,7 +64,7 @@ class KinitDialog : public QDialog, private Ui::KinitDialog {
 
   bool renewCheckBoxIsChecked() const { return renewCheckBox->isChecked(); }
 
- private slots:
+ public slots:
   void changeDetailsState(int state);
   void changeRenewState(int state);
 };

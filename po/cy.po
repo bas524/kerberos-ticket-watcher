@@ -21,7 +21,6 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:308
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:172
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:158
-#, fuzzy
 msgid "&Cancel"
 msgstr ""
 
@@ -38,7 +37,6 @@ msgid "&Destroy Ticket"
 msgstr ""
 
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:286
-#, fuzzy
 msgid "&Details..."
 msgstr ""
 
@@ -49,7 +47,6 @@ msgstr ""
 #: ../cmake-build-debug-bychukavpru/ui_kinitdialog.h:312
 #: ../cmake-build-debug-bychukavpru/ui_pwchangedialog.h:176
 #: ../cmake-build-debug-bychukavpru/ui_pwdialog.h:154
-#, fuzzy
 msgid "&Ok"
 msgstr ""
 
@@ -197,7 +194,6 @@ msgstr ""
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:304
-#, fuzzy
 msgid "Error !"
 msgstr ""
 
@@ -397,7 +393,6 @@ msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
-#, fuzzy
 msgid "Systray"
 msgstr ""
 
@@ -469,7 +464,6 @@ msgid "Unknown principal"
 msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:533
-#, fuzzy
 msgid "Unknown realm"
 msgstr ""
 

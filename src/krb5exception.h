@@ -11,6 +11,14 @@
 #include <QString>
 #include "krb5fwd.h"
 
+#ifndef _GLIBCXX_TXN_SAFE_DYN
+#define _GLIBCXX_TXN_SAFE_DYN
+#endif  //_GLIBCXX_TXN_SAFE_DYN
+
+#ifndef _GLIBCXX_NOTHROW
+#define _GLIBCXX_NOTHROW noexcept
+#endif  //_GLIBCXX_NOTHROW
+
 namespace v5 {
 class Context;
 class Exception : public std::exception {

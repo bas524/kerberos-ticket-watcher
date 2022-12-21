@@ -1,4 +1,4 @@
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}/cmake/modules")
 cmake_minimum_required(VERSION 3.0)
 cmake_policy(SET CMP0075 NEW)
 
@@ -19,11 +19,11 @@ message(STATUS "COMMITTER_SHORTSHA ${COMMITTER_SHORTSHA}")
 message(STATUS "COMMITTER_DATE ${COMMITTER_DATE}")
 message(STATUS "PROJECT_VERSION ${PROJECT_VERSION}")
 
-add_definitions(-DPROJECT_VERSION="${PROJECT_VERSION}")
-
 include_directories(src)
 
 add_executable(krb5-ticket-watcher)
+
+target_compile_definitions(krb5-ticket-watcher PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
 set(KTW_SRCS
     src/kinitdialog.cpp
@@ -77,7 +77,13 @@ set(KTW_UIS
 # enable warnings
 add_definitions(-Wall -DTEXTDOMAIN=krb5-ticket-watcher)
 
+
+set(QT_VER Qt5)
 find_package(Qt5 COMPONENTS Core Widgets Gui Network Keychain REQUIRED)
+# this will run uic on .ui files:
+qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
+# and finally this will run moc:
+qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
 
 find_package(Gettext REQUIRED)
 if (GETTEXT_FOUND)
@@ -86,12 +92,6 @@ if (GETTEXT_FOUND)
 else (GETTEXT_FOUND)
   message(FATAL_ERROR "Gettext not found")
 endif (GETTEXT_FOUND)
-
-# this will run uic on .ui files:
-qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
-
-# and finally this will run moc:
-qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
 
 # we need this to be able to include headers produced by uic in our code
 # (CMAKE_BINARY_DIR holds a path to the build directory, while INCLUDE_DIRECTORIES() works just like INCLUDEPATH from qmake)
@@ -112,12 +112,18 @@ add_custom_target(backupclean find ${CMAKE_SOURCE_DIR} -name "*~" -print0 | xarg
 
 # here we instruct CMake to build "krb5-ticket-watcher" executable from all of the source files
 target_sources(krb5-ticket-watcher PRIVATE ${KTW_SRCS} ${KTW_MOC_SRCS} ${KTW_RC_SRCS} ${KTW_UI_HDRS})
-target_link_libraries(krb5-ticket-watcher PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Network)
+target_link_libraries(krb5-ticket-watcher PRIVATE ${QT_VER}::Core ${QT_VER}::Gui ${QT_VER}::Widgets ${QT_VER}::Network)
 target_link_libraries(krb5-ticket-watcher PRIVATE ${KRB5_LIBRARIES})
 target_link_libraries(krb5-ticket-watcher PRIVATE ${QTKEYCHAIN_LIBRARIES})
 message(STATUS "QTKEYCHAIN_LIBRARIES ${QTKEYCHAIN_LIBRARIES}")
 target_link_options(krb5-ticket-watcher PRIVATE -rdynamic)
 add_link_options($<$<CONFIG:RELEASE>:-s>)
+
+if (APPLE)
+  target_include_directories(krb5-ticket-watcher PRIVATE /usr/local/opt/gettext/include)
+  target_link_directories(krb5-ticket-watcher PRIVATE /usr/local/opt/gettext/lib)
+  target_link_libraries(krb5-ticket-watcher PRIVATE -lintl)
+endif ()
 
 add_subdirectory(po)
 
