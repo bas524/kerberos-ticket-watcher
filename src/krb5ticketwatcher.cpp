@@ -492,6 +492,8 @@ void Ktw::kinit() {
         _options.renewtime.setTime(dlg->renewtimeSpinBoxValue());
         _options.renewtime.setUnit(ktw::TimeUnit::tmUnitFromText(dlg->renewUnitComboBoxCurrentText()));
       }
+    } else {
+      loadOptions();
     }
 
     setOptions(credsOpts);
@@ -1089,4 +1091,19 @@ void Ktw::saveOptions() {
     settings.setValue(item.first, item.second);
   }
   settings.sync();
+}
+
+void Ktw::loadOptions() {
+  QString homeDir = QStandardPaths::standardLocations(QStandardPaths::HomeLocation).first();
+  QString cfgdir = homeDir + "/.config/krb5tw/";
+  QString cfg = cfgdir + "options.cfg";
+  if (QFileInfo(cfg).exists()) {
+    QMap<QString, QVariant> kvProps;
+    QSettings settings(cfg, QSettings::IniFormat);
+    auto keys = settings.allKeys();
+    for (const auto &key : keys) {
+      kvProps.insert(key, settings.value(key));
+    }
+    _options = ktw::Options::fromKeyValueProps(kvProps);
+  }
 }

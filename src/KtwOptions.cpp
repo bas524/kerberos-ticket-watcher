@@ -107,4 +107,28 @@ QMap<QString, QVariant> Options::toKeyValueProps() const {
   result.insert("promptInterval.unit", TimeUnit::tmUnitTostring(promptInterval.unit()));
   return result;
 }
+
+Options Options::fromKeyValueProps(const QMap<QString, QVariant> &props) {
+  Options options;
+  for (const auto &item : props.toStdMap()) {
+    if (item.first == "forwardable") {
+      options.forwardable = item.second.toBool();
+    } else if (item.first == "proxiable") {
+      options.proxiable = item.second.toBool();
+    } else if (item.first == "lifetime.time") {
+      options.lifetime.setTime(item.second.toInt());
+    } else if (item.first == "lifetime.unit") {
+      options.lifetime.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+    } else if (item.first == "renewtime.time") {
+      options.renewtime.setTime(item.second.toInt());
+    } else if (item.first == "renewtime.unit") {
+      options.renewtime.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+    } else if (item.first == "promptInterval.time") {
+      options.promptInterval.setTime(item.second.toInt());
+    } else if (item.first == "promptInterval.unit") {
+      options.promptInterval.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+    }
+  }
+  return options;
+}
 }  // namespace ktw

@@ -152,6 +152,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
   KeyChainClass keyChainClass;
 
   void saveOptions();
+  void loadOptions();
 };
 
 #endif  // KRB5_TICKET_WATCHER_H

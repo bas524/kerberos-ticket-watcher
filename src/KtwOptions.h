@@ -44,6 +44,7 @@ struct Options {
   TimeUnit renewtime = TimeUnit(0, TmUnit::DAYS);
   TimeUnit promptInterval = TimeUnit(31, TmUnit::MINUTES);
   QMap<QString, QVariant> toKeyValueProps() const;
+  static Options fromKeyValueProps(const QMap<QString, QVariant> &props);
 };
 }  // namespace ktw
 #endif  // KRB5_TICKET_WATCHER_KTWOPTIONS_H

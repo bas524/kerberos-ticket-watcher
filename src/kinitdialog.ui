@@ -306,6 +306,11 @@
       </item>
       <item row="2" column="2" colspan="3">
        <widget class="QLineEdit" name="passwordLineEdit">
+        <property name="font">
+         <font>
+          <family>.AppleSystemUIFont</family>
+         </font>
+        </property>
         <property name="echoMode">
          <enum>QLineEdit::Password</enum>
         </property>
