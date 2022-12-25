@@ -7,11 +7,10 @@ if [ -z "$TARGETDIR" ]; then
 	TARGETDIR="."
 fi
 # search for sourcecode-files
-SRCFILES=`find .. -type d -name testsuite -prune , \
-                           -type f -name "*.h" \
-                                -o -name "*.c"   \
-                                -o -name "*.cc"  \
-                                -o -name "*.cpp"`
+SRCFILES=`find .. -type f -name "*.h" \
+                  -o -name "*.c"   \
+                  -o -name "*.cc"  \
+                  -o -name "*.cpp"`
 echo $SRCFILES
 echo "create $TARGETDIR/krb5-ticket-watcher.pot"
 #calling xgettext with the sourcefiles
