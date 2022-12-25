@@ -13,36 +13,67 @@ void TimeUnit::setUnit(TmUnit unit) {
   _unit = unit;
   _unitName = tmUnitTostring(_unit);
 }
-QString TimeUnit::tmUnitTostring(TmUnit unit) {
+QString TimeUnit::tmUnitTostring(TmUnit unit, LocaleOpt lopt) {
   QString result;
-  switch (unit) {
-    case TmUnit::SECONDS:
-      result = ki18n("seconds");
-      break;
-    case TmUnit::MINUTES:
-      result = ki18n("minutes");
-      break;
-    case TmUnit::HOURS:
-      result = ki18n("hours");
-      break;
-    case TmUnit::DAYS:
-      result = ki18n("days");
-      break;
-    case TmUnit::MICROSECONDS:
-      result = ki18n("microseconds");
-      break;
-    case TmUnit::UNDEFINED:
-      result = ki18n("undefined");
-      break;
+  if (lopt == LocaleOpt::USE) {
+    switch (unit) {
+      case TmUnit::SECONDS:
+        result = ki18n("seconds");
+        break;
+      case TmUnit::MINUTES:
+        result = ki18n("minutes");
+        break;
+      case TmUnit::HOURS:
+        result = ki18n("hours");
+        break;
+      case TmUnit::DAYS:
+        result = ki18n("days");
+        break;
+      case TmUnit::MICROSECONDS:
+        result = ki18n("microseconds");
+        break;
+      case TmUnit::UNDEFINED:
+        result = ki18n("undefined");
+        break;
+    }
+  } else {
+    switch (unit) {
+      case TmUnit::SECONDS:
+        result = ("seconds");
+        break;
+      case TmUnit::MINUTES:
+        result = ("minutes");
+        break;
+      case TmUnit::HOURS:
+        result = ("hours");
+        break;
+      case TmUnit::DAYS:
+        result = ("days");
+        break;
+      case TmUnit::MICROSECONDS:
+        result = ("microseconds");
+        break;
+      case TmUnit::UNDEFINED:
+        result = ("undefined");
+        break;
+    }
   }
   return result;
 }
-TmUnit TimeUnit::tmUnitFromText(const QString &text) {
-  if (text == ki18n("days")) return TmUnit::DAYS;
-  if (text == ki18n("hours")) return TmUnit::HOURS;
-  if (text == ki18n("minutes")) return TmUnit::MINUTES;
-  if (text == ki18n("seconds")) return TmUnit::SECONDS;
-  if (text == ki18n("microseconds")) return TmUnit::MICROSECONDS;
+TmUnit TimeUnit::tmUnitFromText(const QString &text, LocaleOpt lopt) {
+  if (lopt == LocaleOpt::USE) {
+    if (text == ki18n("days")) return TmUnit::DAYS;
+    if (text == ki18n("hours")) return TmUnit::HOURS;
+    if (text == ki18n("minutes")) return TmUnit::MINUTES;
+    if (text == ki18n("seconds")) return TmUnit::SECONDS;
+    if (text == ki18n("microseconds")) return TmUnit::MICROSECONDS;
+  } else {
+    if (text == ("days")) return TmUnit::DAYS;
+    if (text == ("hours")) return TmUnit::HOURS;
+    if (text == ("minutes")) return TmUnit::MINUTES;
+    if (text == ("seconds")) return TmUnit::SECONDS;
+    if (text == ("microseconds")) return TmUnit::MICROSECONDS;
+  }
   return TmUnit::UNDEFINED;
 }
 const QString &TimeUnit::unitName() const { return _unitName; }
@@ -100,11 +131,11 @@ QMap<QString, QVariant> Options::toKeyValueProps() const {
   result.insert("forwardable", forwardable);
   result.insert("proxiable", proxiable);
   result.insert("lifetime.time", lifetime.time());
-  result.insert("lifetime.unit", TimeUnit::tmUnitTostring(lifetime.unit()));
+  result.insert("lifetime.unit", TimeUnit::tmUnitTostring(lifetime.unit(), TimeUnit::LocaleOpt::DONT_USE));
   result.insert("renewtime.time", renewtime.time());
-  result.insert("renewtime.unit", TimeUnit::tmUnitTostring(renewtime.unit()));
+  result.insert("renewtime.unit", TimeUnit::tmUnitTostring(renewtime.unit(), TimeUnit::LocaleOpt::DONT_USE));
   result.insert("promptInterval.time", promptInterval.time());
-  result.insert("promptInterval.unit", TimeUnit::tmUnitTostring(promptInterval.unit()));
+  result.insert("promptInterval.unit", TimeUnit::tmUnitTostring(promptInterval.unit(), TimeUnit::LocaleOpt::DONT_USE));
   return result;
 }
 
@@ -118,15 +149,15 @@ Options Options::fromKeyValueProps(const QMap<QString, QVariant> &props) {
     } else if (item.first == "lifetime.time") {
       options.lifetime.setTime(item.second.toInt());
     } else if (item.first == "lifetime.unit") {
-      options.lifetime.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+      options.lifetime.setUnit(TimeUnit::tmUnitFromText(item.second.toString(), TimeUnit::LocaleOpt::DONT_USE));
     } else if (item.first == "renewtime.time") {
       options.renewtime.setTime(item.second.toInt());
     } else if (item.first == "renewtime.unit") {
-      options.renewtime.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+      options.renewtime.setUnit(TimeUnit::tmUnitFromText(item.second.toString(), TimeUnit::LocaleOpt::DONT_USE));
     } else if (item.first == "promptInterval.time") {
       options.promptInterval.setTime(item.second.toInt());
     } else if (item.first == "promptInterval.unit") {
-      options.promptInterval.setUnit(TimeUnit::tmUnitFromText(item.second.toString()));
+      options.promptInterval.setUnit(TimeUnit::tmUnitFromText(item.second.toString(), TimeUnit::LocaleOpt::DONT_USE));
     }
   }
   return options;

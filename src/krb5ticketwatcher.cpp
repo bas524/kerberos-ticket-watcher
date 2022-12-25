@@ -828,8 +828,10 @@ void Ktw::buildCcacheInfos() {
   _principal = std::make_unique<v5::Principal>(cCache.getPrincipal());
   QString defname = _principal->name();
 
-  commonLabel->setText(QString("<qt><b>") + ki18n("Ticket cache: %1:%2").arg(cCache.type(), cCache.name()) + QString("</b><br><b>") +
-                       ki18n("Default principal: %3").arg(defname) + QString("</b><br><br>"));
+  commonLabel->setText(ki18n("Ticket cache:"));
+  labelCacheV->setText(QString("%1:%2").arg(cCache.type(), cCache.name()));
+  labelPrincipal->setText(ki18n("Default principal:"));
+  labelPrincipalV->setText(defname);
 
   auto cursor = cCache.cursor();
   for (auto item = cursor.begin(); item != cursor.end(); ++item) {
@@ -869,12 +871,12 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   lvi->setText(1, n);
   lvi->setText(2, printInterval(expires));
 
-  QBrush brush(Qt::green);
+  QBrush brush(QColor(128, 195, 66));
 
   if (expires == 0)
-    brush = QBrush(Qt::red);
+    brush = QBrush(QColor(219, 88, 86));
   else if (expires < 60)
-    brush = QBrush(Qt::yellow);
+    brush = QBrush(QColor(203, 157, 6));
 
   lvi->setBackground(0, brush);
   lvi->setBackground(1, brush);

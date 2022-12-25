@@ -19,6 +19,7 @@ class TimeUnit {
   QString _unitName;
 
  public:
+  enum class LocaleOpt { USE = 0, DONT_USE = 1 };
   TimeUnit(krb5_deltat time, TmUnit unit);
   TimeUnit(const TimeUnit &) = default;
   TimeUnit(TimeUnit &&) = default;
@@ -33,8 +34,8 @@ class TimeUnit {
   const QString &unitName() const;
   krb5_deltat ticketTime() const;
   krb5_deltat as(TmUnit unit) const;
-  static QString tmUnitTostring(TmUnit unit);
-  static TmUnit tmUnitFromText(const QString &text);
+  static QString tmUnitTostring(TmUnit unit, LocaleOpt lopt = LocaleOpt::USE);
+  static TmUnit tmUnitFromText(const QString &text, LocaleOpt lopt = LocaleOpt::USE);
 };
 
 struct Options {
