@@ -1,6 +1,11 @@
 krb5-ticket-watcher
 
-Version 1.0.6
+Version 1.0.5
+- add tray menu icon with days
+- add applicaton options in ~/.config/krb5tw/options.cfg
+- use qt5keychain for credential saving and reading
+
+Version 1.0.4
 - refactor code to be more c++
 
 Version 1.0.3

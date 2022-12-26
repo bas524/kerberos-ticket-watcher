@@ -4,7 +4,7 @@ cmake_policy(SET CMP0075 NEW)
 
 set(MAJOR "1")
 set(MINOR "0")
-set(PATCH "4")
+set(PATCH "5")
 cmake_policy(SET CMP0048 NEW)
 project(krb5-ticket-watcher VERSION ${MAJOR}.${MINOR}.${PATCH})
 
