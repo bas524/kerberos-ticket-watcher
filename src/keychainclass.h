@@ -2,8 +2,11 @@
 #define KEYCHAINCLASS_H
 
 #include <QObject>
-
+#if QT_VERSION_MAJOR == 5
 #include <qt5keychain/keychain.h>
+#elif QT_VERSION_MAJOR == 6
+#include <qt6keychain/keychain.h>
+#endif
 
 class KeyChainClass : public QObject {
   Q_OBJECT
