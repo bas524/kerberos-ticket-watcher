@@ -55,8 +55,8 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
   ubuntu-20-04:
     runs-on: ubuntu-latest
     strategy:
@@ -111,8 +111,8 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
   debian-bullseye:
     runs-on: ubuntu-latest
     strategy:
@@ -167,8 +167,8 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
   debian-buster:
     runs-on: ubuntu-latest
     strategy:
@@ -223,8 +223,8 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
   centos-latest:
     runs-on: ubuntu-latest
     strategy:
@@ -277,8 +277,8 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
   fedora-latest:
     runs-on: ubuntu-latest
     strategy:
@@ -326,5 +326,5 @@ jobs:
       - name: Upload krb5-ticket-watcher binary
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ format('krb5-ticket-watcher-1.0.4.{0}', steps.container.outputs.value) }}
-          path: cmake-build-release/krb5-ticket-watcher-1.0.4-x86_64.???
+          name: ${{ format('krb5-ticket-watcher-1.0.5.{0}', steps.container.outputs.value) }}
+          path: cmake-build-release/krb5-ticket-watcher-1.0.5-x86_64.???
