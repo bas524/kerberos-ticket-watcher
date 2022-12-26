@@ -165,7 +165,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -290,14 +289,12 @@ msgid "Kerberos Ticket List"
 msgstr "Lista del ticket de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Lista del ticket de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Lista del ticket de Kerberos"
+msgstr "Version"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -341,7 +338,7 @@ msgid "Password expires after %1 days"
 msgstr "La contraseña caduca después de %1 días"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "El ticket caduca en %1"
 
@@ -390,9 +387,8 @@ msgid "Qt Version"
 msgstr "Versión Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Abandonar krb5TicketWatcher"
+msgstr "Abandonar Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -545,7 +541,6 @@ msgstr "Su contraseña ha caducado, por favor cámbiela"
 msgid "days"
 msgstr "días"
 
-#
 # include/lilo/widgets.ycp:60
 #: ../cmake-build-debug/ui_kinitdialog.h:298
 #: ../cmake-build-debug/ui_kinitdialog.h:305
@@ -568,7 +563,6 @@ msgid "hours"
 msgstr "horas"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
 msgstr "microsegundos"
 

@@ -2,11 +2,10 @@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
-#
+# This file is distributed under the same license as krb5-ticket-watcher package. FIRST
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2011-11-24 22:04+0200\n"
@@ -168,7 +167,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -198,9 +196,8 @@ msgid "Default credential cache"
 msgstr "Olağan güven belgesi önbelleği"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Olağan yönetici: %3"
+msgstr "Olağan yönetici:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -295,14 +292,12 @@ msgid "Kerberos Ticket List"
 msgstr "Kerberos Etiket Listesi"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Kerberos Etiket Listesi"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos Etiket Listesi"
+msgstr "Sürüm"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -346,7 +341,7 @@ msgid "Password expires after %1 days"
 msgstr "Parola %1 gün sonra sona eriyor"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Etiket %1 de biter"
 
@@ -395,9 +390,8 @@ msgid "Qt Version"
 msgstr "Qt Sürümü"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "krb5TicketWatcher'dan Çık"
+msgstr "Quit Kerberos5 Ticket Watcher'dan Çık"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -476,9 +470,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Etiket önbelleği yok edilemez."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Etiket önbelleği: %1:%2"
+msgstr "Etiket önbelleği:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -572,9 +565,8 @@ msgid "hours"
 msgstr "saatler"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "saniye"
+msgstr "mikrosaniye"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

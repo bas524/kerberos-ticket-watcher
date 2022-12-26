@@ -1,6 +1,5 @@
 # Copyright © 2009 SUSE Linux Products GmbH.
 # Kurdish Team <i18n@suse.de>, 2009.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: memory.ku.po\n"

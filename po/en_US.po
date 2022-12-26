@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2005-11-08 12:26+8\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../cmake-build-release/ui_pwchangedialog.h:172
 #: ../cmake-build-release/ui_kinitdialog.h:311
 msgid "&Cancel"
-msgstr "C&ancel"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:226
 msgid "&Change Kerberos Password"
@@ -63,9 +63,8 @@ msgstr ""
 
 #: ../cmake-build-debug/ui_mainwidget.h:194
 #: ../cmake-build-release/ui_mainwidget.h:194
-#, fuzzy
 msgid "&Refresh"
-msgstr "Auto refresh"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:221
 msgid "&Renew Ticket"
@@ -423,9 +422,8 @@ msgid "Service principal"
 msgstr ""
 
 #: ../src/main.cpp:78
-#, fuzzy
 msgid "Systray"
-msgstr "System"
+msgstr ""
 
 #: ../cmake-build-debug/ui_mainwidget.h:185
 #: ../cmake-build-debug/ui_mainwidget.h:186

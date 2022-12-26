@@ -183,7 +183,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -213,9 +212,8 @@ msgid "Default credential cache"
 msgstr "Cache implicit pentru date de acces"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Entitate implicită: %3"
+msgstr "Entitate implicită:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -309,14 +307,12 @@ msgid "Kerberos Ticket List"
 msgstr "Listă tichete Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Listă tichete Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Listă tichete Kerberos"
+msgstr "Versiune"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -360,7 +356,7 @@ msgid "Password expires after %1 days"
 msgstr "Parola expiră după %1 zile"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Tichetul expiră în %1"
 
@@ -410,9 +406,8 @@ msgid "Qt Version"
 msgstr "Versiunea Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Părăsește krb5TicketWatcher"
+msgstr "Părăsește Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -491,9 +486,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Cache-ul pentru tichete nu poate fi distrus."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Cache tichet: %1:%2"
+msgstr "Cache tichet:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -587,9 +581,8 @@ msgid "hours"
 msgstr "ore"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "secunde"
+msgstr "microsecunde"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

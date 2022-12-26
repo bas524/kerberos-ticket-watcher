@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2018-08-29 20:01+0000\n"
@@ -164,7 +164,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -194,9 +193,8 @@ msgid "Default credential cache"
 msgstr "Cau de credencials per defecte"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Principal per defecte: %3"
+msgstr "Principal per defecte:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -291,14 +289,12 @@ msgid "Kerberos Ticket List"
 msgstr "Llista de tiquets de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Llista de tiquets de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Llista de tiquets de Kerberos"
+msgstr "Versió Aplicació"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -342,7 +338,7 @@ msgid "Password expires after %1 days"
 msgstr "La contrasenya expira després de %1 dies"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "El tiquet caduca d'aquí a %1"
 
@@ -391,9 +387,8 @@ msgid "Qt Version"
 msgstr "Versió Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Sortir de krb5TicketWatcher"
+msgstr "Sortir de Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -567,7 +562,6 @@ msgid "hours"
 msgstr "hores"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
 msgstr "microsegons"
 

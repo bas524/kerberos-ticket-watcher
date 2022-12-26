@@ -167,7 +167,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -197,9 +196,8 @@ msgid "Default credential cache"
 msgstr "Valtakirjojen oletusvälimuisti"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Oletusvaltuus: %3"
+msgstr "Oletusvaltuus:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -293,14 +291,12 @@ msgid "Kerberos Ticket List"
 msgstr "Kerberos-lippuluettelo"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Kerberos-lippuluettelo"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos-lippuluettelo"
+msgstr "Versio"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -344,7 +340,7 @@ msgid "Password expires after %1 days"
 msgstr "Salasana vanhenee %1 päivän kuluttua"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Lippu vanhenee %1"
 
@@ -395,7 +391,7 @@ msgstr "Qt-Versio"
 #: ../src/krb5ticketwatcher.cpp:243
 #, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Lopeta krb5TicketWatcher"
+msgstr "Lopeta Kerberos5 Ticket Watche"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -474,9 +470,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Lipun välimuistia ei voi tuhota."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Lipun välimuisti: %1:%2"
+msgstr "Lipun välimuisti:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -570,9 +565,8 @@ msgid "hours"
 msgstr "tuntia"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "sekuntia"
+msgstr "microsekuntia"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

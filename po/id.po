@@ -1,7 +1,7 @@
 # Arif Budiman <arifpedia@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2017-04-11 22:48+0000\n"
@@ -165,7 +165,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -195,7 +194,6 @@ msgid "Default credential cache"
 msgstr "Cache kredensial baku"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
 msgstr "Pokok baku: %3"
 
@@ -291,14 +289,12 @@ msgid "Kerberos Ticket List"
 msgstr "Daftar Tiket Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Daftar Tiket Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Daftar Tiket Kerberos"
+msgstr "Versi"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -342,7 +338,7 @@ msgid "Password expires after %1 days"
 msgstr "Kata sandi berakhir setelah % 1 hari"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Tiket berakhir dalam %1"
 
@@ -391,9 +387,8 @@ msgid "Qt Version"
 msgstr "Versi Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Keluar dari krb5TicketWatcher"
+msgstr "Keluar dari Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -472,9 +467,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Cache tiket tidak dapat dimusnahkan."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Cache tiket: %1:%2"
+msgstr "Cache tiket:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -568,9 +562,8 @@ msgid "hours"
 msgstr "jam"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "detik"
+msgstr "mikrodetik"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

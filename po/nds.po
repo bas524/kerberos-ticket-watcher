@@ -1,6 +1,5 @@
 # Low German (nds) message file for YaST2 (@memory@).
 # Copyright (C) 2010 SUSE Linux Products GmbH.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"

@@ -1,6 +1,5 @@
 # Thai message file for YaST2 (@memory@).
 # Copyright (C) 2008 SUSE Linux Products GmbH.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"

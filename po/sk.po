@@ -1,12 +1,12 @@
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 #
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
+# This file is distributed under the same license as krb5-ticket-watcher package. FIRST
 #
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2016-07-28 18:28+0000\n"
@@ -171,7 +171,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -201,9 +200,8 @@ msgid "Default credential cache"
 msgstr "Štandardne poverená medzipamäť"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Predvolené hlavné: %3"
+msgstr "Predvolené hlavné:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -299,14 +297,12 @@ msgid "Kerberos Ticket List"
 msgstr "Zoznam Kerberos tiketov"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Zoznam Kerberos tiketov"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Zoznam Kerberos tiketov"
+msgstr "Verzia"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -350,7 +346,7 @@ msgid "Password expires after %1 days"
 msgstr "Platnosť hesla vyprší po %1 dňoch"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Tiket vyprší o %1"
 
@@ -401,9 +397,8 @@ msgid "Qt Version"
 msgstr "Qt Verzia"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Ukončiť krb5TicketWatcher"
+msgstr "Ukončiť Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -482,9 +477,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Medzipamäť tiketu nemôže byť zničená."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Medzipamäť tiketu: %1:%2"
+msgstr "Medzipamäť tiketu:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -578,9 +572,8 @@ msgid "hours"
 msgstr "hodiny/hodín"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "sekúnd(y)"
+msgstr "mikrosekund(y)"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

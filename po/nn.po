@@ -1,12 +1,10 @@
 # @TITLE@
 # Copyright (C) 2011, SUSE Linux GmbH, Nuremberg
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
+# This file is distributed under the same license as krb5-ticket-watcher package. FIRST
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2005-08-11 20:37+0200\n"

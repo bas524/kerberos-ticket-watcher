@@ -168,7 +168,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -198,9 +197,8 @@ msgid "Default credential cache"
 msgstr "Domyślny bufor poświadczeń"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Domyślny podmiot: %3"
+msgstr "Domyślny podmiot:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -294,14 +292,12 @@ msgid "Kerberos Ticket List"
 msgstr "Lista biletów Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Lista biletów Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Lista biletów Kerberos"
+msgstr "Wersja"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -345,7 +341,7 @@ msgid "Password expires after %1 days"
 msgstr "Hasło wygasa po %1 dniach"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Bilet wygasa za %1"
 
@@ -394,9 +390,8 @@ msgid "Qt Version"
 msgstr "Wersja Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Zakończ program krb5TicketWatcher"
+msgstr "Zakończ program Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -475,9 +470,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Nie można usunąć bufora biletów."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Bufor biletów: %1:%2"
+msgstr "Bufor biletów:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -571,9 +565,8 @@ msgid "hours"
 msgstr "godzin"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "sekund"
+msgstr "mikrosekundy"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

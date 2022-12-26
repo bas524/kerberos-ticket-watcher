@@ -2,7 +2,7 @@
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 #
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
+# This file is distributed under the same license as krb5-ticket-watcher package. FIRST
 #
 # Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2008, 2009.
 msgid ""
@@ -171,7 +171,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -345,7 +344,7 @@ msgid "Password expires after %1 days"
 msgstr "Пароль застаріє через %1 днiв"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Квиток застаріє за %1"
 
@@ -569,7 +568,6 @@ msgid "hours"
 msgstr "годин(и)"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
 msgstr "мiкросек"
 

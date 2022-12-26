@@ -1,6 +1,5 @@
 # Basque message file for YaST2 (@memory@).
 # Copyright (C) 2012 SUSE Linux Products GmbH.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"

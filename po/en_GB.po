@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2001-07-17 16:27+0200\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: ../cmake-build-debug/ui_mainwidget.h:198
 #: ../cmake-build-release/ui_mainwidget.h:198
 msgid "&Close"
-msgstr "&Close"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:231
 msgid "&Destroy Ticket"
@@ -41,9 +41,8 @@ msgstr ""
 
 #: ../cmake-build-debug/ui_kinitdialog.h:289
 #: ../cmake-build-release/ui_kinitdialog.h:289
-#, fuzzy
 msgid "&Details..."
-msgstr "Details..."
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:216
 msgid "&New Ticket"
@@ -55,19 +54,17 @@ msgstr ""
 #: ../cmake-build-release/ui_pwdialog.h:154
 #: ../cmake-build-release/ui_pwchangedialog.h:176
 #: ../cmake-build-release/ui_kinitdialog.h:315
-#, fuzzy
 msgid "&Ok"
-msgstr "Ok"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:241
 msgid "&Quit"
-msgstr "&Quit"
+msgstr ""
 
 #: ../cmake-build-debug/ui_mainwidget.h:194
 #: ../cmake-build-release/ui_mainwidget.h:194
-#, fuzzy
 msgid "&Refresh"
-msgstr "Refresh"
+msgstr ""
 
 #: ../src/krb5ticketwatcher.cpp:221
 msgid "&Renew Ticket"
@@ -260,9 +257,8 @@ msgstr ""
 
 #. Legend: Explain ticket flag "I"
 #: ../src/krb5ticketwatcher.cpp:180
-#, fuzzy
 msgid "Initial"
-msgstr "Initialising"
+msgstr ""
 
 #. Legend: Explain ticket flag "i"
 #: ../src/krb5ticketwatcher.cpp:176

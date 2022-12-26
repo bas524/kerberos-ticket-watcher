@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: @PACKAGE@\n"
+"Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-25 13:00+0300\n"
 "PO-Revision-Date: 2011-05-15 22:14+0100\n"
@@ -163,7 +163,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -193,9 +192,8 @@ msgid "Default credential cache"
 msgstr "Cache delle credenziali predefinita"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Principale predefinito: %3"
+msgstr "Principale predefinito:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -289,14 +287,12 @@ msgid "Kerberos Ticket List"
 msgstr "Elenco dei ticket di Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Elenco dei ticket di Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Elenco dei ticket di Kerberos"
+msgstr "Versione"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -340,7 +336,7 @@ msgid "Password expires after %1 days"
 msgstr "La password scade dopo % 1 giorni"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Il ticket scade in %1"
 
@@ -389,9 +385,8 @@ msgid "Qt Version"
 msgstr "Versione Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Uscire da krb5TicketWatcher"
+msgstr "Uscire da Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -471,9 +466,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "La cache dei ticket non può essere distrutta."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Cache dei ticket: %1:%2"
+msgstr "Cache dei ticket:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -568,9 +562,8 @@ msgid "hours"
 msgstr "ore"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "secondi"
+msgstr "microsecondi"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

@@ -1,5 +1,4 @@
 # Mohammad Rezaei Seresht <mohammad@rezaeiseresht.ir>, 2014.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: opensuse-i 18n\n"

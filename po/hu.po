@@ -129,7 +129,7 @@ msgstr "Anonim"
 
 #: ../src/krb5ticketwatcher.cpp:1071
 msgid "Application"
-msgstr ""
+msgstr "Alkalmazás"
 
 #: ../src/krb5ticketwatcher.cpp:945 ../src/krb5creds.cpp:134
 #: ../src/krb5creds.cpp:142
@@ -139,7 +139,7 @@ msgstr "Hibás cím (%1 típus, hossz %2)"
 
 #: ../src/krb5ticketwatcher.cpp:1074
 msgid "Build Date"
-msgstr ""
+msgstr "Építés Dátuma"
 
 #: ../cmake-build-debug/ui_pwchangedialog.h:171
 #: ../cmake-build-release/ui_pwchangedialog.h:171
@@ -165,7 +165,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -195,9 +194,8 @@ msgid "Default credential cache"
 msgstr "Alapértelmezett okmány gyorsítótár"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Alapértelmezett igazgató: %3"
+msgstr "Alapértelmezett igazgató:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -291,14 +289,13 @@ msgid "Kerberos Ticket List"
 msgstr "Kerberos jegylista"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Kerberos jegylista"
 
 #: ../src/krb5ticketwatcher.cpp:248
 #, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos jegylista"
+msgstr "Verzió"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -339,7 +336,7 @@ msgstr "A jelszó módosítása sikertelen"
 #: ../src/krb5ticketwatcher.cpp:649
 #, qt-format
 msgid "Password expires after %1 days"
-msgstr ""
+msgstr "A jelszó lejár %1 nap után"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
 #, fuzzy, qt-format
@@ -390,12 +387,11 @@ msgstr "Proxy"
 
 #: ../src/krb5ticketwatcher.cpp:1073
 msgid "Qt Version"
-msgstr ""
+msgstr "Verzió Qt"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Kilépés a krb5TicketWatcher-ből"
+msgstr "Kilépés a Kerberos5 Ticket Watcherl"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -474,9 +470,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "A jegy gyorsítótár nem törölhető."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Jegy gyorsítótár: %1: %2"
+msgstr "Jegy gyorsítótár:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -535,11 +530,11 @@ msgstr "Érték"
 
 #: ../src/krb5ticketwatcher.cpp:630
 msgid "Warning"
-msgstr ""
+msgstr "Figyelem"
 
 #: ../src/krb5ticketwatcher.cpp:630
 msgid "Your password expired, please change it"
-msgstr ""
+msgstr "A jelszó lejárt, kérjük, változtassa meg"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:299
 #: ../cmake-build-debug/ui_kinitdialog.h:306
@@ -572,7 +567,7 @@ msgstr "óra"
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
 #, fuzzy
 msgid "microseconds"
-msgstr "másodperc"
+msgstr "mikroszekundum"
 
 # 49593 AttribValues/label
 #: ../cmake-build-debug/ui_kinitdialog.h:301

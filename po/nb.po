@@ -1,7 +1,7 @@
 # translation of krb5-ticket-watcher.po to norsk bokmål
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
-# This file is distributed under the same license as @PACKAGE@ package. FIRST
+# This file is distributed under the same license as krb5-ticket-watcher package. FIRST
 #
 # Olav Pettershagen <olav.pet@gmail.com>, 2008, 2009.
 msgid ""
@@ -168,7 +168,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -198,9 +197,8 @@ msgid "Default credential cache"
 msgstr "Standard rettighetsmellomlager"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Standard primærbruker: %3"
+msgstr "Standard primærbruker:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -294,14 +292,12 @@ msgid "Kerberos Ticket List"
 msgstr "Kerberos-billettliste"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Kerberos-billettliste"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Kerberos-billettliste"
+msgstr "Versjon"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -345,7 +341,7 @@ msgid "Password expires after %1 days"
 msgstr "Passordet utløper etter %1 dager"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "Billetten utløper om %1"
 
@@ -394,9 +390,8 @@ msgid "Qt Version"
 msgstr "Qt-Versjon"
 
 #: ../src/krb5ticketwatcher.cpp:243
-#, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Avslutt krb5TicketWatcher"
+msgstr "Avslutt Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -475,9 +470,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Billettmellomlager kan ikke ødelegges."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Billettmellomlager: %1:%2"
+msgstr "Billettmellomlager:"
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -571,9 +565,8 @@ msgid "hours"
 msgstr "timer"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "sekunder"
+msgstr "mikrosekunder"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308

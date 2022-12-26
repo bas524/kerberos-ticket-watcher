@@ -1,7 +1,6 @@
 # Marathi message file for YaST2 (@memory@).
 # Copyright (C) 2006 SUSE Linux Products GmbH.
 # "( अमेय पाळंदे ) Ameya Palande" <2ameya@gmail.com>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"

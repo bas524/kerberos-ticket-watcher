@@ -1,9 +1,7 @@
 # Galician translation for krb5-ticket-watcher.gl.po
 # Copyright (C) 2000 SuSE GmbH.
-#
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.net
-#
 # Jesús Bravo Álvarez <jba@pobox.com>, 2000.
 # Manuel A. Vázquez <xixirei@yahoo.es>, 2009.
 # Manuel A. Vazquez <xixirei@yahoo.es>, 2009.
@@ -174,7 +172,6 @@ msgid "Ctrl+D"
 msgstr "Ctrl+D"
 
 #: ../src/krb5ticketwatcher.cpp:247
-#, fuzzy
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
@@ -204,9 +201,8 @@ msgid "Default credential cache"
 msgstr "Caché de credencial predeterminada"
 
 #: ../src/krb5ticketwatcher.cpp:833
-#, fuzzy
 msgid "Default principal:"
-msgstr "Suxeito principal predeterminado: %3"
+msgstr "Suxeito principal predeterminado:"
 
 #. title
 #: ../src/krb5ticketwatcher.cpp:279
@@ -300,14 +296,12 @@ msgid "Kerberos Ticket List"
 msgstr "Lista do ticket de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:1077
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher"
 msgstr "Lista do ticket de Kerberos"
 
 #: ../src/krb5ticketwatcher.cpp:248
-#, fuzzy
 msgid "Kerberos5 Ticket Watcher Version"
-msgstr "Lista do ticket de Kerberos"
+msgstr "Versión"
 
 #: ../src/krb5ticketwatcher.cpp:922
 msgid "Key Encryption Type"
@@ -351,7 +345,7 @@ msgid "Password expires after %1 days"
 msgstr "O contrasinal caduca despois de %1 días"
 
 #: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
-#, fuzzy, qt-format
+#, qt-format
 msgid "Password expires on %1"
 msgstr "O tícket caduca en %1"
 
@@ -402,7 +396,7 @@ msgstr "Versión Qt"
 #: ../src/krb5ticketwatcher.cpp:243
 #, fuzzy
 msgid "Quit Kerberos5 Ticket Watcher"
-msgstr "Saír de krb5TicketWatcher"
+msgstr "Saír de Kerberos5 Ticket Watcher"
 
 #: ../src/krb5ticketwatcher.cpp:236
 msgid "Re&store"
@@ -481,9 +475,8 @@ msgid "Ticket cache cannot be destroyed."
 msgstr "Non se pode destruír a caché do tícket."
 
 #: ../src/krb5ticketwatcher.cpp:831
-#, fuzzy
 msgid "Ticket cache:"
-msgstr "Caché do tícket: %1:%2"
+msgstr "Caché do tícket: "
 
 #: ../src/krb5ticketwatcher.cpp:819
 #, qt-format
@@ -577,9 +570,8 @@ msgid "hours"
 msgstr "horas"
 
 #: ../src/KtwOptions.cpp:33 ../src/KtwOptions.cpp:69
-#, fuzzy
 msgid "microseconds"
-msgstr "segundos"
+msgstr "microsegundos"
 
 #: ../cmake-build-debug/ui_kinitdialog.h:301
 #: ../cmake-build-debug/ui_kinitdialog.h:308
