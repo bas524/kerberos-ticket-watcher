@@ -36,4 +36,5 @@ This is a fork of [source forge project](https://sourceforge.net/projects/krb5ti
 ![LoginWindowE](screenshots/login-w-extend.png?raw=true "kerberos-ticket-watcher")
 
 * Main window and menu
+Icon in the system tray shows how many days left before password will be expired
 ![MainWindow](screenshots/main-w.png?raw=true "kerberos-ticket-watcher")
