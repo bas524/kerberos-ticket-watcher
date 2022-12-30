@@ -524,6 +524,8 @@ void Ktw::kinit() {
           case KRB5KRB_AP_ERR_BAD_INTEGRITY:
             /* Invalid password, try again. */
             errorTxt = ki18n("Invalid Password");
+            keyChainClass.deleteKey(principalKey);
+            keyChainClass.deleteKey(pwdKey);
             break;
           case KRB5KDC_ERR_KEY_EXP:
             /* password expired */
