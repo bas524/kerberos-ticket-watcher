@@ -158,36 +158,36 @@ void Ktw::initTray() {
 
 void Ktw::initMainWindow() {
   setupUi(this);
-  textLabel1->setText(
-      // Legend: Explain ticket flag "F"
-      QString("<qt><table><tr><td><b>F</b></td><td>") + ki18n("Forwardable") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "f"
-      QString("<tr><td><b>f</b></td><td>") + ki18n("Forwarded") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "p"
-      QString("<tr><td><b>P</b></td><td>") + ki18n("Proxiable") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "P"
-      QString("<tr><td><b>p</b></td><td>") + ki18n("Proxy") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "D"
-      QString("<tr><td><b>D</b></td><td>") + ki18n("May Postdate") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "d"
-      QString("<tr><td><b>d</b></td><td>") + ki18n("Postdated") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "i"
-      QString("<tr><td><b>i</b></td><td>") + ki18n("Invalid") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "R"
-      QString("<tr><td><b>R</b></td><td>") + ki18n("Renewable") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "I"
-      QString("<tr><td><b>I</b></td><td>") + ki18n("Initial") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "H"
-      QString("<tr><td><b>H</b></td><td>") + ki18n("HW Auth") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "A"
-      QString("<tr><td><b>A</b></td><td>") + ki18n("Pre Auth") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "T"
-      QString("<tr><td><b>T</b></td><td>") + ki18n("Transit Policy Checked") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "O"
-      QString("<tr><td><b>O</b></td><td>") + ki18n("Ok as Delegate") + QString("</td></tr>") +
-      // Legend: Explain ticket flag "a"
-      QString("<tr><td><b>a</b></td><td>") + ki18n("Anonymous") + QString("</td></tr></table></qt>"));
-
+  //  textLabel1->setText(
+  //      // Legend: Explain ticket flag "F"
+  //      QString("<qt><table><tr><td><b>F</b></td><td>") + ki18n("Forwardable") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "f"
+  //      QString("<tr><td><b>f</b></td><td>") + ki18n("Forwarded") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "p"
+  //      QString("<tr><td><b>P</b></td><td>") + ki18n("Proxiable") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "P"
+  //      QString("<tr><td><b>p</b></td><td>") + ki18n("Proxy") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "D"
+  //      QString("<tr><td><b>D</b></td><td>") + ki18n("May Postdate") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "d"
+  //      QString("<tr><td><b>d</b></td><td>") + ki18n("Postdated") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "i"
+  //      QString("<tr><td><b>i</b></td><td>") + ki18n("Invalid") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "R"
+  //      QString("<tr><td><b>R</b></td><td>") + ki18n("Renewable") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "I"
+  //      QString("<tr><td><b>I</b></td><td>") + ki18n("Initial") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "H"
+  //      QString("<tr><td><b>H</b></td><td>") + ki18n("HW Auth") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "A"
+  //      QString("<tr><td><b>A</b></td><td>") + ki18n("Pre Auth") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "T"
+  //      QString("<tr><td><b>T</b></td><td>") + ki18n("Transit Policy Checked") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "O"
+  //      QString("<tr><td><b>O</b></td><td>") + ki18n("Ok as Delegate") + QString("</td></tr>") +
+  //      // Legend: Explain ticket flag "a"
+  //      QString("<tr><td><b>a</b></td><td>") + ki18n("Anonymous") + QString("</td></tr></table></qt>"));
+  _defaultStyleSheet = labelForwardableLetter->styleSheet();
   connect(refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
 }
 
@@ -872,11 +872,15 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   lvi->setText(2, printInterval(expires));
 
   QBrush brush(QColor(128, 195, 66));
+  QString brushText = "rgb(128, 195, 66)";
 
-  if (expires == 0)
+  if (expires == 0) {
     brush = QBrush(QColor(219, 88, 86));
-  else if (expires < 60)
+    brushText = "rgb(219, 88, 86)";
+  } else if (expires < 60) {
     brush = QBrush(QColor(203, 157, 6));
+    brushText = "rgb(203, 157, 6)";
+  }
 
   lvi->setBackground(0, brush);
   lvi->setBackground(1, brush);
@@ -897,20 +901,29 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   }
 
   QString tFlags;
-  if (cred.isForwardable()) tFlags += 'F';
-  if (cred.isForwarded()) tFlags += 'f';
-  if (cred.isProxyable()) tFlags += 'P';
-  if (cred.isProxy()) tFlags += 'p';
-  if (cred.isMayPostdate()) tFlags += 'D';
-  if (cred.isPostdated()) tFlags += 'd';
-  if (cred.isInvalid()) tFlags += 'i';
-  if (cred.isRenewable()) tFlags += 'R';
-  if (cred.isInitial()) tFlags += 'I';
-  if (cred.isHWAuth()) tFlags += 'H';
-  if (cred.isPreAuth()) tFlags += 'A';
-  if (cred.hasTransitionPolicy()) tFlags += 'T';
-  if (cred.isOkAsDelegate()) tFlags += 'O'; /* D/d are taken.  Use short strings?  */
-  if (cred.isAnonimous()) tFlags += 'a';
+  auto setLabelStyle = [&brushText, &tFlags, this](bool isEnabled, QLabel *label, QChar flag) {
+    if (isEnabled) {
+      tFlags += flag;
+      label->setStyleSheet(QString("QLabel { background-color: %1; border-radius: 6px; }").arg(brushText));
+    } else {
+      label->setStyleSheet(_defaultStyleSheet);
+    }
+  };
+
+  setLabelStyle(cred.isForwardable(), labelForwardableLetter, 'F');
+  setLabelStyle(cred.isForwarded(), labelForwardedLetter, 'f');
+  setLabelStyle(cred.isProxyable(), labelProxiableLetter, 'P');
+  setLabelStyle(cred.isProxy(), labelProxyLetter, 'p');
+  setLabelStyle(cred.isMayPostdate(), labelMayPostdateLetter, 'D');
+  setLabelStyle(cred.isPostdated(), labelPostdateLetter, 'd');
+  setLabelStyle(cred.isInvalid(), labelInvalidLetter, 'i');
+  setLabelStyle(cred.isRenewable(), labelRenewableLetter, 'R');
+  setLabelStyle(cred.isInitial(), labelInitialLetter, 'I');
+  setLabelStyle(cred.isHWAuth(), labelHWAuthLetter, 'H');
+  setLabelStyle(cred.isPreAuth(), labelPreAuthLetter, 'A');
+  setLabelStyle(cred.hasTransitionPolicy(), labelTransitPolicyCheckedLetter, 'T');
+  setLabelStyle(cred.isOkAsDelegate(), labelOkasDelegateLetter, 'O');
+  setLabelStyle(cred.isAnonimous(), labelAnonimousLetter, 'a');
 
   last = new QTreeWidgetItem(lvi, last);
   last->setText(0, ki18n("Ticket flags"));

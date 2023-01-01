@@ -150,6 +150,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
   ktw::Options _options;
 
   KeyChainClass keyChainClass;
+  QString _defaultStyleSheet;
 
   void saveOptions();
   void loadOptions();
