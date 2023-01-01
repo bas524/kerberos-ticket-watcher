@@ -54,6 +54,10 @@ set(KTW_SRCS
     src/keychainclass.cpp
     src/KtwOptions.cpp
     src/KtwOptions.h
+    src/pwdialog.cpp
+    src/pwchangedialog.cpp
+    src/pwdialog.h
+    src/pwchangedialog.h
     )
 
 # another list, this time it includes all header files that should be treated with moc
@@ -84,6 +88,8 @@ find_package(Qt5 COMPONENTS Core Widgets Gui Network Keychain REQUIRED)
 qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
 # and finally this will run moc:
 qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
+#add resources
+qt5_add_resources(KTW_RC_SRCS rc/icons.qrc)
 
 find_package(Gettext REQUIRED)
 if (GETTEXT_FOUND)

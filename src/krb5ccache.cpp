@@ -25,7 +25,7 @@ CCache::~CCache() {
   }
 }
 Context& CCache::context() { return _context; }
-krb5_ccache CCache::operator()() { return _ccache; }
+krb5_ccache CCache::operator()() const { return _ccache; }
 Principal CCache::getPrincipal() { return Principal(*this); }
 krb5_error_code CCache::destroy() {
   int code = krb5_cc_destroy(_context(), _ccache);
@@ -36,8 +36,8 @@ krb5_error_code CCache::destroy() {
   return 0;
 }
 krb5_error_code CCache::setFlags(krb5_flags flags) { return krb5_cc_set_flags(_context(), _ccache, flags); }
-QString CCache::type() { return QString(krb5_cc_get_type(_context(), _ccache)); }
-QString CCache::name() { return QString(krb5_cc_get_name(_context(), _ccache)); }
+QString CCache::type() const { return QString(krb5_cc_get_type(_context(), _ccache)); }
+QString CCache::name() const { return QString(krb5_cc_get_name(_context(), _ccache)); }
 Cursor CCache::cursor() { return Cursor(*this); }
 Creds CCache::renewCredentials(const Principal& principal) {
   auto my_creds = std::make_unique<krb5_creds>();

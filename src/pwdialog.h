@@ -4,35 +4,29 @@
 #include <QDialog>
 #include <QString>
 #include <QLineEdit>
-
 #include "krb5_tw_gettext.h"
-
 #include "ui_pwdialog.h"
 
 class PWDialog : public QDialog, private Ui::PWDialog {
   Q_OBJECT
 
+  QIcon _icEye;
+  QIcon _icClosedEye;
+
  public:
-  explicit PWDialog(QWidget* parent = 0, const char* name = 0, bool modal = false, Qt::WindowFlags fl = Qt::WindowType::Widget)
-      : QDialog(parent, fl) {
-    setModal(modal);
-    setAccessibleName(name);
-    setupUi(this);
-    QWidget* wnd = window();
-    if (wnd) {
-      wnd->setWindowFlags(wnd->windowFlags() | Qt::WindowStaysOnTopHint);
-    }
-  }
+  explicit PWDialog(QWidget* parent = nullptr, const char* name = nullptr, bool modal = false, Qt::WindowFlags fl = Qt::WindowType::Widget);
 
-  ~PWDialog() {}
+  ~PWDialog();
 
-  void krb5promptSetText(const QString& text) { krb5prompt->setText(text); }
+  void krb5promptSetText(const QString& text);
 
-  void promptEditSetEchoMode(QLineEdit::EchoMode mode) { promptEdit->setEchoMode(mode); }
+  void promptEditSetEchoMode(QLineEdit::EchoMode mode);
 
-  QString promptEditText() const { return promptEdit->text(); }
+  QString promptEditText() const;
 
-  void errorLabelSetText(const QString& text) { errorLabel->setText(text); }
+  void errorLabelSetText(const QString& text);
+ private slots:
+  void on_btnShowPwd_clicked();
 };
 
 #endif  // PWDIALOG_H
