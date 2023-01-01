@@ -26,12 +26,12 @@ class CCache {
   CCache(CCache &&) = default;
   ~CCache();
   Context &context();
-  krb5_ccache operator()();
+  krb5_ccache operator()() const;
   Principal getPrincipal();
   krb5_error_code destroy();
   krb5_error_code setFlags(krb5_flags flags);
-  QString type();
-  QString name();
+  QString type() const;
+  QString name() const;
   Cursor cursor();
   Creds renewCredentials(const Principal &principal);
 };

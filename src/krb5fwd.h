@@ -10,6 +10,7 @@ typedef int32_t krb5_int32;
 typedef krb5_int32 krb5_error_code;
 typedef krb5_int32 krb5_timestamp;
 typedef krb5_int32 krb5_deltat;
+typedef krb5_int32 krb5_flags;
 
 struct _krb5_context;
 typedef struct _krb5_context* krb5_context;

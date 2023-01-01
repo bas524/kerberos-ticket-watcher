@@ -4,69 +4,66 @@
 #include <QDialog>
 #include <QString>
 #include <QStringList>
-
 #include "krb5_tw_gettext.h"
-
 #include "ui_kinitdialog.h"
 
 class KinitDialog : public QDialog, private Ui::KinitDialog {
   Q_OBJECT
 
+  QIcon _icEye;
+  QIcon _icClosedEye;
+
  public:
   explicit KinitDialog(QWidget* parent = nullptr, const char* name = nullptr, bool modal = false, Qt::WindowFlags fl = Qt::WindowType::Widget);
   ~KinitDialog() override;
 
-  void errorLabelSetText(const QString& text) { errorLabel->setText(text); }
+  void errorLabelSetText(const QString& text);
 
-  void userLineEditSetText(const QString& text) { userLineEdit->setText(text); }
+  void userLineEditSetText(const QString& text);
 
-  QString userLineEditText() const { return userLineEdit->text(); }
+  QString userLineEditText() const;
 
-  void realmLineEditSetText(const QString& text) { realmLineEdit->setText(text); }
+  void realmLineEditSetText(const QString& text);
 
-  QString realmLineEditText() const { return realmLineEdit->text(); }
+  QString realmLineEditText() const;
 
-  void passwordLineEditSetFocus() { passwordLineEdit->setFocus(); }
+  void passwordLineEditSetFocus();
 
-  QString passwordLineEditText() { return passwordLineEdit->text(); }
+  QString passwordLineEditText();
 
-  void forwardCheckBoxSetChecked(bool check) { forwardCheckBox->setChecked(check); }
+  void forwardCheckBoxSetChecked(bool check);
 
-  bool forwardCheckBoxIsChecked() const { return forwardCheckBox->isChecked(); }
+  bool forwardCheckBoxIsChecked() const;
 
-  void proxyCheckBoxSetChecked(bool check) { proxyCheckBox->setChecked(check); }
+  void proxyCheckBoxSetChecked(bool check);
 
-  bool proxyCheckBoxIsChecked() const { return proxyCheckBox->isChecked(); }
+  bool proxyCheckBoxIsChecked() const;
 
-  void lifetimeSpinBoxSetValue(int v) { lifetimeSpinBox->setValue(v); }
+  void lifetimeSpinBoxSetValue(int v);
 
   int lifetimeSpinBoxValue() const { return lifetimeSpinBox->value(); }
 
-  void lifetimeUnitComboBoxSetCurrentText(const QString& text) {
-    int index = lifetimeUnitComboBox->findText(text);
-    lifetimeUnitComboBox->setCurrentIndex(index);
-  }
+  void lifetimeUnitComboBoxSetCurrentText(const QString& text);
 
-  QString lifetimeUnitComboBoxCurrentText() const { return lifetimeUnitComboBox->currentText(); }
+  QString lifetimeUnitComboBoxCurrentText() const;
 
-  void renewtimeSpinBoxSetValue(int v) { renewtimeSpinBox->setValue(v); }
+  void renewtimeSpinBoxSetValue(int v);
 
-  int renewtimeSpinBoxValue() const { return renewtimeSpinBox->value(); }
+  int renewtimeSpinBoxValue() const;
 
-  void renewUnitComboBoxSetCurrentText(const QString& text) {
-    int index = renewUnitComboBox->findText(text);
-    renewUnitComboBox->setCurrentIndex(index);
-  }
+  void renewUnitComboBoxSetCurrentText(const QString& text);
 
-  QString renewUnitComboBoxCurrentText() const { return renewUnitComboBox->currentText(); }
+  QString renewUnitComboBoxCurrentText() const;
 
-  void renewCheckBoxSetChecked(bool check) { renewCheckBox->setChecked(check); }
+  void renewCheckBoxSetChecked(bool check);
 
-  bool renewCheckBoxIsChecked() const { return renewCheckBox->isChecked(); }
+  bool renewCheckBoxIsChecked() const;
 
  public slots:
   void changeDetailsState(int state);
   void changeRenewState(int state);
+ private slots:
+  void on_btnShowPwd_clicked();
 };
 
 #endif

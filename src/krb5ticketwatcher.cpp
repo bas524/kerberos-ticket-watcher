@@ -158,7 +158,6 @@ void Ktw::initTray() {
 
 void Ktw::initMainWindow() {
   setupUi(this);
-
   textLabel1->setText(
       // Legend: Explain ticket flag "F"
       QString("<qt><table><tr><td><b>F</b></td><td>") + ki18n("Forwardable") + QString("</td></tr>") +
@@ -518,14 +517,13 @@ void Ktw::kinit() {
       if (ex.retval()) {
         qWarning("Error during initCredential(): %d", ex.retval());
         ok = true;
-
+        keyChainClass.deleteKey(principalKey);
+        keyChainClass.deleteKey(pwdKey);
         switch (ex.retval()) {
           case KRB5KDC_ERR_PREAUTH_FAILED:
           case KRB5KRB_AP_ERR_BAD_INTEGRITY:
             /* Invalid password, try again. */
             errorTxt = ki18n("Invalid Password");
-            keyChainClass.deleteKey(principalKey);
-            keyChainClass.deleteKey(pwdKey);
             break;
           case KRB5KDC_ERR_KEY_EXP:
             /* password expired */
@@ -696,7 +694,7 @@ void Ktw::changePassword(const QString &oldpw) {
     if (oldPasswd.isEmpty() || !errorText.isEmpty()) {
       oldPasswd = passwordDialog(errorText);
 
-      if (oldPasswd.isNull()) throw KRB5EXCEPTION(-1, _context, "old password is null");
+      if (oldPasswd.isNull()) return;
     }
     QString srv = "kadmin/changepw";
     try {
