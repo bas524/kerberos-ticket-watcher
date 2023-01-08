@@ -159,6 +159,29 @@ void Ktw::initTray() {
 
 void Ktw::initMainWindow() {
   setupUi(this);
+
+  auto isFixedPitch = [](const QFont &font) {
+    const QFontInfo fi(font);
+    return fi.fixedPitch();
+  };
+  auto getMonospaceFont = [&isFixedPitch]() -> QFont {
+#ifdef __APPLE__
+    QFont font("Monaco");
+#else
+    QFont font("monospace");
+#endif
+    if (isFixedPitch(font)) return font;
+    font.setStyleHint(QFont::Monospace);
+    if (isFixedPitch(font)) return font;
+    font.setStyleHint(QFont::TypeWriter);
+    if (isFixedPitch(font)) return font;
+    font.setFamily("courier");
+    if (isFixedPitch(font)) return font;
+    return font;
+  };
+
+  _monospacedFont = getMonospaceFont();
+
   statusBar = new QStatusBar(this);
   this->statusLayout->addWidget(statusBar, 1);
   commonLabel->setText(ki18n("Ticket cache:"));
@@ -893,14 +916,17 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
 
   last = new QTreeWidgetItem(lvi);
   last->setText(0, ki18n("Valid starting"));
+  last->setFont(1, _monospacedFont);
   last->setText(1, printtime(cred.ticketStartTime()));
 
   last = new QTreeWidgetItem(lvi, last);
   last->setText(0, ki18n("Expires"));
+  last->setFont(1, _monospacedFont);
   last->setText(1, printtime(cred.ticketEndTime()));
 
   last = new QTreeWidgetItem(lvi, last);
   last->setText(0, ki18n("Renew until"));
+  last->setFont(1, _monospacedFont);
   if (cred.ticketRenewTimeDelta() != -1) {
     last->setText(1, printtime(cred.ticketRenewTillTime()));
   } else {
@@ -994,7 +1020,7 @@ QString Ktw::oneAddr(krb5_address *a) {
 }
 
 QString Ktw::printtime(time_t tv) {
-  char timestring[30];
+  char timestring[30] = {0};
   char fill = ' ';
 
   if (tv == 0) {

@@ -26,6 +26,7 @@
 #include <QTranslator>
 #include <QSystemTrayIcon>
 #include <QStatusBar>
+#include <QFont>
 #include "keychainclass.h"
 #include "KtwOptions.h"
 
@@ -155,6 +156,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
 
   KeyChainClass keyChainClass;
   QString _defaultStyleSheet;
+  QFont _monospacedFont;
 
   void saveOptions();
   void loadOptions();
