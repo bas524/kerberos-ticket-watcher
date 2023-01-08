@@ -50,7 +50,7 @@ class Creds {
   krb5_timestamp ticketStartTime() const;
   krb5_timestamp ticketRenewTillTime() const;
   krb5_deltat ticketLifeTime() const;
-  krb5_deltat ticketRenewTime() const;
+  krb5_deltat ticketRenewTimeDelta() const;
   std::pair<krb5_deltat, LifeTimeDuration> lifeTimeDuration() const;
   std::pair<krb5_deltat, LifeTimeDuration> renewTimeDuration() const;
   QString clientName() const;

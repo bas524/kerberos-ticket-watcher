@@ -25,6 +25,7 @@
 #include <QTimer>
 #include <QTranslator>
 #include <QSystemTrayIcon>
+#include <QStatusBar>
 #include "keychainclass.h"
 #include "KtwOptions.h"
 
@@ -87,6 +88,8 @@ class Ktw : public QWidget, private Ui::MainWidget {
 
   void changePassword(const QString &oldpw = QString());
 
+  void on_ticketView_itemClicked(QTreeWidgetItem *item, int column);
+
  private:
   void createTrayMenu();
 
@@ -130,6 +133,7 @@ class Ktw : public QWidget, private Ui::MainWidget {
 
   QSystemTrayIcon *tray;
   QMenu *trayMenu;
+  QStatusBar *statusBar;
 
   QAction *kinitAction{};
   QAction *renewAction{};

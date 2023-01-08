@@ -50,6 +50,7 @@
 #include <QStandardPaths>
 #include <QSettings>
 #include <QDir>
+#include <QList>
 
 #include "kinitdialog.h"
 #include "pwchangedialog.h"
@@ -158,35 +159,12 @@ void Ktw::initTray() {
 
 void Ktw::initMainWindow() {
   setupUi(this);
-  //  textLabel1->setText(
-  //      // Legend: Explain ticket flag "F"
-  //      QString("<qt><table><tr><td><b>F</b></td><td>") + ki18n("Forwardable") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "f"
-  //      QString("<tr><td><b>f</b></td><td>") + ki18n("Forwarded") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "p"
-  //      QString("<tr><td><b>P</b></td><td>") + ki18n("Proxiable") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "P"
-  //      QString("<tr><td><b>p</b></td><td>") + ki18n("Proxy") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "D"
-  //      QString("<tr><td><b>D</b></td><td>") + ki18n("May Postdate") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "d"
-  //      QString("<tr><td><b>d</b></td><td>") + ki18n("Postdated") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "i"
-  //      QString("<tr><td><b>i</b></td><td>") + ki18n("Invalid") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "R"
-  //      QString("<tr><td><b>R</b></td><td>") + ki18n("Renewable") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "I"
-  //      QString("<tr><td><b>I</b></td><td>") + ki18n("Initial") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "H"
-  //      QString("<tr><td><b>H</b></td><td>") + ki18n("HW Auth") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "A"
-  //      QString("<tr><td><b>A</b></td><td>") + ki18n("Pre Auth") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "T"
-  //      QString("<tr><td><b>T</b></td><td>") + ki18n("Transit Policy Checked") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "O"
-  //      QString("<tr><td><b>O</b></td><td>") + ki18n("Ok as Delegate") + QString("</td></tr>") +
-  //      // Legend: Explain ticket flag "a"
-  //      QString("<tr><td><b>a</b></td><td>") + ki18n("Anonymous") + QString("</td></tr></table></qt>"));
+  statusBar = new QStatusBar(this);
+  this->statusLayout->addWidget(statusBar, 1);
+  commonLabel->setText(ki18n("Ticket cache:"));
+  labelCacheV->setText(" -- ");
+  labelPrincipal->setText(ki18n("Default principal:"));
+  labelPrincipalV->setText(" -- ");
   _defaultStyleSheet = labelForwardableLetter->styleSheet();
   connect(refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
 }
@@ -196,9 +174,13 @@ void Ktw::initMainWindow() {
 void Ktw::reReadCache() {
   try {
     buildCcacheInfos();
+    statusBar->showMessage("cache re-read complete", 30000);
+  } catch (v5::Exception &ex) {
+    qWarning() << "Error: " << ex.what();
+    statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
   } catch (std::exception &ex) {
     qWarning() << "Error: " << ex.what();
-    commonLabel->setText("<qt><b>" + QString(ex.what()) + "</b></qt>");
+    statusBar->showMessage(ex.what(), 30000);
   }
 }
 
@@ -300,7 +282,13 @@ void Ktw::initWorkflow(int type) {
   QString defRealm = _context.defaultRealm();
 
   if (type == 69 && !defRealm.isEmpty()) {
-    kinit();
+    try {
+      kinit();
+      statusBar->showMessage("kinit complete", 30000);
+    } catch (v5::Exception &ex) {
+      statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
+      return;
+    }
   }
 
   try {
@@ -310,10 +298,16 @@ void Ktw::initWorkflow(int type) {
     reReadCache();
   } catch (v5::Exception &ex) {
     qWarning() << ex.what();
+    statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
   }
 
   if (isTicketExpired && !defRealm.isEmpty()) {
-    kinit();
+    try {
+      kinit();
+    } catch (v5::Exception &ex) {
+      statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
+      return;
+    }
   } else if (isPromptIntervalMoreThanTicketLifeTime) {
     qDebug("stop the timer");
 
@@ -324,35 +318,40 @@ void Ktw::initWorkflow(int type) {
       QString pwd = keyChainClass.readKey(pwdKey);
       reinitCredential(pwd);
     } catch (v5::Exception &ex) {
-      retval = ex.retval();
-      if (retval == KRB5_KDC_UNREACH) {
-        qWarning("cannot reach the KDC. Sleeping ...");
-      } else {
-        ex.rethrow();
-      }
+      statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
     }
     waitTimer.start(_options.promptInterval.as(ktw::TmUnit::MICROSECONDS));
   } else {
     if (type != 69) {
       auto cCache = _context.ccache();
       if (_principal != nullptr) {
-        auto newCreds = cCache.renewCredentials(*_principal);
-        tgtEndtime = newCreds.ticketEndTime();
-        retval = 0;
+        try {
+          auto newCreds = cCache.renewCredentials(*_principal);
+          tgtEndtime = newCreds.ticketEndTime();
+          retval = 0;
+          statusBar->showMessage("renew credentials complete", 30000);
+        } catch (v5::Exception &ex) {
+          statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
+          return;
+        }
       } else {
         retval = KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN;
+        statusBar->showMessage("unknown principal", 30000);
       }
     }
 
     try {
       getPwExp(QString{});
+      statusBar->showMessage("password expiration info updated", 30000);
+    } catch (v5::Exception &ex) {
+      qWarning() << "getPwExp Error : " << ex.what();
+      statusBar->showMessage(ex.krb5ErrorMessage(), 30000);
     } catch (std::exception &ex) {
       qWarning() << "getPwExp Error : " << ex.what();
+      statusBar->showMessage(ex.what(), 30000);
     }
     if (!retval) tray->showMessage(ki18n("Ticket renewed"), ki18n("Ticket successfully renewed."), QSystemTrayIcon::Information, 5000);
   }
-
-  qDebug("Workflow finished");
 }
 
 // public slot
@@ -431,7 +430,14 @@ void Ktw::kinit() {
       dlg = std::make_unique<KinitDialog>(this, "kinitDialog", true);
 
       dlg->errorLabelSetText(errorTxt);
-      dlg->userLineEditSetText(getUserName());
+      QString usr = user;
+      if (!principal.isEmpty()) {
+        auto strs = principal.split("@");
+        if (!strs.isEmpty()) {
+          usr = strs.first();
+        }
+      }
+      dlg->userLineEditSetText(usr);
       dlg->realmLineEditSetText(defRealm);
       dlg->passwordLineEditSetFocus();
 
@@ -517,7 +523,6 @@ void Ktw::kinit() {
       if (ex.retval()) {
         qWarning("Error during initCredential(): %d", ex.retval());
         ok = true;
-        keyChainClass.deleteKey(principalKey);
         keyChainClass.deleteKey(pwdKey);
         switch (ex.retval()) {
           case KRB5KDC_ERR_PREAUTH_FAILED:
@@ -894,16 +899,20 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   last->setText(0, ki18n("Expires"));
   last->setText(1, printtime(cred.ticketEndTime()));
 
-  if (cred.ticketRenewTime()) {
-    last = new QTreeWidgetItem(lvi, last);
-    last->setText(0, ki18n("Renew until"));
-    last->setText(1, printtime(cred.ticketRenewTime()));
+  last = new QTreeWidgetItem(lvi, last);
+  last->setText(0, ki18n("Renew until"));
+  if (cred.ticketRenewTimeDelta() != -1) {
+    last->setText(1, printtime(cred.ticketRenewTillTime()));
+  } else {
+    last->setText(1, "--");
   }
 
   QString tFlags;
-  auto setLabelStyle = [&brushText, &tFlags, this](bool isEnabled, QLabel *label, QChar flag) {
+  QList<char> lFlags;
+  auto setLabelStyle = [&brushText, &tFlags, &lFlags, this](bool isEnabled, QLabel *label, char flag) {
     if (isEnabled) {
       tFlags += flag;
+      lFlags.append(flag);
       label->setStyleSheet(QString("QLabel { background-color: %1; border-radius: 6px; }").arg(brushText));
     } else {
       label->setStyleSheet(_defaultStyleSheet);
@@ -928,6 +937,10 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   last = new QTreeWidgetItem(lvi, last);
   last->setText(0, ki18n("Ticket flags"));
   last->setText(1, tFlags);
+  QVariant itemData;
+  itemData.setValue<QList<char>>(lFlags);
+  lvi->setData(0, Qt::UserRole, itemData);
+  lvi->setData(1, Qt::UserRole, brushText);
 
   v5::Ticket tkt = cred.ticket();
 
@@ -1120,5 +1133,73 @@ void Ktw::loadOptions() {
       kvProps.insert(key, settings.value(key));
     }
     _options = ktw::Options::fromKeyValueProps(kvProps);
+  }
+}
+
+void Ktw::on_ticketView_itemClicked(QTreeWidgetItem *item, int column) {
+  QList<char> lFlags = item->data(0, Qt::UserRole).value<QList<char>>();
+  QString brushText = item->data(1, Qt::UserRole).toString();
+  auto getLabel = [this](char l) {
+    QLabel *lbl = nullptr;
+    switch (l) {
+      case 'F':
+        lbl = labelForwardableLetter;
+        break;
+      case 'f':
+        lbl = labelForwardedLetter;
+        break;
+      case 'P':
+        lbl = labelProxiableLetter;
+        break;
+      case 'p':
+        lbl = labelProxyLetter;
+        break;
+      case 'D':
+        lbl = labelMayPostdateLetter;
+        break;
+      case 'd':
+        lbl = labelPostdateLetter;
+        break;
+      case 'i':
+        lbl = labelInvalidLetter;
+        break;
+      case 'R':
+        lbl = labelRenewableLetter;
+        break;
+      case 'I':
+        lbl = labelInitialLetter;
+        break;
+      case 'H':
+        lbl = labelHWAuthLetter;
+        break;
+      case 'A':
+        lbl = labelPreAuthLetter;
+        break;
+      case 'T':
+        lbl = labelTransitPolicyCheckedLetter;
+        break;
+      case 'O':
+        lbl = labelOkasDelegateLetter;
+        break;
+      case 'a':
+        lbl = labelAnonimousLetter;
+        break;
+      default:
+        lbl = nullptr;
+        break;
+    }
+    return lbl;
+  };
+  auto setLabeslStyle = [&getLabel](const QList<char> &lFlags, const QString &style) {
+    for (const auto &f : lFlags) {
+      QLabel *label = getLabel(f);
+      if (label != nullptr) {
+        label->setStyleSheet(style);
+      }
+    }
+  };
+  if (!lFlags.isEmpty() && !brushText.isEmpty()) {
+    setLabeslStyle(QList<char>{'F', 'f', 'P', 'p', 'D', 'd', 'i', 'R', 'I', 'H', 'A', 'T', 'O', 'a'}, _defaultStyleSheet);
+    setLabeslStyle(lFlags, QString("QLabel { background-color: %1; border-radius: 6px; }").arg(brushText));
   }
 }

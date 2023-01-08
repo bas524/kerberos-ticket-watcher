@@ -52,7 +52,7 @@ krb5_timestamp Creds::ticketEndTime() const { return _creds->times.endtime; }
 krb5_timestamp Creds::ticketStartTime() const { return _creds->times.starttime; }
 krb5_timestamp Creds::ticketRenewTillTime() const { return _creds->times.renew_till; }
 krb5_deltat Creds::ticketLifeTime() const { return _creds->times.endtime - _creds->times.starttime; }
-krb5_deltat Creds::ticketRenewTime() const {
+krb5_deltat Creds::ticketRenewTimeDelta() const {
   if (_creds->times.renew_till == 0) {
     return -1;
   }
@@ -73,7 +73,7 @@ std::pair<krb5_deltat, Creds::LifeTimeDuration> Creds::lifeTimeDuration() const 
   return std::make_pair(lifetime, duration);
 }
 std::pair<krb5_deltat, Creds::LifeTimeDuration> Creds::renewTimeDuration() const {
-  krb5_deltat ticketrenewtime = ticketRenewTime();
+  krb5_deltat ticketrenewtime = ticketRenewTimeDelta();
   krb5_deltat renewtime = ticketrenewtime;
   LifeTimeDuration duration = LifeTimeDuration::SECONDS;
 
