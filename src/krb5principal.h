@@ -13,11 +13,11 @@ class Context;
 class CCache;
 
 class Principal {
-  Context &_context;
+  const Context &_context;
   krb5_principal _principal = nullptr;
-  explicit Principal(CCache &cCache);
-  Principal(Context &context, krb5_principal principal);
-  Principal(CCache &cCache, krb5_principal principal);
+  explicit Principal(const CCache &cCache);
+  Principal(const Context &context, krb5_principal principal);
+  Principal(const CCache &cCache, krb5_principal principal);
   friend class CCache;
   friend class Context;
 

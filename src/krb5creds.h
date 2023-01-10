@@ -17,10 +17,10 @@ class CCache;
 class Principal;
 
 class Creds {
-  Context &_context;
+  const Context &_context;
   std::unique_ptr<krb5_creds> _creds;
-  Creds(Context &context, std::unique_ptr<krb5_creds> creds);
-  void retriveCreds(CCache &cCache, Principal &principal, Principal &targetPrincipal);
+  Creds(const Context &context, std::unique_ptr<krb5_creds> creds);
+  void retriveCreds(const v5::CCache &cCache, const v5::Principal &principal, const v5::Principal &targetPrincipal);
   friend class Context;
   friend class Cursor;
   friend class Ticket;
@@ -45,7 +45,7 @@ class Creds {
   bool isPreAuth() const;
   bool hasTransitionPolicy() const;
   bool isOkAsDelegate() const;
-  bool isAnonimous() const;
+  bool isAnonymous() const;
   krb5_timestamp ticketEndTime() const;
   krb5_timestamp ticketStartTime() const;
   krb5_timestamp ticketRenewTillTime() const;

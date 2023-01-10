@@ -18,19 +18,19 @@ Exception::Exception(krb5_error_code retval, std::string what, int line, const c
   print_stacktrace(ss);
   _stackTraces.push_back(ss.str());
 }
-Exception::Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file, const char *function)
+Exception::Exception(krb5_error_code retval, const Context &context, std::string what, int line, const char *file, const char *function)
     : _retval(retval), _what(std::move(what)), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
-Exception::Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file, const char *function)
+Exception::Exception(krb5_error_code retval, const Context &context, const QString &what, int line, const char *file, const char *function)
     : _retval(retval), _what(what.toStdString()), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
-Exception::Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file, const char *function)
+Exception::Exception(krb5_error_code retval, const Context &context, const char *what, int line, const char *file, const char *function)
     : _retval(retval), _what(what), _line(line), _file(file), _function(function) {
   makeErrorMessage(context);
 }
-void Exception::makeErrorMessage(Context &context) {
+void Exception::makeErrorMessage(const Context &context) {
   _krb5ErrMessage = krb5ErrorMessage(_retval, context);
   _message = std::string(_file).append(":").append(std::to_string(_line)).append(" ").append(_what).append(" krb5:").append(_krb5ErrMessage);
   std::stringstream ss;
@@ -39,7 +39,7 @@ void Exception::makeErrorMessage(Context &context) {
 }
 const char *Exception::what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW { return _message.c_str(); }
 krb5_error_code Exception::retval() const { return _retval; }
-std::string Exception::krb5ErrorMessage(krb5_error_code retval, Context &context) {
+std::string Exception::krb5ErrorMessage(krb5_error_code retval, const Context &context) {
   const char *message = krb5_get_error_message(context(), retval);
   std::string msg(message);
   krb5_free_error_message(context(), message);

@@ -25,7 +25,7 @@ Context::~Context() {
   krb5_free_context(kcontext);
   kcontext = nullptr;
 }
-krb5_context Context::operator()() { return kcontext; }
+krb5_context Context::operator()() const { return kcontext; }
 bool Context::valid() const { return kcontext == nullptr; }
 QString Context::defaultRealm() const {
   char *realm = nullptr;
@@ -42,8 +42,8 @@ krb5_timestamp Context::currentDateTime() const {
   }
   return now;
 }
-CCache Context::ccache() { return CCache(*this); }
-Principal Context::principal(const QString &name) {
+CCache Context::ccache() const { return CCache(*this); }
+Principal Context::principal(const QString &name) const {
   krb5_principal principal = nullptr;
   krb5_error_code retval = krb5_parse_name(kcontext, name.toStdString().c_str(), &principal);
   if (retval != 0) {
@@ -51,15 +51,15 @@ Principal Context::principal(const QString &name) {
   }
   return Principal(*this, principal);
 }
-CredsOpts Context::credsOpts() {
+CredsOpts Context::credsOpts() const {
   krb5_get_init_creds_opt *opts = nullptr;
   krb5_error_code retval = krb5_get_init_creds_opt_alloc(kcontext, &opts);
   if (retval != 0) {
-    KRB5EXCEPTION(retval, *this, "can't init credsopts");
+    throw KRB5EXCEPTION(retval, *this, "can't init credsopts");
   }
   return CredsOpts(*this, opts);
 }
-Creds Context::initCreds(Principal &principal, CredsOpts &opts, const QString &password, const QString &initService) {
+Creds Context::initCreds(const Principal &principal, const CredsOpts &opts, const QString &password, const QString &initService) {
   qDebug("call initCredential");
   auto creds = std::make_unique<krb5_creds>();
   std::string tmpStrSvc = initService.toStdString();
@@ -71,7 +71,7 @@ Creds Context::initCreds(Principal &principal, CredsOpts &opts, const QString &p
   }
   return Creds(*this, std::move(creds));
 }
-krb5_timestamp Context::getPasswordExpiredTimestamp(Principal &principal) {
+krb5_timestamp Context::getPasswordExpiredTimestamp(const Principal &principal) const {
   krb5_timestamp pwd_exp = 0;
   auto expire_cb =
       [](krb5_context context, void *data, krb5_timestamp password_expiration, krb5_timestamp account_expiration, krb5_boolean is_last_req) -> void {

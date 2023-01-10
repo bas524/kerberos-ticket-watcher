@@ -958,7 +958,7 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   setLabelStyle(cred.isPreAuth(), labelPreAuthLetter, 'A');
   setLabelStyle(cred.hasTransitionPolicy(), labelTransitPolicyCheckedLetter, 'T');
   setLabelStyle(cred.isOkAsDelegate(), labelOkasDelegateLetter, 'O');
-  setLabelStyle(cred.isAnonimous(), labelAnonimousLetter, 'a');
+  setLabelStyle(cred.isAnonymous(), labelAnonymousLetter, 'a');
 
   last = new QTreeWidgetItem(lvi, last);
   last->setText(0, ki18n("Ticket flags"));
@@ -1208,7 +1208,7 @@ void Ktw::on_ticketView_itemClicked(QTreeWidgetItem *item, int column) {
         lbl = labelOkasDelegateLetter;
         break;
       case 'a':
-        lbl = labelAnonimousLetter;
+        lbl = labelAnonymousLetter;
         break;
       default:
         lbl = nullptr;

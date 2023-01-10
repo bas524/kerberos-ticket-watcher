@@ -9,7 +9,7 @@
 #include "krb5exception.h"
 
 namespace v5 {
-CredsOpts::CredsOpts(Context &context, krb5_get_init_creds_opt *opt) : _context(context), _opt(opt) {}
+CredsOpts::CredsOpts(const Context &context, krb5_get_init_creds_opt *opt) : _context(context), _opt(opt) {}
 CredsOpts::~CredsOpts() noexcept { krb5_get_init_creds_opt_free(_context(), _opt); }
 void CredsOpts::setForwardable(bool fl) { krb5_get_init_creds_opt_set_forwardable(_opt, (fl) ? 1 : 0); }
 void CredsOpts::setProxiable(bool fl) { krb5_get_init_creds_opt_set_proxiable(_opt, (fl) ? 1 : 0); }

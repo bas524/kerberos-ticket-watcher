@@ -13,9 +13,9 @@
 #include "krb5exception.h"
 
 namespace v5 {
-Creds::Creds(Context& context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
+Creds::Creds(const Context &context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
 Creds::~Creds() { krb5_free_cred_contents(_context(), _creds.get()); }
-void Creds::retriveCreds(CCache& cCache, Principal& principal, Principal& targetPrincipal) {
+void Creds::retriveCreds(const CCache& cCache, const Principal& principal, const Principal& targetPrincipal) {
   krb5_creds mcreds;
   memset(_creds.get(), 0, sizeof(krb5_creds));
   memset(&mcreds, 0, sizeof(mcreds));
@@ -47,7 +47,7 @@ bool Creds::isHWAuth() const { return _creds->ticket_flags & TKT_FLG_HW_AUTH; }
 bool Creds::isPreAuth() const { return _creds->ticket_flags & TKT_FLG_PRE_AUTH; }
 bool Creds::hasTransitionPolicy() const { return _creds->ticket_flags & TKT_FLG_TRANSIT_POLICY_CHECKED; }
 bool Creds::isOkAsDelegate() const { return _creds->ticket_flags & TKT_FLG_OK_AS_DELEGATE; }
-bool Creds::isAnonimous() const { return _creds->ticket_flags & TKT_FLG_ANONYMOUS; }
+bool Creds::isAnonymous() const { return _creds->ticket_flags & TKT_FLG_ANONYMOUS; }
 krb5_timestamp Creds::ticketEndTime() const { return _creds->times.endtime; }
 krb5_timestamp Creds::ticketStartTime() const { return _creds->times.starttime; }
 krb5_timestamp Creds::ticketRenewTillTime() const { return _creds->times.renew_till; }

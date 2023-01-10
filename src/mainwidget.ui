@@ -665,7 +665,7 @@
          <item row="13" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout_16">
            <item>
-            <widget class="QLabel" name="labelAnonimousLetter">
+            <widget class="QLabel" name="labelAnonymousLetter">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -698,9 +698,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="labelAnonimous">
+            <widget class="QLabel" name="labelAnonymous">
              <property name="text">
-              <string>Anonimous</string>
+              <string>Anonymous</string>
              </property>
             </widget>
            </item>
