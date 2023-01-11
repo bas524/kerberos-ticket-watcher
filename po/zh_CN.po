@@ -128,7 +128,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "匿名"
 
@@ -262,9 +261,8 @@ msgstr "HW 认证"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "无效密钥"
+msgstr "隐藏密码"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -355,9 +353,8 @@ msgstr "问题在 %1 过期"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "无效密钥"
+msgstr "密码:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -366,7 +363,6 @@ msgstr "请输入 <b>%1</b> 的 Kerberos 密钥"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "发布日期"
 
@@ -441,9 +437,8 @@ msgstr "服务身份"
 #: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
 #: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
-#, fuzzy
 msgid "Show password"
-msgstr "密钥："
+msgstr "显示密码"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -610,15 +605,4 @@ msgstr "秒"
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "匿名"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "更改 Kerberos 密钥"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "更改 Kerberos 密钥"
+msgstr "未定义"

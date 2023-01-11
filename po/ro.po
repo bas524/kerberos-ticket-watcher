@@ -142,7 +142,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "Anonim"
 
@@ -276,9 +275,8 @@ msgstr "Autentificare HW"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "Parolă invalidă."
+msgstr "Ascunde parola"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -369,9 +367,8 @@ msgstr "Tichetul expiră în %1"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "Parolă invalidă."
+msgstr "Parolă:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -380,7 +377,6 @@ msgstr "Introduceți parola Kerberos pentru <b>%1</b>"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "Postdatat"
 
@@ -456,9 +452,8 @@ msgstr "Entitate serviciu"
 #: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
 #: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
-#, fuzzy
 msgid "Show password"
-msgstr "Parolă:"
+msgstr "Arată parola"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -625,15 +620,4 @@ msgstr "secunde"
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "Anonim"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Modifică parola Kerberos"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Modifică parola Kerberos"
+msgstr "nedefinit"

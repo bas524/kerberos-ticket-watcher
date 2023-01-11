@@ -13,7 +13,7 @@
 #include "krb5exception.h"
 
 namespace v5 {
-Creds::Creds(const Context &context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
+Creds::Creds(const Context& context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
 Creds::~Creds() { krb5_free_cred_contents(_context(), _creds.get()); }
 void Creds::retriveCreds(const CCache& cCache, const Principal& principal, const Principal& targetPrincipal) {
   krb5_creds mcreds;
@@ -114,12 +114,16 @@ bool Creds::hasStartTime() const { return _creds->times.starttime != 0; }
 void Creds::setStartTimeInAuthTime() { _creds->times.starttime = _creds->times.authtime; }
 QString Creds::encryptionTypeName() const {
   char buf[100];
+  QString result;
   krb5_error_code retval = krb5_enctype_to_string(_creds->keyblock.enctype, buf, sizeof(buf));
   if (retval) {
     /* XXX if there's an error != EINVAL, I should probably report it */
-    sprintf(buf, "etype %d", _creds->keyblock.enctype);
+    result = QString("etype %1").arg(_creds->keyblock.enctype);
+  } else {
+    result = QString::fromLocal8Bit(buf);
   }
-  return {buf};
+
+  return result;
 }
 QStringList Creds::adresses() const {
   if (!_creds->addresses || !_creds->addresses[0]) {

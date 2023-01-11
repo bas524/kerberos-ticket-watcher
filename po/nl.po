@@ -129,7 +129,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "Anoniem"
 
@@ -263,9 +262,8 @@ msgstr "HW Auth"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "Ongeldig wachtwoord"
+msgstr "Passwort verbergen"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -356,9 +354,8 @@ msgstr "Ticket verloopt na %1"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "Ongeldig wachtwoord"
+msgstr "Passwort:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -367,7 +364,6 @@ msgstr "Voer het Kerberos wachtwoord in van <b>%1</b>"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "Latere datum gebruikt"
 
@@ -444,7 +440,7 @@ msgstr "Service autoriteit"
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
 #, fuzzy
 msgid "Show password"
-msgstr "Wachtwoord:"
+msgstr "Passwort anzeigen:"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -611,15 +607,4 @@ msgstr "seconden"
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "Anoniem"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Wijzig het wachtwoord van Kerberos"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Wijzig het wachtwoord van Kerberos"
+msgstr "undefiniert"

@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.6\n"
 
 #: ../src/krb5ticketwatcher.cpp:886
@@ -130,7 +130,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "Анонимно"
 
@@ -264,9 +263,8 @@ msgstr "Аппаратная аутентификация"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "Неверный пароль"
+msgstr "Скрыть пароль"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -357,9 +355,8 @@ msgstr "Билет истекает в %1"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "Неверный пароль"
+msgstr "Пароль:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -368,7 +365,6 @@ msgstr "Пожалуйста, введите пароль Kerberos для <b>%1<
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "Датировано будущим числом"
 
@@ -443,9 +439,8 @@ msgstr "Служебная учётная запись"
 #: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
 #: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
-#, fuzzy
 msgid "Show password"
-msgstr "Пароль:"
+msgstr "Показать пароль:"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -613,14 +608,3 @@ msgstr "секунд"
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
 msgstr "не определено"
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "Анонимно"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Изменить пароль Kerberos"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Изменить пароль Kerberos"

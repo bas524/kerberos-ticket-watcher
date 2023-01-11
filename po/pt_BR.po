@@ -133,7 +133,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "Anônimo"
 
@@ -267,9 +266,8 @@ msgstr "Autenticação HW"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "Senha inválida"
+msgstr "Ocultar senha"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -360,9 +358,8 @@ msgstr "Ticket expira em %1"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "Senha inválida"
+msgstr "Senha:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -371,7 +368,6 @@ msgstr "Digite a senha do Kerberos para <b>%1</b>"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "Atrasado"
 
@@ -446,9 +442,8 @@ msgstr "Principal do serviço"
 #: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
 #: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
-#, fuzzy
 msgid "Show password"
-msgstr "Senha:"
+msgstr "Mostrar senha"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -615,15 +610,4 @@ msgstr "segundos"
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "Anônimo"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Modificar a senha do Kerberos"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Modificar a senha do Kerberos"
+msgstr "indefinido"

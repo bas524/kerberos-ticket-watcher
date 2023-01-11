@@ -125,7 +125,7 @@ msgid "Alt+R"
 msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
-#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582s
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
 msgid "Anonymous"
 msgstr "Nimetöns"
 

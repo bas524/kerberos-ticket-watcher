@@ -130,7 +130,6 @@ msgstr "Alt+R"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:582
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
-#, fuzzy
 msgid "Anonymous"
 msgstr "Anonymný"
 
@@ -266,9 +265,8 @@ msgstr "HW overenie"
 
 #: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
 #: ../src/pwdialog.cpp:40
-#, fuzzy
 msgid "Hide password"
-msgstr "Neplatné heslo"
+msgstr "Skryť heslo"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
@@ -359,9 +357,8 @@ msgstr "Tiket vyprší o %1"
 
 #: ../qt-cmake-build-debug/ui_kinitdialog.h:297
 #: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
-#, fuzzy
 msgid "Password:"
-msgstr "Neplatné heslo"
+msgstr "Heslo:"
 
 #: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
@@ -370,7 +367,6 @@ msgstr "Zadajte Kerberos heslo pre <b>%1</b>"
 
 #: ../qt-cmake-build-debug/ui_mainwidget.h:585
 #: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
-#, fuzzy
 msgid "Postdate"
 msgstr "Z neskoršej doby"
 
@@ -447,9 +443,8 @@ msgstr "Služba pre hlavné"
 #: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
 #: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
 #: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
-#, fuzzy
 msgid "Show password"
-msgstr "Heslo:"
+msgstr "Zobraziť heslo"
 
 #: ../src/main.cpp:78
 msgid "Systray"
@@ -616,15 +611,4 @@ msgstr "sekúnd(y)"
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Anonimous"
-#~ msgstr "Anonymný"
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Zmeniť Kerberos heslo"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Zmeniť Kerberos heslo"
+msgstr "nedefinované"
