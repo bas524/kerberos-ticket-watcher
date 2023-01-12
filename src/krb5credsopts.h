@@ -10,9 +10,9 @@
 namespace v5 {
 class Context;
 class CredsOpts {
-  Context &_context;
+  const Context &_context;
   krb5_get_init_creds_opt *_opt;
-  CredsOpts(Context &context, krb5_get_init_creds_opt *opt);
+  CredsOpts(const Context &context, krb5_get_init_creds_opt *opt);
   friend class Context;
 
  public:

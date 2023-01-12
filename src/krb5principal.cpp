@@ -10,20 +10,20 @@
 #include "krb5ccache.h"
 
 namespace v5 {
-Principal::Principal(CCache& cCache) : _context(cCache.context()) {
+Principal::Principal(const CCache &cCache) : _context(cCache.context()) {
   krb5_error_code retval = krb5_cc_get_principal(_context(), cCache(), &_principal);
   if (retval != 0) {
     throw KRB5EXCEPTION(retval, _context, "Cant' get principal from ccache");
   }
 }
-Principal::Principal(Context& context, krb5_principal principal) : _context(context), _principal(principal) {}
+Principal::Principal(const Context &context, krb5_principal principal) : _context(context), _principal(principal) {}
 Principal::~Principal() {
   if (_principal) {
     krb5_free_principal(_context(), _principal);
   }
 }
 Principal::Principal(Principal&& o) noexcept : _context(o._context), _principal(o._principal) { o._principal = nullptr; }
-Principal::Principal(CCache& cCache, krb5_principal principal) : _context(cCache.context()), _principal(principal) {}
+Principal::Principal(const CCache &cCache, krb5_principal principal) : _context(cCache.context()), _principal(principal) {}
 
 QString Principal::realm() const { return QString::fromLocal8Bit(_principal->realm.data, (int)_principal->realm.length); }
 

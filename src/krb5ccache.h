@@ -16,24 +16,24 @@ class Principal;
 
 class CCache {
   bool _destroyed = false;
-  Context &_context;
+  const Context &_context;
   krb5_ccache _ccache = nullptr;
-  explicit CCache(Context &context);
+  explicit CCache(const Context &context);
   friend class Creds;
   friend class Context;
 
  public:
   CCache(CCache &&) = default;
   ~CCache();
-  Context &context();
+  const Context &context() const;
   krb5_ccache operator()() const;
-  Principal getPrincipal();
+  Principal getPrincipal() const;
   krb5_error_code destroy();
   krb5_error_code setFlags(krb5_flags flags);
   QString type() const;
   QString name() const;
   Cursor cursor();
-  Creds renewCredentials(const Principal &principal);
+  Creds renewCredentials(const Principal &principal) const;
 };
 }  // namespace v5
 

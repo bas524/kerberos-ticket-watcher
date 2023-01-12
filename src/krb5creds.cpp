@@ -13,9 +13,9 @@
 #include "krb5exception.h"
 
 namespace v5 {
-Creds::Creds(Context& context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
+Creds::Creds(const Context& context, std::unique_ptr<krb5_creds> creds) : _context(context), _creds(std::move(creds)) {}
 Creds::~Creds() { krb5_free_cred_contents(_context(), _creds.get()); }
-void Creds::retriveCreds(CCache& cCache, Principal& principal, Principal& targetPrincipal) {
+void Creds::retriveCreds(const CCache& cCache, const Principal& principal, const Principal& targetPrincipal) {
   krb5_creds mcreds;
   memset(_creds.get(), 0, sizeof(krb5_creds));
   memset(&mcreds, 0, sizeof(mcreds));
@@ -47,12 +47,12 @@ bool Creds::isHWAuth() const { return _creds->ticket_flags & TKT_FLG_HW_AUTH; }
 bool Creds::isPreAuth() const { return _creds->ticket_flags & TKT_FLG_PRE_AUTH; }
 bool Creds::hasTransitionPolicy() const { return _creds->ticket_flags & TKT_FLG_TRANSIT_POLICY_CHECKED; }
 bool Creds::isOkAsDelegate() const { return _creds->ticket_flags & TKT_FLG_OK_AS_DELEGATE; }
-bool Creds::isAnonimous() const { return _creds->ticket_flags & TKT_FLG_ANONYMOUS; }
+bool Creds::isAnonymous() const { return _creds->ticket_flags & TKT_FLG_ANONYMOUS; }
 krb5_timestamp Creds::ticketEndTime() const { return _creds->times.endtime; }
 krb5_timestamp Creds::ticketStartTime() const { return _creds->times.starttime; }
 krb5_timestamp Creds::ticketRenewTillTime() const { return _creds->times.renew_till; }
 krb5_deltat Creds::ticketLifeTime() const { return _creds->times.endtime - _creds->times.starttime; }
-krb5_deltat Creds::ticketRenewTime() const {
+krb5_deltat Creds::ticketRenewTimeDelta() const {
   if (_creds->times.renew_till == 0) {
     return -1;
   }
@@ -73,7 +73,7 @@ std::pair<krb5_deltat, Creds::LifeTimeDuration> Creds::lifeTimeDuration() const 
   return std::make_pair(lifetime, duration);
 }
 std::pair<krb5_deltat, Creds::LifeTimeDuration> Creds::renewTimeDuration() const {
-  krb5_deltat ticketrenewtime = ticketRenewTime();
+  krb5_deltat ticketrenewtime = ticketRenewTimeDelta();
   krb5_deltat renewtime = ticketrenewtime;
   LifeTimeDuration duration = LifeTimeDuration::SECONDS;
 
@@ -114,12 +114,16 @@ bool Creds::hasStartTime() const { return _creds->times.starttime != 0; }
 void Creds::setStartTimeInAuthTime() { _creds->times.starttime = _creds->times.authtime; }
 QString Creds::encryptionTypeName() const {
   char buf[100];
+  QString result;
   krb5_error_code retval = krb5_enctype_to_string(_creds->keyblock.enctype, buf, sizeof(buf));
   if (retval) {
     /* XXX if there's an error != EINVAL, I should probably report it */
-    sprintf(buf, "etype %d", _creds->keyblock.enctype);
+    result = QString("etype %1").arg(_creds->keyblock.enctype);
+  } else {
+    result = QString::fromLocal8Bit(buf);
   }
-  return {buf};
+
+  return result;
 }
 QStringList Creds::adresses() const {
   if (!_creds->addresses || !_creds->addresses[0]) {

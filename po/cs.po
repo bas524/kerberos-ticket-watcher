@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-ticket-watcher\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-25 13:00+0300\n"
+"POT-Creation-Date: 2023-01-10 11:08+0300\n"
 "PO-Revision-Date: 2016-07-28 12:08+0000\n"
 "Last-Translator: Tomáš Chvátal <tchvatal@suse.com>\n"
 "Language-Team: Czech <https://l10n.opensuse.org/projects/krb5-ticket-watcher/"
@@ -17,548 +17,567 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 2.6\n"
 
-#: ../src/krb5ticketwatcher.cpp:858
+#: ../src/krb5ticketwatcher.cpp:886
 #, qt-format
 msgid " for client %1"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwdialog.h:158
-#: ../cmake-build-debug/ui_pwchangedialog.h:172
-#: ../cmake-build-debug/ui_kinitdialog.h:311
-#: ../cmake-build-release/ui_pwdialog.h:158
-#: ../cmake-build-release/ui_pwchangedialog.h:172
-#: ../cmake-build-release/ui_kinitdialog.h:311
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:325
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:200
+#: ../qt-cmake-build-debug/ui_pwdialog.h:164
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:325
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:200
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwdialog.h:164
 msgid "&Cancel"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:226
+#: ../src/krb5ticketwatcher.cpp:230
 msgid "&Change Kerberos Password"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:198
-#: ../cmake-build-release/ui_mainwidget.h:198
+#: ../qt-cmake-build-debug/ui_mainwidget.h:558
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:558
 msgid "&Close"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:231
+#: ../src/krb5ticketwatcher.cpp:235
 msgid "&Destroy Ticket"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:289
-#: ../cmake-build-release/ui_kinitdialog.h:289
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:299
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:299
 msgid "&Details..."
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:216
+#: ../src/krb5ticketwatcher.cpp:220
 msgid "&New Ticket"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwdialog.h:154
-#: ../cmake-build-debug/ui_pwchangedialog.h:176
-#: ../cmake-build-debug/ui_kinitdialog.h:315
-#: ../cmake-build-release/ui_pwdialog.h:154
-#: ../cmake-build-release/ui_pwchangedialog.h:176
-#: ../cmake-build-release/ui_kinitdialog.h:315
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:321
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:204
+#: ../qt-cmake-build-debug/ui_pwdialog.h:160
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:321
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:204
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwdialog.h:160
 msgid "&Ok"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:241
+#: ../src/krb5ticketwatcher.cpp:245
 msgid "&Quit"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:194
-#: ../cmake-build-release/ui_mainwidget.h:194
+#: ../qt-cmake-build-debug/ui_mainwidget.h:554
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:554
 msgid "&Refresh"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:221
+#: ../src/krb5ticketwatcher.cpp:225
 msgid "&Renew Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:246
+#: ../src/krb5ticketwatcher.cpp:250
 msgid "&Version"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:930 ../src/krb5ticketwatcher.cpp:965
-#: ../src/krb5creds.cpp:153
+#: ../src/krb5creds.cpp:153 ../src/krb5ticketwatcher.cpp:982
+#: ../src/krb5ticketwatcher.cpp:1017
 msgid "(none)"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:287
-#: ../cmake-build-release/ui_kinitdialog.h:287
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:296
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:296
 msgid "@"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:934
+#: ../src/krb5ticketwatcher.cpp:986
 msgid "Addresses"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwdialog.h:160
-#: ../cmake-build-debug/ui_mainwidget.h:200
-#: ../cmake-build-debug/ui_pwchangedialog.h:174
-#: ../cmake-build-debug/ui_kinitdialog.h:313
-#: ../cmake-build-release/ui_pwdialog.h:160
-#: ../cmake-build-release/ui_mainwidget.h:200
-#: ../cmake-build-release/ui_pwchangedialog.h:174
-#: ../cmake-build-release/ui_kinitdialog.h:313
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:327
+#: ../qt-cmake-build-debug/ui_mainwidget.h:560
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:202
+#: ../qt-cmake-build-debug/ui_pwdialog.h:166
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:327
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:560
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:202
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwdialog.h:166
 msgid "Alt+C"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:291
-#: ../cmake-build-release/ui_kinitdialog.h:291
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:301
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:301
 msgid "Alt+D"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwdialog.h:156
-#: ../cmake-build-debug/ui_pwchangedialog.h:178
-#: ../cmake-build-debug/ui_kinitdialog.h:317
-#: ../cmake-build-release/ui_pwdialog.h:156
-#: ../cmake-build-release/ui_pwchangedialog.h:178
-#: ../cmake-build-release/ui_kinitdialog.h:317
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:323
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:206
+#: ../qt-cmake-build-debug/ui_pwdialog.h:162
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:323
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:206
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwdialog.h:162
 msgid "Alt+O"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:196
-#: ../cmake-build-release/ui_mainwidget.h:196
+#: ../qt-cmake-build-debug/ui_mainwidget.h:556
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:556
 msgid "Alt+R"
 msgstr ""
 
-#. Legend: Explain ticket flag "a"
-#: ../src/krb5ticketwatcher.cpp:190
+#: ../qt-cmake-build-debug/ui_mainwidget.h:582
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:582
 msgid "Anonymous"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1071
+#: ../src/krb5ticketwatcher.cpp:1123
 msgid "Application"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:945 ../src/krb5creds.cpp:134
-#: ../src/krb5creds.cpp:142
+#: ../src/krb5creds.cpp:134 ../src/krb5creds.cpp:142
+#: ../src/krb5ticketwatcher.cpp:997
 #, qt-format
 msgid "Broken address (type %1 length %2)"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1074
+#: ../src/krb5ticketwatcher.cpp:1126
 msgid "Build Date"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwchangedialog.h:171
-#: ../cmake-build-release/ui_pwchangedialog.h:171
-#: ../src/krb5ticketwatcher.cpp:228 ../src/krb5ticketwatcher.cpp:649
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:199
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:199
+#: ../src/krb5ticketwatcher.cpp:232 ../src/krb5ticketwatcher.cpp:677
 msgid "Change Kerberos Password"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:727
+#: ../src/krb5ticketwatcher.cpp:755
 #, qt-format
 msgid "Change the password for principal <b>%1</b>"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:218
+#: ../src/krb5ticketwatcher.cpp:222
 msgid "Create a new Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:227
+#: ../src/krb5ticketwatcher.cpp:231
 msgid "Ctrl+C"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:232
+#: ../src/krb5ticketwatcher.cpp:236
 msgid "Ctrl+D"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:247
+#: ../src/krb5ticketwatcher.cpp:251
 msgid "Ctrl+I"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:217
+#: ../src/krb5ticketwatcher.cpp:221
 msgid "Ctrl+N"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:242
+#: ../src/krb5ticketwatcher.cpp:246
 msgid "Ctrl+Q"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:222
+#: ../src/krb5ticketwatcher.cpp:226
 msgid "Ctrl+R"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:237
+#: ../src/krb5ticketwatcher.cpp:241
 msgid "Ctrl+S"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1001
+#: ../src/krb5ticketwatcher.cpp:1053
 msgid "Day(s)"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:183
-#: ../cmake-build-release/ui_mainwidget.h:183
+#: ../qt-cmake-build-debug/ui_mainwidget.h:562
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:562
 msgid "Default credential cache"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:833
+#: ../src/krb5ticketwatcher.cpp:189 ../src/krb5ticketwatcher.cpp:861
 msgid "Default principal:"
 msgstr ""
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:279
+#: ../src/krb5ticketwatcher.cpp:283
 msgid "Destroy Kerberos Ticket Cache?"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:233
+#: ../src/krb5ticketwatcher.cpp:237
 msgid "Destroy the Ticket"
 msgstr ""
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:281
+#: ../src/krb5ticketwatcher.cpp:285
 msgid "Do you want to destroy the ticket cache?"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwchangedialog.h:182
-#: ../cmake-build-release/ui_pwchangedialog.h:182
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:210
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:210
+#, fuzzy
 msgid "Enter new password:"
-msgstr ""
+msgstr "Změnit Kerberos heslo"
 
 #. title
-#: ../src/krb5ticketwatcher.cpp:288
+#: ../src/krb5ticketwatcher.cpp:292
 msgid "Error !"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:823
+#: ../src/krb5ticketwatcher.cpp:851
 msgid "Error while setting cache flags"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:890
+#: ../src/krb5ticketwatcher.cpp:923
 msgid "Expires"
 msgstr ""
 
 #. kdc unreachable, return
-#: ../src/krb5ticketwatcher.cpp:476 ../src/krb5ticketwatcher.cpp:552
-#: ../src/krb5ticketwatcher.cpp:635 ../src/krb5ticketwatcher.cpp:711
+#: ../src/krb5ticketwatcher.cpp:504 ../src/krb5ticketwatcher.cpp:580
+#: ../src/krb5ticketwatcher.cpp:663 ../src/krb5ticketwatcher.cpp:739
 #: ../src/main.cpp:92
 msgid "Failure"
 msgstr ""
 
-#. Legend: Explain ticket flag "F"
-#: ../src/krb5ticketwatcher.cpp:164
+#: ../qt-cmake-build-debug/ui_mainwidget.h:578
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:578
 msgid "Forwardable"
 msgstr ""
 
-#. Legend: Explain ticket flag "f"
-#: ../src/krb5ticketwatcher.cpp:166
+#: ../qt-cmake-build-debug/ui_mainwidget.h:575
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:575
 msgid "Forwarded"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1072
+#: ../src/krb5ticketwatcher.cpp:1124
 msgid "Full Version"
 msgstr ""
 
-#. Legend: Explain ticket flag "H"
-#: ../src/krb5ticketwatcher.cpp:182
+#: ../qt-cmake-build-debug/ui_mainwidget.h:572
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:572
 msgid "HW Auth"
 msgstr ""
+
+#: ../src/kinitdialog.cpp:111 ../src/pwchangedialog.cpp:39
+#: ../src/pwdialog.cpp:40
+#, fuzzy
+msgid "Hide password"
+msgstr "Změnit Kerberos heslo"
 
 #: ../src/main.cpp:79
 msgid "I couldn't detect any system tray on this system."
 msgstr ""
 
-#. Legend: Explain ticket flag "I"
-#: ../src/krb5ticketwatcher.cpp:180
+#: ../qt-cmake-build-debug/ui_mainwidget.h:574
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:574
 msgid "Initial"
 msgstr ""
 
-#. Legend: Explain ticket flag "i"
-#: ../src/krb5ticketwatcher.cpp:176
+#: ../qt-cmake-build-debug/ui_mainwidget.h:573
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:573
 msgid "Invalid"
 msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:526
+#: ../src/krb5ticketwatcher.cpp:554
 msgid "Invalid Password"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:475
+#: ../src/krb5ticketwatcher.cpp:503
 msgid "Invalid principal name"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwdialog.h:153
-#: ../cmake-build-release/ui_pwdialog.h:153
+#: ../qt-cmake-build-debug/ui_pwdialog.h:159
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwdialog.h:159
+#, fuzzy
 msgid "Kerberos Password Dialog"
-msgstr ""
+msgstr "Změnit Kerberos heslo"
 
-#: ../cmake-build-debug/ui_mainwidget.h:182
-#: ../cmake-build-release/ui_mainwidget.h:182
+#: ../qt-cmake-build-debug/ui_mainwidget.h:553
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:553
 msgid "Kerberos Ticket List"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1077
+#: ../src/krb5ticketwatcher.cpp:1129
 msgid "Kerberos5 Ticket Watcher"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:248
+#: ../src/krb5ticketwatcher.cpp:252
 msgid "Kerberos5 Ticket Watcher Version"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:922
+#: ../src/krb5ticketwatcher.cpp:974
 msgid "Key Encryption Type"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:297
-#: ../cmake-build-release/ui_kinitdialog.h:297
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:307
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:307
 msgid "Lifetime:"
 msgstr ""
 
-#. Legend: Explain ticket flag "D"
-#: ../src/krb5ticketwatcher.cpp:172
+#: ../qt-cmake-build-debug/ui_mainwidget.h:576
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:576
 msgid "May Postdate"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:284
-#: ../cmake-build-release/ui_kinitdialog.h:284
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:293
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:293
 msgid "New Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1014
+#: ../src/krb5ticketwatcher.cpp:1066
 msgid "No Credential Cache found"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:821
+#: ../src/krb5ticketwatcher.cpp:849
 msgid "No credentials cache found"
 msgstr ""
 
-#. Legend: Explain ticket flag "O"
-#: ../src/krb5ticketwatcher.cpp:188
+#: ../qt-cmake-build-debug/ui_mainwidget.h:577
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:577
 msgid "Ok as Delegate"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:755
+#: ../src/krb5ticketwatcher.cpp:783
 msgid "Password change failed"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:649
+#: ../src/krb5ticketwatcher.cpp:677
 #, qt-format
 msgid "Password expires after %1 days"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:389 ../src/krb5ticketwatcher.cpp:508
+#: ../src/krb5ticketwatcher.cpp:410 ../src/krb5ticketwatcher.cpp:536
 #, qt-format
 msgid "Password expires on %1"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:288
-#: ../cmake-build-release/ui_kinitdialog.h:288
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:297
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:297
+#, fuzzy
 msgid "Password:"
-msgstr ""
+msgstr "Změnit Kerberos heslo"
 
-#: ../src/krb5ticketwatcher.cpp:660
+#: ../src/krb5ticketwatcher.cpp:688
 #, qt-format
 msgid "Please enter the Kerberos password for <b>%1</b>"
 msgstr ""
 
-#. Legend: Explain ticket flag "d"
-#: ../src/krb5ticketwatcher.cpp:174
-msgid "Postdated"
+#: ../qt-cmake-build-debug/ui_mainwidget.h:585
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:585
+msgid "Postdate"
 msgstr ""
 
-#. Legend: Explain ticket flag "A"
-#: ../src/krb5ticketwatcher.cpp:184
+#: ../qt-cmake-build-debug/ui_mainwidget.h:581
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:581
 msgid "Pre Auth"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:286
-#: ../cmake-build-release/ui_kinitdialog.h:286
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:295
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:295
 msgid "Principal:"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:191
-#: ../cmake-build-release/ui_mainwidget.h:191
+#: ../qt-cmake-build-debug/ui_mainwidget.h:570
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:570
 msgid "Property"
 msgstr ""
 
-#. Legend: Explain ticket flag "p"
-#: ../src/krb5ticketwatcher.cpp:168
+#: ../qt-cmake-build-debug/ui_mainwidget.h:579
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:579
 msgid "Proxiable"
 msgstr ""
 
-#. Legend: Explain ticket flag "P"
-#: ../src/krb5ticketwatcher.cpp:170
+#: ../qt-cmake-build-debug/ui_mainwidget.h:584
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:584
 msgid "Proxy"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1073
+#: ../src/krb5ticketwatcher.cpp:1125
 msgid "Qt Version"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:243
+#: ../src/krb5ticketwatcher.cpp:247
 msgid "Quit Kerberos5 Ticket Watcher"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:236
+#: ../src/krb5ticketwatcher.cpp:240
 msgid "Re&store"
 msgstr ""
 
-#: ../cmake-build-debug/ui_pwchangedialog.h:183
-#: ../cmake-build-release/ui_pwchangedialog.h:183
+#: ../qt-cmake-build-debug/ui_pwchangedialog.h:212
+#: ../qt-cmake-build-releasewithdebuginfo/ui_pwchangedialog.h:212
+#, fuzzy
 msgid "Reenter password:"
-msgstr ""
+msgstr "Změnit Kerberos heslo"
 
-#: ../src/krb5ticketwatcher.cpp:223
+#: ../src/krb5ticketwatcher.cpp:227
 msgid "Renew the Ticket"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:895
+#: ../src/krb5ticketwatcher.cpp:928
 msgid "Renew until"
 msgstr ""
 
-#. Legend: Explain ticket flag "R"
-#: ../src/krb5ticketwatcher.cpp:178
+#: ../qt-cmake-build-debug/ui_mainwidget.h:583
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:583
 msgid "Renewable"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:304
-#: ../cmake-build-release/ui_kinitdialog.h:304
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:314
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:314
 msgid "Renewable for:"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:238
+#: ../src/krb5ticketwatcher.cpp:242
 msgid "Restore the Window"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:870
+#: ../src/krb5ticketwatcher.cpp:898
 msgid "Service principal"
 msgstr ""
+
+#: ../src/kinitdialog.cpp:33 ../src/kinitdialog.cpp:116
+#: ../src/pwchangedialog.cpp:18 ../src/pwchangedialog.cpp:45
+#: ../src/pwdialog.cpp:22 ../src/pwdialog.cpp:45
+#, fuzzy
+msgid "Show password"
+msgstr "Změnit Kerberos heslo"
 
 #: ../src/main.cpp:78
 msgid "Systray"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:185
-#: ../cmake-build-debug/ui_mainwidget.h:186
-#: ../cmake-build-debug/ui_mainwidget.h:187
-#: ../cmake-build-release/ui_mainwidget.h:185
-#: ../cmake-build-release/ui_mainwidget.h:186
-#: ../cmake-build-release/ui_mainwidget.h:187
+#: ../qt-cmake-build-debug/ui_mainwidget.h:563
+#: ../qt-cmake-build-debug/ui_mainwidget.h:564
+#: ../qt-cmake-build-debug/ui_mainwidget.h:565
+#: ../qt-cmake-build-debug/ui_mainwidget.h:566
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:563
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:564
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:565
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:566
 msgid "TextLabel"
 msgstr ""
 
 #. Invalid password, try again.
-#: ../src/krb5ticketwatcher.cpp:625 ../src/krb5ticketwatcher.cpp:707
+#: ../src/krb5ticketwatcher.cpp:653 ../src/krb5ticketwatcher.cpp:735
 msgid "The password you entered is invalid"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:730
+#: ../src/krb5ticketwatcher.cpp:758
 msgid "The passwords are not equal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:925
+#: ../src/krb5ticketwatcher.cpp:977
 msgid "Ticket Encryption Type"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:294
-#: ../cmake-build-release/ui_kinitdialog.h:294
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:304
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:304
 msgid "Ticket Flags"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:192
-#: ../cmake-build-release/ui_mainwidget.h:192
+#: ../qt-cmake-build-debug/ui_mainwidget.h:571
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:571
 msgid "Ticket Flags Legend"
 msgstr ""
 
 #. message text
-#: ../src/krb5ticketwatcher.cpp:290
+#: ../src/krb5ticketwatcher.cpp:294
 msgid "Ticket cache cannot be destroyed."
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:831
+#: ../src/krb5ticketwatcher.cpp:187 ../src/krb5ticketwatcher.cpp:859
 msgid "Ticket cache:"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:819
+#: ../src/krb5ticketwatcher.cpp:847
 #, qt-format
 msgid "Ticket cache: %1:%2"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:1020
+#: ../src/krb5ticketwatcher.cpp:1072
 #, qt-format
 msgid "Ticket expires in %1"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:916
+#: ../src/krb5ticketwatcher.cpp:964
 msgid "Ticket flags"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:353
+#: ../src/krb5ticketwatcher.cpp:376
 msgid "Ticket renewed"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:353
+#: ../src/krb5ticketwatcher.cpp:376
 msgid "Ticket successfully renewed."
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:189
-#: ../cmake-build-release/ui_mainwidget.h:189
+#: ../qt-cmake-build-debug/ui_mainwidget.h:568
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:568
 msgid "Time Remaining"
 msgstr ""
 
-#. Legend: Explain ticket flag "T"
-#: ../src/krb5ticketwatcher.cpp:186
+#: ../qt-cmake-build-debug/ui_mainwidget.h:580
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:580
 msgid "Transit Policy Checked"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:962 ../src/krb5creds.cpp:150
+#: ../src/krb5creds.cpp:150 ../src/krb5ticketwatcher.cpp:1014
 #, qt-format
 msgid "Unknown address type %1"
 msgstr ""
 
 #. principal unknown
-#: ../src/krb5ticketwatcher.cpp:542
+#: ../src/krb5ticketwatcher.cpp:570
 msgid "Unknown principal"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:545
+#: ../src/krb5ticketwatcher.cpp:573
 msgid "Unknown realm"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:886
+#: ../src/krb5ticketwatcher.cpp:918
 msgid "Valid starting"
 msgstr ""
 
-#: ../cmake-build-debug/ui_mainwidget.h:190
-#: ../cmake-build-release/ui_mainwidget.h:190
+#: ../qt-cmake-build-debug/ui_mainwidget.h:569
+#: ../qt-cmake-build-releasewithdebuginfo/ui_mainwidget.h:569
 msgid "Value"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:630
+#: ../src/krb5ticketwatcher.cpp:658
 msgid "Warning"
 msgstr ""
 
-#: ../src/krb5ticketwatcher.cpp:630
+#: ../src/krb5ticketwatcher.cpp:658
 msgid "Your password expired, please change it"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:299
-#: ../cmake-build-debug/ui_kinitdialog.h:306
-#: ../cmake-build-release/ui_kinitdialog.h:299
-#: ../cmake-build-release/ui_kinitdialog.h:306 ../src/KtwOptions.cpp:30
-#: ../src/KtwOptions.cpp:65
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:309
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:316
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:309
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:316
+#: ../src/KtwOptions.cpp:30 ../src/KtwOptions.cpp:65
 msgid "days"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:298
-#: ../cmake-build-debug/ui_kinitdialog.h:305
-#: ../cmake-build-release/ui_kinitdialog.h:298
-#: ../cmake-build-release/ui_kinitdialog.h:305
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:308
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:315
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:308
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:315
 msgid "default"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:295
-#: ../cmake-build-release/ui_kinitdialog.h:295
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:305
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:305
 msgid "forwardable"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:300
-#: ../cmake-build-debug/ui_kinitdialog.h:307
-#: ../cmake-build-release/ui_kinitdialog.h:300
-#: ../cmake-build-release/ui_kinitdialog.h:307 ../src/KtwOptions.cpp:27
-#: ../src/KtwOptions.cpp:66
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:310
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:317
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:310
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:317
+#: ../src/KtwOptions.cpp:27 ../src/KtwOptions.cpp:66
 msgid "hours"
 msgstr ""
 
@@ -567,34 +586,27 @@ msgid "microseconds"
 msgstr ""
 
 # 49593 AttribValues/label
-#: ../cmake-build-debug/ui_kinitdialog.h:301
-#: ../cmake-build-debug/ui_kinitdialog.h:308
-#: ../cmake-build-release/ui_kinitdialog.h:301
-#: ../cmake-build-release/ui_kinitdialog.h:308 ../src/KtwOptions.cpp:24
-#: ../src/KtwOptions.cpp:67
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:311
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:318
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:311
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:318
+#: ../src/KtwOptions.cpp:24 ../src/KtwOptions.cpp:67
 msgid "minutes"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:296
-#: ../cmake-build-release/ui_kinitdialog.h:296
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:306
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:306
 msgid "proxiable"
 msgstr ""
 
-#: ../cmake-build-debug/ui_kinitdialog.h:302
-#: ../cmake-build-debug/ui_kinitdialog.h:309
-#: ../cmake-build-release/ui_kinitdialog.h:302
-#: ../cmake-build-release/ui_kinitdialog.h:309 ../src/KtwOptions.cpp:21
-#: ../src/KtwOptions.cpp:68
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:312
+#: ../qt-cmake-build-debug/ui_kinitdialog.h:319
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:312
+#: ../qt-cmake-build-releasewithdebuginfo/ui_kinitdialog.h:319
+#: ../src/KtwOptions.cpp:21 ../src/KtwOptions.cpp:68
 msgid "seconds"
 msgstr ""
 
 #: ../src/KtwOptions.cpp:36
 msgid "undefined"
 msgstr ""
-
-#~ msgid "Change the Kerberos Password"
-#~ msgstr "Změnit Kerberos heslo"
-
-#, fuzzy
-#~ msgid "Change the password"
-#~ msgstr "Změnit Kerberos heslo"

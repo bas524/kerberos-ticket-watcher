@@ -31,20 +31,20 @@ class Exception : public std::exception {
   std::string _krb5ErrMessage;
   std::list<std::string> _stackTraces;
 
-  void makeErrorMessage(Context &context);
+  void makeErrorMessage(const Context &context);
 
  public:
   Exception(krb5_error_code retval, std::string what, int line, const char *file, const char *function);
-  Exception(krb5_error_code retval, Context &context, std::string what, int line, const char *file, const char *function);
-  Exception(krb5_error_code retval, Context &context, const QString &what, int line, const char *file, const char *function);
-  Exception(krb5_error_code retval, Context &context, const char *what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, const Context &context, std::string what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, const Context &context, const QString &what, int line, const char *file, const char *function);
+  Exception(krb5_error_code retval, const Context &context, const char *what, int line, const char *file, const char *function);
   Exception(const Exception &) = default;
   Exception(Exception &&) = default;
   ~Exception() override = default;
   const char *what() const _GLIBCXX_TXN_SAFE_DYN _GLIBCXX_NOTHROW override;
   krb5_error_code retval() const;
   QString krb5ErrorMessage() const;
-  static std::string krb5ErrorMessage(krb5_error_code retval, Context &context);
+  static std::string krb5ErrorMessage(krb5_error_code retval, const Context &context);
   const std::string &simpleWhat() const;
   void rethrow() const;
   const std::string &file() const;

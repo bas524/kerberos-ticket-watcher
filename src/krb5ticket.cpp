@@ -19,10 +19,13 @@ v5::Ticket::Ticket(Creds& creds) : _creds(creds), _tkt(nullptr) {
 v5::Ticket::~Ticket() noexcept { krb5_free_ticket(_creds._context(), _tkt); }
 QString v5::Ticket::encriptionTypeName() const {
   char buf[100];
+  QString result;
   krb5_error_code retval = krb5_enctype_to_string(_tkt->enc_part.enctype, buf, sizeof(buf));
   if (retval) {
-    sprintf(buf, "etype %d", _tkt->enc_part.enctype);
+    result = QString("etype %1").arg(_tkt->enc_part.enctype);
+  } else {
+    result = QString::fromLocal8Bit(buf);
   }
-  return {buf};
+  return result;
 }
 }  // namespace v5

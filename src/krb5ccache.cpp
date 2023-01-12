@@ -13,7 +13,7 @@
 #include <memory>
 
 namespace v5 {
-CCache::CCache(Context& context) : _context(context) {
+CCache::CCache(const Context &context) : _context(context) {
   krb5_error_code retval = krb5_cc_default(_context(), &_ccache);
   if (retval != 0) {
     throw KRB5EXCEPTION(retval, _context, "Can't generate ccache from default");
@@ -24,9 +24,9 @@ CCache::~CCache() {
     krb5_cc_close(_context(), _ccache);
   }
 }
-Context& CCache::context() { return _context; }
+const Context &CCache::context() const { return _context; }
 krb5_ccache CCache::operator()() const { return _ccache; }
-Principal CCache::getPrincipal() { return Principal(*this); }
+Principal CCache::getPrincipal() const { return Principal(*this); }
 krb5_error_code CCache::destroy() {
   int code = krb5_cc_destroy(_context(), _ccache);
   _destroyed = true;
@@ -39,7 +39,7 @@ krb5_error_code CCache::setFlags(krb5_flags flags) { return krb5_cc_set_flags(_c
 QString CCache::type() const { return QString(krb5_cc_get_type(_context(), _ccache)); }
 QString CCache::name() const { return QString(krb5_cc_get_name(_context(), _ccache)); }
 Cursor CCache::cursor() { return Cursor(*this); }
-Creds CCache::renewCredentials(const Principal& principal) {
+Creds CCache::renewCredentials(const Principal& principal) const {
   auto my_creds = std::make_unique<krb5_creds>();
 
   krb5_error_code retval = krb5_get_renewed_creds(_context(), my_creds.get(), principal(), _ccache, nullptr);
