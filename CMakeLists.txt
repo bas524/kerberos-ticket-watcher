@@ -58,6 +58,8 @@ set(KTW_SRCS
     src/pwchangedialog.cpp
     src/pwdialog.h
     src/pwchangedialog.h
+    src/ldapinfo.h
+    src/ldapinfo.cpp
     )
 
 # another list, this time it includes all header files that should be treated with moc

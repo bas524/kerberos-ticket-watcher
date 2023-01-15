@@ -59,6 +59,10 @@ class KinitDialog : public QDialog, private Ui::KinitDialog {
 
   bool renewCheckBoxIsChecked() const;
 
+  bool ldapServerIsEmpty() const;
+
+  QString ldapServerText() const;
+
  public slots:
   void changeDetailsState(int state);
   void changeRenewState(int state);

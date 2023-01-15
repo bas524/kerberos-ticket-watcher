@@ -136,6 +136,7 @@ QMap<QString, QVariant> Options::toKeyValueProps() const {
   result.insert("renewtime.unit", TimeUnit::tmUnitTostring(renewtime.unit(), TimeUnit::LocaleOpt::DONT_USE));
   result.insert("promptInterval.time", promptInterval.time());
   result.insert("promptInterval.unit", TimeUnit::tmUnitTostring(promptInterval.unit(), TimeUnit::LocaleOpt::DONT_USE));
+  result.insert("ldap.server", ldapServer);
   return result;
 }
 
@@ -158,6 +159,8 @@ Options Options::fromKeyValueProps(const QMap<QString, QVariant> &props) {
       options.promptInterval.setTime(item.second.toInt());
     } else if (item.first == "promptInterval.unit") {
       options.promptInterval.setUnit(TimeUnit::tmUnitFromText(item.second.toString(), TimeUnit::LocaleOpt::DONT_USE));
+    } else if (item.first == "ldap.server") {
+      options.ldapServer = item.second.toString();
     }
   }
   return options;

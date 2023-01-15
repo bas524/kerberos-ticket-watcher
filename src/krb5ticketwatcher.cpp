@@ -63,6 +63,7 @@
 #include "krb5credsopts.h"
 #include "krb5timestamphelper.h"
 #include "version.h"
+#include "ldapinfo.h"
 
 static int pw_exp;
 
@@ -520,6 +521,9 @@ void Ktw::kinit() {
         _options.renewtime.setTime(dlg->renewtimeSpinBoxValue());
         _options.renewtime.setUnit(ktw::TimeUnit::tmUnitFromText(dlg->renewUnitComboBoxCurrentText()));
       }
+      if (!dlg->ldapServerIsEmpty()) {
+        _options.ldapServer = dlg->ldapServerText();
+      }
     } else {
       loadOptions();
     }
@@ -541,6 +545,13 @@ void Ktw::kinit() {
         keyChainClass.writeKey(principalKey, principal);
         keyChainClass.writeKey(pwdKey, pwd);
         saveOptions();
+      }
+
+      LdapInfo ldapinfo(_options.ldapServer, principal, pwd);
+      auto dpName = ldapinfo.displayName();
+      auto title = ldapinfo.title();
+      if (!dpName.isEmpty() && !title.isEmpty()) {
+        this->setWindowTitle(QString("%1 - %2").arg(dpName, title));
       }
     } catch (v5::Exception &ex) {
       if (ex.retval()) {
