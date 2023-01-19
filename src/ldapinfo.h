@@ -14,11 +14,17 @@ class LdapInfo {
   QString _searchString;
   QString _title;
   QString _displayName;
+  QString _surname;
+  QString _name;
+  QString _middleName;
 
  public:
   LdapInfo(const QString &ldapServer, const QString &principal, const QString &password);
   const QString &title() const;
-  const QString displayName() const;
+  const QString &displayName() const;
+  const QString &surname() const;
+  const QString &name() const;
+  const QString &middleName() const;
 };
 
 #endif  // KRB5_TICKET_WATCHER_LDAPINFO_H

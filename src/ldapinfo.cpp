@@ -1,7 +1,7 @@
 #include "ldapinfo.h"
-#include <memory>
-#include <cstdio>
 #include <QTextStream>
+#include <cstdio>
+#include <memory>
 
 template <typename Action>
 void execAndDoOnEveryLine(const std::string &execString, const Action &action) {
@@ -41,8 +41,9 @@ LdapInfo::LdapInfo(const QString &ldapServer, const QString &principal, const QS
   if (domen1.isEmpty() || domen0.isEmpty()) {
     return;
   }
-  _searchString = QString("ldapsearch -Z -h %1 -D \"%2\" -w \"%3\" -b \"dc=%4,dc=%5\" \"(sAMAccountName=%6)\" title displayName")
-                      .arg(_ldapServer, _principal, password, domen1, domen0, principalName);
+  _searchString =
+      QString("ldapsearch -Z -h %1 -D \"%2\" -w \"%3\" -b \"dc=%4,dc=%5\" \"(sAMAccountName=%6)\" title displayName sn givenName middleName")
+          .arg(_ldapServer, _principal, password, domen1, domen0, principalName);
   execAndDoOnEveryLine(_searchString.toStdString(), [this](const QString &line) {
     if (line.contains("title:")) {
       auto ss = line.split(":");
@@ -56,9 +57,33 @@ LdapInfo::LdapInfo(const QString &ldapServer, const QString &principal, const QS
         _displayName = ss.at(1).trimmed();
       }
     }
+    if (line.contains("sn:")) {
+      auto ss = line.split(":");
+      if (ss.size() == 2) {
+        _surname = ss.at(1).trimmed();
+      }
+    }
+    if (line.contains("givenName:")) {
+      auto ss = line.split(":");
+      if (ss.size() == 2) {
+        _name = ss.at(1).trimmed();
+      }
+    }
+    if (line.contains("middleName:")) {
+      auto ss = line.split(":");
+      if (ss.size() == 2) {
+        _middleName = ss.at(1).trimmed();
+      }
+    }
   });
 }
 
 const QString &LdapInfo::title() const { return _title; }
 
-const QString LdapInfo::displayName() const { return _displayName; }
+const QString &LdapInfo::displayName() const { return _displayName; }
+
+const QString &LdapInfo::surname() const { return _surname; }
+
+const QString &LdapInfo::name() const { return _name; }
+
+const QString &LdapInfo::middleName() const { return _middleName; }

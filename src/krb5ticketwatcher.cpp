@@ -42,28 +42,28 @@
 #include <QSpinBox>
 #include <QSystemTrayIcon>
 // #include <QTextCodec>
+#include <QDir>
+#include <QList>
+#include <QSettings>
+#include <QStandardPaths>
 #include <QTime>
 #include <QToolTip>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QtDebug>
-#include <QStandardPaths>
-#include <QSettings>
-#include <QDir>
-#include <QList>
 
 #include "kinitdialog.h"
+#include "krb5ccache.h"
+#include "krb5creds.h"
+#include "krb5credsopts.h"
+#include "krb5cursor.h"
+#include "krb5exception.h"
+#include "krb5ticket.h"
+#include "krb5timestamphelper.h"
+#include "ldapinfo.h"
 #include "pwchangedialog.h"
 #include "pwdialog.h"
-#include "krb5creds.h"
-#include "krb5ccache.h"
-#include "krb5exception.h"
-#include "krb5cursor.h"
-#include "krb5ticket.h"
-#include "krb5credsopts.h"
-#include "krb5timestamphelper.h"
 #include "version.h"
-#include "ldapinfo.h"
 
 static int pw_exp;
 
@@ -548,7 +548,7 @@ void Ktw::kinit() {
       }
 
       LdapInfo ldapinfo(_options.ldapServer, principal, pwd);
-      auto dpName = ldapinfo.displayName();
+      auto dpName = QString("%1 %2 %3").arg(ldapinfo.name(), ldapinfo.middleName(), ldapinfo.surname());
       auto title = ldapinfo.title();
       if (!dpName.isEmpty() && !title.isEmpty()) {
         this->setWindowTitle(QString("%1 - %2").arg(dpName, title));
