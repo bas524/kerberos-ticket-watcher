@@ -203,6 +203,16 @@
          <string/>
         </property>
         <layout class="QGridLayout" name="detailLayout">
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="renewCheckBox">
+           <property name="text">
+            <string>Renewable for:</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="0" colspan="3">
           <widget class="QGroupBox" name="groupBox">
            <property name="title">
@@ -224,29 +234,6 @@
              </widget>
             </item>
            </layout>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="textLabel1_2">
-           <property name="text">
-            <string>Lifetime:</string>
-           </property>
-           <property name="wordWrap">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QSpinBox" name="lifetimeSpinBox">
-           <property name="specialValueText">
-            <string>default</string>
-           </property>
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="value">
-            <number>0</number>
-           </property>
           </widget>
          </item>
          <item row="1" column="2">
@@ -279,29 +266,6 @@
            </item>
           </widget>
          </item>
-         <item row="2" column="0">
-          <widget class="QCheckBox" name="renewCheckBox">
-           <property name="text">
-            <string>Renewable for:</string>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QSpinBox" name="renewtimeSpinBox">
-           <property name="specialValueText">
-            <string>default</string>
-           </property>
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="value">
-            <number>0</number>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="2">
           <widget class="QComboBox" name="renewUnitComboBox">
            <item>
@@ -325,6 +289,52 @@
             </property>
            </item>
           </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="textLabel1_2">
+           <property name="text">
+            <string>Lifetime:</string>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="renewtimeSpinBox">
+           <property name="specialValueText">
+            <string>default</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="lifetimeSpinBox">
+           <property name="specialValueText">
+            <string>default</string>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="labelLdapServer">
+           <property name="text">
+            <string>LdapServer:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="QLineEdit" name="lineEditLdapServer"/>
          </item>
         </layout>
        </widget>

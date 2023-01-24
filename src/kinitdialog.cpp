@@ -80,6 +80,10 @@ void KinitDialog::renewCheckBoxSetChecked(bool check) { renewCheckBox->setChecke
 
 bool KinitDialog::renewCheckBoxIsChecked() const { return renewCheckBox->isChecked(); }
 
+bool KinitDialog::ldapServerIsEmpty() const { return lineEditLdapServer->text().isEmpty(); }
+
+QString KinitDialog::ldapServerText() const { return lineEditLdapServer->text(); }
+
 KinitDialog::~KinitDialog() = default;
 
 void KinitDialog::changeDetailsState(int state) {
