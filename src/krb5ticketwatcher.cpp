@@ -51,6 +51,10 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QtDebug>
+#include <QStandardPaths>
+#include <QSettings>
+#include <QDir>
+#include <QList>
 
 #include "kinitdialog.h"
 #include "krb5ccache.h"
