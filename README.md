@@ -21,6 +21,7 @@ promptInterval.unit=minutes
 proxiable=true
 renewtime.time=13
 renewtime.unit=days
+ldap.server=dc.domain.com
 ```
 
 ## Code
