@@ -282,7 +282,7 @@ void Ktw::createTrayMenu() {
 void Ktw::forceRenewCredential() {
   qDebug("forceRenewCredential called");
   initWorkflow(1);
-  emit refreshButton->click();
+  Q_EMIT refreshButton->click();
 }
 
 void Ktw::destroyCredential() {
