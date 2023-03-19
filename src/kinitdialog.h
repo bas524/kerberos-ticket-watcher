@@ -63,6 +63,8 @@ class KinitDialog : public QDialog, private Ui::KinitDialog {
 
   QString ldapServerText() const;
 
+  void ldapServerSetText(const QString& text);
+
  public slots:
   void changeDetailsState(int state);
   void changeRenewState(int state);

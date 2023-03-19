@@ -193,6 +193,8 @@ void Ktw::initMainWindow() {
   labelCacheV->setText(" -- ");
   labelPrincipal->setText(ki18n("Default principal:"));
   labelPrincipalV->setText(" -- ");
+  auto labelWidth = std::max(commonLabel->width(), labelPrincipal->width());
+  commonLabel->setFixedWidth(labelWidth);
   _defaultStyleSheet = labelForwardableLetter->styleSheet();
   connect(refreshButton, SIGNAL(clicked()), this, SLOT(reReadCache()));
 }
@@ -280,6 +282,7 @@ void Ktw::createTrayMenu() {
 void Ktw::forceRenewCredential() {
   qDebug("forceRenewCredential called");
   initWorkflow(1);
+  emit refreshButton->click();
 }
 
 void Ktw::destroyCredential() {
@@ -443,6 +446,7 @@ void Ktw::kinit() {
   const QString user = getUserName();
   QString principalKey = QString("%1_principal").arg(user);
   QString pwdKey = QString("%1_pwd").arg(user);
+  loadOptions();
   do {
     ok = false;
     QString principal;
@@ -487,6 +491,8 @@ void Ktw::kinit() {
         dlg->renewCheckBoxSetChecked(false);
       }
 
+      dlg->ldapServerSetText(_options.ldapServer);
+
       int ret = dlg->exec();
       if (ret == QDialog::Rejected) {
         qDebug("rejected");
@@ -528,8 +534,6 @@ void Ktw::kinit() {
       if (!dlg->ldapServerIsEmpty()) {
         _options.ldapServer = dlg->ldapServerText();
       }
-    } else {
-      loadOptions();
     }
 
     setOptions(credsOpts);
@@ -875,6 +879,8 @@ void Ktw::buildCcacheInfos() {
   labelCacheV->setText(QString("%1:%2").arg(cCache.type(), cCache.name()));
   labelPrincipal->setText(ki18n("Default principal:"));
   labelPrincipalV->setText(defname);
+  auto labelWidth = std::max(commonLabel->width(), labelPrincipal->width());
+  commonLabel->setFixedWidth(labelWidth);
 
   auto cursor = cCache.cursor();
   for (auto item = cursor.begin(); item != cursor.end(); ++item) {

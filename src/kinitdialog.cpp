@@ -84,6 +84,8 @@ bool KinitDialog::ldapServerIsEmpty() const { return lineEditLdapServer->text().
 
 QString KinitDialog::ldapServerText() const { return lineEditLdapServer->text(); }
 
+void KinitDialog::ldapServerSetText(const QString &text) { lineEditLdapServer->setText(text); }
+
 KinitDialog::~KinitDialog() = default;
 
 void KinitDialog::changeDetailsState(int state) {
