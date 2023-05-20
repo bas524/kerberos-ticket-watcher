@@ -642,7 +642,9 @@ void Ktw::reinitCredential(const QString &password) {
       }
     }
     // if we repeat this task, we should ask again for the password
-    passwd.clear();
+    if (repeat) {
+      passwd.clear();
+    }
   } while (repeat);
 
   try {
@@ -758,6 +760,11 @@ void Ktw::changePassword(const QString &oldpw) {
     throw KRB5EXCEPTION(retval, _context, "changing password failed");
   }
 
+  tray->showMessage(ki18n("Password change"), ki18n("Password successfully renewed."), QSystemTrayIcon::Information, 5000);
+  const QString user = getUserName();
+  QString pwdKey = QString("%1_pwd").arg(user);
+  keyChainClass.deleteKey(pwdKey);
+  keyChainClass.writeKey(pwdKey, p1);
   reinitCredential(p1);
 }
 
