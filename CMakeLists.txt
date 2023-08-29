@@ -105,30 +105,15 @@ set(QT_VER Qt5)
     if (NOT Qt5_FOUND)
         set(QT_VER Qt6)
         find_package(${QT_VER} COMPONENTS Core Widgets Gui Network Keychain REQUIRED)
-#this will run uic on.ui files:
-    qt_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
-#and finally this will run moc:
-    qt_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
-#add resources
-    qt_add_resources(KTW_RC_SRCS rc/icons.qrc)
+        qt_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
+        qt_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
+        qt_add_resources(KTW_RC_SRCS rc/icons.qrc)
     else ()
-#this will run uic on.ui files:
-    qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
-#and finally this will run moc:
-    qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
-#add resources
-    qt5_add_resources(KTW_RC_SRCS rc/icons.qrc)
+        qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
+        qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
+        qt5_add_resources(KTW_RC_SRCS rc/icons.qrc)
     endif ()
 endif()
-
-#set(QT_VER Qt5)
-#find_package(${QT_VER} COMPONENTS Core Widgets Gui Network Keychain REQUIRED)
-##this will run uic on.ui files:
-#qt5_wrap_ui(KTW_UI_HDRS ${KTW_UIS} OPTIONS -tr ki18n)
-##and finally this will run moc:
-#qt5_wrap_cpp(KTW_MOC_SRCS ${KTW_MOC_HDRS})
-##add resources
-#qt5_add_resources(KTW_RC_SRCS rc/icons.qrc)
 
 find_package(Gettext REQUIRED)
 if (GETTEXT_FOUND)
@@ -231,9 +216,17 @@ if (APPLE)
     if (${QT_VER} STREQUAL Qt5)
       add_custom_command(TARGET krb5-ticket-watcher
                         POST_BUILD
-                        COMMAND plutil -replace NSHighResolutionCapable -bool true krb5-ticket-watcher.app/Contents/Info.plist
+                        COMMAND chmod +w krb5-ticket-watcher.app/Contents/Info.plist && plutil -replace NSHighResolutionCapable -bool true krb5-ticket-watcher.app/Contents/Info.plist
                         )
-      endif()
+    endif()
+    add_custom_command(TARGET krb5-ticket-watcher
+            POST_BUILD
+            COMMAND chmod +w krb5-ticket-watcher.app/Contents/Info.plist && plutil -insert CFBundleDisplayName -string Krb5Watcher krb5-ticket-watcher.app/Contents/Info.plist
+            )
+    add_custom_command(TARGET krb5-ticket-watcher
+            POST_BUILD
+            COMMAND chmod +w krb5-ticket-watcher.app/Contents/Info.plist && plutil -replace CFBundleIdentifier -string Krb5Watcher krb5-ticket-watcher.app/Contents/Info.plist
+            )
 else ()
     set(CPACK_PACKAGE_NAME "krb5-ticket-watcher")
     set(CPACK_PACKAGE_VERSION "${MAJOR}.${MINOR}.${PATCH}")
@@ -261,8 +254,9 @@ else ()
     set(CPACK_RPM_PACKAGE_URL ${CMAKE_PROJECT_HOMEPAGE_URL})
     set(CPACK_RPM_PACKAGE_LICENSE "GPLv2.0")
     set(CPACK_RPM_PACKAGE_REQUIRES "krb5-config, qt5-qtbase, qt5-qtnetworkauth, qtkeychain-qt5, libicu")
-
-    include(CPack)
-    cpack_add_component(application DISPLAY_NAME "Kerberos Ticket Watcher App" REQUIRED)
+endif ()
+include(CPack)
+cpack_add_component(application DISPLAY_NAME "Kerberos Ticket Watcher App" REQUIRED)
+if (NOT APPLE)
     cpack_add_component(localization DISPLAY_NAME "Kerberos Ticket Watcher Localization " REQUIRED)
 endif ()
