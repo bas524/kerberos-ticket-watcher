@@ -1,6 +1,6 @@
 build/
 *~
 *.swp
-/qt-cmake-build-debug/
-/qt-cmake-build-releasewithdebuginfo/
+/qt-cmake-build-*/
+/cmake-build-*/
 /CMakeLists.txt.user
