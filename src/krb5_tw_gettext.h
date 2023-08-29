@@ -5,4 +5,4 @@
 
 #define ki18n(s, ...) QString::fromUtf8(dgettext("krb5-ticket-watcher", s))
 
-#endif
+#endif // KRB5_TW_GETTEXT_H

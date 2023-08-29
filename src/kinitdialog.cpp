@@ -21,7 +21,7 @@ KinitDialog::KinitDialog(QWidget *parent, const char *name, bool modal, Qt::Wind
   changeRenewState(Qt::Checked);
 
   QSize size32(32, 32);
-  QList<QSize> qlistSizes = _icClosedEye.availableSizes();
+  const QList<QSize> qlistSizes = _icClosedEye.availableSizes();
   QList<QSize>::const_iterator it =
       std::lower_bound(qlistSizes.begin(), qlistSizes.end(), size32, [](const QSize &a, const QSize &b) { return a.width() < b.width(); });
   QSize result = (it != qlistSizes.end()) ? *it : size32;

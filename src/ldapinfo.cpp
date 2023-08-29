@@ -1,5 +1,6 @@
 #include "ldapinfo.h"
 #include <QTextStream>
+#include <QStringList>
 #include <cstdio>
 #include <memory>
 

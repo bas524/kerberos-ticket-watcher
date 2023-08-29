@@ -577,6 +577,8 @@ void Ktw::trayClicked(QSystemTrayIcon::ActivationReason reason) {
 void Ktw::restore() {
   reReadCache();
   show();
+  activateWindow();
+  raise();
 }
 
 // public slots -------------------------------------------------------------
@@ -945,7 +947,7 @@ void Ktw::showCredential(v5::Creds &cred, const QString &defname) {
   last->setText(0, ki18n("Ticket flags"));
   last->setText(1, tFlags);
   QVariant itemData;
-  itemData.setValue<QList<char>>(lFlags);
+  itemData.setValue<QList<char>>(QList<char>(lFlags));
   lvi->setData(0, Qt::UserRole, itemData);
   lvi->setData(1, Qt::UserRole, brushText);
 
